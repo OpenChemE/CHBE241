@@ -1,4 +1,4 @@
-#Useful Python tutorials
+# Useful Python tutorials
 
 1. [__Code Academy__](https://www.codecademy.com/learn/python "Code Academy") has one of the better tutorials for python 
 	- It is recommended	to go up to lesson 8 to grasp the general usage of python syntax, conditions and functions. 
