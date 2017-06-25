@@ -16,4 +16,4 @@
  	- on [__Jeff's__](http://nbviewer.jupyter.org/github/jckantor/CBE20255/blob/master/notebooks/Getting%20Started%20with%20Units%20and%20Engineering%20Calculations.ipynb) page, he asks you to use ```pip install pint``` 
 	but if you use ```conda list```, you can see that pint is a package in the conda library and can use conda to install it.
 	- Using Pip is the alternative if the package is not in Conda.
-5.  We can use [sphinx](http://www.sphinx-doc.org/en/stable/) to generate an online textbook like [this one](https://clouds.eos.ubc.ca/~phil/courses/parallel_python/) that's also exportable as a nice PDF document, all from the ipynb files.
+5.  [**sphinx**](http://www.sphinx-doc.org/en/stable/) can be used to generate an online textbook like [this one](https://clouds.eos.ubc.ca/~phil/courses/parallel_python/) that's also exportable as a nice PDF document, all from the ipynb files.
