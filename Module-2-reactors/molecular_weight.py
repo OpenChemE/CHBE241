@@ -3,10 +3,10 @@
 #  chemweight.py
 #  
 
-__init__.py
+# 
 
 
-import re
+# import re
 mass = {
   "H":	1.00794,
   "He":	4.002602,
