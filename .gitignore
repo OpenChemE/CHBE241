@@ -1,2 +1,3 @@
 textbook.pdf
 **/*.ipynb_checkpoints/
+**/*thumbs.db
