@@ -1,3 +1,5 @@
+[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/UBC-Open-ChemE/Lobby)
+
 # Useful Python tutorials by @corneliuscob
 
 1. [__Code Academy__](https://www.codecademy.com/learn/python "Code Academy") has one of the better tutorials for python 
