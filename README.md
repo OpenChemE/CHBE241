@@ -1,4 +1,4 @@
-[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/UBC-Open-ChemE/Lobby)
+[![Gitter chat](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/UBC-Open-ChemE/Lobby)
 
 # Useful Python tutorials by @corneliuscob
 
