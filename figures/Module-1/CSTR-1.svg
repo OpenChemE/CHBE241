@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,7 +45,7 @@
      inkscape:measure-end="177.773,119.84"
      inkscape:zoom="4.7813887"
      inkscape:cx="177.44926"
-     inkscape:cy="121.36966"
+     inkscape:cy="104.63812"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -241,7 +241,7 @@
          x="22.169291"
          y="132.60489"
          style="font-size:13.33333333px;" /></flowRegion><flowPara
-       id="flowPara182"></flowPara></flowRoot>  <flowRoot
+       id="flowPara182" /></flowRoot>  <flowRoot
      xml:space="preserve"
      id="flowRoot202"
      style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:sans-serif;font-stretch:normal;font-variant:normal"><flowRegion
@@ -251,7 +251,7 @@
          height="21.443663"
          x="-15.676056"
          y="137.39436" /></flowRegion><flowPara
-       id="flowPara208"></flowPara></flowRoot>  <flowRoot
+       id="flowPara208" /></flowRoot>  <flowRoot
      xml:space="preserve"
      id="flowRoot210"
      style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:sans-serif;font-stretch:normal;font-variant:normal"><flowRegion
@@ -261,7 +261,7 @@
          height="19.964788"
          x="12.12676"
          y="132.80986" /></flowRegion><flowPara
-       id="flowPara216"></flowPara></flowRoot>  <text
+       id="flowPara216" /></flowRoot>  <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
      x="22.108675"
@@ -284,7 +284,7 @@
          height="24.697184"
          x="18.633802"
          y="129.55634" /></flowRegion><flowPara
-       id="flowPara228"></flowPara></flowRoot>  <text
+       id="flowPara228" /></flowRoot>  <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
      x="19.854557"
@@ -350,9 +350,7 @@
        y="138.46468"
        style="font-size:13.33333302px">n<tspan
    style="font-size:64.99999762%;baseline-shift:sub"
-   id="tspan230-2">(4, H<tspan
-   style="font-size:5.33333349px"
-   id="tspan232-4">2</tspan>O)</tspan></tspan></text>
+   id="tspan230-2">4</tspan></tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -443,7 +441,7 @@
          height="20.286993"
          x="13.385233"
          y="147.24498" /></flowRegion><flowPara
-       id="flowPara430"></flowPara></flowRoot>  <text
+       id="flowPara430" /></flowRoot>  <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
      x="20.668839"
