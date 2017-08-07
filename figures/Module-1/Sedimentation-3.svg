@@ -242,25 +242,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="294.52036"
-       y="178.00777"
-       id="text92-8"><tspan
-         sodipodi:role="line"
-         id="tspan90-73"
-         x="294.52036"
-         y="178.00777">x<tspan
-   style="font-size:64.99999762%;baseline-shift:sub"
-   id="tspan284">(3, Particulate)</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="295.55609"
-       y="193.28526"
+       x="294.8237"
+       y="177.90498"
        id="text92-03"><tspan
          sodipodi:role="line"
          id="tspan90-0"
-         x="295.55609"
-         y="193.28526">x<tspan
+         x="294.8237"
+         y="177.90498">x<tspan
    style="font-size:64.99999762%;baseline-shift:sub"
    id="tspan286">(3, Bacteria)</tspan></tspan></text>
     <text
@@ -412,7 +400,17 @@
          sodipodi:role="line"
          id="tspan399-7"
          x="268.49835"
-         y="244.76776">=0.40</tspan></text>
+         y="244.76776">=0.20</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="301.95364"
+       y="265.25137"
+       id="text401-7-2"><tspan
+         sodipodi:role="line"
+         id="tspan399-7-2"
+         x="301.95364"
+         y="265.25137">=0.40</tspan></text>
   </g>
   <text
      xml:space="preserve"
