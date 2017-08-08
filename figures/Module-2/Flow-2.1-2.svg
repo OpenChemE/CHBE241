@@ -40,7 +40,7 @@
      id="namedview3696"
      showgrid="false"
      inkscape:zoom="5.375"
-     inkscape:cx="185.70945"
+     inkscape:cx="254.70394"
      inkscape:cy="45.720959"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
@@ -138,12 +138,12 @@
        x="266.11609"
        y="56.68132"
        style="font-size:16px">n<tspan
-   style="font-size:8px;baseline-shift:sub"
-   id="tspan3760">1</tspan> kmol/h C<tspan
-   style="font-size:8px;baseline-shift:sub"
-   id="tspan3772">2</tspan>H<tspan
-   style="font-size:8px;baseline-shift:sub"
-   id="tspan3776">6</tspan></tspan></text>
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan3801">(1, C<tspan
+   style="font-size:8px"
+   id="tspan3803">2</tspan>H<tspan
+   style="font-size:8px"
+   id="tspan3807">6</tspan>)</tspan> </tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -155,12 +155,12 @@
        x="267.23236"
        y="73.98365"
        style="font-size:16px">n<tspan
-   style="font-size:8px;baseline-shift:sub"
-   id="tspan3764">2</tspan> kmol/h C<tspan
-   style="font-size:8px;baseline-shift:sub"
-   id="tspan3778">2</tspan>H<tspan
-   style="font-size:8px;baseline-shift:sub"
-   id="tspan3782">4</tspan></tspan></text>
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan3811">(2, C<tspan
+   style="font-size:8px"
+   id="tspan3813">2</tspan>H<tspan
+   style="font-size:8px"
+   id="tspan3815">4</tspan>)</tspan></tspan></text>
   <ellipse
      id="path3784"
      cx="271.18561"
