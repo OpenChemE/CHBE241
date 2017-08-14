@@ -2,14 +2,20 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "deletable": true,
+    "editable": true
+   },
    "source": [
     "# Questions on $C_v$ and $C_p$ "
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "deletable": true,
+    "editable": true
+   },
    "source": [
     "## 5.6.0 &ndash; Learning Objectives\n",
     "\n",
@@ -24,7 +30,10 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "deletable": true,
+    "editable": true
+   },
    "source": [
     "## 5.6.2 &ndash; Question 1: \n",
     "\n",
@@ -60,7 +69,9 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": true
+    "collapsed": true,
+    "deletable": true,
+    "editable": true
    },
    "source": [
     "## 5.6.2 &ndash; Question 2: \n",
@@ -94,49 +105,58 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "deletable": true,
+    "editable": true
+   },
    "source": [
     "## 5.6.3 &ndash; Question 3:\n",
-    " [taking this table off the internet for now](http://www.personal.utulsa.edu/~geoffrey-price/Courses/ChE7023/HeatCapacity-HeatOfFormation.pdf)\n",
-    "  \n",
-    "n-butane is brought from 450 $^\\circ$C to 923$^\\circ$C. Using the formal definition and formula of heat capacities, find the heat required to bring acetone to this temperature.\n",
     "\n",
-    "Preamble: Because n-butane is far from an ideal gas and the temperature that we are measuring is extremely high, it is important to capture the true heat capacity to evaluate the enthalpy. Depending on the work in engineering this higher accuracy may be important; however, unless otherwise stated, it is often safe enough to take a constant value.\n",
+    "n-butane is brought from 450 $^\\circ$C to 923$^\\circ$C. Using the formal definition and formula of heat capacities, find the heat required to bring n-butane to this temperature.\n",
     "\n",
+    "Preamble: Because the temperature range that we are measuring is extremely large , it is important to capture the true heat capacity to evaluate the enthalpy. Here we must assume that the pressure is adequately low to  assume ideal gas law.\n",
     "1. Draw the diagram of the process taking place and write down the relevant equations.\n",
-    "\n",
-    "\n",
-    "  ![](http://www.jmcampbell.com/tip-of-the-month/wp-content/uploads/2013/04/Figure-21.png) need another one\n",
+    "$$ \\Delta H  = \\int^{T_2}_{T_1}C_pdT$$\n",
     " \n",
-    "  $$\\Delta H  = \\int^{T_2}_{T_1}C_pdT$$\n",
+    "2.  List simplifications and assumptions\n",
+ question:Module-5-Energy-Balances/5.6-Questions-on-Cv-and-Cp.ipynb
     " \n",
-    " 2.  List simplifications and assumptions\n",
+    "3. Solve equations __Note mind your units! Kelvin and Celsius matter!__ For us, we  are told to use celcius.\n",
     " \n",
-    " 3. Solve equations __Note mind your units! Kelvin and Celsius matter!__\n",
+    " Taking the tabulated data from table B2 and expanding the enthalpy equation:\n",
     " \n",
-    " Taking the tabulated data and expanding the enthalpy equation:\n",
-    " $$\\Delta H  = \\int^{T_2}_{T_1}C_pdT = \\int^{T_2}_{T_1}(A + BT + CT^2)dT$$\n",
+
+    " **Note:** table B2's powers are all supposed to be negative.\n",
+    " $$ \\Delta H  = \\int^{T_2}_{T_1}C_pdT = \\int^{T_2}_{T_1}(A + BT + CT^2+DT^3)dT $$\n",
+ question:Module-5-Energy-Balances/5.6-Questions-on-Cv-and-Cp.ipynb
     " \n",
-    " $A = 1.935$\n",
+    " $A = 92.3\\times 10^{-3}$\n",
     " \n",
-    " $B = 36.915 \\times 10^{-3}$\n",
+    " $B = 27.88 \\times 10^{-5}$\n",
     " \n",
-    " $C = -11.402 \\times 10^{-6}$\n",
+    " $C = -15.47 \\times 10^{-8}$\n",
     " \n",
-    " $(T_1, \\space T_2)=(723, \\space 1196) \\space K$\n",
+    " $D = -34.98 \\times 10^{-12}$\n",
     " \n",
-    " $$\\Delta H  =  \\int^{1196}_{723} \\big(A + BT + CT^2 \\big)dT$$\n",
+
+    " $(T_1, \\space T_2)=(450, \\space 923 ) \\space C$\n",
     " \n",
-    " $$\\Delta H  = \\bigg[ \\bigg(AT + B\\frac{T^2}{2} + C\\frac{T^3}{3} \\bigg) \\bigg]^{1196}_{723}$$\n",
+    " $$ \\Delta H  =  \\int^{923}_{450} \\big(A + BT + CT^2 +DT^3\\big)dT$$\n",
     " \n",
-    "  $$\\Delta H  = \\bigg[ \\bigg(1.935 \\cdot T + 36.915 \\times 10^{-3} \\cdot \\frac{T^2}{2}  - 11.402 \\times 10^{-6} \\cdot \\frac{T^3}{3} \\bigg) \\bigg]^{1196}_{723}$$\n",
+    " $$ \\Delta H  = \\bigg[ \\bigg(AT + B\\frac{T^2}{2} + C\\frac{T^3}{3} +D\\frac{T^4}{4}\\bigg) \\bigg]^{923}_{450}$$\n",
+    " \n",
+    "  $$ \\Delta H  = \\bigg[ \\bigg(92.3\\times 10^{-3} T + 27.88 \\times 10^{-5} \\frac{T^2}{2}  -15.47 \\times 10^{-8} \\frac{T^3}{3} +34.98 \\times 10^{-12}\\frac{T^4}{4}  \\bigg) \\bigg]^{923}_{450} $$\n",
     "  \n",
-    "  $$\\Delta H  = 20,876 \\space \\frac{J}{kg}$$"
+    "  $$ \\Delta H  = 104 \\space \\frac{kJ}{kg} $$"
+question:Module-5-Energy-Balances/5.6-Questions-on-Cv-and-Cp.ipynb
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "deletable": true,
+    "editable": true
+   },
    "source": [
     "\n",
     "## 5.6.4 &ndash; Question 4: lets apply it ! \n",
@@ -149,7 +169,9 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "collapsed": true
+    "collapsed": true,
+    "deletable": true,
+    "editable": true
    },
    "outputs": [],
    "source": []
@@ -172,7 +194,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.6.1"
+   "version": "3.5.2"
   }
  },
  "nbformat": 4,
