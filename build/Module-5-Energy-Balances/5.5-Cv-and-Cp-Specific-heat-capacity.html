@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>5.5 Cv, Cp, and Specific Heat Capacity &#8212; project1 1.0 documentation</title>
+    <title>5.5 Cv, Cp,-and-Specific-Properties &#8212; project1 1.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -42,8 +42,170 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="5.5-Cv,-Cp,-and-Specific-Heat-Capacity">
-<h1>5.5 Cv, Cp, and Specific Heat Capacity<a class="headerlink" href="#5.5-Cv,-Cp,-and-Specific-Heat-Capacity" title="Permalink to this headline">¶</a></h1>
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="5.5-Cv,-Cp,-and-Specific-Properties">
+<h1>5.5 Cv, Cp,-and-Specific-Properties<a class="headerlink" href="#5.5-Cv,-Cp,-and-Specific-Properties" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="5.5.0-–-Learning-Objectives">
 <h2>5.5.0 – Learning Objectives<a class="headerlink" href="#5.5.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
 <p>By the end of this section you should be able to:</p>
@@ -83,6 +245,35 @@ C_v :raw-latex:</cite>Delta <a href="#id3"><span class="problematic" id="id4">`<
 <p>In open systems, Heat <span class="math">\(Q\)</span> is written as $n C_p
 <a href="#id5"><span class="problematic" id="id6">:raw-latex:`\Delta `T $ or $m C\_p :raw-latex:`</span></a>Delta <a href="#id7"><span class="problematic" id="id8">`</span></a>T $</p>
 </div>
+<div class="section" id="5.5.3-–-Specific-Properties">
+<h2>5.5.3 – Specific Properties<a class="headerlink" href="#5.5.3-–-Specific-Properties" title="Permalink to this headline">¶</a></h2>
+<p>A specific property is obtained by dividing an extensive property by
+mass. This turns the property to be intensive, i.e. not reliant on the
+situation.</p>
+<p>For test puposes, when you see a specifc property <strong>remember to divide
+by its mass</strong>.</p>
+<p>For example: 10kg of water has a <strong>heat capacity</strong> of $
+4.184:raw-latex:<cite>frac{kJ}{kgcdot  Delta T}</cite><a href="#id9"><span class="problematic" id="id10">:raw-latex:`\cdot `10kg
+:raw-latex:`</span></a>cdot <cite>= 41.84:raw-latex:</cite>frac{kJ}{Delta T}`$</p>
+<p>Likewise, 100kg of water has a <strong>heat capacity</strong> of $
+4.184:raw-latex:<cite>frac{kJ}{kgcdot  Delta T}</cite><a href="#id11"><span class="problematic" id="id12">:raw-latex:`\cdot `100kg
+:raw-latex:`</span></a>cdot <cite>= 418.4:raw-latex:</cite>frac{kJ}{Delta T}`$</p>
+<p>It takes 41kJ of energy to raise the temperature of 10kg of water by 1
+degree and 418 kJ of energy to raise the temperature of 100kg of water
+by 1 degree.</p>
+<p>Both 10 and 100kg of water have a <strong>specific heat capacity</strong> of
+<span class="math">\(4.184\frac{kJ}{kg \Delta T}\)</span></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -93,10 +284,11 @@ C_v :raw-latex:</cite>Delta <a href="#id3"><span class="problematic" id="id4">`<
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">5.5 Cv, Cp, and Specific Heat Capacity</a><ul>
+<li><a class="reference internal" href="#">5.5 Cv, Cp,-and-Specific-Properties</a><ul>
 <li><a class="reference internal" href="#5.5.0-–-Learning-Objectives">5.5.0 – Learning Objectives</a></li>
 <li><a class="reference internal" href="#5.5.1-–-Introduction">5.5.1 – Introduction</a></li>
 <li><a class="reference internal" href="#5.5.2-–-Specific-Heat-Capacity">5.5.2 – Specific Heat Capacity</a></li>
+<li><a class="reference internal" href="#5.5.3-–-Specific-Properties">5.5.3 – Specific Properties</a></li>
 </ul>
 </li>
 </ul>

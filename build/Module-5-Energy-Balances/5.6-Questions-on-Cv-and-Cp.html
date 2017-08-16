@@ -229,7 +229,7 @@ the change of internal energy in the system?</p>
 equation:</li>
 </ol>
 <div class="figure">
-<img alt="" src="Module-5-Energy-Balances/../figures/Module-5/cvcpq1.svg" /></div>
+<img alt="" src="../_images/cvcpq1.svg" /></div>
 <div class="math">
 \[\Delta U = Q - W\]</div>
 <ol class="arabic simple" start="2">
@@ -274,7 +274,7 @@ capacity of water is 4.184 <span class="math">\(J/g \cdot\)</span> <span class="
 <li><p class="first">Draw the diagram of the process taking place and write down the
 relevant equations.</p>
 <div class="figure">
-<img alt="" src="Module-5-Energy-Balances/../figures/Module-5/cvcpq2.svg" /></div>
+<img alt="" src="../_images/cvcpq2.svg" /></div>
 </li>
 </ol>
 <div class="math">
@@ -288,8 +288,7 @@ relevant equations.</p>
 </ol>
 <ul class="simple">
 <li>Any specific heat capacity used here are assumed to be constant
-because no information suggests otherwise. __ This is often the
-case __</li>
+because no information suggests otherwise. <strong>This is often the case</strong></li>
 <li>The mass<span class="math">\(m\)</span> is constant in the system.</li>
 <li>Since all units are in Celsius and heat is in terms of a reference,
 we are not concerned with converting to kelvin.</li>
@@ -305,42 +304,40 @@ we are not concerned with converting to kelvin.</li>
 </div>
 <div class="section" id="5.6.3-–-Question-3:">
 <h2>5.6.3 – Question 3:<a class="headerlink" href="#5.6.3-–-Question-3:" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://www.personal.utulsa.edu/~geoffrey-price/Courses/ChE7023/HeatCapacity-HeatOfFormation.pdf">taking this table off the internet for
-now</a></p>
 <p>n-butane is brought from 450 <span class="math">\(^\circ\)</span>C to
 923<span class="math">\(^\circ\)</span>C. Using the formal definition and formula of heat
-capacities, find the heat required to bring acetone to this temperature.</p>
-<p>Preamble: Because n-butane is far from an ideal gas and the temperature
-that we are measuring is extremely high, it is important to capture the
-true heat capacity to evaluate the enthalpy. Depending on the work in
-engineering this higher accuracy may be important; however, unless
-otherwise stated, it is often safe enough to take a constant value.</p>
-<ol class="arabic simple">
-<li>Draw the diagram of the process taking place and write down the
-relevant equations.</li>
-</ol>
-<p><img alt="image0" src="http://www.jmcampbell.com/tip-of-the-month/wp-content/uploads/2013/04/Figure-21.png" /> need another one</p>
+capacities, find the heat required to bring n-butane to this
+temperature.</p>
+<p>Preamble: Because the temperature range that we are measuring is
+extremely large , it is important to capture the true heat capacity to
+evaluate the enthalpy. Here we must assume that the pressure is
+adequately low to assume ideal gas law. 1. Draw the diagram of the
+process taking place and write down the relevant equations.</p>
 <div class="math">
 \[\Delta H  = \int^{T_2}_{T_1}C_pdT\]</div>
 <ol class="arabic simple" start="2">
 <li>List simplifications and assumptions</li>
-<li>Solve equations <strong>Note mind your units! Kelvin and Celsius matter!</strong></li>
+<li>Solve equations <strong>Note mind your units! Kelvin and Celsius matter!</strong>
+For us, we are told to use celcius.</li>
 </ol>
-<p>Taking the tabulated data and expanding the enthalpy equation:</p>
+<p>Taking the tabulated data from table B2 and expanding the enthalpy
+equation:</p>
+<p><strong>Note:</strong> table B2&#8217;s powers are all supposed to be negative.</p>
 <div class="math">
-\[\Delta H  = \int^{T_2}_{T_1}C_pdT = \int^{T_2}_{T_1}(A + BT + CT^2)dT\]</div>
-<p><span class="math">\(A = 1.935\)</span></p>
-<p><span class="math">\(B = 36.915 \times 10^{-3}\)</span></p>
-<p><span class="math">\(C = -11.402 \times 10^{-6}\)</span></p>
-<p><span class="math">\((T_1, \space T_2)=(723, \space 1196) \space K\)</span></p>
+\[\Delta H  = \int^{T_2}_{T_1}C_pdT = \int^{T_2}_{T_1}(A + BT + CT^2+DT^3)dT\]</div>
+<p><span class="math">\(A = 92.3\times 10^{-3}\)</span></p>
+<p><span class="math">\(B = 27.88 \times 10^{-5}\)</span></p>
+<p><span class="math">\(C = -15.47 \times 10^{-8}\)</span></p>
+<p><span class="math">\(D = -34.98 \times 10^{-12}\)</span></p>
+<p><span class="math">\((T_1, \space T_2)=(450, \space 923 ) \space C\)</span></p>
 <div class="math">
-\[\Delta H  =  \int^{1196}_{723} \big(A + BT + CT^2 \big)dT\]</div>
+\[\Delta H  =  \int^{923}_{450} \big(A + BT + CT^2 +DT^3\big)dT\]</div>
 <div class="math">
-\[\Delta H  = \bigg[ \bigg(AT + B\frac{T^2}{2} + C\frac{T^3}{3} \bigg) \bigg]^{1196}_{723}\]</div>
+\[\Delta H  = \bigg[ \bigg(AT + B\frac{T^2}{2} + C\frac{T^3}{3} +D\frac{T^4}{4}\bigg) \bigg]^{923}_{450}\]</div>
 <div class="math">
-\[\Delta H  = \bigg[ \bigg(1.935 \cdot T + 36.915 \times 10^{-3} \cdot \frac{T^2}{2}  - 11.402 \times 10^{-6} \cdot \frac{T^3}{3} \bigg) \bigg]^{1196}_{723}\]</div>
+\[\Delta H  = \bigg[ \bigg(92.3\times 10^{-3} T + 27.88 \times 10^{-5} \frac{T^2}{2}  -15.47 \times 10^{-8} \frac{T^3}{3} +34.98 \times 10^{-12}\frac{T^4}{4}  \bigg) \bigg]^{923}_{450}\]</div>
 <div class="math">
-\[\Delta H  = 20,876 \space \frac{J}{kg}\]</div>
+\[\Delta H  = 104 \space \frac{kJ}{kg}\]</div>
 </div>
 <div class="section" id="5.6.4-–-Question-4:-lets-apply-it-!">
 <h2>5.6.4 – Question 4: lets apply it !<a class="headerlink" href="#5.6.4-–-Question-4:-lets-apply-it-!" title="Permalink to this headline">¶</a></h2>
