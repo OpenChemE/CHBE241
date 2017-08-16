@@ -1,0 +1,129 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5.2 &ndash; Heat and Work"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.2.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the characteristics of heat and work.\n",
+    "2. Understand the various forms that heat and work come in.\n",
+    "3. Utilize the first law along with heat and work.\n",
+    "\n",
+    "## 5.2.1 &ndash; Introduction\n",
+    "\n",
+
+    "this notebook will cover the expanded form of the first law."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+
+    "\n",
+    "$$ E_{sys} = Q_{sys} - W_{sys} $$ \n",
+    "\n",
+    "and when we are observing the change of a system the first law becomes  \n",
+    "\n",
+    "$$  \\Delta E = Q -  W  $$ \n",
+    "\n",
+    "Where $\\Delta$ is the change. This breaks down the first law into \n",
+    "\n",
+    "$$ E_f - E_i  = Q - W  $$\n",
+    "\n",
+    "Heat and Work usually do not take the delta sign in front of them be cause their value given as energy __transferred__. \n",
+    "As the past notebook states. Energy is the cumulative terms of $E_k + E_p + U$. Breaking these down into their respective initial and final states and plugging it into the first law we get  $$\n",
+    "(E_{kf}- E_{ki})+(E_{pf} - E_{pi}) + (U_f - U_i )  =Q - W $$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 5.2.2 &ndash; Heat $Q$\n",
+    "\n",
+    "Heat is the quantity of __energy__ that is __added__ or __removed__ from the system. Clay is often fired in kilns to harden the structure of the material. This adds massive amounts of heat to the system so that the silica particles in the clay form a lattice. \n",
+    "\n",
+    "If there is no heat transfer $Q$ becomes 0 and the process is known as an __adiabatic__ process.\n",
+    "\n",
+    "## 5.2.3 &ndash; Work $W$\n",
+    "Work is the mechanical energy that the system either takes or gives. \n",
+    "The full term for is work = $W_{total} = W_{electrical}+ W_{flow}+ p\\Delta V $.\n",
+    "__Sign convention of work:__\n",
+    "The textbook defines \n",
+    "\n",
+    "$(+)W_{total}$ as  __work done by the system__\n",
+    "\n",
+    "and\n",
+    "\n",
+    "$(-)W_{total}$ as  __work done on the system__\n",
+    "\n",
+    "#### For example:\n",
+    "\n",
+    "> __pumping a water gun:__ solving the work equation (which will be solved in later chapters)  gives a negative work __$-W$__ which is substituted into the first law equation: \n",
+    "\n",
+    "$$ U = Q - (-W) $$ \n",
+    "\n",
+    ">Resulting in a net positive increase of internal energy assuming that $Q$ is positive (more energy to decimate your opponents... or at least before you have to pump again).\n",
+    "\n",
+    "> __an ejection seat launching a pilot away:__ solving the work equation,  gives a positive work $W$ which is substituted into the first law equation : \n",
+    "\n",
+    "$$ U = Q - (+W) $$\n",
+    "\n",
+    ">Assuming little heat is gained, the internal energy of the seat is now smaller."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.2.4 &ndash; An example in the spray drying industry\n",
+    "\n",
+    "\n",
+    "> Spray drying is the process of drying a liquid product into a powder form. To perform this, the liquid is atomized into tiny particles via a spray nozzle or rotary disk. Then, the liquid particles are heated to reduce the liquid to powder.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

@@ -78,7 +78,7 @@
     "  $$\\Delta H_{melting} = - \\Delta H_{fusion} = m H_{lm}$$\n",
     "\n",
     "2. List simplifications and assumptions\n",
-    " - Any specific heat capacity used here are assumed to be constant because no information suggests otherwise. __This is often the case__\n",
+    " - Any specific heat capacity used here are assumed to be constant because no information suggests otherwise. __ This is often the case __\n",
     " - The mass$m$ is constant in the system.\n",
     " - Since all units are in Celsius and heat is in terms of a reference, we are not concerned with converting to kelvin.\n",
     "3. Solve equations. __Mind the units__\n",

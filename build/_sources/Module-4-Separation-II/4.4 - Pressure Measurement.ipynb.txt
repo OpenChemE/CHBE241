@@ -1,0 +1,141 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 4.4 &ndash; Pressure Measurement"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the difference between gauge, atmospheric, and absolute pressure.\n",
+    "2. Know the different ways pressure can be measured.\n",
+    "3. Understand how manometers and Bourdon gauges operate.\n",
+    "\n",
+    "## Introduction\n",
+    "Pressure measurement is vital to any process. Measuring pressure can give you a lot of information about your system. We will go over different types of pressure, and ways to measure pressure."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Gauge vs. Absolute Pressure\n",
+    "\n",
+    "**Absolute pressure** is a measurement of pressure with a perfect vacuum as a reference point. This means that absolute pressure can never be negative. **Gauge pressure** is a measurement of pressure with the ambient air pressure (**atmospheric pressure**) as a reference point. This means that gauge pressure can be both negative and positive.\n",
+    "\n",
+    "A similar example to gauge and absolute pressure is Celsius and Kelvin. Kelvin uses absolute zero as its reference point. This means that you can never have negative values of Kelvin. Celsius uses the freezing point of water as its reference point. This means that Celsius can be both negative and positive.\n",
+    "\n",
+    "The equation used to relate gauge, atmospheric, and absolute pressure is:\n",
+    "\n",
+    "$$ P_{abs} = P_{gauge} + P_{atm} $$\n",
+    "\n",
+    "where\n",
+    "\n",
+    "$$ P_{abs} = \\text{Absolute pressure} $$\n",
+    "\n",
+    "$$ P_{gauge} = \\text{Gauge pressure} $$\n",
+    "\n",
+    "$$ P_{atm} = \\text{Atmospheric pressure} $$\n",
+    "\n",
+    "## Ways to measure pressure\n",
+    "\n",
+    "### Manometers\n",
+    "\n",
+    "**Manometers** are one of the most common tools used to measure pressure. As specified in Module-1, they are simple to use and can give you instantaneous feedback on your system. There are three main types of manometers, open-end, differential, and sealed-end.\n",
+    "\n",
+    "<img src = \"../figures/Module-4/Open-end-manometer.svg\" style=\" float: left; width: 30%;\">\n",
+    "\n",
+    "<img src = \"../figures/Module-4/Differential-manometer.svg\" style=\" float: left; width: 30%;\">\n",
+    "\n",
+    "<img src = \"../figures/Module-4/Sealed-end-Manometer.svg\" style=\"float: left; width: 35.6%;\">\n",
+    "\n",
+    "<div style = \"clear:both\"></div>\n",
+    "\n",
+    "As you can see, **open-end manometers** have one end connected to a line or system and the other end open to the atmosphere. Open-end manometers measure **gauge pressure**. **Differential manometers** have each end connected to the same line and measure pressure drops. Differential manometers measure **differential pressure**. Finally, sealed-end manometers have the one end connected to a line or system and the other end closed to the near vacuum. **Sealed-end manometers** measure **absolute pressure**.\n",
+    "\n",
+    "### Bourdon Gauges\n",
+    "\n",
+    "**Bourdon gauges** are the most common mechanical devices used to measure pressure. A bourdon gauge is a hollow metal tube that is closed at one end and bent into a C configuration. The open end is exposed to the fluid whose pressure is being measured. As the pressure increases, the tube tends to straighten to equalize the pressure in the tube. This straightening causes gears to turn which in turn will cause a pointer to rotate which will inform you on its pressure.\n",
+    "\n",
+    "<img src = \"../figures/Module-4/Bourdon-cover.png\" style=\"height:300px; float:left; margin-left: 10%;\">\n",
+    "\n",
+    "<img src = \"../figures/Module-4/Bourdon-workings.png\" style=\"height:275px; margin-left: 60%;\">\n",
+    "\n",
+    "<div style = \"clear:both\"></div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## Problem Statement\n",
+    "\n",
+    "### Question\n",
+    "\n",
+    "An open-end manometer, shown below is used to measure the pressure of the stream. If $d_1 = 1.0 \\space m$ and $h = 0.7 \\space m$, what is the absolute pressure at $P_1$?\n",
+    "\n",
+    "<img src=\"../figures/Module-4/PMprob.svg\" style= \"height:250px\">\n",
+    "\n",
+    "### Answer\n",
+    "\n",
+    "Sine we know $d_1 = 1.0 \\space m$ and $h = 0.7 \\space m$, we can solve for $d_2$\n",
+    "\n",
+    "$$ d_2 = d_1 - h = 1.0 \\space m - 0.7 \\space m = 0.3 \\space m $$\n",
+    "\n",
+    "next we can use the general manometer equation to solve for $P_1$\n",
+    "\n",
+    "$$ P_1 + \\rho_1 g d_1 =  P_2 + \\rho_2 g d_2 + \\rho_f g h $$\n",
+    "\n",
+    "Since the density of air, relative to the other terms, is practically 0, we can ignore $\\rho_2$.\n",
+    "\n",
+    "$$ P_1 + \\rho_1 g d_1 =  P_2  + \\rho_f g h $$\n",
+    "\n",
+    "$$ P_1 =  P_2  + \\rho_f g h - \\rho_1 g d_1 $$\n",
+    "\n",
+    "$$ P_1 =  101,300 \\space Pa  + (1,000 \\space kg/m^3) (9.81 \\space m/s^2) (0.7 \\space m) - (950 \\space kg/m^3) (9.81 \\space m/s^2) (1 \\space m) $$\n",
+    "\n",
+    "$$ P_1 =  98,800 \\space Pa $$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

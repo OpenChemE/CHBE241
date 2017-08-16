@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Equilibrium &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="Equilibrium">
+<h1>Equilibrium<a class="headerlink" href="#Equilibrium" title="Permalink to this headline">¶</a></h1>
+<p>Example 1 - Solid-Liquid equilibrium</p>
+<p>One hundred kilograms of a saturated aqueous solution of <span class="math">\(AgNO_3\)</span>
+at 100 °C is cooled to 20 °C, thereby forming <span class="math">\(AgNO_3\)</span> solution,
+which is filtered from the remaining solution. The wet filter cake,
+<em>which contains 80% solid crystals and 20% saturated solution by mass</em>,
+is produced. Calculate the mass of solid <span class="math">\(AgNO_3\)</span> and <span class="math">\(H_2O\)</span>
+in the fresh feed and in the wet filter cake.</p>
+<p>The solubility of <span class="math">\(AgNO_3\)</span> at 100 °C is 952g/100g <span class="math">\(H_2O\)</span> and
+222g/100g <span class="math">\(H_2O\)</span> at 20 °C.</p>
+<div class="section" id="Step-1">
+<h2>Step 1<a class="headerlink" href="#Step-1" title="Permalink to this headline">¶</a></h2>
+<p>Write out all assumptions:</p>
+<ul class="simple">
+<li>Basis: 100 kg</li>
+<li>Saturated solution of <span class="math">\(AgNO_3\)</span> from 100 °C to 20 °C &amp;rarr
+Change in solubility</li>
+</ul>
+</div>
+<div class="section" id="Step-2">
+<h2>Step 2<a class="headerlink" href="#Step-2" title="Permalink to this headline">¶</a></h2>
+<p>Draw a diagram</p>
+<div class="figure" id="id4">
+<img alt="Figure 1." src="../_images/Equilibrium-example-question-1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+</div>
+<div class="section" id="Step-3">
+<h2>Step 3<a class="headerlink" href="#Step-3" title="Permalink to this headline">¶</a></h2>
+<p>Find the composition of the basis, filtrate and wet filter cake, and
+convert all units to a single, uniform unit. - Composition of 100 kg
+basis at 100 °C: - <span class="math">\(AgNO_3\)</span> fraction =
+<span class="math">\(\frac{952 \space g}{100 \space g}\)</span> =
+<span class="math">\(\frac{952 \space g}{100 \space g + 952 \space g}\)</span> =
+<span class="math">\(0.905g \space AgNO_3\)</span></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>- $H_2O$ fraction = $1 \space - 0.905$ = $0.095g \space AgNO_3$
+</pre></div>
+</div>
+<ul class="simple">
+<li>Composition of filtrate and solution in wet filter cake at 20 °C<ul>
+<li><span class="math">\(AgNO_3\)</span> fraction <span class="math">\(x_1\)</span> =
+<span class="math">\(\frac{222 \space g}{100 \space g}\)</span> =
+<span class="math">\(\frac{222 \space g}{100 \space g + 222 \space g}\)</span> =
+<span class="math">\(0.689g \space AgNO_3\)</span></li>
+<li><span class="math">\(H_2O\)</span> fraction <span class="math">\(x_2\)</span> = <span class="math">\(1 \space - 0.689\)</span> =
+<span class="math">\(0.311g \space AgNO_3\)</span></li>
+</ul>
+</li>
+<li>Composition of wet filter cake at 20 °C<ul>
+<li><span class="math">\(m_2\)</span> = 0.8<span class="math">\((m_2 \space + \space m_3)\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="Step-4">
+<h2>Step 4<a class="headerlink" href="#Step-4" title="Permalink to this headline">¶</a></h2>
+<p>Complete mass balances on the process, whichever is solvable</p>
+<ul class="simple">
+<li><span class="math">\(H_2O\)</span> balance: <span class="math">\((100kg \cdot 0.095)\)</span> kg H2O =
+0.311<span class="math">\(m_1\)</span> + 0.311<span class="math">\(m_3\)</span></li>
+<li><span class="math">\(m_2\)</span> = 0.8<span class="math">\((m_2 \space + \space m_3)\)</span></li>
+<li><span class="math">\(Total \space balance\)</span> = <span class="math">\(100 \space kg\)</span> =
+<span class="math">\(m_1 + m_2 + m_3\)</span></li>
+</ul>
+<p>With these two equation, we can solve the masses.</p>
+<ul class="simple">
+<li><span class="math">\(m_1\)</span> = 12.904 <span class="math">\(kg/hr\)</span></li>
+<li><span class="math">\(m_2\)</span> = 69.677 <span class="math">\(kg/hr\)</span></li>
+<li><span class="math">\(m_3\)</span> = 17.419 <span class="math">\(kg/hr\)</span></li>
+</ul>
+<p>Using the total stream masses and the fractional compositions, we can
+solve for the mass of <span class="math">\(AgNO_3\)</span> and <span class="math">\(H_2O\)</span> in the streams.</p>
+<p><span class="math">\(AgNO_3\)</span> - Fresh feed stream:
+<span class="math">\(0.905 \space AgNO_3 \cdot 100 \space kg/hr\)</span> =
+<span class="math">\(90.5 \space kg \space AgNO_3\)</span> - Filtrate stream:
+<span class="math">\(0.689 \space AgNO_3 \cdot 12.904 \space kg/hr\)</span> =
+<span class="math">\(8.9 \space kg \space AgNO_3\)</span> - Wet filter cake mass:
+<span class="math">\(m_2 + m_3 \cdot x_1\)</span> =
+<span class="math">\(69.677 \space + \space 0.689 \space AgNO_3 \cdot 17.419 \space kg/hr\)</span>
+= <span class="math">\(81.6 \space kg/hr\)</span></p>
+<p><span class="math">\(H_2O\)</span> (Note: This is the long way of doing it, we can also use
+the balances in the beginning of step 4 to solve) - Fresh feed stream:
+<span class="math">\(0.095 \space H_2O \cdot 100 \space kg/hr\)</span> =
+<span class="math">\(9.5 \space kg \space H_2O\)</span> - Filtrate stream:
+<span class="math">\(0.311 \space H_2O \cdot 12.904 \space kg/hr\)</span> =
+<span class="math">\(4.0 \space kg \space H_2O\)</span> - Wet filter cake mass:
+<span class="math">\(m_3 \cdot x_2\)</span> = <span class="math">\(0.311 \cdot 17.419 \space kg/hr\)</span> =
+<span class="math">\(5.5 \space kg \space H_2O/hr\)</span></p>
+</div>
+</div>
+<div class="section" id="Example-2-—-Solid---Vapor-equilibrium">
+<h1>Example 2 — Solid - Vapor equilibrium<a class="headerlink" href="#Example-2-—-Solid---Vapor-equilibrium" title="Permalink to this headline">¶</a></h1>
+<p>Sublimation of CO2</p>
+<p>Dry ice need to be transported from a cooler to another cooler, without
+any loss in mass. The process is shown below.</p>
+<p>Given the amounts shown, is there any loss in CO2 during transport, and
+if so how much CO2 is lost?</p>
+</div>
+<div class="section" id="Example-3-–-Liquid---Liquid-Equilibrium">
+<h1>Example 3 – Liquid - Liquid Equilibrium<a class="headerlink" href="#Example-3-–-Liquid---Liquid-Equilibrium" title="Permalink to this headline">¶</a></h1>
+<p><strong>It is unlikely you will be tested on this in 241, but will come back
+to liquid-liquid equilibriums in extraction in 3rd year</strong></p>
+<p>Two hundred cubic centimeters of an acetone–water mixture that contains
+10.0 wt% acetone is mixed with 300 <span class="math">\(cm^3\)</span> of chloroform at 25 °C,
+and the phases are then allowed to settle. The densities of acetone,
+water and chloroform are 0.792 <span class="math">\(g/cm^3\)</span>, 1.000 <span class="math">\(g/cm^3\)</span> and
+1.489 <span class="math">\(g/cm^3\)</span> respectively.</p>
+<p>How much acetone, in kg, is transferred from the water to the
+chloroform?</p>
+<div class="section" id="Step-1">
+<h2>Step 1<a class="headerlink" href="#Step-1" title="Permalink to this headline">¶</a></h2>
+<p>We need the density of the mixture to determine how much total mass of
+acetone-water mixture is present. We can use the densities of the
+individual components and frational composition of the mixture to
+estimate a density.</p>
+<div class="math">
+\[\bar{\rho} = x_{Acetone} \cdot \rho_{Acetone} + x_{Water} \cdot \rho_{Water}\]</div>
+<div class="math">
+\[0.974 \space \frac{g}{cm^3} = 0.1 \cdot 0.792\frac{g}{cm^3} + 0.9 \cdot 1\frac{g}{cm^3}\]</div>
+</div>
+<div class="section" id="Step-2">
+<h2>Step 2<a class="headerlink" href="#Step-2" title="Permalink to this headline">¶</a></h2>
+<p>Draw a diagram of the system.</p>
+<div class="figure" id="id5">
+<img alt="Figure 1." src="../_images/Liquid-liquid-1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+<p>While this diagram is accurate, we need to be able to differentiate how
+much acetone is mixed with the chloroform and how much is still retained
+in the water. A more helpful diagram might be:</p>
+<div class="figure" id="id6">
+<img alt="Figure 1." src="../_images/Liquid-liquid-2.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+</div>
+<div class="section" id="Step-3">
+<h2>Step 3<a class="headerlink" href="#Step-3" title="Permalink to this headline">¶</a></h2>
+<p>Determine the distribution coefficient</p>
+<div class="math">
+\[K = \frac{x_{(C)}}{x_{(w)}} = \frac{{m_3}/({m_3+m_4})}{{m_1}/({m_1+m_2})} = 1.72\]</div>
+</div>
+<div class="section" id="Stemp-4">
+<h2>Stemp 4<a class="headerlink" href="#Stemp-4" title="Permalink to this headline">¶</a></h2>
+<p>Complete mass balances</p>
+<p><span class="math">\(Chloroform\)</span></p>
+<div class="math">
+\[596g = m_4\]</div>
+<p><span class="math">\(Water\)</span></p>
+<div class="math">
+\[(0.9)(195) = m_2 = 175.5g\]</div>
+<p><span class="math">\(Acetone\)</span></p>
+<div class="math">
+\[(0.1)(195) = m_1 + m_3 = 19.5g\]</div>
+<p>Here is where we would use the distribution coefficient to determine the
+mass flow rates of <span class="math">\(m_1\)</span> and <span class="math">\(m_3\)</span>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Equilibrium</a><ul>
+<li><a class="reference internal" href="#Step-1">Step 1</a></li>
+<li><a class="reference internal" href="#Step-2">Step 2</a></li>
+<li><a class="reference internal" href="#Step-3">Step 3</a></li>
+<li><a class="reference internal" href="#Step-4">Step 4</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Example-2-—-Solid---Vapor-equilibrium">Example 2 — Solid - Vapor equilibrium</a></li>
+<li><a class="reference internal" href="#Example-3-–-Liquid---Liquid-Equilibrium">Example 3 – Liquid - Liquid Equilibrium</a><ul>
+<li><a class="reference internal" href="#Step-1">Step 1</a></li>
+<li><a class="reference internal" href="#Step-2">Step 2</a></li>
+<li><a class="reference internal" href="#Step-3">Step 3</a></li>
+<li><a class="reference internal" href="#Stemp-4">Stemp 4</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-3-Separation-I/Equilibrium example questions.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, I2.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/Module-3-Separation-I/Equilibrium example questions.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

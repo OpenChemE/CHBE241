@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>6.4 – Latent Heats &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="6.4-–-Latent-Heats">
+<h1>6.4 – Latent Heats<a class="headerlink" href="#6.4-–-Latent-Heats" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="6.4.0-–-Learning-objectives">
+<h2>6.4.0 – Learning objectives<a class="headerlink" href="#6.4.0-–-Learning-objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the concept of latent heat.</li>
+<li>Differentiate between heat of melting, fusion, and vapourization.</li>
+<li>Understand the concept of higher heating value and lower heating
+value.</li>
+</ol>
+</div>
+<div class="section" id="6.4.1-–-Introduction">
+<h2>6.4.1 – Introduction<a class="headerlink" href="#6.4.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>The change in <strong>specific enthalpy</strong> of substance that occurs when that
+substance transitions from one phase to another is known as <strong>latent
+heat</strong>.</p>
+</div>
+<div class="section" id="6.4.2-–-Heat-of-Vapourization">
+<h2>6.4.2 – Heat of Vapourization<a class="headerlink" href="#6.4.2-–-Heat-of-Vapourization" title="Permalink to this headline">¶</a></h2>
+<p>The change in specific enthalpy for liquid water to steam at
+<span class="math">\(100 ^{\circ} C\)</span> and <span class="math">\(1\)</span> atm is
+<span class="math">\(\Delta \hat{H}_v (T,P) = 2,255.6 \space kJ/kg\)</span>. This change
+specific enthalpy in is called the <strong>heat of vapourization</strong>. The
+condensation of this steam back to liquid water at
+<span class="math">\(100 ^{\circ} C\)</span> and <span class="math">\(1\)</span> atm would result in a change
+specific enthalpy of
+<span class="math">\(\Delta \hat{H}_v (T,P) = -2,255.6 \space kJ/kg\)</span>.</p>
+</div>
+<div class="section" id="6.4.3-–-Heat-of-Melting-and-Heat-of-fusion">
+<h2>6.4.3 – Heat of Melting and Heat of fusion<a class="headerlink" href="#6.4.3-–-Heat-of-Melting-and-Heat-of-fusion" title="Permalink to this headline">¶</a></h2>
+<p>The change in specific enthalpy for liquid water to ice at
+<span class="math">\(0 ^{\circ} C\)</span> and <span class="math">\(1\)</span> atm is
+<span class="math">\(\Delta \hat{H}_f (T,P) = -333 \space kJ/kg\)</span>. This change specific
+enthalpy in is called the <strong>heat of fusion</strong>. The melting of this ice
+back to liquid water at <span class="math">\(100 ^{\circ} C\)</span> and <span class="math">\(1\)</span> atm would
+result in a change specific enthalpy of
+$:raw-latex:<cite>Delta `:raw-latex:</cite>hat{H}`_m (T,P) = 333
+:raw-latex:<a href="#id1"><span class="problematic" id="id2">`</span></a>space <a href="#id3"><span class="problematic" id="id4">`</span></a>kJ/kg $. This change specific enthalpy in is called
+the <strong>heat of melting</strong>.</p>
+</div>
+<div class="section" id="6.4.4-–-Higher-Heat-Value-and-Lower-Heat-Value">
+<h2>6.4.4 – Higher Heat Value and Lower Heat Value<a class="headerlink" href="#6.4.4-–-Higher-Heat-Value-and-Lower-Heat-Value" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>heating value</strong> is the amount of energy released by the combustion
+of a material. it shares the same value as the <strong>heat of combustion</strong>
+but has the <strong>opposite sign</strong>.</p>
+<p>The <strong>higher heating value (HHV)</strong> is the amount of energy to bring a
+material to combustion and turn any liquid products into vapor.</p>
+<p>The __ lower heating value (LHV)__ is the amount of energy to bring
+a material to combustion and without turning liquid products into
+vapour.</p>
+<p>To calculate the higher heating value or lower heating value we need the
+number of moles of water <span class="math">\(n\)</span>, and we can use the equation.</p>
+<div class="math">
+\[HHV = LHV + n \space \Delta \hat{H}_v \space (H_2 O, 25 ^{\circ} C)\]</div>
+</div>
+<div class="section" id="6.4.5-–-Problem-Statement">
+<h2>6.4.5 – Problem Statement<a class="headerlink" href="#6.4.5-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Question">
+<h3>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h3>
+<p>A sample of natural gas contains 75% methane, 15% ethane, and 10 %
+propane by volume. The heat of combustion of the methane, ethane, and
+propane at <span class="math">\(25 ^{\circ} C\)</span> and <span class="math">\(1\)</span> atm with water vapour as
+the product are shown below:</p>
+<div class="math">
+\[C H_4 \small{\text{(g)}} + 2 \space O_2 \small{\text{(g)}} \longrightarrow C O_2 \small{\text{(g)}} + 2 \space H_2 O \small{\text{(v)}} \quad \Delta \hat{H}_c ^{\circ} = -802 \space kJ/mol\]</div>
+<div class="math">
+\[C_2 H_6 \small{\text{(g)}} + \frac{7}{2} \space O_2 \small{\text{(g)}} \longrightarrow 2 \space C O_2 \small{\text{(g)}} + 3 \space H_2 O \small{\text{(v)}} \quad \Delta \hat{H}_c ^{\circ} = -1,428 \space kJ/mol\]</div>
+<div class="math">
+\[C_3 H_8 \small{\text{(g)}} + 5 \space O_2 \small{\text{(g)}} \longrightarrow 3 \space C O_2 \small{\text{(g)}} + 4 \space H_2 O \small{\text{(v)}} \quad \Delta \hat{H}_c ^{\circ} = -2,039 \space kJ/mol\]</div>
+<p>Calculate the higher heating value, in <span class="math">\(MJ/kg\)</span>, of the natural gas
+given</p>
+<div class="math">
+\[\Delta \hat{H}_{v, H_2 O} = 44.013 kJ/mol\]</div>
+</div>
+<div class="section" id="Answer">
+<h3>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h3>
+<p>Since we want the higher heating value per unit mass, we must first
+convert the volume fraction to mass fraction. Assuming the gasses behave
+ideally, 1 mol of natural gas is:</p>
+<div class="math">
+\[0.75 mol \space C H_4 = 12 \space g \space C H_4\]</div>
+<div class="math">
+\[0.15 mol \space C_2 H_6 = 4.5 \space g \space C_2 H_6\]</div>
+<div class="math">
+\[0.10 mol \space C_3 H_8 = 4.4 \space g \space C_3 H_8\]</div>
+<p>Therefore,</p>
+<div class="math">
+\[m_{total} = m_{C H_4} + m_{C_2 H_6} + m_{C_3 H_8} = (12 + 4.5 + 4.4) \space g = 20.9 \space g\]</div>
+<div class="math">
+\[x_{C H_4} = \frac{m_{C H_4}}{m_{total}} = \frac{12 \space g}{20.9 \space g} =  0.574\]</div>
+<div class="math">
+\[x_{C_2 H_6} = \frac{m_{C_2 H_6}}{m_{total}} = \frac{4.5 \space g}{20.9 \space g} =  0.215\]</div>
+<div class="math">
+\[x_{C_3 H_8} = \frac{m_{C_3 H_8}}{m_{total}} = \frac{4.4 \space g}{20.9 \space g} =  0.211\]</div>
+<p>Now we can solve for the higher heating value for each species</p>
+<div class="math">
+\[(HHV)_{C H_4} = (LHV)_{C H_4} + n_{H_2 O} \Big( \Delta \hat{H}_{v, H_2 O} \Big)\]</div>
+<div class="math">
+\[(HHV)_{C H_4} = \Bigg[802 \space \frac{kJ}{mol \space C H_4} + \frac{2 \space mol \space H_2 O}{mol \space C H_4}  \Bigg(  44.013 \frac{kJ}{mol \space H_2 O} \Bigg) \Bigg] \times \frac{1 \space mol}{0.0160 \space kg \space C H_4}\]</div>
+<div class="math">
+\[(HHV)_{C H_4} = 55.6 \space \frac{MJ}{kg}\]</div>
+<div class="math">
+\[(HHV)_{C_2 H_6} = (LHV)_{C_2 H_6} + n_{H_2 O} \Big( \Delta \hat{H}_{v, H_2 O} \Big)\]</div>
+<div class="math">
+\[(HHV)_{C_2 H_6} = \Bigg[1,428 \space \frac{kJ}{mol \space C_2 H_6} + \frac{3 \space mol \space H_2 O}{mol \space C_2 H_6}  \Bigg(  44.013 \frac{kJ}{mol \space H_2 O} \Bigg) \Bigg] \times \frac{1 \space mol}{0.0300 \space kg \space C_2 H_6}\]</div>
+<div class="math">
+\[(HHV)_{C_2 H_6} = 52.0 \space \frac{MJ}{kg}\]</div>
+<div class="math">
+\[(HHV)_{C_3 H_8} = (LHV)_{C_3 H_8} + n_{H_2 O} \Big( \Delta \hat{H}_{v, H_2 O} \Big)\]</div>
+<div class="math">
+\[(HHV)_{C_3 H_8} = \Bigg[2,039 \space \frac{kJ}{mol \space C_3 H_8} + \frac{4 \space mol \space H_2 O}{mol \space C_3 H_8}  \Bigg(  44.013 \frac{kJ}{mol \space H_2 O} \Bigg) \Bigg] \times \frac{1 \space mol}{0.0440 \space kg \space C_3 H_8}\]</div>
+<div class="math">
+\[(HHV)_{C_3 H_8} = 50.3 \space \frac{MJ}{kg}\]</div>
+<p>Now we can finally solve for the higher heating value of the mixture</p>
+<div class="math">
+\[(HHV) = x_{C H_4} \cdot (HHV)_{C H_4} + x_{C_2 H_6} \cdot (HHV)_{C_2 H_6} + x_{C_3 H_8} \cdot (HHV)_{C_3 H_8}\]</div>
+<div class="math">
+\[(HHV) = [(0.574) \cdot (55.6) + (0.215) \cdot (52.0) + (0.211) \cdot (50.3)]\]</div>
+<div class="math">
+\[(HHV) = 53.7 \frac{MJ}{kg}\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">6.4 – Latent Heats</a><ul>
+<li><a class="reference internal" href="#6.4.0-–-Learning-objectives">6.4.0 – Learning objectives</a></li>
+<li><a class="reference internal" href="#6.4.1-–-Introduction">6.4.1 – Introduction</a></li>
+<li><a class="reference internal" href="#6.4.2-–-Heat-of-Vapourization">6.4.2 – Heat of Vapourization</a></li>
+<li><a class="reference internal" href="#6.4.3-–-Heat-of-Melting-and-Heat-of-fusion">6.4.3 – Heat of Melting and Heat of fusion</a></li>
+<li><a class="reference internal" href="#6.4.4-–-Higher-Heat-Value-and-Lower-Heat-Value">6.4.4 – Higher Heat Value and Lower Heat Value</a></li>
+<li><a class="reference internal" href="#6.4.5-–-Problem-Statement">6.4.5 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-6-Reactive-Energy-Balances/6.4 - Latent Heats.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, I2.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/Module-6-Reactive-Energy-Balances/6.4 - Latent Heats.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
