@@ -42,169 +42,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
-    background: none;
-    border: none;
-    padding: 0 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-/* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput,
-div.nboutput {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput div.prompt pre {
-    color: #303F9F;
-}
-
-/* output prompt */
-div.nboutput div.prompt pre {
-    color: #D84315;
-}
-
-/* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
-    min-width: 8ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
-    text-align: right;
-    flex: 0;
-}
-@media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput div.prompt.empty {
-        padding: 0;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
-    padding: 0.4em;
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-    background: #f7f7f7;
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.pngmath center alignment in output cells */
-div.nboutput div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="section" id="6.5-–-Heat-of-Reaction-and-Formation-Methods">
+  <div class="section" id="6.5-–-Heat-of-Reaction-and-Formation-Methods">
 <h1>6.5 – Heat of Reaction and Formation Methods<a class="headerlink" href="#6.5-–-Heat-of-Reaction-and-Formation-Methods" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="6.5.0-–-Learning-Objectives">
 <h2>6.5.0 – Learning Objectives<a class="headerlink" href="#6.5.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
@@ -220,10 +58,10 @@ div.nboutput div.output_area.stderr {
 <h2>6.5.1 – Introduction<a class="headerlink" href="#6.5.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
 <p>There are two common methods to solving energy balances. The first is
 <strong>heat of reaction method</strong>. This method is generally preferred for a
-single reaction sys where $ <a href="#id1"><span class="problematic" id="id2">:raw-latex:`\Delta `H\_r$ is known. The
-second method is **heat of formation method**. This method is generally
-preferred for multiple reactions and systems where $
-:raw-latex:`</span></a>Delta <a href="#id3"><span class="problematic" id="id4">`</span></a>H_r$ is not readily available.</p>
+single reaction sys where <span class="math">\(\Delta H_r\)</span> is known. The second method
+is <strong>heat of formation method</strong>. This method is generally preferred for
+multiple reactions and systems where <span class="math">\(\Delta H_r\)</span> is not readily
+available.</p>
 </div>
 <div class="section" id="6.5.2-–-Heat-of-Reaction-Method">
 <h2>6.5.2 – Heat of Reaction Method<a class="headerlink" href="#6.5.2-–-Heat-of-Reaction-Method" title="Permalink to this headline">¶</a></h2>
@@ -235,8 +73,7 @@ reaction method</strong>:</p>
 <li>Calculate the extent of reaction for all reactions.</li>
 <li>Prepare the inlet/outlet enthalpy table.</li>
 <li>Calculate Enthalpies.</li>
-<li>Calculate $ <a href="#id5"><span class="problematic" id="id6">:raw-latex:`\Delta `:raw-latex:`</span></a>dot{H}`$ for the
-reactor.</li>
+<li>Calculate <span class="math">\(\Delta \dot{H}\)</span> for the reactor.</li>
 <li>Solve the energy balance.</li>
 </ol>
 <p>Let&#8217;s try using this method to solve an energy balance. Suppose you are
@@ -249,8 +86,8 @@ trying to solve how much heat is given off by the furnace shown below?</p>
 </div>
 <div class="section" id="2.-Choose-reference-states-for-energy-calculations:">
 <h3>2. Choose reference states for energy calculations:<a class="headerlink" href="#2.-Choose-reference-states-for-energy-calculations:" title="Permalink to this headline">¶</a></h3>
-<p>For the reacting species, <span class="math">\(C_3 H_8 \small{\text{(g)}}\)</span>, $ O_2
-<a href="#id7"><span class="problematic" id="id8">:raw-latex:`\small{\text{(g)}}`$, :math:`C O_2 \small{\text{(g)}}`</span></a>,
+<p>For the reacting species, <span class="math">\(C_3 H_8 \small{\text{(g)}}\)</span>,
+<span class="math">\(O_2 \small{\text{(g)}}\)</span>, <span class="math">\(C O_2 \small{\text{(g)}}\)</span>,
 <span class="math">\(H_2 O \small{\text{(l)}}\)</span>, we will choose <span class="math">\(25 ^{\circ} C\)</span>
 and <span class="math">\(1\)</span> atm as our reference state so that we have the same
 reference as the heat of reaction.</p>
@@ -270,9 +107,9 @@ compound involved in the reaction):</p>
 <div class="section" id="4.-Prepare-the-inlet/outlet-enthalpy-table:">
 <h3>4. Prepare the inlet/outlet enthalpy table:<a class="headerlink" href="#4.-Prepare-the-inlet/outlet-enthalpy-table:" title="Permalink to this headline">¶</a></h3>
 <p>Reference states: <span class="math">\(25 ^{\circ} C\)</span> and <span class="math">\(1\)</span> atm for
-<span class="math">\(C_3 H_8 \small{\text{(g)}}\)</span>, $ O_2
-<a href="#id9"><span class="problematic" id="id10">:raw-latex:`\small{\text{(g)}}`$, :math:`C O_2 \small{\text{(g)}}`</span></a>,
-<span class="math">\(H_2 O \small{\text{(l)}}\)</span>, and <span class="math">\(N_2 \small{\text{(g)}}\)</span></p>
+<span class="math">\(C_3 H_8 \small{\text{(g)}}\)</span>, <span class="math">\(O_2 \small{\text{(g)}}\)</span>,
+<span class="math">\(C O_2 \small{\text{(g)}}\)</span>, <span class="math">\(H_2 O \small{\text{(l)}}\)</span>, and
+<span class="math">\(N_2 \small{\text{(g)}}\)</span></p>
 <table style="width:70%" align="center"><div class="highlight-default"><div class="highlight"><pre><span></span>&lt;tr&gt;
     &lt;th&gt; Substance &lt;/th&gt;
     &lt;th&gt; $\dot{n}_{in} \space (mol/s) \space $ &lt;/th&gt;
@@ -425,8 +262,8 @@ compound involved in the reaction):</p>
 </pre></div>
 </div>
 </table></div>
-<div class="section" id="6.-Calculate-$-:raw-latex:`\Delta-`:raw-latex:`dot{H}`$-for-the-reactor:">
-<h3>6. Calculate $ <a href="#id11"><span class="problematic" id="id12">:raw-latex:`\Delta `:raw-latex:`</span></a>dot{H}`$ for the reactor:<a class="headerlink" href="#6.-Calculate-$-:raw-latex:`\Delta-`:raw-latex:`dot{H}`$-for-the-reactor:" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="6.-Calculate--for-the-reactor:">
+<h3>6. Calculate <span class="math">\(\Delta \dot{H}\)</span> for the reactor:<a class="headerlink" href="#6.-Calculate--for-the-reactor:" title="Permalink to this headline">¶</a></h3>
 <div class="math">
 \[\Delta \dot{H} = \xi \Delta \dot{H}_r ^{\circ} + \sum \dot{n}_{out} \cdot \hat{H}_{out} - \sum \dot{n}_{in} \cdot \hat{H}_{in}\]</div>
 <div class="math">
@@ -438,8 +275,8 @@ compound involved in the reaction):</p>
 \[\Delta \dot{H} = -1.26 \times 10^5 \space kJ/s\]</div>
 <div class="math">
 \[\Delta \dot{H} + \Delta \dot{E}_k + \Delta \dot{E}_p = \dot{Q} + \dot{W}_s\]</div>
-<p>where <span class="math">\(\Delta \dot{E}_k\)</span>, <span class="math">\(\Delta \dot{E}_p\)</span>, and $
-<a href="#id13"><span class="problematic" id="id14">:raw-latex:`\dot{W}`</span></a>_s$ are assumed to be negligible.</p>
+<p>where <span class="math">\(\Delta \dot{E}_k\)</span>, <span class="math">\(\Delta \dot{E}_p\)</span>, and
+<span class="math">\(\dot{W}_s\)</span> are assumed to be negligible.</p>
 <div class="math">
 \[\therefore \space \dot{Q} = \Delta \dot{H} = -1.26 \times 10^5 \space kW\]</div>
 </div>
@@ -453,8 +290,7 @@ formation method</strong>:</p>
 <li>Choose reference states for energy calculations.</li>
 <li>Prepare the inlet/outlet enthalpy table.</li>
 <li>Calculate Enthalpies.</li>
-<li>Calculate $ <a href="#id15"><span class="problematic" id="id16">:raw-latex:`\Delta `:raw-latex:`</span></a>dot{H}`$ for the
-reactor.</li>
+<li>Calculate <span class="math">\(\Delta \dot{H}\)</span> for the reactor.</li>
 <li>Solve the energy balance.</li>
 </ol>
 <p>Let&#8217;s try using this method to solve an energy balance. Suppose you are
@@ -469,11 +305,10 @@ trying to solve how much heat is given off by the furnace shown below.</p>
 <h3>2. Choose reference states for energy calculations:<a class="headerlink" href="#2.-Choose-reference-states-for-energy-calculations:" title="Permalink to this headline">¶</a></h3>
 <p>For the reacting species, we must find their elemental species at
 standard condition. The elemental species for
-<span class="math">\(C_3 H_8 \small{\text{(g)}}\)</span>, $ O_2
-<a href="#id19"><span class="problematic" id="id20">:raw-latex:`\small{\text{(g)}}`$, :math:`C O_2 \small{\text{(g)}}`</span></a>, and
-<span class="math">\(H_2 O \small{\text{(l)}}\)</span> are <span class="math">\(C \small{\text{(s)}}\)</span>, $
-H_2 <a href="#id21"><span class="problematic" id="id22">:raw-latex:`\small{\text{(g)}}`$ and
-:math:`O_2 \small{\text{(g)}}`</span></a>. We will choose <span class="math">\(25 ^{\circ} C\)</span> and
+<span class="math">\(C_3 H_8 \small{\text{(g)}}\)</span>, <span class="math">\(O_2 \small{\text{(g)}}\)</span>,
+<span class="math">\(C O_2 \small{\text{(g)}}\)</span>, and <span class="math">\(H_2 O \small{\text{(l)}}\)</span>
+are <span class="math">\(C \small{\text{(s)}}\)</span>, <span class="math">\(H_2 \small{\text{(g)}}\)</span> and
+<span class="math">\(O_2 \small{\text{(g)}}\)</span>. We will choose <span class="math">\(25 ^{\circ} C\)</span> and
 <span class="math">\(1\)</span> atm as our reference state for these elemental species.</p>
 <p>For the non-reacting species, <span class="math">\(N_2 \small{\text{(g)}}\)</span>, we will
 choose <span class="math">\(25 ^{\circ} C\)</span> and <span class="math">\(1\)</span> atm as our reference state
@@ -482,8 +317,8 @@ because we have an enthalpy table.</p>
 <div class="section" id="3.-Prepare-the-inlet/outlet-enthalpy-table:">
 <h3>3. Prepare the inlet/outlet enthalpy table:<a class="headerlink" href="#3.-Prepare-the-inlet/outlet-enthalpy-table:" title="Permalink to this headline">¶</a></h3>
 <p>Reference states: <span class="math">\(25 ^{\circ} C\)</span> and <span class="math">\(1\)</span> atm for
-<span class="math">\(C \small{\text{(s)}}\)</span>, $ O_2 <a href="#id24"><span class="problematic" id="id25">:raw-latex:`\small{\text{(g)}}`$,
-:math:`H_2 \small{\text{(g)}}`</span></a>, and <span class="math">\(N_2 \small{\text{(g)}}\)</span></p>
+<span class="math">\(C \small{\text{(s)}}\)</span>, <span class="math">\(O_2 \small{\text{(g)}}\)</span>,
+<span class="math">\(H_2 \small{\text{(g)}}\)</span>, and <span class="math">\(N_2 \small{\text{(g)}}\)</span></p>
 <table style="width:70%" align="center"><div class="highlight-default"><div class="highlight"><pre><span></span>&lt;tr&gt;
     &lt;th&gt; Substance &lt;/th&gt;
     &lt;th&gt; $\dot{n}_{in} \space (mol/s) \space $ &lt;/th&gt;
@@ -636,8 +471,8 @@ because we have an enthalpy table.</p>
 </pre></div>
 </div>
 </table></div>
-<div class="section" id="5.-Calculate-$-:raw-latex:`\Delta-`:raw-latex:`dot{H}`$-for-the-reactor:">
-<h3>5. Calculate $ <a href="#id27"><span class="problematic" id="id28">:raw-latex:`\Delta `:raw-latex:`</span></a>dot{H}`$ for the reactor:<a class="headerlink" href="#5.-Calculate-$-:raw-latex:`\Delta-`:raw-latex:`dot{H}`$-for-the-reactor:" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="5.-Calculate--for-the-reactor:">
+<h3>5. Calculate <span class="math">\(\Delta \dot{H}\)</span> for the reactor:<a class="headerlink" href="#5.-Calculate--for-the-reactor:" title="Permalink to this headline">¶</a></h3>
 <div class="math">
 \[\Delta \dot{H} = \sum \dot{n}_{out} \cdot \hat{H}_{out} - \sum \dot{n}_{in} \cdot \hat{H}_{in} = -1.26 \times 10^5 \space kJ/s\]</div>
 </div>
@@ -647,20 +482,10 @@ because we have an enthalpy table.</p>
 \[\Delta \dot{H} = -1.26 \times 10^5 \space kJ/s\]</div>
 <div class="math">
 \[\Delta \dot{H} + \Delta \dot{E}_k + \Delta \dot{E}_p = \dot{Q} + \dot{W}_s\]</div>
-<p>where <span class="math">\(\Delta \dot{E}_k\)</span>, <span class="math">\(\Delta \dot{E}_p\)</span>, and $
-<a href="#id31"><span class="problematic" id="id32">:raw-latex:`\dot{W}`</span></a>_s$ are assumed to be negligible.</p>
+<p>where <span class="math">\(\Delta \dot{E}_k\)</span>, <span class="math">\(\Delta \dot{E}_p\)</span>, and
+<span class="math">\(\dot{W}_s\)</span> are assumed to be negligible.</p>
 <div class="math">
 \[\therefore \space \dot{Q} = \Delta \dot{H} = -1.26 \times 10^5 \space kW\]</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -682,7 +507,7 @@ because we have an enthalpy table.</p>
 <li><a class="reference internal" href="#3.-Calculate-the-extent-of-reaction-for-all-reactions:">3. Calculate the extent of reaction for all reactions:</a></li>
 <li><a class="reference internal" href="#4.-Prepare-the-inlet/outlet-enthalpy-table:">4. Prepare the inlet/outlet enthalpy table:</a></li>
 <li><a class="reference internal" href="#5.-Calculate-Enthalpies:">5. Calculate Enthalpies:</a></li>
-<li><a class="reference internal" href="#6.-Calculate-$-:raw-latex:`\Delta-`:raw-latex:`dot{H}`$-for-the-reactor:">6. Calculate $ :raw-latex:`\Delta `:raw-latex:`dot{H}`$ for the reactor:</a></li>
+<li><a class="reference internal" href="#6.-Calculate--for-the-reactor:">6. Calculate <span class="math">\(\Delta \dot{H}\)</span> for the reactor:</a></li>
 <li><a class="reference internal" href="#7.-Solve-the-energy-balance:">7. Solve the energy balance:</a></li>
 </ul>
 </li>
@@ -691,7 +516,7 @@ because we have an enthalpy table.</p>
 <li><a class="reference internal" href="#2.-Choose-reference-states-for-energy-calculations:">2. Choose reference states for energy calculations:</a></li>
 <li><a class="reference internal" href="#3.-Prepare-the-inlet/outlet-enthalpy-table:">3. Prepare the inlet/outlet enthalpy table:</a></li>
 <li><a class="reference internal" href="#4.-Calculate-Enthalpies:">4. Calculate Enthalpies:</a></li>
-<li><a class="reference internal" href="#5.-Calculate-$-:raw-latex:`\Delta-`:raw-latex:`dot{H}`$-for-the-reactor:">5. Calculate $ :raw-latex:`\Delta `:raw-latex:`dot{H}`$ for the reactor:</a></li>
+<li><a class="reference internal" href="#5.-Calculate--for-the-reactor:">5. Calculate <span class="math">\(\Delta \dot{H}\)</span> for the reactor:</a></li>
 <li><a class="reference internal" href="#6.-Solve-the-energy-balance:">6. Solve the energy balance:</a></li>
 </ul>
 </li>

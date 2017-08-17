@@ -42,203 +42,50 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
-    background: none;
-    border: none;
-    padding: 0 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-/* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput,
-div.nboutput {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput div.prompt pre {
-    color: #303F9F;
-}
-
-/* output prompt */
-div.nboutput div.prompt pre {
-    color: #D84315;
-}
-
-/* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
-    min-width: 8ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
-    text-align: right;
-    flex: 0;
-}
-@media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput div.prompt.empty {
-        padding: 0;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
-    padding: 0.4em;
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-    background: #f7f7f7;
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.pngmath center alignment in output cells */
-div.nboutput div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="section" id="Question-Page-–-2">
+  <div class="section" id="Question-Page-–-2">
 <h1>Question Page – 2<a class="headerlink" href="#Question-Page-–-2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Question">
 <h2>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h2>
 <p>A vessel contains a mixture of benzene, <span class="math">\(C_6 H_6\)</span>, and toluene,
-<span class="math">\(C_7 H_8\)</span>. At 373 the pressure in the vessel is 1.53 bar(abs).
+<span class="math">\(C_7 H_8\)</span>. At 373K the pressure in the vessel is 1.53 bar(abs).
 Using the data provioded, and any others necessary, find the mass
 fractions of benzene in the liquid and vapour. Assume the liquids and
-vapours behave ideally.</p>
-<table style="width:75%" align="center"><div class="highlight-default"><div class="highlight"><pre><span></span>&lt;tr&gt;
-    &lt;th&gt; Compnent &lt;/th&gt;
-    &lt;th colspan=&quot;3&quot;&gt; Antoine Constants &lt;br/&gt; $ \log_{10} p^* = A - \frac{B}{T + C}$&lt;/th&gt;
-
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;A&lt;/td&gt;
-    &lt;td&gt;B&lt;/td&gt;
-    &lt;td&gt;C&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt;Benzene&lt;/td&gt;
-    &lt;td&gt;4.72583&lt;/td&gt;
-    &lt;td&gt;1660.652&lt;/td&gt;
-    &lt;td&gt;-1.461&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt;Toluene&lt;/td&gt;
-    &lt;td&gt;4.07827&lt;/td&gt;
-    &lt;td&gt;1343.943&lt;/td&gt;
-    &lt;td&gt;-53.773&lt;/td&gt;
-&lt;/tr&gt;
-</pre></div>
+vapours behave ideally. Recall the formula for Antoines equation:
+<span class="math">\(\log_{10} p^* = A - \frac{B}{T + C}\)</span>. Where T is in kelvin for
+this question.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="19%" />
+<col width="21%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Component</th>
+<th class="head">Are</th>
+<th class="head">Cool</th>
+<th class="head">Antoine Constants</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#160;</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+</tr>
+<tr class="row-odd"><td>Benzene</td>
+<td>4.72583</td>
+<td>1660.652</td>
+<td>-1.461</td>
+</tr>
+<tr class="row-even"><td>Toluene</td>
+<td>4.07827</td>
+<td>1343.943</td>
+<td>-53.773</td>
+</tr>
+</tbody>
+</table>
 </div>
-</table></div>
 <div class="section" id="Answer">
 <h2>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h2>
 <p>From antoines equation, we can find the vapour partial pressure of
@@ -288,16 +135,6 @@ of the benzne and toluene and a basis of 1 mole:</p>
 \[m_t = y_t \times MW_t = 0.124 \space mol \times 92.14 \space \frac{g}{mol} = 11.43 \space g\]</div>
 <div class="math">
 \[\therefore \space w_b = \frac{m_b}{m_b + m_t} = \frac{68.42}{68.42 + 11.43} = 0.857\]</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 
