@@ -7,13 +7,13 @@ Welcome to project1's documentation!
 ====================================
 
 .. toctree::
+
    :maxdepth: 2
    :caption: Contents:
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-   
-  
+
 Module-0-Introduction
 ====================================
 
@@ -33,8 +33,8 @@ Module-1-Proces-Basics-Water
 * :ref:`Module-1-Proces-Basics-Water/1.3 - Flow Rate.ipynb`
 * :ref:`Module-1-Proces-Basics-Water/1.4 - Input-Output and Block Flow Diagrams.ipynb`
 * :ref:`Module-1-Proces-Basics-Water/1.5 - Degrees of Freedom (DOF).ipynb`
-* :ref:`Module-1-Proces-Basics-Water/1.6-Types-of-Processes.ipynb`	
-* :ref:`Module-1-Proces-Basics-Water/1.7Steady-state-and-Unsteady-State-Transience.ipynb`	
+* :ref:`Module-1-Proces-Basics-Water/1.6 - Types-of-Processes.ipynb`	
+* :ref:`Module-1-Proces-Basics-Water/1.7 - Steady-state-and-Unsteady-State-Transience.ipynb`	
 * :ref:`Module-1-Proces-Basics-Water/1.8 - Materials Balances.ipynb`	
 * :ref:`Module-1-Proces-Basics-Water/1.9 - Process Economics.ipynb`	
 * :ref:`Module-1-Proces-Basics-Water/Question Page - 1.ipynb`	

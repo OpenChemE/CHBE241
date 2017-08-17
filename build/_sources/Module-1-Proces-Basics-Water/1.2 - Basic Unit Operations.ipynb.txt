@@ -32,13 +32,20 @@
     "\n",
     "In a process, a **mixer** is a unit operation that attempts to make a **heterogeneous** system into a **homogenous** system. Examples include scrambling eggs, mixing sugar and cream into coffee, and a Continuous Stirred-Tank Reactor used in water treatment. A mixer allows heat and/or mass transfer to occur between one or more streams. \n",
     "\n",
-    "<img src=\"../figures/Module-1/mixer.svg\" style= \"height:250px\">\n",
+    "<img src=\"../figures/Module-1/mixer.svg\" style= \"height:250px\">"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "\n",
     "\n",
     "Attribution: Said Zaid-Alkailani at UBC Chemical and Biological Engineering\n",
     "\n",
     "## 1.2.3 &ndash; Reactor\n",
     "\n",
-    "In a process, a **reactor** is a unit operation that is designed to contain a chemical reaction. These reactions can include anything from burning natural gas to chlorination of water for purification purposes.\n",
+    "In a process, a **reactor** is a unitoperation that is designed to contain a chemical reaction. These reactions can include anything from burning natural gas to chlorination of water for purification purposes.\n",
     "\n",
     "<img src=\"../figures/Module-1/Batch_reactor.2.jpg\" style= \"height:350px\">\n",
     "\n",

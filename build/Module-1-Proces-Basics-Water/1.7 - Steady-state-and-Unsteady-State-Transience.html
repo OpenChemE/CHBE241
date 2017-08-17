@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>1.6 – Types of Processes &#8212; project1 1.0 documentation</title>
+    <title>1.7 – Steady-state-and-Unsteady-State-Transience &#8212; project1 1.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -204,93 +204,72 @@ div.nboutput div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 </style>
-<div class="section" id="1.6-–-Types-of-Processes">
-<h1>1.6 – Types of Processes<a class="headerlink" href="#1.6-–-Types-of-Processes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="1.6.0-–-Learning-Objectives">
-<h2>1.6.0 – Learning Objectives<a class="headerlink" href="#1.6.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="1.7-–-Steady-state-and-Unsteady-State-Transience">
+<h1>1.7 – Steady-state-and-Unsteady-State-Transience<a class="headerlink" href="#1.7-–-Steady-state-and-Unsteady-State-Transience" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="1.7.0-–-Learning-Objectives">
+<h2>1.7.0 – Learning Objectives<a class="headerlink" href="#1.7.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
 <p>By the end of this section you should be able to:</p>
 <ol class="arabic simple">
-<li>Understand the <strong>three types of processes</strong> dominant in chemical
-engineeing.</li>
-<li>Be able to characterize processes into the three types of processes.</li>
+<li>Understand the difference between steady-state and unsteady state
+classification.</li>
+<li>characterize the two calssifications.</li>
+<li>understand the math in the classifications.</li>
 </ol>
 </div>
-<div class="section" id="1.6.1-–-Introduction">
-<h2>1.6.1 – Introduction<a class="headerlink" href="#1.6.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
-<p>Chemical processes can all be classified as: <strong>Batch</strong>,
-<strong>Continuous-flow</strong>, and <strong>Semi-batch</strong> and as <strong>steady-state</strong> or
-<strong>transient</strong> (unsteady-state). This notebook will cover the first three
-classifications.</p>
+<div class="section" id="1.7.1–-Introduction">
+<h2>1.7.1– Introduction<a class="headerlink" href="#1.7.1–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Steady-state and unsteady-state processes describe the time interval
+that a process occurs over. steady-state refers to the time period where
+the <strong>variable of interest doesn&#8217;t change</strong>. Unsteady-state is when the
+varible of interest <strong>changes over time.</strong> While all processes have a
+steady-state and <strong>transient</strong> phase, it is more beneficial to evaluate
+certain processes with steady-state or transience.</p>
+<p>__ Note: __ Steady-state is often referred to as <strong>S.S</strong>, you may
+see that written in problems. Transience is used <strong>interchangeably</strong>
+with unsteady-state. It will be referred in this section interchangeably
+You may see problems using <strong>U.S.S</strong></p>
 </div>
-<div class="section" id="1.6.2-–-Batch-Processes">
-<h2>1.6.2 – Batch Processes<a class="headerlink" href="#1.6.2-–-Batch-Processes" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>All reactants fed to the reactor at the beginning of the process and
-the products are removed when the reaction is complete. No reactants
-are fed to the reactor and no product is removed during the process.</p>
-<p><em>Note</em> The textbook refers to this as &#8220;no mass crossing the system
-boundaries&#8221;</p>
-</div></blockquote>
-<div class="section" id="Alcohol-fermentation-is-a-batch-process">
-<h3>Alcohol fermentation is a batch process<a class="headerlink" href="#Alcohol-fermentation-is-a-batch-process" title="Permalink to this headline">¶</a></h3>
-<p>Beer production is a classic example of a batch process. All the
-ingredients are input into the fermentation vessel and left to react.</p>
-<p style="width:40%; margin-left: 300px;margin-top:40px;"><p>Our feeling when home brews take 3 weeks. 🙄🍺Yeast has been added and the
-primary fermenter has been sealed with an airlock, which allows carbon
-dioxide to escape but nothing to enter! -ubcchemecar</p>
-</p></div>
+<div class="section" id="1.7.2-–-When-to-use-Steady-State-and-Unsteady-state">
+<h2>1.7.2 – When to use Steady State and Unsteady state<a class="headerlink" href="#1.7.2-–-When-to-use-Steady-State-and-Unsteady-state" title="Permalink to this headline">¶</a></h2>
+<p>Except for minor fluctuations, steady-state indicates that there is no
+change in the variable of interest. A can of pop lying outside is at
+steady-state because it will not change temperature suddenly.</p>
+<p>As such, it is best to analyze continuous flow reactors using steady
+state analysis.</p>
+<p>Unsteady state processes have a definitive change over time. Boiling
+water takes room temperatured water and raises it to 100 C over a set
+time. Because of this, batch and fed-batch reactors are often analyzed
+using unsteady-state methods.</p>
+<p>The following section will cover how the analysis is carried out.</p>
 </div>
-<div class="section" id="1.6.3-–-Continuous-flow-processes">
-<h2>1.6.3 – Continuous flow processes<a class="headerlink" href="#1.6.3-–-Continuous-flow-processes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="1.7.3-–-Quiz:-Transient-or-steady-state">
+<h2>1.7.3 – Quiz: Transient or steady-state<a class="headerlink" href="#1.7.3-–-Quiz:-Transient-or-steady-state" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>Continuous flow processes are where the inputs and outputs of the
-reactor flow at a constant</div></blockquote>
-<p>Hydrogen sulfide is fed continuously in a series of reactors to form
-sulphuric acid. Since the process is continuous, it can be run 24/7,
-with the only maintenane as the major factor to stop the production.</p>
-<p><img alt="image0" src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/WetSulfuricAcidProcessDiagram.svg/800px-WetSulfuricAcidProcessDiagram.svg.png" /> <em>sulphuric acid production: wikipedia</em></p>
-</div>
-<div class="section" id="1.6.4-–-Semi-Batch-Processes">
-<h2>1.6.4 – Semi-Batch Processes<a class="headerlink" href="#1.6.4-–-Semi-Batch-Processes" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>A semi-batch process is when reactants are <strong>periodically</strong> added or
-products are periodically removed. The textbook defines Semi-batch
-processes as &#8220;neither batch nor continuous.&#8221;</div></blockquote>
-<div style=" float:right"><p><p>Wikimedia</p>
-</p></div><p style="width:50%; margin-top:45px;"><p>Most drugs are produced as a semi-batch process where a second reactant
-is input into the reactor. Penicillin is produced by the penicillin
-fungus at low concentrations of <strong>glucose</strong>. Therfore it is essential to
-periodically add glucose to the reactor to supply the fungus with
-nutrients.</p>
-</p></div>
-<div class="section" id="1.6.5-–-Quiz:-What-type-of-processes-are-these?">
-<h2>1.6.5 – Quiz: What type of processes are these?<a class="headerlink" href="#1.6.5-–-Quiz:-What-type-of-processes-are-these?" title="Permalink to this headline">¶</a></h2>
+<div>For the following problems, determine whether a steady-state model
+or a transient model is the appropriate method to solve the problem.
+You do not need to acutally solve the problem</div></blockquote>
 <ol class="arabic simple">
-<li>The chocolate level of the middle tray of a chocolate fondue
-fountain.</li>
-<li>A queue for a rollercoaster?</li>
-<li>A second year class of chemical engineers going through the
-engineering process.</li>
-<li>The chemical and biological engineering program on students.</li>
+<li>A ballon deflating.</li>
+<li>Putting a can of iced tea in an insulated cooler half filled with ice
+and water.</li>
+<li>The direct impact of floodwater at the site C dam.</li>
 </ol>
+<div class="section" id="Answers">
+<h3>Answers<a class="headerlink" href="#Answers" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>This is a <strong>continuous process</strong> as the rate of which the chocolate
-is entering the middle tray and exiting the middle tray is the same.</li>
-<li>This <strong>depends</strong> the output flow is always constant as the
-rollercoaster will take x amount of people at a constant rate. If the
-input of people is constant, then this is a continuous process. If
-there are a staggered amount of people coming in at different times
-then this is a fed-batch process.</li>
-<li>Watch the control volume of this one. The focus of this is on a
-single class. If the whole class finishes at the same time then this
-would be a <strong>batch process</strong>, however; thiss is not the case. A
-<strong>fed-batch</strong> is more representative as there are students joining
-from exchange and leaving for co-op at varying rates.</li>
-<li>This problem is an extension of problem 3. now instead of the control
-volume being one class of students it is the department that hosts
-all chemical engineering students. As a whole, this is best
-represented by a <strong>continuous</strong> process. Students are getting
-admitted at a constant rate and leaving at a constant rate as well.</li>
+<li>The unsteady-state model would be the better way to model either the
+volume of the baloon shrinking or the pressure of the balloon. At
+stead-state, the ballon is deflated and there is no information in
+that model.</li>
+<li>The U.S.S model would be an appropriate model to meaasure the
+<strong>rate</strong> of heat being transferred from the can to the ice/water
+bath. The steady-state model would show the <a href="#id1"><span class="problematic" id="id2">**</span></a>total ** heat that the
+iced tea contains.</li>
+<li>Both models have merit in this situation. In transiece, the rate of
+water flooding the geographical land is importnnt such that the force
+of the water flooding is not too strong. In steady-state, it would be
+important to see the height of the floodwater to seethe amountof land
+displaced.</li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
@@ -304,6 +283,7 @@ admitted at a constant rate and leaving at a constant rate as well.</li>
 </div>
 </div>
 </div>
+</div>
 
 
           </div>
@@ -313,16 +293,14 @@ admitted at a constant rate and leaving at a constant rate as well.</li>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">1.6 – Types of Processes</a><ul>
-<li><a class="reference internal" href="#1.6.0-–-Learning-Objectives">1.6.0 – Learning Objectives</a></li>
-<li><a class="reference internal" href="#1.6.1-–-Introduction">1.6.1 – Introduction</a></li>
-<li><a class="reference internal" href="#1.6.2-–-Batch-Processes">1.6.2 – Batch Processes</a><ul>
-<li><a class="reference internal" href="#Alcohol-fermentation-is-a-batch-process">Alcohol fermentation is a batch process</a></li>
+<li><a class="reference internal" href="#">1.7 – Steady-state-and-Unsteady-State-Transience</a><ul>
+<li><a class="reference internal" href="#1.7.0-–-Learning-Objectives">1.7.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#1.7.1–-Introduction">1.7.1– Introduction</a></li>
+<li><a class="reference internal" href="#1.7.2-–-When-to-use-Steady-State-and-Unsteady-state">1.7.2 – When to use Steady State and Unsteady state</a></li>
+<li><a class="reference internal" href="#1.7.3-–-Quiz:-Transient-or-steady-state">1.7.3 – Quiz: Transient or steady-state</a><ul>
+<li><a class="reference internal" href="#Answers">Answers</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#1.6.3-–-Continuous-flow-processes">1.6.3 – Continuous flow processes</a></li>
-<li><a class="reference internal" href="#1.6.4-–-Semi-Batch-Processes">1.6.4 – Semi-Batch Processes</a></li>
-<li><a class="reference internal" href="#1.6.5-–-Quiz:-What-type-of-processes-are-these?">1.6.5 – Quiz: What type of processes are these?</a></li>
 </ul>
 </li>
 </ul>
@@ -336,7 +314,7 @@ admitted at a constant rate and leaving at a constant rate as well.</li>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/Module-1-Proces-Basics-Water/1.6-Types-of-Processes.ipynb.txt"
+      <li><a href="../_sources/Module-1-Proces-Basics-Water/1.7 - Steady-state-and-Unsteady-State-Transience.ipynb.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -362,7 +340,7 @@ admitted at a constant rate and leaving at a constant rate as well.</li>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="../_sources/Module-1-Proces-Basics-Water/1.6-Types-of-Processes.ipynb.txt"
+      <a href="../_sources/Module-1-Proces-Basics-Water/1.7 - Steady-state-and-Unsteady-State-Transience.ipynb.txt"
           rel="nofollow">Page source</a>
     </div>
 

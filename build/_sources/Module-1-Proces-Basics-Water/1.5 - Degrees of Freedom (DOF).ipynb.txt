@@ -33,11 +33,11 @@
     "\n",
     "## 1.5.3 &ndash; Performing a DOF Analysis\n",
     "\n",
-    "To perform a DOF analysis, we need to first draw and completely label a block flow diagram (BFD). Next, we need to count the unknown variables on the BFD. After this, we need to count the independent equations relating them. Finally we subtract the number of equations from the number of unknown variables. The result is the DOF of the process, $ n_{df} $. From this calculation, there are three possibilities:\n",
+    "To perform a DOF analysis, we need to first draw and completely label a block flow diagram (BFD). Next, we need to count the unknown variables on the BFD. After this, we need to count the independent equations relating them. Finally we subtract the number of equations from the number of unknown variables. The result is the DOF of the process, $n_{df}$. From this calculation, there are three possibilities:\n",
     "\n",
-    "1. If $ n_{df} = 0 $ then there is the same number of unknown variables and equating equations and the problem can be solved.\n",
-    "2. If $ n_{df} > 0 $ then there are more unknown variables than equating equations and the system cannot be solved yet. When this inequality happens, we say the question is underspecified and has infinitely many solutions.\n",
-    "3. If $ n_{df} < 0 $ then there are less unknown variables than equating equations. This inequality means that either the BFD was incorrectly labeled or the problem was over specified with useless information."
+    "1. If $n_{df} = 0$ then there is the same number of unknown variables and equating equations and the problem can be solved.\n",
+    "2. If $n_{df} > 0$ then there are more unknown variables than equating equations and the system cannot be solved yet. When this inequality happens, we say the question is underspecified and has infinitely many solutions.\n",
+    "3. If $n_{df} < 0$ then there are less unknown variables than equating equations. This inequality means that either the BFD was incorrectly labeled or the problem was over specified with useless information."
    ]
   },
   {
@@ -58,37 +58,28 @@
     "\n",
     "Right off the bat we know the number of unknowns is $ n_{unknown} = 5 $ and now we need to find the number of relating equations.\n",
     "\n",
-    "1. $ \\dot{n_2} = \\frac{135 \\space L \\space H_2 O}{h} \\times \\frac{1.00 \\space kg \\space H_2 O}{L} \\times \\frac{1 \\space mol \\space H_2 O}{18.0 \\times 10^{-3} \\space kg} $\n",
+    "1. $\\dot{n_2} = \\frac{135 \\space L \\space H_2 O}{h} \\times \\frac{1.00 \\space kg \\space H_2 O}{L} \\times \\frac{1 \\space mol \\space H_2 O}{18.0 \\times 10^{-3} \\space kg}$\n",
     "\n",
     "    $$ $$\n",
     "    \n",
-    "2. $ \\dot{n_2} = (0.85)( 0.080 \\space \\dot{n_1} ) $ \n",
+    "2. $\\dot{n_2} = (0.85)( 0.080 \\space \\dot{n_1} )$ \n",
     "    \n",
     "    $$ $$\n",
     "    \n",
-    "3. $ \\dot{n_3} = (0.21)( 0.920 \\space \\dot{n_1} ) $\n",
+    "3. $\\dot{n_3} = (0.21)( 0.920 \\space \\dot{n_1} )$\n",
     "\n",
     "    $$ $$\n",
     "\n",
-    "4. $ \\dot{n_4} = (0.79)( 0.920 \\space \\dot{n_1} ) $\n",
+    "4. $\\dot{n_4} = (0.79)( 0.920 \\space \\dot{n_1} )$\n",
     "\n",
     "    $$ $$\n",
     "\n",
-    "5. $ \\dot{n_5} + \\dot{n_2} = ( 0.08 \\space \\dot{n_1} ) $\n",
+    "5. $\\dot{n_5} + \\dot{n_2} = ( 0.08 \\space \\dot{n_1} )$\n",
     "\n",
-    "The first equation relates the volumetric flow rate to the molar flow rate which will give us a value for $ \\dot{n_2} $. The second equation relates $ \\dot{n_2} $ to $ \\dot{n_1} $ using the 85% condensation. The third equation balances $ O_2 $. The fourth equation balances $ N_2 $. The fifth equation balances the $ H_2 O $. Therefore the degrees of freedom are:\n",
+    "The first equation relates the volumetric flow rate to the molar flow rate which will give us a value for $\\dot{n_2}$. The second equation relates $\\dot{n_2}$ to $\\dot{n_1}$ using the 85% condensation. The third equation balances $O_2$. The fourth equation balances $N_2$. The fifth equation balances the $H_2 O$. Therefore the degrees of freedom are:\n",
     "\n",
     "$$ n_{df} = 5 - 5 = 0 $$"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "collapsed": true
-   },
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {

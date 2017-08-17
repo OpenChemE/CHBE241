@@ -2,22 +2,16 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
-    "# 1.6&ndash; Types of Processes"
+    "# 1.6 &ndash; Types of Processes"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
-    "## 1.6.0-Learning Objectives\n",
+    "## 1.6.0 &ndash; Learning Objectives\n",
     "\n",
     "By the end of this section you should be able to:\n",
     "\n",
@@ -25,7 +19,7 @@
     "2. Be able to characterize processes into the three types  of processes.\n",
     "\n",
     "\n",
-    "## 1.6.1-Introduction\n",
+    "## 1.6.1 &ndash; Introduction\n",
     "\n",
     "Chemical processes can all be classified as:\n",
     "__Batch__, __Continuous-flow__, and  __Semi-batch__ and as __steady-state__ or __transient__ (unsteady-state). This notebook will cover the first three classifications. "
@@ -33,12 +27,9 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
-    "## 1.6.2-Batch Processes\n",
+    "## 1.6.2 &ndash; Batch Processes\n",
     "\n",
     "> All reactants fed to the reactor at the beginning of the process and the products are removed when the reaction is complete. No reactants are fed to the reactor and no product is removed during the process.\n",
     "\n",
@@ -48,9 +39,7 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": true,
-    "deletable": true,
-    "editable": true
+    "collapsed": true
    },
    "source": [
     "#### Alcohol fermentation is a batch process\n",
@@ -67,12 +56,9 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
-    "## 1.6.3-Continuous flow processes\n",
+    "## 1.6.3 &ndash; Continuous flow processes\n",
     "\n",
     ">Continuous flow processes are where the inputs and outputs of the reactor flow at a constant\n",
     "\n",
@@ -81,10 +67,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "![](https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/WetSulfuricAcidProcessDiagram.svg/800px-WetSulfuricAcidProcessDiagram.svg.png)\n",
     "*sulphuric acid production: wikipedia*"
@@ -93,12 +76,10 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": true,
-    "deletable": true,
-    "editable": true
+    "collapsed": true
    },
    "source": [
-    "## 1.6.4-Semi-Batch Processes\n",
+    "## 1.6.4 &ndash; Semi-Batch Processes\n",
     "\n",
     "> A semi-batch process is when reactants are __periodically__ added or products are periodically removed. \n",
     "The textbook defines Semi-batch processes as \"neither batch nor continuous.\"\n",
@@ -116,12 +97,10 @@
   {
    "cell_type": "markdown",
    "metadata": {
-    "collapsed": true,
-    "deletable": true,
-    "editable": true
+    "collapsed": true
    },
    "source": [
-    "## 1.6.5-Quiz: What type of processes are these?\n",
+    "## 1.6.5 &ndash; Quiz: What type of processes are these?\n",
     "\n",
     "1. The chocolate level of the middle tray of a chocolate fondue fountain.\n",
     "\n",
@@ -146,31 +125,7 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "collapsed": true,
-    "deletable": true,
-    "editable": true
-   },
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "collapsed": true,
-    "deletable": true,
-    "editable": true
-   },
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "collapsed": true,
-    "deletable": true,
-    "editable": true
+    "collapsed": true
    },
    "outputs": [],
    "source": []
@@ -192,9 +147,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-
-   "version": "3.6.2"
-
+   "version": "3.6.1"
   }
  },
  "nbformat": 4,
