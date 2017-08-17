@@ -220,12 +220,12 @@ div.nboutput div.output_area.stderr {
 <p>To account for <strong>open</strong> systems. Enthalpy is used as a <strong>measurement of
 Energy</strong> in a system. This This notebook will go over a short
 explanation of enthalpy and go over problem 7.4-2 of the textbook.</p>
-<p>Recall that the energy equation in a <strong>closed system</strong> is $E_{tot} = Q
-- W $ and after negating potential and kinetic energy becomes:
-<span class="math">\(U = Q-W\)</span>.</p>
+<p>Recall that the energy equation in a <strong>closed system</strong> is
+<span class="math">\(E_{tot} = Q - W\)</span> and after negating potential and kinetic energy
+becomes: <span class="math">\(U = Q-W\)</span>.</p>
 <p>In an open system, there is a <strong>transfer of material</strong>. This means that
-there needs to be a correction for internal energy $U $ to account for
-the particles leaving the system. Enthalpy <span class="math">\(H\)</span> is a measure of
+there needs to be a correction for internal energy <span class="math">\(U\)</span> to account
+for the particles leaving the system. Enthalpy <span class="math">\(H\)</span> is a measure of
 energy accounts for open systems and the energy balance becomes:</p>
 <div class="math">
 \[H = Q-W\]</div>
@@ -262,8 +262,8 @@ Essentially, the only data that is relevant is given to us explicitly.</p>
 <p>For simplicity, we will say that 4.4 MPa is close enough to 4.5MPa on
 the steam table. <strong>(all teachers are different; check with yours
 first!)</strong></p>
-<p>Let any <strong>inlet flow</strong> take the subscript <strong>:math:`i`</strong> and <strong>outlet
-flow</strong> take the subscript <strong>:math:`o`</strong>.</p>
+<p>Let any inlet flow take the subscript <span class="math">\(i\)</span> and outlet flow take the
+subscript <span class="math">\(o\)</span>.</p>
 </div>
 <div class="section" id="2.-Draw-a-flowchart-and-write-the-full-equation-to-solve">
 <h3>2. Draw a flowchart and write the full equation to solve<a class="headerlink" href="#2.-Draw-a-flowchart-and-write-the-full-equation-to-solve" title="Permalink to this headline">¶</a></h3>
@@ -278,51 +278,21 @@ flow</strong> take the subscript <strong>:math:`o`</strong>.</p>
 <div class="section" id="3.-Identify-the-known-and-unknown-variables">
 <h3>3. Identify the known and unknown variables<a class="headerlink" href="#3.-Identify-the-known-and-unknown-variables" title="Permalink to this headline">¶</a></h3>
 <p><strong>be careful with units</strong>; we want everything in terms of
-$:raw-latex:<cite>frac{Kj}{hr}</cite> $</p>
-<p>$:raw-latex:<cite>dot{H}</cite>_i $ for 500kg of steam at 44 atm and 450° =
-$3324.2 <a href="#id1"><span class="problematic" id="id2">:raw-latex:`\space `:raw-latex:`</span></a>frac{kJ}{kg cdot hr}`
-<a href="#id3"><span class="problematic" id="id4">:raw-latex:`\cdot `500 :raw-latex:`</span></a>space <cite>kg $ =
-:math:`1,662,100 space frac{kJ}{hr}</cite></p>
+<span class="math">\(\frac{Kj}{hr}\)</span></p>
+<p><span class="math">\(\dot{H}_i\)</span> for 500kg of steam at 44 atm and 450° =
+<span class="math">\(3324.2 \space \frac{kJ}{kg \cdot hr} \cdot 500 \space kg\)</span> =
+<span class="math">\(1,662,100 \space \frac{kJ}{hr}\)</span></p>
 <p>from the
 <a class="reference external" href="https://www.nist.gov/sites/default/files/documents/srd/NISTIR5078-Tab3.pdf">nist</a>
 steam table</p>
 <p><span class="math">\(H_o\)</span> is <strong>unknown</strong> because we do not know the temperature of
 steam leaving the turbine.</p>
-<p>$:raw-latex:<cite>dot{E}</cite>_{ki}= <a href="#id5"><span class="problematic" id="id6">:raw-latex:`\frac{1}{2}`</span></a>
-<a href="#id7"><span class="problematic" id="id8">:raw-latex:`\cdot `:raw-latex:`</span></a>dot{m}` <a href="#id9"><span class="problematic" id="id10">:raw-latex:`\cdot `v^2 = 500
-:raw-latex:`</span></a>space <cite>:raw-latex:</cite>frac{kg}{hr}`
-<a href="#id11"><span class="problematic" id="id12">:raw-latex:`\cdot `:raw-latex:`</span></a>frac{1}{2}` <a href="#id13"><span class="problematic" id="id14">:raw-latex:`\cdot `(60
-:raw-latex:`</span></a>space <cite>:raw-latex:</cite>frac{m}{s}`)^2
-<a href="#id15"><span class="problematic" id="id16">:raw-latex:`\cdot `:raw-latex:`</span></a>frac{1 space kJ}{1000 space J}` = 900
-<a href="#id17"><span class="problematic" id="id18">:raw-latex:`\space `:raw-latex:`</span></a>frac{kJ}{hr}` $</p>
-<p>$ <a href="#id19"><span class="problematic" id="id20">:raw-latex:`\dot{E}`</span></a>_{ko} = <a href="#id21"><span class="problematic" id="id22">:raw-latex:`\frac{1}{2}`</span></a>
-<a href="#id23"><span class="problematic" id="id24">:raw-latex:`\cdot `:raw-latex:`</span></a>dot{m}` <a href="#id25"><span class="problematic" id="id26">:raw-latex:`\cdot `v^2 = 500
-:raw-latex:`</span></a>space <cite>:raw-latex:</cite>frac{kg}{hr}`
-<a href="#id27"><span class="problematic" id="id28">:raw-latex:`\cdot `:raw-latex:`</span></a>frac{1}{2}` <a href="#id29"><span class="problematic" id="id30">:raw-latex:`\cdot `(360
-:raw-latex:`</span></a>space <cite>:raw-latex:</cite>frac{m}{s}`)^2
-<a href="#id31"><span class="problematic" id="id32">:raw-latex:`\cdot `:raw-latex:`</span></a>frac{1k space J}{1000 space J}` =
-32,400 <a href="#id33"><span class="problematic" id="id34">:raw-latex:`\space `:raw-latex:`</span></a>frac{kJ}{hr}` $</p>
-<p>$:raw-latex:<cite>dot{E}</cite>_{pi}= <a href="#id35"><span class="problematic" id="id36">:raw-latex:`\dot{m}`</span></a> <a href="#id37"><span class="problematic" id="id38">:raw-latex:`\cdot `g
-:raw-latex:`</span></a>cdot <cite>h = 500
-:raw-latex:</cite>space <cite>:raw-latex:</cite>frac{kg}{hr}` <a href="#id39"><span class="problematic" id="id40">:raw-latex:`\cdot `9.81
-:raw-latex:`</span></a>space <cite>:raw-latex:</cite>frac{m}{s}`^2
-<a href="#id41"><span class="problematic" id="id42">:raw-latex:`\cdot `:raw-latex:`</span></a>frac{1 space kJ}{1000 space J}`
-<a href="#id43"><span class="problematic" id="id44">:raw-latex:`\cdot `5 :raw-latex:`</span></a>space <cite>m = 24.525
-:raw-latex:</cite>space  <cite>:raw-latex:</cite>frac{kJ}{hr}` $</p>
-<p>$:raw-latex:<cite>dot{E}</cite>_{po}= <a href="#id45"><span class="problematic" id="id46">:raw-latex:`\dot{m}`</span></a> <a href="#id47"><span class="problematic" id="id48">:raw-latex:`\cdot `g
-:raw-latex:`</span></a>cdot <cite>h = 500
-:raw-latex:</cite>space <cite>:raw-latex:</cite>frac{kg}{hr}`
-<a href="#id49"><span class="problematic" id="id50">:raw-latex:`\cdot `9.81:raw-latex:`</span></a>frac{m}{s}`^2
-<a href="#id51"><span class="problematic" id="id52">:raw-latex:`\cdot `:raw-latex:`</span></a>frac{1 space kJ}{1000 space J}`
-<a href="#id53"><span class="problematic" id="id54">:raw-latex:`\cdot `0m = 0 :raw-latex:`</span></a>space <cite>:raw-latex:</cite>frac{kJ}{hr}`
-$</p>
-<p>$:raw-latex:<cite>dot{Q}</cite> = lost = -10^4 <a href="#id55"><span class="problematic" id="id56">:raw-latex:`\space `kcal
-:raw-latex:`</span></a>times <cite>4184 :raw-latex:</cite>frac{J}{kcal}`
-<a href="#id57"><span class="problematic" id="id58">:raw-latex:`\times `:raw-latex:`</span></a>frac{1 space kJ}{1000 space J}` =
--41,840 <a href="#id59"><span class="problematic" id="id60">:raw-latex:`\space `:raw-latex:`</span></a>frac{kJ}{hr}` $</p>
-<p>$:raw-latex:<cite>dot{W}</cite>_{net} = +W_e = 70 <a href="#id61"><span class="problematic" id="id62">:raw-latex:`\space `kW
-:raw-latex:`</span></a>cdot <cite>:raw-latex:</cite>frac{3600 space s}{1 space hr}` =
-252,000 <a href="#id63"><span class="problematic" id="id64">:raw-latex:`\space `:raw-latex:`</span></a>frac{kJ}{hr}` $</p>
+<p><span class="math">\(\dot{E}_{ki}= \frac{1}{2} \cdot \dot{m} \cdot v^2 = 500 \space \frac{kg}{hr} \cdot \frac{1}{2} \cdot (60 \space \frac{m}{s})^2 \cdot \frac{1 \space kJ}{1000 \space J} = 900 \space \frac{kJ}{hr}\)</span></p>
+<p><span class="math">\(\dot{E}_{ko} = \frac{1}{2} \cdot \dot{m} \cdot v^2 = 500 \space \frac{kg}{hr} \cdot \frac{1}{2} \cdot (360 \space \frac{m}{s})^2 \cdot \frac{1k \space J}{1000 \space J} = 32,400 \space \frac{kJ}{hr}\)</span></p>
+<p><span class="math">\(\dot{E}_{pi}= \dot{m} \cdot g \cdot h = 500 \space \frac{kg}{hr} \cdot 9.81 \space \frac{m}{s}^2 \cdot \frac{1 \space kJ}{1000 \space J} \cdot 5 \space m = 24.525 \space \frac{kJ}{hr}\)</span></p>
+<p><span class="math">\(\dot{E}_{po}= \dot{m} \cdot g \cdot h = 500 \space \frac{kg}{hr} \cdot 9.81\frac{m}{s}^2 \cdot \frac{1 \space kJ}{1000 \space J} \cdot 0m = 0 \space \frac{kJ}{hr}\)</span></p>
+<p><span class="math">\(\dot{Q} = lost = -10^4 \space kcal \times 4184 \frac{J}{kcal} \times \frac{1 \space kJ}{1000 \space J} = -41,840 \space \frac{kJ}{hr}\)</span></p>
+<p><span class="math">\(\dot{W}_{net} = +W_e = 70 \space kW \cdot \frac{3600 \space s}{1 \space hr} = 252,000 \space \frac{kJ}{hr}\)</span></p>
 </div>
 <div class="section" id="4.-Solving-the-system">
 <h3>4. Solving the system<a class="headerlink" href="#4.-Solving-the-system" title="Permalink to this headline">¶</a></h3>

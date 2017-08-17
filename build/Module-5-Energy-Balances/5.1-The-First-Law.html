@@ -42,169 +42,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
-    background: none;
-    border: none;
-    padding: 0 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-/* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput,
-div.nboutput {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput div.prompt pre {
-    color: #303F9F;
-}
-
-/* output prompt */
-div.nboutput div.prompt pre {
-    color: #D84315;
-}
-
-/* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
-    min-width: 8ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
-    text-align: right;
-    flex: 0;
-}
-@media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput div.prompt.empty {
-        padding: 0;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
-    padding: 0.4em;
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-    background: #f7f7f7;
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.pngmath center alignment in output cells */
-div.nboutput div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="section" id="5.1-–-The-First-Law-of-Thermodynamics">
+  <div class="section" id="5.1-–-The-First-Law-of-Thermodynamics">
 <h1>5.1 – The First Law of Thermodynamics<a class="headerlink" href="#5.1-–-The-First-Law-of-Thermodynamics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="5.1.0-–-Learning-Objectives">
 <h2>5.1.0 – Learning Objectives<a class="headerlink" href="#5.1.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
@@ -240,15 +78,19 @@ mathematically as:</div></blockquote>
 <div class="math">
 \[\Delta E_{sys} = \Delta Q-\Delta W\]</div>
 <p><strong>Important! The system must be closed. Otherwise internal energy cannot
-be used alone</strong> ### 5.1.3 – Units of the first law</p>
+be used alone</strong></p>
+</div>
+<div class="section" id="5.1.3-–-Units-of-the-first-law">
+<h2>5.1.3 – Units of the first law<a class="headerlink" href="#5.1.3-–-Units-of-the-first-law" title="Permalink to this headline">¶</a></h2>
 <p>Energy in chemical engineering is often described as a
-<strong>:math:`frac{Kilojoule}{Kilogram}` or :math:`frac{Joule}{mol}`</strong>.
-These units are used because of the massive amount of material that
-chemical engineers work with.</p>
+<span class="math">\(\frac{Kilojoule}{Kilogram}\)</span> or <span class="math">\(\frac{Joule}{mol}\)</span>. These
+units are used because of the massive amount of material that chemical
+engineers work with.</p>
 <blockquote>
 <div>Let&#8217;s break down these terms down one-by-one.</div></blockquote>
+</div>
 <div class="section" id="5.1.4-–-Energy-">
-<h3>5.1.4 – Energy <span class="math">\(E\)</span><a class="headerlink" href="#5.1.4-–-Energy-" title="Permalink to this headline">¶</a></h3>
+<h2>5.1.4 – Energy <span class="math">\(E\)</span><a class="headerlink" href="#5.1.4-–-Energy-" title="Permalink to this headline">¶</a></h2>
 <p>Energy comes in many <strong>different forms</strong>. Sitting up on a chair reading
 this, you have <strong>potential energy</strong>. When you run in class to hand in
 your homework, you are demonstrating <strong>kinetic energy</strong>. Your mere
@@ -259,11 +101,10 @@ classified but this course will be mainly focusing on these three.</p>
 \[E_{tot} = E_{sys} = E_k + E_p + U\]</div>
 </div>
 <div class="section" id="5.1.5-–-Fermi-question!!">
-<h3>5.1.5 – Fermi question!!<a class="headerlink" href="#5.1.5-–-Fermi-question!!" title="Permalink to this headline">¶</a></h3>
+<h2>5.1.5 – Fermi question!!<a class="headerlink" href="#5.1.5-–-Fermi-question!!" title="Permalink to this headline">¶</a></h2>
 <p>Using only facts, you know yourself... How fast would a car have to
 drive to have the same energy to climb mount Everest? How many Oreo
 cookies would that be? <strong>An answer will be provided at the bottom</strong></p>
-</div>
 <div class="section" id="A-solution-to-Fermi.">
 <h3>A solution to Fermi.<a class="headerlink" href="#A-solution-to-Fermi." title="Permalink to this headline">¶</a></h3>
 <p>I know that the Mount Everest is approximately 30000ft. The average
@@ -282,20 +123,10 @@ and rough unit conversions:</p>
 \[E_k = \frac{1}{2} \cdot m *v^2\]</div>
 <div class="math">
 \[5,738,850 \space J = \frac{1}{2} \cdot 1,000 \space kg \cdot v^2\]</div>
-<p>Solving for v results in $v = 107.13 :raw-latex:<a href="#id1"><span class="problematic" id="id2">`</span></a>space <a href="#id3"><span class="problematic" id="id4">`</span></a>m/s $ which is
-just over the speed of the bullet train in Japan.</p>
+<p>Solving for v results in <span class="math">\(v = 107.13 \space m/s\)</span> which is just
+over the speed of the bullet train in Japan.</p>
 <p>Click here for more fermi questions <a class="reference external" href="http://www.fermiquestions.com/play">more
 fermi!</a></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -311,9 +142,10 @@ fermi!</a></p>
 <li><a class="reference internal" href="#">5.1 – The First Law of Thermodynamics</a><ul>
 <li><a class="reference internal" href="#5.1.0-–-Learning-Objectives">5.1.0 – Learning Objectives</a></li>
 <li><a class="reference internal" href="#5.1.1-–-Introduction">5.1.1 – Introduction</a></li>
-<li><a class="reference internal" href="#5.1.2-–-The-First-Law">5.1.2 – The First Law</a><ul>
+<li><a class="reference internal" href="#5.1.2-–-The-First-Law">5.1.2 – The First Law</a></li>
+<li><a class="reference internal" href="#5.1.3-–-Units-of-the-first-law">5.1.3 – Units of the first law</a></li>
 <li><a class="reference internal" href="#5.1.4-–-Energy-">5.1.4 – Energy <span class="math">\(E\)</span></a></li>
-<li><a class="reference internal" href="#5.1.5-–-Fermi-question!!">5.1.5 – Fermi question!!</a></li>
+<li><a class="reference internal" href="#5.1.5-–-Fermi-question!!">5.1.5 – Fermi question!!</a><ul>
 <li><a class="reference internal" href="#A-solution-to-Fermi.">A solution to Fermi.</a></li>
 </ul>
 </li>

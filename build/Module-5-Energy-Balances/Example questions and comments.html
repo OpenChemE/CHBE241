@@ -42,169 +42,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
-    background: none;
-    border: none;
-    padding: 0 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-/* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput,
-div.nboutput {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput div.prompt pre {
-    color: #303F9F;
-}
-
-/* output prompt */
-div.nboutput div.prompt pre {
-    color: #D84315;
-}
-
-/* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
-    min-width: 8ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
-    text-align: right;
-    flex: 0;
-}
-@media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput div.prompt.empty {
-        padding: 0;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
-    padding: 0.4em;
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-    background: #f7f7f7;
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.pngmath center alignment in output cells */
-div.nboutput div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="section" id="Example---5.1">
+  <div class="section" id="Example---5.1">
 <h1>Example - 5.1<a class="headerlink" href="#Example---5.1" title="Permalink to this headline">¶</a></h1>
 <p>Water flows into a process unit through a 2-cm ID (internal diameter),
 4m long pipe at a rate of 2.00 <span class="math">\(m^3/h\)</span>, at a height of 2m from the
@@ -244,7 +82,7 @@ final gas temperature is 100 °C.</p>
 <div class="section" id="Step-1">
 <h2>Step 1<a class="headerlink" href="#Step-1" title="Permalink to this headline">¶</a></h2>
 <div class="figure" id="id2">
-<img alt="Figure 1." src="Module-5-Energy-Balances/../figures/module-5/5.2-Example-1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+<img alt="Figure 1." src="../_images/5.2-Example-1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
 </div>
 <p>In this step, the system <strong>absorbs</strong> heat that raises it&#8217;s temperatures
 by 80 °C.</p>
@@ -268,7 +106,7 @@ by 80 °C.</p>
 <div class="section" id="Step-2">
 <h2>Step 2<a class="headerlink" href="#Step-2" title="Permalink to this headline">¶</a></h2>
 <div class="figure" id="id3">
-<img alt="Figure 1." src="Module-5-Energy-Balances/../figures/module-5/5.2-Example-1.1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+<img alt="Figure 1." src="../_images/5.2-Example-1.1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
 </div>
 <div class="math">
 \[\Delta U + \Delta E_k + \Delta E_p = Q-W\]</div>
@@ -327,7 +165,7 @@ solve it?</li>
 <p>Water is partially condensed out of a gas stream containing 66.9 mole%
 water vapor and the balance nitrogen.</p>
 <div class="figure" id="id4">
-<img alt="Figure 1." src="Module-5-Energy-Balances/../figures/module-5/module-5-example-5.7.1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+<img alt="Figure 1." src="../_images/module-5-example-5.7.1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
 </div>
 </div>
 <div class="section" id="Step-1---Perform-all-required-material-balances">
@@ -384,32 +222,6 @@ the system that is increasing or the surroundings?</li>
 <li>p used for pressure, I changed it to P, correct or no?</li>
 </ul>
 </div>
-<div class="section" id="5.9-–-Thermo-cheat-sheet">
-<h1>5.9 – Thermo cheat sheet<a class="headerlink" href="#5.9-–-Thermo-cheat-sheet" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>no need question</li>
-</ul>
-</div>
-<div class="section" id="5.10-–-Psychrometric-charts-and-spray-drying">
-<h1>5.10 – Psychrometric charts and spray drying<a class="headerlink" href="#5.10-–-Psychrometric-charts-and-spray-drying" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="5.11---Enthalpy-of-mixing">
-<h1>5.11 - Enthalpy of mixing<a class="headerlink" href="#5.11---Enthalpy-of-mixing" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Youtube video not showing up</li>
-<li>Still missing an example question, to be added</li>
-</ul>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none"><div class="highlight"><pre>
-<span></span>In [ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-</div>
 
 
           </div>
@@ -439,9 +251,6 @@ the system that is increasing or the surroundings?</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#5.8-–-Path-and-State-functions">5.8 – Path and State functions</a></li>
-<li><a class="reference internal" href="#5.9-–-Thermo-cheat-sheet">5.9 – Thermo cheat sheet</a></li>
-<li><a class="reference internal" href="#5.10-–-Psychrometric-charts-and-spray-drying">5.10 – Psychrometric charts and spray drying</a></li>
-<li><a class="reference internal" href="#5.11---Enthalpy-of-mixing">5.11 - Enthalpy of mixing</a></li>
 </ul>
 <div class="relations">
 <h3>Related Topics</h3>

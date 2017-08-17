@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>First Draft Modules Completed &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="First-Draft-Modules-Completed">
+<h1>First Draft Modules Completed<a class="headerlink" href="#First-Draft-Modules-Completed" title="Permalink to this headline">¶</a></h1>
+<p>Module-0 (Said, Victor, Ngaito)</p>
+<p>Module-1 (Said)</p>
+<p>Module -2 (Ngai To)</p>
+</div>
+<div class="section" id="Said">
+<h1>Said<a class="headerlink" href="#Said" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Changes-Week-1">
+<h2>Changes Week 1<a class="headerlink" href="#Changes-Week-1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Completed the first draft of module one, half of the introduction
+notebook, and MATH 152.</li>
+<li>Got rid of conservation of mass as its own section and included it
+onto material balances</li>
+</ol>
+</div>
+<div class="section" id="Suggestions/Comments">
+<h2>Suggestions/Comments<a class="headerlink" href="#Suggestions/Comments" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Continous, batch, and semi-batch should be moved to module one.</li>
+<li>I dont think we should have a section about excel since we will be
+using python instead.</li>
+<li>Could we get the slides from last year? Would be nice to have
+something to refer too in terms of how indepth we should go into it.</li>
+</ol>
+</div>
+<div class="section" id="Challenges">
+<h2>Challenges<a class="headerlink" href="#Challenges" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Found it hard to come up with examples, I used a mixture of my own,
+textbook, and online examples. Not sure if we should only make our
+own.</li>
+<li>Should each notebook be content heavy?</li>
+</ol>
+</div>
+</div>
+<div class="section" id="Ngai-To">
+<h1>Ngai To<a class="headerlink" href="#Ngai-To" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Changes-Week-1">
+<h2>Changes Week 1<a class="headerlink" href="#Changes-Week-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Completed the first draft of module two. <strong>note</strong>: naming convention
+is whack</li>
+<li>Have a section taken from a scientific journal. was reading the
+copyright. will probably have to remove.</li>
+<li>Step-by step solved a problem from the textbook without answers (odd
+numbered)</li>
+<li>very enjoyable</li>
+</ul>
+</div>
+<div class="section" id="Suggestions/Comments">
+<h2>Suggestions/Comments<a class="headerlink" href="#Suggestions/Comments" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Have been trying to look for examples that are not fromthe textbook
+to give stuents more variety</li>
+<li>not been too sucessful</li>
+<li>Agree with Said: Material balance belongs with processes.</li>
+<li>Some notebooks are content heavy. Some are very short</li>
+<li>I think that reactive balances are a separate section that should
+come after separation.</li>
+<li>if the general balance is $ A = I - O + G -C $ then i think the flow
+should be on the <strong>input</strong> and <strong>output</strong> <span class="math">\(\rightarrow\)</span> then on
+the <strong>consumption</strong> and <strong>generation</strong></li>
+</ul>
+</div>
+<div class="section" id="Challenges">
+<h2>Challenges<a class="headerlink" href="#Challenges" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>I find it challenging to find novel content that fits the theme.</li>
+<li>It would be easier to make up number to fit the theme ( such as flow
+rates etc..) would that be better ?</li>
+<li>I am finding hard to integrate python into parts that are content
+heavy.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="Victor">
+<h1>Victor<a class="headerlink" href="#Victor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Changes-Week-1">
+<h2>Changes Week 1<a class="headerlink" href="#Changes-Week-1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Added CHEM 154 notebook<ul>
+<li>Progressed until VLE calculations, decided to retroactively add
+content based on what basic is needed.</li>
+<li>Future plans: Will add interactive graphs to explore phase
+diagrams and codes to solve equations</li>
+</ul>
+</li>
+<li>Added Module 3, building on Said&#8217;s introductions. Drafts heavily
+based on the textbook.<ul>
+<li>Added Spliter notebook</li>
+<li>Added Recycle notebook</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="Suggestions/Comments">
+<h2>Suggestions/Comments<a class="headerlink" href="#Suggestions/Comments" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>No codes added yet, will do first drafts and add the code.</li>
+<li>Process and Instrumentation Diagram (P&amp;ID) should be moved to Module
+1 and three equilibrium cases (Solid-Liquid, Liquid-Liquid, and
+Vapor-Liquid) should be put in the next section (VLE).</li>
+</ol>
+</div>
+<div class="section" id="Challenges">
+<h2>Challenges<a class="headerlink" href="#Challenges" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Hard to come up with examples for first drafts.</li>
+<li>Cannot find any code that tracks how the user interacts with the
+notebooks.</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">First Draft Modules Completed</a></li>
+<li><a class="reference internal" href="#Said">Said</a><ul>
+<li><a class="reference internal" href="#Changes-Week-1">Changes Week 1</a></li>
+<li><a class="reference internal" href="#Suggestions/Comments">Suggestions/Comments</a></li>
+<li><a class="reference internal" href="#Challenges">Challenges</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Ngai-To">Ngai To</a><ul>
+<li><a class="reference internal" href="#Changes-Week-1">Changes Week 1</a></li>
+<li><a class="reference internal" href="#Suggestions/Comments">Suggestions/Comments</a></li>
+<li><a class="reference internal" href="#Challenges">Challenges</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Victor">Victor</a><ul>
+<li><a class="reference internal" href="#Changes-Week-1">Changes Week 1</a></li>
+<li><a class="reference internal" href="#Suggestions/Comments">Suggestions/Comments</a></li>
+<li><a class="reference internal" href="#Challenges">Challenges</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/meeting-summaries/meetingjul-14.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, I2.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/meeting-summaries/meetingjul-14.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

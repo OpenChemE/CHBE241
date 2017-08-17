@@ -1,0 +1,127 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Meeting July 21\n",
+    "\n",
+    "## Said \n",
+    "\n",
+    "### What I've done\n",
+    "\n",
+    "1. Finished Module 4 and 6.\n",
+    "\n",
+    "### Any challenges\n",
+    "\n",
+    "1. Having trouble formating the tables in 6.4 but Siang said he can help when he has time.\n",
+    "2. Not sure where to put mixer in module 1.\n",
+    "\n",
+    "### Suggestion\n",
+    "\n",
+    "1. Should decide on standards, for example:\n",
+    "    -numbering of sections and inside sections\n",
+    "    -order of subsections eg. learning objectives, intorduction, overview\n",
+    "    -Names of things eg. I call my topics inside modules sections while Victor calls them Notebooks\n",
+    "    \n",
+    "    ---\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## Ngai To\n",
+    "\n",
+    "### What I've done\n",
+    "\n",
+    "1. Half finished  module 5 \n",
+    "### Any challenges\n",
+    "\n",
+    "1. Want to put the thermo library in but there are no steam tabls. \n",
+    "2. missing a conceptual question \n",
+    "3. it seems like  is dependent on everything \n",
+    "4. Thinking of a spray dryin question \n",
+    "\n",
+    "\n",
+    "### Suggestion\n",
+    "\n",
+    "1. N/a\n",
+    "\n",
+    "---\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## Victor\n",
+    "\n",
+    "### What I've done\n",
+    "\n",
+    "1. Updated module 3 to reflect changes suggested\n",
+    "- Overall\n",
+    "    1. Added learning objectives section\n",
+    "    2. Explained steps in solving example questions more clearly.\n",
+    "    3. Added conceptual questions for some notebooks,\n",
+    "    \n",
+    "### Any challenges\n",
+    "\n",
+    "1. Certain notebooks seem like basic knowledge needed to know in Module-1 (density and s.g, P&ID)\n",
+    "2. Conceptual questions for notebooks are hard to think of, referred heavily to textbook.\n",
+    "3. Unsure about solid-liquid and solid-vapour content.\n",
+    "4. Example questions for some notebooks still missing.\n",
+    "\n",
+    "### Suggestion\n",
+    "\n",
+    "1. N/A"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "- Single component solid - liquid equilibrium = solubility pg301 figure6.5-1\n",
+    "- Aspen "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python [default]",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.5.2"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

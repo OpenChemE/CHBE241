@@ -1,0 +1,132 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## First Draft Modules Completed\n",
+    "Module-0 (Said, Victor, Ngaito)\n",
+    "\n",
+    "Module-1 (Said)\n",
+    "\n",
+    "Module -2 (Ngai To)\n",
+    "\n",
+    "## Said \n",
+    "### Changes Week 1\n",
+    "1. Completed the first draft of module one, half of the introduction notebook, and MATH 152.\n",
+    "2. Got rid of conservation of mass as its own section and included it onto material balances\n",
+    "\n",
+    "### Suggestions/Comments\n",
+    "1. Continous, batch, and semi-batch should be moved to module one.\n",
+    "2. I dont think we should have a section about excel since we will be using python instead.\n",
+    "3. Could we get the slides from last year? Would be nice to have something to refer too in terms of how indepth we should go into it.\n",
+    "\n",
+    "### Challenges\n",
+    "1. Found it hard to come up with examples, I used a mixture of my own, textbook, and online examples. Not sure if we should only make our own.\n",
+    "2. Should each notebook be content heavy?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## Ngai To\n",
+    "\n",
+    "### Changes Week 1\n",
+    "\n",
+    "- Completed the first draft of module two. __note__: naming convention is whack\n",
+    "- Have a section taken from a scientific journal. was reading the copyright. will probably have to remove.\n",
+    "- Step-by step solved a problem from the textbook without answers (odd numbered) \n",
+    " - very enjoyable\n",
+    "    \n",
+    "\n",
+    "### Suggestions/Comments\n",
+    "- Have been trying to look for examples that are not fromthe textbook to give stuents more variety\n",
+    " - not been too sucessful\n",
+    "- Agree with Said: Material balance belongs with processes.\n",
+    "- Some notebooks are content heavy. Some are very short\n",
+    "- I think that  reactive balances are a separate section that should come after separation. \n",
+    " - if the general balance is $ A = I - O + G -C  $  then i think the flow should be on  the __input__  and __output__ $\\rightarrow$  then on the __consumption__ and __generation__\n",
+    "\n",
+    "\n",
+    "### Challenges\n",
+    "\n",
+    "- I find it challenging to find novel content that fits the theme. \n",
+    "- It would be easier to make  up  number to fit the theme ( such as flow rates etc..) would that be better ?\n",
+    "\n",
+    "- I am finding hard to integrate python into parts that are content heavy. \n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## Victor\n",
+    "\n",
+    "### Changes Week 1 \n",
+    "\n",
+    "1. Added CHEM 154 notebook\n",
+    "    + Progressed until VLE calculations, decided to retroactively add content based on what basic is needed.\n",
+    "    + Future plans: Will add interactive graphs to explore phase diagrams and codes to solve equations\n",
+    "\n",
+    "2. Added Module 3, building on Said's introductions. Drafts heavily based on the textbook. \n",
+    "    + Added Spliter notebook\n",
+    "    + Added Recycle notebook\n",
+    "    \n",
+    "### Suggestions/Comments\n",
+    "1. No codes added yet, will do first drafts and add the code. \n",
+    "2. Process and Instrumentation Diagram (P&ID) should be moved to Module 1 and three equilibrium cases (Solid-Liquid, Liquid-Liquid, and Vapor-Liquid) should be put in the next section (VLE).\n",
+    "\n",
+    "### Challenges\n",
+    "1. Hard to come up with examples for first drafts. \n",
+    "2. Cannot find any code that tracks how the user interacts with the notebooks. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 2",
+   "language": "python",
+   "name": "python2"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.11"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
