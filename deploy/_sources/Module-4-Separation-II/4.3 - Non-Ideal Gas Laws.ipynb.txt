@@ -24,7 +24,7 @@
     "---\n",
     "## 4.3.1 &ndash; Introduction\n",
     "\n",
-    "Before this course, you most likely have used the **ideal gas law**, $ P V = n R T $, but this equation of state is not very accurate in describing gases in the real world. This is because the **ideal gas law** assumes that gas particles are infinitesimal points of mass and that these points of mass do not interact with each other. This is a flaw in the ideal gas law and causes the ideal gas law to be close to the truth only when pressures are relatively low or the gases are noble gases, especially Helium.\n",
+    "Before this course, you most likely have used the **ideal gas law**, $P V = n R T$, but this equation of state is not very accurate in describing gases in the real world. This is because the **ideal gas law** assumes that gas particles are infinitesimal points of mass and that these points of mass do not interact with each other. This is a flaw in the ideal gas law and causes the ideal gas law to be close to the truth only when pressures are relatively low or the gases are noble gases, especially Helium.\n",
     "\n",
     "That is why equations of state for **non-ideal gases** are crucial for calculating how **real gases**. In this section, we will focus on the **compressibility factors** to correct the ideal gas law and the **viral equation**, the **Van der Walls equation**, and the **Soave-Redlich-Kwong equation**.\n",
     "\n",
@@ -37,11 +37,11 @@
    "source": [
     "## 4.3.2 &ndash; Equations of the State for Non-Ideal Gases\n",
     "\n",
-    "**Critical temperature**, $T_c$ and **critical pressure**, $P_c$ are the temperature and pressure of a species at its critical point. These two properties often tell us how well or poorly the **ideal gas law** is for describing the species.\n",
+    "**Critical temperature**, $T_c$, and **critical pressure**, $P_c$, are the temperature and pressure of a species at its critical point. These two properties often tell us how well or poorly the **ideal gas law** is for describing the species.\n",
     "\n",
     "### The Viral Equation of State\n",
     "\n",
-    "The **viral equation of state** is an expression of the quantity $P \\hat{V} / R T $ as a power series in the inverse of specific volume:\n",
+    "The **viral equation of state** is an expression of the quantity $P \\hat{V} / R T$ as a power series in the inverse of specific volume:\n",
     "\n",
     "$$ \\frac{P \\hat{V}}{R T} = 1 + \\frac{B}{\\hat{V}} + \\frac{C}{\\hat{V}^2} + \\frac{D}{\\hat{V}^3} + ... $$\n",
     "\n",
@@ -51,9 +51,16 @@
     "\n",
     "To solve the **viral equation of state** we must:\n",
     "\n",
-    "1. Look up the **critical temperature**, $T_c$, the **critical pressure**, $P_c$, and the **Pitzer acentric factor**, $ \\omega $. **Pitzer acentric factor** is a constant that reflects the geometry and polarity of a molecule.\n",
+    "1. Look up the **critical temperature**, $T_c$, the **critical pressure**, $P_c$, and the **Pitzer acentric factor**, $\\omega$. **Pitzer acentric factor** is a constant that reflects the geometry and polarity of a molecule.\n",
     "2. Calculate the **reduced temperature**, $T_r = T / T_c$.\n",
-    "3. Estimate B using: $$ $$ $$ B_0 = 0.083 - \\frac{0.422}{T^{1.6}_r} $$ $$ $$ $$ B_1 = 0.139 - \\frac{0.172}{T^{4.2}_r} $$ $$ $$ $$ B = \\frac{R T_c}{P_c} (B_0 + \\omega B_1) $$ $$ $$\n",
+    "3. Estimate B using:\n",
+    "    \n",
+    "    $$ B_0 = 0.083 - \\frac{0.422}{T^{1.6}_r} $$\n",
+    "    \n",
+    "    $$ B_1 = 0.139 - \\frac{0.172}{T^{4.2}_r} $$\n",
+    "    \n",
+    "    $$ B = \\frac{R T_c}{P_c} (B_0 + \\omega B_1) $$ \n",
+    "    \n",
     "4. Substitute B back into the **viral equation of state**.\n",
     "\n",
     "### Van der Waals Equation of State\n",
@@ -95,7 +102,7 @@
     "\n",
     "$$ z = \\frac{ P \\hat{V} }{R T} $$ \n",
     "\n",
-    "When $ z = 1 $, the gas behaves ideally. The amount $ z $ differs from 1 is a measurement of how non-ideal the gas is.\n",
+    "When $z = 1$, the gas behaves ideally. The amount $z$ differs from 1 is a measurement of how non-ideal the gas is.\n",
     "\n",
     "A method used to estimate $z$, since every type of gas has different $z$ factors at the same pressure and temperature, is:\n",
     "\n",
@@ -135,7 +142,7 @@
     "\n",
     "#### a) Ideal gas law\n",
     "\n",
-    "Since we know that the ideal gas law is $ P V = n R T $, we can solve for n. First, everything needs to be converted into SI units. \n",
+    "Since we know that the ideal gas law is $P V = n R T$, we can solve for n. First, everything needs to be converted into SI units. \n",
     "\n",
     "$$ P = 10 \\space bar \\times \\frac{100,000 \\space Pa}{1 \\space bar} = 1,000,000 \\space Pa $$\n",
     "\n",
@@ -223,9 +230,7 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "metadata": {
-    "collapsed": false
-   },
+   "metadata": {},
    "outputs": [
     {
      "name": "stdout",
@@ -275,9 +280,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "metadata": {
-    "collapsed": false
-   },
+   "metadata": {},
    "outputs": [
     {
      "name": "stdout",
@@ -324,7 +327,7 @@
  "metadata": {
   "anaconda-cloud": {},
   "kernelspec": {
-   "display_name": "Python [default]",
+   "display_name": "Python 3",
    "language": "python",
    "name": "python3"
   },
@@ -338,7 +341,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.5.2"
+   "version": "3.6.1"
   }
  },
  "nbformat": 4,

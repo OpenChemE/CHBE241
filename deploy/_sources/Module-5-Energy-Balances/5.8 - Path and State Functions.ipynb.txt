@@ -38,7 +38,7 @@
     "\n",
     " A __State function__ is the change of the state of a variable __regardless of the path it takes__. __Internal Energy__ $U$, __Enthalpy__ $H$, __Pressure__ $P$, __Temperature__ $T$, and __Volume__ $V$ are state functions. \n",
     "\n",
-    "But __how__did that guy get up there? Did he skydive out of a plane? Did he climb up there himself? Was he carried up by a Sherpa? Now we are concerned about the path the guy took to get up there. \n",
+    "But __how__ did that guy get up there? Did he skydive out of a plane? Did he climb up there himself? Was he carried up by a Sherpa? Now we are concerned about the path the guy took to get up there. \n",
     "\n",
     "A __Path function__ is the transition of __path variables__ from one state to another. __Work__ $W$ and __Heat__ $Q$ are path variables. They change depending on what path is chosen to reach a state.\n",
     "\n",

@@ -218,15 +218,15 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="section" id="4.3.2-–-Equations-of-the-State-for-Non-Ideal-Gases">
 <h2>4.3.2 – Equations of the State for Non-Ideal Gases<a class="headerlink" href="#4.3.2-–-Equations-of-the-State-for-Non-Ideal-Gases" title="Permalink to this headline">¶</a></h2>
-<p><strong>Critical temperature</strong>, <span class="math">\(T_c\)</span> and <strong>critical pressure</strong>,
-<span class="math">\(P_c\)</span> are the temperature and pressure of a species at its
+<p><strong>Critical temperature</strong>, <span class="math">\(T_c\)</span>, and <strong>critical pressure</strong>,
+<span class="math">\(P_c\)</span>, are the temperature and pressure of a species at its
 critical point. These two properties often tell us how well or poorly
 the <strong>ideal gas law</strong> is for describing the species.</p>
 <div class="section" id="The-Viral-Equation-of-State">
 <h3>The Viral Equation of State<a class="headerlink" href="#The-Viral-Equation-of-State" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>viral equation of state</strong> is an expression of the quantity $P
-<a href="#id1"><span class="problematic" id="id2">:raw-latex:`\hat{V}`</span></a> / R T $ as a power series in the inverse of
-specific volume:</p>
+<p>The <strong>viral equation of state</strong> is an expression of the quantity
+<span class="math">\(P \hat{V} / R T\)</span> as a power series in the inverse of specific
+volume:</p>
 <div class="math">
 \[\frac{P \hat{V}}{R T} = 1 + \frac{B}{\hat{V}} + \frac{C}{\hat{V}^2} + \frac{D}{\hat{V}^3} + ...\]</div>
 <p>Where B, C, and D are the second, third, and fourth virial coefficients
@@ -238,27 +238,19 @@ use a truncated version:</p>
 <p>To solve the <strong>viral equation of state</strong> we must:</p>
 <ol class="arabic">
 <li><p class="first">Look up the <strong>critical temperature</strong>, <span class="math">\(T_c\)</span>, the <strong>critical
-pressure</strong>, <span class="math">\(P_c\)</span>, and the <strong>Pitzer acentric factor</strong>, $
-:raw-latex:<a href="#id3"><span class="problematic" id="id4">`</span></a>omega <a href="#id5"><span class="problematic" id="id6">`</span></a>$. <strong>Pitzer acentric factor</strong> is a constant that
+pressure</strong>, <span class="math">\(P_c\)</span>, and the <strong>Pitzer acentric factor</strong>,
+<span class="math">\(\omega\)</span>. <strong>Pitzer acentric factor</strong> is a constant that
 reflects the geometry and polarity of a molecule.</p>
 </li>
 <li><p class="first">Calculate the <strong>reduced temperature</strong>, <span class="math">\(T_r = T / T_c\)</span>.</p>
 </li>
 <li><p class="first">Estimate B using:</p>
 <div class="math">
-\[\]</div>
-<div class="math">
 \[B_0 = 0.083 - \frac{0.422}{T^{1.6}_r}\]</div>
-<div class="math">
-\[\]</div>
 <div class="math">
 \[B_1 = 0.139 - \frac{0.172}{T^{4.2}_r}\]</div>
 <div class="math">
-\[\]</div>
-<div class="math">
 \[B = \frac{R T_c}{P_c} (B_0 + \omega B_1)\]</div>
-<div class="math">
-\[\]</div>
 </li>
 <li><p class="first">Substitute B back into the <strong>viral equation of state</strong>.</p>
 </li>
@@ -322,8 +314,8 @@ law in this case? Why/why not?</p>
 <h3>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="a)-Ideal-gas-law">
 <h4>a) Ideal gas law<a class="headerlink" href="#a)-Ideal-gas-law" title="Permalink to this headline">¶</a></h4>
-<p>Since we know that the ideal gas law is $ P V = n R T $, we can solve
-for n. First, everything needs to be converted into SI units.</p>
+<p>Since we know that the ideal gas law is <span class="math">\(P V = n R T\)</span>, we can
+solve for n. First, everything needs to be converted into SI units.</p>
 <div class="math">
 \[P = 10 \space bar \times \frac{100,000 \space Pa}{1 \space bar} = 1,000,000 \space Pa\]</div>
 <div class="math">

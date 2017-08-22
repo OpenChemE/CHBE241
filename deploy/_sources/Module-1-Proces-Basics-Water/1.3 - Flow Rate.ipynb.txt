@@ -36,7 +36,7 @@
    "metadata": {},
    "source": [
     "## 1.3.2 &ndash; Mass Flow Rate\n",
-    "**Mass flow rate** is the measurement of mass per unit time (mass/time). This flowrate is usually denoted by the character $ \\dot{m} $, where $ \\dot{m} = \\frac{ kg }{s} $. Since mass must be conserved, the input masses of a process must equal the output masses, unless there is accumulation (See [section 1.8.2](1.8 - Materials Balances.ipynb) for further reference). Therefore, mass flowrate is a very useful tool in solving material balances.\n",
+    "**Mass flow rate** is the measurement of mass per unit time (mass/time). This flowrate is usually denoted by the character $\\dot{m}$, where $\\dot{m} = \\frac{ kg }{s}$. Since mass must be conserved, the input masses of a process must equal the output masses, unless there is accumulation (See [section 1.8.2](1.8 - Materials Balances.ipynb) for further reference). Therefore, mass flowrate is a very useful tool in solving material balances.\n",
     "\n",
     "---\n",
     "## 1.3.3 &ndash; Molar Flow Rate\n",
@@ -44,7 +44,7 @@
     "\n",
     "---\n",
     "## 1.3.4 &ndash; Volumetric Flow Rate\n",
-    "**Volumetric flow rate** is the measurement of volume per unit time (volume/time) This flow rate is usually denoted by the character $ \\dot{V} $, where $ \\dot{V} = \\frac{ m^3 }{s} $. Volumetric flow rate may change with density. \n",
+    "**Volumetric flow rate** is the measurement of volume per unit time (volume/time) This flow rate is usually denoted by the character $\\dot{V}$, where $\\dot{V} = \\frac{ m^3 }{s}$. Volumetric flow rate may change with density. \n",
     "\n",
     "$$ \\rho = \\frac{m}{V} = \\frac{\\dot{m}}{\\dot{V}} = \\frac{\\frac{kg}{s}}{\\frac{m^3}{s}} = \\frac{kg}{m^3} $$\n",
     "\n",
