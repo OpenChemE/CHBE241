@@ -1,0 +1,113 @@
+.. project1 documentation master file, created by
+   sphinx-quickstart on Wed Aug 16 09:19:14 2017.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to project1's documentation!
+====================================
+
+.. toctree::
+
+   :maxdepth: 2
+   :caption: Contents:
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+Module-0-Introduction
+====================================
+
+* :ref:`Module-0-Introduction/CHEM-154/CHEM 154 Review notebook.ipynb`
+* :ref:`Module-0-Introduction/MATH-152/Solving Sets of Linear Equations.ipynb`
+* :ref:`Module-0-Introduction/MATH-152/Unique Solution, No Solution, or Infinite Solutions.ipynb`
+* :ref:`Module-0-Introduction/Getting started on Using Jupyter Notebooks and Python.ipynb`
+* :ref:`Module-0-Introduction/Learn More.ipynb`
+* :ref:`Module-0-Introduction/using jupyter to make questions.ipynb`	
+
+
+Module-1-Proces-Basics-Water
+====================================
+
+* :ref:`Module-1-Proces-Basics-Water/1.1 - Unit Conversions.ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.2 - Basic Unit Operations.ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.3 - Flow Rate.ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.4 - Input-Output and Block Flow Diagrams.ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.5 - Degrees of Freedom (DOF).ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.6 - Types-of-Processes.ipynb`	
+* :ref:`Module-1-Proces-Basics-Water/1.7 - Steady-state-and-Unsteady-State-Transience.ipynb`	
+* :ref:`Module-1-Proces-Basics-Water/1.8 - Materials Balances.ipynb`	
+* :ref:`Module-1-Proces-Basics-Water/1.9 - Process Economics.ipynb`	
+* :ref:`Module-1-Proces-Basics-Water/Question Page - 1.ipynb`	
+* :ref:`Module-1-Proces-Basics-Water/Question Page - 2.ipynb`	
+	
+
+Module 2
+==================
+
+
+* :ref:`Module-2-reactors/2.1 - Reactive-Balances.ipynb`
+* :ref:`Module-2-reactors/2.2 - Extent-of-reaction.ipynb`
+* :ref:`Module-2-reactors/2.3 - Solving-Reactive-Balances.ipynb`
+* :ref:`Module-2-reactors/2.4 - Fractional-coversion-Yield-and-Selectivity.ipynb`
+* :ref:`Module-2-reactors/2.5 - Problem-4.13.ipynb`
+
+Module 3
+==================
+
+* :ref:`Module-3-Separation-I/3.1 - Density and specific gravity.ipynb`
+* :ref:`Module-3-Separation-I/3.2 - Dimensional Homogeneity.ipynb`
+* :ref:`Module-3-Separation-I/3.3 - Process and Instrumentation Diagram (P&ID).ipynb`
+* :ref:`Module-3-Separation-I/3.4 - Equilibrium.ipynb`
+* :ref:`Module-3-Separation-I/3.5 - Temperature systems ( Kelvin, Celsius, Fahrenheit, Rankine ).ipynb`
+* :ref:`Module-3-Separation-I/3.6 - Splitter.ipynb`
+* :ref:`Module-3-Separation-I/3.7 - Recycle and purge.ipynb`
+* :ref:`Module-3-Separation-I/3.8 - Separator.ipynb`
+* :ref:`Module-3-Separation-I/3.9 - Module summary and practice questions.ipynb`
+* :ref:`Module-3-Separation-I/Equilibrium example questions.ipynb`
+* :ref:`Module-3-Separation-I/q434.ipynb`
+
+
+
+Module 4
+==================		
+* :ref:`Module-4-Separation-II/4.1 - Separators.ipynb`
+* :ref:`Module-4-Separation-II/4.2 - Standards.ipynb`
+* :ref:`Module-4-Separation-II/4.3 - Non-Ideal Gas Laws.ipynb`
+* :ref:`Module-4-Separation-II/4.4 - Pressure Measurement.ipynb`
+* :ref:`Module-4-Separation-II/4.5 - Phase Diagrams.ipynb`
+* :ref:`Module-4-Separation-II/4.6 - Steam Tables.ipynb`
+* :ref:`Module-4-Separation-II/4.7 - Gibbs Phase Rule.ipynb`	
+* :ref:`Module-4-Separation-II/4.8 - Vapour Pressure.ipynb`
+* :ref:`Module-4-Separation-II/4.9 - Vapour-Liquid Equilibrium.ipynb`
+* :ref:`Module-4-Separation-II/Extra - Steam Tables.ipynb`
+* :ref:`Module-4-Separation-II/Question-notebook.ipynb`	
+* :ref:`Module-4-Separation-II/Question Page - 2.ipynb`
+
+
+
+Module 5
+==================
+
+* :ref:`Module-5-Energy-Balances/5.1 - The-First-Law.ipynb`
+* :ref:`Module-5-Energy-Balances/5.2 - Heat-and-Work.ipynb`
+* :ref:`Module-5-Energy-Balances/5.3 - Open-Systems-and-Enthalpy.ipynb`
+* :ref:`Module-5-Energy-Balances/5.4 - Review-of-Terms.ipynb`
+* :ref:`Module-5-Energy-Balances/5.6 - Questions-on-Cv-and-Cp.ipynb`
+* :ref:`Module-5-Energy-Balances/5.7 - Reference-States-and-State-Properties.ipynb`
+* :ref:`Module-5-Energy-Balances/5.8 - Path-and-State-Functions.ipynb`
+* :ref:`Module-5-Energy-Balances/5.9 - thermo-cheatsheeet.ipynb`
+* :ref:`Module-5-Energy-Balances/5.10 - Psychrometric-charts-and-spraydrying.ipynb`
+* :ref:`Module-5-Energy-Balances/7.57.ipynb`
+* :ref:`Module-5-Energy-Balances/Example questions and comments.ipynb`
+
+
+Module 6
+==================
+
+
+* :ref:`Module-6-Reactive-Energy-Balances/6.1 - The Enthalpy of Mixing.ipynb`
+* :ref:`Module-6-Reactive-Energy-Balances/6.2 - Heat of Reaction (Combustion).ipynb`
+* :ref:`Module-6-Reactive-Energy-Balances/6.3 - Hess's Law for Heats of Reaction.ipynb`
+* :ref:`Module-6-Reactive-Energy-Balances/6.4 - Latent Heats.ipynb`
+* :ref:`Module-6-Reactive-Energy-Balances/6.5 - Heat of Reaction and Formation Methods.ipynb`
+* :ref:`Module-6-Reactive-Energy-Balances/Victor - Module example questions.ipynb`
