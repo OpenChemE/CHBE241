@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="267px"
+   height="231px"
+   version="1.1"
+   content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36&quot; version=&quot;6.9.8&quot; editor=&quot;www.draw.io&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;266859b7-01ad-c23c-98fe-5d88bda6a063&quot; name=&quot;Page-1&quot;&gt;7VxLc5swEP41HNsBiecxj6a9dKYz7UzPCsiYKUYuCMfpr68wyEaCBKMKUuPkkJhlWS37fStpFxwD3m32n3O0XX8lEU4NYEZ7A94bAADXYb8rwXMtgL5bC+I8iWqRdRJ8T/7gRmg20jKJcCEoUkJSmmxFYUiyDIdUkKE8J0+i2oqk4qhbFOOO4HuI0q70ZxLRdS31HfMk/4KTeM1HtszmzCMKf8U5KbNmPAPA1eGnPr1B3FajX6xRRJ5aIvjJgHc5IbT+tNnf4bQKLQ9bfd3DC2ePfuc4o+dcYHv1FTuUlpi7fHCMPvNghGW+w5W+ZcBbnEU3VYDZYUYypnG7ppu0OdkdvXEIR0K8G18+Y7LBNH9mCk+nKPMgr1sB5rIcp4gmOxEl1IAdH80dR/hGEuYJMBteQh72hpYAmqKJgpR5iJur2mGTDNnmgCGK8hjTjiEWOvTcUttWCsUIh13zVb+gLen7A/r+OP3OfYv+sA/1HfKjFsYn0YGCL9DRvyo6ymip0rED41R0lB12BujlyHSxX9f3RurL9+1opmMwTMfLZqA8v1iqDJQMHRfEAQYqgMJvfbmgaJsW7PlAsZYOytAUqzpXTwkKWDgone2I6vQlG5oSFHfhoHQI7uoCRTakEZQzyqDLBkVX5TO4Y9AIyhnFwEWDMlhFKpej04HCc3CxoHQIbqtmiryNkw3pA8WzR4ESpqgokvDCcIFiOD1VWOBsS73nXAEsgSZYgvlgGbeuXCYsUudFeRPWMTQhLuO6LcvAxdeEy4Sriz9uyb9MXOTOo3IjTDY0IS7jei6LwMUKNOEyYTHpgyvEBejCZbr1xYdXiIty9TJjvlzBNhnI7WOZ5srly5m4jH7UJzffPL2P1vxxbdCLBN0e6gCoFkfn9nfGgm5L5JLeHvl30Me1WRcBuuVoAr2zxE4EugU1g66njSvB20OBN1tzbagpzfmzoRlqBz1vNvzHoLi6QPG8uUDhCX81oKh3pSRQJtydBnrebPiPQZGmryD46Nt24FqM6ZCVY76eyWzArEbAxpV5FwiYnEXKtYScRdPV3kHfEyo3ZYG5XZHKuhvTQ+hrWbFFmYCY+7skXPlDcXhf/IYpWOZ2fzrJrUTcDPOqtqRm3eszDgaMM7F4RxL1KN5TkW85ZkOix4OCyY6bDRvTdm4N555JUElJ7dbhApQmccY+p3hVmdrhnCYhSm8aMSXb+ibDJIt/VAf3H+yjK5U23o9l9pF6tsgYq9lHtJgPepgvb13bJBdY9RqF+toEb0ah8lEW1U4ossp6kT4nN7pDLptrtsQ1vsbPwbW+7oQOXq1f5NWioOPf/5G79nNA19djmGqa+PY+Tbw514A4TThdqsGpqNbX2VgK1cA71TpU89+Oan39mnEo99PqIS3ZGOzsANxRsuunl06O3+OsSCgLjIs2FYrZY1H9Me4eDN+amf+aptqjWAjgkrICOGJWHB9ttdLC7UkLuY+mkhaW2ded0ZkXQ9Pg1eWFpnVh+XlhW8FHX9wG829bz5IZYKLM+Iqyyh2cM40mS94zpO3L6j1DzswQIGcI22J1MiTQkyHs8PRvFeoO5ulfV8BPfwE=&lt;/diagram&gt;&lt;/mxfile&gt;"
+   style="background-color: rgb(255, 255, 255);"
+   id="svg256"
+   sodipodi:docname="Manometer-2.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata260">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="958"
+     inkscape:window-height="1008"
+     id="namedview258"
+     showgrid="false"
+     inkscape:zoom="8.1731602"
+     inkscape:cx="90.942152"
+     inkscape:cy="33.692602"
+     inkscape:window-x="953"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg256" />
+  <defs
+     id="defs130" />
+  <g
+     transform="translate(0.5,0.5)"
+     id="g254">
+    <path
+       d="M 66 180 Q 66 210 76 220 Q 86 230 106 230 Q 126 230 136 220 Q 146 210 146 180"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path132" />
+    <path
+       d="M 86 180 Q 86 200 91 207 Q 96 214 106 214 Q 116 214 121 207 Q 126 200 126 180"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path134" />
+    <path
+       d="M 66 160 L 66 50"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path136" />
+    <path
+       d="M 86 180 L 86 50"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path138" />
+    <path
+       d="M 126 180 L 126 50"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path140" />
+    <path
+       d="M 146 160 L 146 50"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path142" />
+    <path
+       d="M 126 110 L 146 110"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path144" />
+    <path
+       d="M 66 180 L 66 160"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path146" />
+    <path
+       d="M 146 180 L 146 160"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path148" />
+    <path
+       d="M 66 190 L 86 190"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path150" />
+    <path
+       d="M 76 20 L 76 43.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path152" />
+    <path
+       d="M 76 48.88 L 72.5 41.88 L 76 43.63 L 79.5 41.88 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path154" />
+    <path
+       d="M 136 20 L 136 43.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path156" />
+    <path
+       d="M 136 48.88 L 132.5 41.88 L 136 43.63 L 139.5 41.88 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path158" />
+    <path
+       d="M 96 110 L 96 56.37"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path160" />
+    <path
+       d="M 96 51.12 L 99.5 58.12 L 96 56.37 L 92.5 58.12 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path162" />
+    <path
+       d="M 96 130 L 96 183.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path164" />
+    <path
+       d="M 96 188.88 L 92.5 181.88 L 96 183.63 L 99.5 181.88 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path166" />
+    <path
+       d="M 116 160 L 116 183.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path168" />
+    <path
+       d="M 116 188.88 L 112.5 181.88 L 116 183.63 L 119.5 181.88 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path170" />
+    <path
+       d="M 116 140 L 116 116.37"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path172" />
+    <path
+       d="M 116 111.12 L 119.5 118.12 L 116 116.37 L 112.5 118.12 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path174" />
+    <path
+       d="M 116 70 L 116 56.37"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path176" />
+    <path
+       d="M 116 51.12 L 119.5 58.12 L 116 56.37 L 112.5 58.12 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path178" />
+    <path
+       d="M 116 90 L 116 103.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path180" />
+    <path
+       d="M 116 108.88 L 112.5 101.88 L 116 103.63 L 119.5 101.88 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path182" />
+    <path
+       d="M 26 150 L 40.45 128.32 Q 46 120 55.49 116.84 L 69.96 112.01"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path184" />
+    <path
+       d="M 74.94 110.35 L 69.41 115.89 L 69.96 112.01 L 67.19 109.25 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path186" />
+    <path
+       d="M 186 190 L 180.47 178.94 Q 176 170 166.3 167.57 L 142.18 161.54"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path188" />
+    <path
+       d="M 137.08 160.27 L 144.72 158.57 L 142.18 161.54 L 143.03 165.36 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path190" />
+    <path
+       d="M 186 100 L 180.47 88.94 Q 176 80 166.3 77.57 L 142.18 71.54"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path192" />
+    <path
+       d="M 137.08 70.27 L 144.72 68.57 L 142.18 71.54 L 143.03 75.36 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path194" />
+    <path
+       d="M 89 190 L 102 190"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path196" />
+    <path
+       d="M 109 190 L 123 190"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path198" />
+    <path
+       d="M 109 110 L 123 110"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path200" />
+    <path
+       d="M 89 49.84 L 102 49.84"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path202" />
+    <path
+       d="M 109 50 L 123 50"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path204" />
+    <g
+       transform="translate(111.5,71.5)"
+       id="g210">
+      <switch
+         id="switch208">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="9"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:font>
+                <xhtml:span
+                   style="font-size: 10px">d</xhtml:span>
+                <xhtml:span
+                   style="font-size: 7px">2</xhtml:span>
+              </xhtml:font>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="5"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text206">[Not supported by viewer]</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(91.5,112.5)"
+       id="g216">
+      <switch
+         id="switch214">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="9"
+           height="15"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:font>
+                <xhtml:span
+                   style="font-size: 10px">d</xhtml:span>
+                <xhtml:sub>
+                  <xhtml:font
+                     style="font-size: 7px">1</xhtml:font>
+                </xhtml:sub>
+              </xhtml:font>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="5"
+           y="14"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text212">[Not supported by viewer]</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(112.5,142.5)"
+       id="g222">
+      <switch
+         id="switch220">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="6"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:span
+                 style="font-size: 10px">h</xhtml:span>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="3"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text218">[Not supported by viewer]</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(71.5,2.5)"
+       id="g228">
+      <switch
+         id="switch226">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="11"
+           height="15"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:font>
+                <xhtml:span
+                   style="font-size: 10px">P</xhtml:span>
+                <xhtml:sub>
+                  <xhtml:font
+                     style="font-size: 7px">1</xhtml:font>
+                </xhtml:sub>
+              </xhtml:font>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="6"
+           y="14"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text224">[Not supported by viewer]</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(131.5,2.5)"
+       id="g234">
+      <switch
+         id="switch232">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="11"
+           height="15"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:font>
+                <xhtml:span
+                   style="font-size: 10px">P</xhtml:span>
+                <xhtml:sub>
+                  <xhtml:font
+                     style="font-size: 7px">2</xhtml:font>
+                </xhtml:sub>
+              </xhtml:font>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="6"
+           y="14"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text230">[Not supported by viewer]</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(1.5,152.5)"
+       id="g240">
+      <switch
+         id="switch238">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="46"
+           height="29"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:font
+                 style="font-size: 10px">Fluid 1</xhtml:font>
+              <xhtml:div>
+                <xhtml:font>
+                  <xhtml:span
+                     style="font-size: 10px">Density ρ</xhtml:span>
+                  <xhtml:sub>
+                    <xhtml:font
+                       style="font-size: 7px">1</xhtml:font>
+                  </xhtml:sub>
+                </xhtml:font>
+              </xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="23"
+           y="21"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text236">[Not supported by viewer]</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(167.5,99.5)"
+       id="g246">
+      <switch
+         id="switch244">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="46"
+           height="29"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:font
+                 style="font-size: 10px">Fluid 2</xhtml:font>
+              <xhtml:div>
+                <xhtml:font>
+                  <xhtml:span
+                     style="font-size: 10px">Density ρ</xhtml:span>
+                  <xhtml:sub>
+                    <xhtml:font
+                       style="font-size: 7px">2</xhtml:font>
+                  </xhtml:sub>
+                </xhtml:font>
+              </xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="23"
+           y="21"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text242">[Not supported by viewer]</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(177.5,190.5)"
+       id="g252">
+      <switch
+         id="switch250">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="75"
+           height="29"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:font
+                 style="font-size: 10px">Manometer Fluid</xhtml:font>
+              <xhtml:div>
+                <xhtml:font>
+                  <xhtml:span
+                     style="font-size: 10px">Density ρ</xhtml:span>
+                  <xhtml:sub>
+                    <xhtml:font
+                       style="font-size: 7px">f</xhtml:font>
+                  </xhtml:sub>
+                </xhtml:font>
+              </xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="38"
+           y="21"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text248">[Not supported by viewer]</text>
+      </switch>
+    </g>
+  </g>
+  <path
+     style="fill:#b3b3b3;stroke-width:0.2447034"
+     d="m 102.87742,229.81952 c -6.740317,-0.41443 -12.696267,-1.74822 -17.420804,-3.90126 -4.070327,-1.85491 -8.419839,-5.32489 -10.718438,-8.55101 -3.638775,-5.10709 -6.18667,-13.85208 -7.111724,-24.40916 l -0.166175,-1.89645 h 9.403397 9.403396 l 0.407195,3.13011 c 1.543096,11.86181 5.605581,17.79882 13.805263,20.17533 1.65625,0.48003 2.45828,0.55199 6.06844,0.54449 4.74082,-0.01 6.07369,-0.27136 9.31331,-1.82718 2.4017,-1.1534 5.02622,-3.49255 6.45248,-5.75088 2.28419,-3.61676 3.56144,-8.39985 4.44316,-16.63893 0.19974,-1.86638 0.32381,-12.89616 0.40465,-35.9714 0.0735,-20.98099 0.20087,-33.05358 0.34467,-32.6679 1.74445,4.67884 1.97197,5.13877 2.54205,5.13877 0.37731,0 0.62777,-0.18611 0.74092,-0.55058 0.094,-0.30282 0.60512,-1.67928 1.13578,-3.05879 1.32492,-3.44428 1.62817,-3.35781 1.71635,0.4894 l 0.0687,2.99762 0.67293,0.0774 0.67293,0.0774 v -3.31975 c 0,-3.15662 -0.0241,-3.31975 -0.4894,-3.31975 -0.26918,0 -0.48941,-0.15233 -0.48941,-0.33852 0,-0.18618 0.22023,-0.3961 0.48941,-0.46649 0.33071,-0.0865 0.4894,-0.33378 0.4894,-0.76265 0,-0.47154 -0.12579,-0.63467 -0.4894,-0.63467 -0.46345,0 -0.48941,-0.16314 -0.48941,-3.07505 v -3.07504 l -0.67293,0.0774 -0.67294,0.0774 -0.12235,3.04012 -0.12235,3.04012 -2.05308,-3.1013 c -1.66551,-2.51584 -2.1621,-3.1013 -2.63056,-3.1013 -0.45285,0 -0.57748,-0.13203 -0.57748,-0.61176 v -0.61175 h 9.31473 9.31474 l -0.10128,5.8117 c -0.0691,3.96643 -0.20681,6.14191 -0.43362,6.8517 -0.18279,0.57199 -0.39298,1.03999 -0.4671,1.03999 -0.0741,0 -0.36615,-0.82588 -0.64896,-1.83528 l -0.5142,-1.83527 h 0.57717 c 0.45515,0 0.57716,-0.13159 0.57716,-0.62249 0,-0.4512 -0.11461,-0.6027 -0.41652,-0.55058 -0.56252,0.0971 -0.83407,-0.79169 -0.81911,-2.68101 0.0116,-1.46499 0.0379,-1.5294 0.62387,-1.5294 0.44862,0 0.61176,-0.13051 0.61176,-0.48941 0,-0.35597 -0.16314,-0.4894 -0.59835,-0.4894 -0.53757,0 -0.60593,-0.11485 -0.67294,-1.13067 l -0.0746,-1.13067 -0.55408,0.45773 c -0.33294,0.27505 -0.55268,0.72632 -0.55058,1.13067 0.002,0.43659 -0.12542,0.67294 -0.36356,0.67294 -0.20392,0 -0.36705,0.21751 -0.36705,0.4894 0,0.26918 0.15761,0.48941 0.35026,0.48941 0.2746,0 0.36711,0.51538 0.42823,2.38586 0.0429,1.31222 0.0961,2.71621 0.11828,3.11997 0.0222,0.40376 0.40758,1.91722 0.85646,3.36325 0.77086,2.48324 0.8525,2.62922 1.47114,2.63056 0.41884,9.1e-4 0.69534,-0.15298 0.7669,-0.42681 0.0616,-0.23553 0.12469,6.75263 0.1403,15.52923 l 0.0284,15.95747 -0.91763,0.23764 c -0.50471,0.13071 -2.59699,0.60274 -4.64952,1.04896 -2.05254,0.44622 -3.69736,0.91489 -3.65516,1.04148 0.0422,0.12659 1.7766,1.68977 3.85423,3.47373 2.68216,2.30305 3.7934,3.12339 3.83232,2.8291 0.0301,-0.22797 -0.12032,-1.16331 -0.33436,-2.07854 -0.21404,-0.91523 -0.34526,-1.70795 -0.29161,-1.7616 0.0536,-0.0537 0.57348,0.0232 1.15518,0.1709 l 1.05763,0.26846 -0.13895,14.09537 c -0.13373,13.56602 -0.24244,15.76058 -1.04371,21.06942 -1.25487,8.31427 -3.6503,15.07022 -6.8332,19.27204 -4.86634,6.42416 -13.72865,10.59246 -24.70312,11.61889 -3.00473,0.28103 -8.03945,0.41876 -10.27754,0.28115 z m 36.44017,-72.74886 c 0.33192,-0.36676 3.32413,-7.80618 3.32413,-8.26464 0,-0.0608 -0.29167,-0.0757 -0.64816,-0.0331 -0.57578,0.0688 -0.73718,0.32333 -1.44551,2.27976 -0.89152,2.46239 -0.70975,2.52873 -1.84387,-0.67293 -0.53803,-1.51887 -0.64152,-1.65175 -1.2864,-1.65175 -0.56934,0 -0.66941,0.0806 -0.53182,0.42823 2.32691,5.87938 2.48292,6.94559 1.04071,7.11265 -0.52378,0.0607 -0.66843,0.2063 -0.66843,0.67294 0,0.51218 0.11453,0.5955 0.81854,0.5955 0.49444,0 0.98574,-0.18476 1.24081,-0.46661 z m -4.30241,-2.38308 c 0.70763,-0.45792 1.26425,-1.74228 1.26425,-2.91717 0,-2.40845 -2.20344,-4.0671 -3.8608,-2.90624 l -0.54386,0.38094 v -1.4821 c 0,-1.41777 -0.0266,-1.4821 -0.61176,-1.4821 h -0.61176 v 4.40467 4.40466 h 0.61176 c 0.33647,0 0.61176,-0.10359 0.61176,-0.2302 0,-0.1266 0.30282,-0.0695 0.67293,0.12688 0.72947,0.38706 1.56303,0.28594 2.46748,-0.29934 z m 5.50147,-27.76687 c 0.63599,-0.32525 1.37789,-1.19437 1.38552,-1.62311 0.008,-0.43532 -1.0971,-0.37944 -1.47387,0.0745 -0.92476,1.11428 -2.44128,0.90303 -2.89674,-0.40352 l -0.24786,-0.711 h 2.34378 2.34378 l -0.13012,-1.1544 c -0.0977,-0.86661 -0.30663,-1.31212 -0.83815,-1.78703 -0.70592,-0.63074 -0.70672,-0.63477 -0.27005,-1.35381 0.57309,-0.94365 0.58535,-3.09229 0.0231,-4.04414 -0.44868,-0.75956 -1.64699,-1.44876 -2.51896,-1.44876 -0.89082,0 -2.20122,0.75626 -2.58017,1.48907 -0.42659,0.82494 -0.46726,2.89368 -0.0738,3.75711 0.15533,0.34091 0.53989,0.78854 0.85457,0.99473 l 0.57216,0.3749 -0.48752,0.9096 c -0.89295,1.66605 -0.49748,3.92294 0.82914,4.73189 0.85097,0.5189 2.3502,0.61076 3.16526,0.19394 z"
+     id="path262"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#b3b3b3;stroke-width:0.1223517"
+     d="m 132.63836,153.96729 c -0.56323,-0.3434 -0.80296,-0.96531 -0.80053,-2.07684 0.002,-1.03504 0.18407,-1.50085 0.7823,-2.00423 0.6742,-0.5673 1.69693,-0.30095 2.15482,0.56119 0.306,0.57615 0.30511,2.19948 -0.002,2.81757 -0.43311,0.87295 -1.35679,1.17679 -2.13504,0.70231 z"
+     id="path264"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#b3b3b3;stroke-width:0.1223517"
+     d="m 137.63156,120.11495 c -0.29381,-0.1074 -0.74187,-0.55673 -0.94536,-0.94805 -0.28037,-0.53914 -0.25486,-2.13831 0.0422,-2.64561 0.71823,-1.2265 2.27293,-1.25374 2.94868,-0.0517 0.35673,0.63458 0.3913,2.10071 0.0649,2.75048 -0.38359,0.76348 -1.34942,1.17301 -2.11038,0.89484 z"
+     id="path266"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#b3b3b3;stroke-width:0.1223517"
+     d="m 137.43462,122.86839 c 0.22864,-1.14318 1.78078,-1.69823 2.61059,-0.93355 0.2932,0.27019 0.64514,0.92429 0.64514,1.19903 0,0.0806 -0.60266,0.12628 -1.66704,0.12628 h -1.66704 z"
+     id="path268"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#b3b3b3;stroke-width:0.1223517"
+     d="m 129.15689,123.10389 -0.8277,-2.35195 0.002,-3.10975 0.002,-3.10976 2.06403,3.04858 2.06403,3.04858 -0.36544,0.0612 c -0.35133,0.0588 -0.39566,0.14388 -1.14764,2.20233 -0.43021,1.17763 -0.82293,2.23601 -0.87271,2.35195 -0.0624,0.14527 -0.34782,-0.52034 -0.91821,-2.14116 z"
+     id="path270"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#b3b3b3;stroke-width:0.1223517"
+     d="m 144.78913,162.01633 c -0.53834,-0.13763 -0.99929,-0.26746 -1.02431,-0.28851 -0.025,-0.0211 0.45673,-0.62245 1.07057,-1.33643 l 1.11608,-1.29815 v 1.59855 c 0,0.8792 -0.0413,1.5932 -0.0918,1.58666 -0.0505,-0.007 -0.53223,-0.1245 -1.07058,-0.26212 z"
+     id="path272"
+     inkscape:connector-curvature="0" />
+</svg>

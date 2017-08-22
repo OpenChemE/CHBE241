@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="601.16699"
+   height="381.07233"
+   version="1.1"
+   content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36&quot; version=&quot;7.1.0&quot; editor=&quot;www.draw.io&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;ebc0eeaf-174d-f86a-ed98-d657ad0cbe18&quot; name=&quot;Page-1&quot;&gt;1VZNT4QwEP01XA1QwL3quurFxGQP6rHCLDQWSkpXwF9voS0fZTduNmqUw4Z5nc5M33sN66B13txxXGYPLAHq+G7SOOjG8f0gCuRvB7QKiC4jBaScJAryRmBLPkCDrkb3JIFqligYo4KUczBmRQGxmGGYc1bP03aMzruWOIUFsI0xXaJPJBGZQlehO+L3QNLMdPZcvfKK47eUs32h+zk+2vWPWs6xqaXzqwwnrJ5AaOOgNWdMqLe8WQPtqDW0qX23R1aHuTkU4pQNSG14x3QPZuJ+LtEaLvrTQJfvOei6zoiAbYnjbrWW4kssEznVyztC6ZpRxvu96LZ/JK7bABfQHB3VGwiQvgKWg+CtTDGmCjRn2lO+ietRIc/wmk3UWWkMa1OkQ+mRGPmiuTnMU/A1T1AkV531ZBRTXFUknlMjj8nbZxm4JnjpgotwoAeShSstcuQ1wDwFMRFvydeEj/AAHQbjQLEg7/OOhzjSHR4ZkbMMciDfksOmuWJ7HoPeNbWgXWhlFQqtQurIi0K9ZMOxT1Ix/AYVGyKeB9266EVLerqGipk/oGEQzan3Ls/UMLLvpnuahpJq3E7Syi6hOj5w6B7uM1pCVTzXINFPGcT7pwax7mZw7iW3DYKi3zGI6XOmQWQ4fotV+vh/B20+AQ==&lt;/diagram&gt;&lt;/mxfile&gt;"
+   id="svg28"
+   sodipodi:docname="Separator_1.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata32">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview30"
+     showgrid="false"
+     inkscape:zoom="3.3798021"
+     inkscape:cx="291.3187"
+     inkscape:cy="181.99845"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg28" />
+  <defs
+     id="defs10" />
+  <g
+     transform="translate(68.886101,116.92372)"
+     id="g26">
+    <rect
+       x="127"
+       y="47"
+       width="120"
+       height="80"
+       rx="12"
+       ry="12"
+       pointer-events="none"
+       id="rect12"
+       style="fill:#ffffff;stroke:#000000" />
+    <path
+       d="M 7,87 H 120.63"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path14"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 125.88,87 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path16"
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="M 187,47 V 17 Q 187,7 197,7 h 123.63"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path18"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 325.88,7 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path20"
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 187,127 v 30 q 0,10 10,10 h 123.63"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path22"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 325.88,167 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path24"
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+  </g>
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot42"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="translate(66.293951,92.573157)"><flowRegion
+       id="flowRegion44"><rect
+         id="rect46"
+         width="84.941475"
+         height="61.509338"
+         x="17.574097"
+         y="47.541718" /></flowRegion><flowPara
+       id="flowPara48"
+       style="text-align:center;text-anchor:middle">Feed</flowPara><flowPara
+       id="flowPara50"
+       style="text-align:center;text-anchor:middle">2000 L/h</flowPara><flowPara
+       id="flowPara52"
+       style="text-align:center;text-anchor:middle">m<flowSpan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="flowSpan187">1</flowSpan> (kg/h)</flowPara></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot54"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="translate(65.038651,110.14726)"><flowRegion
+       id="flowRegion56"><rect
+         id="rect58"
+         width="110.76276"
+         height="38.533627"
+         x="15.481943"
+         y="93.569115" /></flowRegion><flowPara
+       id="flowPara60">0.45 kg B/kg</flowPara><flowPara
+       id="flowPara62">0.55 kg T/kg</flowPara></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot42-4"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="translate(239.64418,33.949067)"><flowRegion
+       id="flowRegion44-2"><rect
+         id="rect46-8"
+         width="144.35605"
+         height="39.351368"
+         x="17.574097"
+         y="47.541718" /></flowRegion><flowPara
+       id="flowPara50-8"
+       style="text-align:center;text-anchor:middle">Overhead Product</flowPara><flowPara
+       id="flowPara52-8"
+       style="text-align:center;text-anchor:middle">m<flowSpan
+   style="font-size:64.99999762%;text-align:center;baseline-shift:sub;text-anchor:middle"
+   id="flowSpan185">2 </flowSpan>(kg/h)</flowPara></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot54-1"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="translate(263.49077,30.977757)"><flowRegion
+       id="flowRegion56-5"><rect
+         id="rect58-6"
+         width="110.76276"
+         height="38.533627"
+         x="15.481943"
+         y="93.569115" /></flowRegion><flowPara
+       id="flowPara60-4">0.95 kg B/kg</flowPara><flowPara
+       id="flowPara62-0">0.05 kg T/kg</flowPara></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot42-4-6"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="translate(247.92199,215.92416)"><flowRegion
+       id="flowRegion44-2-7"><rect
+         id="rect46-8-5"
+         width="135.569"
+         height="20.10354"
+         x="17.574097"
+         y="47.541718" /></flowRegion><flowPara
+       id="flowPara52-8-0">Bottom Product</flowPara><flowPara
+       id="flowPara150" /></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot54-1-1"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="translate(256.79588,192.49208)"><flowRegion
+       id="flowRegion56-5-8"><rect
+         id="rect58-6-3"
+         width="259.30573"
+         height="46.065392"
+         x="3.3474474"
+         y="93.150681" /></flowRegion><flowPara
+       id="flowPara60-4-3">m<flowSpan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="flowSpan181">B3</flowSpan> (kg B/h) (8% of B in feed)</flowPara><flowPara
+       id="flowPara62-0-7">m<flowSpan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="flowSpan183">T3 </flowSpan>(kg T/h) </flowPara></flowRoot>  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path189"
+     cx="94.645035"
+     cy="183.91145"
+     r="1.4054078" />
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path189-3"
+     cx="298.65106"
+     cy="105.43053"
+     r="1.4054078" />
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path189-2"
+     cx="267.66382"
+     cy="289.49469"
+     r="1.4054078" />
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path189-2-5"
+     cx="267.98315"
+     cy="309.61707"
+     r="1.4054078" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="203.0891"
+     y="209.78398"
+     id="text229"><tspan
+       sodipodi:role="line"
+       id="tspan227"
+       x="203.0891"
+       y="209.78398"
+       style="font-size:21.33333397px">Separator</tspan></text>
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path189-9"
+     cx="274.22235"
+     cy="1.4054078"
+     r="1.4054078" />
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path189-1"
+     cx="599.7616"
+     cy="203.92595"
+     r="1.4054078" />
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path189-37"
+     cx="1.4054078"
+     cy="212.29457"
+     r="1.4054078" />
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path189-4"
+     cx="309.37054"
+     cy="379.66693"
+     r="1.4054078" />
+</svg>

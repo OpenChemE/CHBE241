@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="336px"
+   height="256px"
+   version="1.1"
+   content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36&quot; version=&quot;7.0.0&quot; editor=&quot;www.draw.io&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;8f01fb79-c0cf-d4e5-2708-f5c8b410a9fc&quot; name=&quot;Page-1&quot;&gt;3VdNc5swFPw1XDMgAeaauEl76UxnfGh7VOEZNBHII+Rg+usrQAiQyDRfbp344EEr6T1p9wktHt6Wp8+CHIqvPAPmIT87efiThxCKI/XfAe0A4CQegFzQbICCCdjR36BBX6NHmkG9GCg5Z5IelmDKqwpSucCIELxZDttztsx6IDk4wC4lzEW/00wWA5pE/oR/AZoXY+bA1z2/SHqfC36sdD4P4X3/G7pLMsbS4+uCZLyZQfjWw1vBuRyeytMWWEftSNsw7+6RXrNuAZV8ygQ0THgg7Ajjivt1yXbkot8NdON9D980BZWwO5C0622U+AorZMlUK1CPe8rYljMu+rn4rv8pXKcBIeH06FIDQ4CqK+AlSNGqIeOEWHOmawqFut1MCpkxxUydRGNEF0VuQk/EqAfNzTpP+O88QZVdd6WnWikjdU3TJTVqm6L9oWnsGz+7xlVk6IHMqUqLHHUMiMhBzsRz+ZrxEa3QMWICGJH0YZlxjSOd4Runai1GjsRSw2a55keRgp40r0ArToCtQNgKNOzYCdQrZnb9JBGjtxSx122S8X2KaM5Qa52fZ6uIloFweDYV48tQ8VIkw+iFktmBQv9skm0u4+35vyRTEl3hMEzQJkpi5MejGXrtq1Mp9qy4bydo4PqGnRRASoUFjrbqzpdLNWsp+D2MRqHiFVjeQUOE0bzqSkIJCQq/6RwEVT7tWneUNMu6NKu+xHu96bBvuUjfIbPCSVYKxz6TL7Ecges5DMfu+XnHHCPLAQQb19idjWTXExiSw49EMkZ2JeN/R7J7ZRuS8UciGWFs3c3huUhWzekrcXiDT1/i+PYP&lt;/diagram&gt;&lt;/mxfile&gt;"
+   style="background-color: rgb(255, 255, 255);"
+   id="svg170"
+   sodipodi:docname="CSTR-1.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata174">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview172"
+     showgrid="false"
+     inkscape:measure-start="161.041,104.99"
+     inkscape:measure-end="177.773,119.84"
+     inkscape:zoom="4.7813887"
+     inkscape:cx="177.44926"
+     inkscape:cy="104.63812"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg170" />
+  <defs
+     id="defs124" />
+  <g
+     transform="translate(0.5,0.5)"
+     id="g168">
+    <rect
+       x="87"
+       y="87"
+       width="160"
+       height="80"
+       fill="#ffffff"
+       stroke="#000000"
+       pointer-events="none"
+       id="rect126" />
+    <path
+       d="M 7 127 L 80.77 127.26"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path128" />
+    <path
+       d="M 86.02 127.28 L 79.01 130.76 L 80.77 127.26 L 79.04 123.76 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path130" />
+    <path
+       d="M 167 7 L 167.13 80.92"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path132" />
+    <path
+       d="M 167.14 86.17 L 163.63 79.17 L 167.13 80.92 L 170.63 79.16 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path134" />
+    <path
+       d="M 167 167 L 167 240.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path136" />
+    <path
+       d="M 167 245.88 L 163.5 238.88 L 167 240.63 L 170.5 238.88 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path138" />
+    <path
+       d="M 247.34 127 L 320.98 127"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path140" />
+    <path
+       d="M 326.23 127 L 319.23 130.5 L 320.98 127 L 319.23 123.5 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path142" />
+    <g
+       transform="translate(22.5,105.5)"
+       id="g148">
+      <switch
+         id="switch146">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="48"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 50px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Stream 1</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="24"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text144">Stream 1</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(172.5,20.5)"
+       id="g154">
+      <switch
+         id="switch152">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="48"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 50px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Stream 2</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="24"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text150">Stream 2</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(262.5,103.5)"
+       id="g160">
+      <switch
+         id="switch158">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="48"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 50px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Stream 4</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="24"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text156">Stream 4</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(175.5,174.5)"
+       id="g166">
+      <switch
+         id="switch164">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="48"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 50px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Stream 3</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="24"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text162">Stream 3</text>
+      </switch>
+    </g>
+  </g>
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot176"
+     style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:13.33333333px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:sans-serif;font-stretch:normal;font-variant:normal;"><flowRegion
+       id="flowRegion178"
+       style="font-size:13.33333333px;"><rect
+         id="rect180"
+         width="51.44949"
+         height="34.29966"
+         x="22.169291"
+         y="132.60489"
+         style="font-size:13.33333333px;" /></flowRegion><flowPara
+       id="flowPara182" /></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot202"
+     style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:sans-serif;font-stretch:normal;font-variant:normal"><flowRegion
+       id="flowRegion204"><rect
+         id="rect206"
+         width="70.838028"
+         height="21.443663"
+         x="-15.676056"
+         y="137.39436" /></flowRegion><flowPara
+       id="flowPara208" /></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot210"
+     style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:sans-serif;font-stretch:normal;font-variant:normal"><flowRegion
+       id="flowRegion212"><rect
+         id="rect214"
+         width="39.338028"
+         height="19.964788"
+         x="12.12676"
+         y="132.80986" /></flowRegion><flowPara
+       id="flowPara216" /></flowRoot>  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="22.108675"
+     y="141.14799"
+     id="text220"><tspan
+       sodipodi:role="line"
+       id="tspan218"
+       x="22.108675"
+       y="141.14799"
+       style="font-size:13.33333302px">n<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230">1</tspan></tspan></text>
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot222"
+     style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:sans-serif;font-stretch:normal;font-variant:normal"><flowRegion
+       id="flowRegion224"><rect
+         id="rect226"
+         width="78.823944"
+         height="24.697184"
+         x="18.633802"
+         y="129.55634" /></flowRegion><flowPara
+       id="flowPara228" /></flowRoot>  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="19.854557"
+     y="165.67426"
+     id="text220-4"><tspan
+       sodipodi:role="line"
+       id="tspan218-4"
+       x="19.854557"
+       y="165.67426"
+       style="font-size:13.33333302px">y<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230-7">(1, Fe<tspan
+   style="font-size:64.99999762%;baseline-shift:super"
+   id="tspan336">+2</tspan>)</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="174.67996"
+     y="47.070312"
+     id="text220-5"><tspan
+       sodipodi:role="line"
+       id="tspan218-1"
+       x="174.67996"
+       y="47.070312"
+       style="font-size:13.33333302px">n<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan460">2</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="174.97574"
+     y="74.746368"
+     id="text220-7"><tspan
+       sodipodi:role="line"
+       id="tspan218-7"
+       x="174.97574"
+       y="74.746368"
+       style="font-size:13.33333302px">y<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230-8">(2, NaOH)</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="177.34193"
+     y="202.05623"
+     id="text220-2"><tspan
+       sodipodi:role="line"
+       id="tspan218-2"
+       x="177.34193"
+       y="202.05623"
+       style="font-size:13.33333302px">n<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230-3">3</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="266.37009"
+     y="138.46468"
+     id="text220-20"><tspan
+       sodipodi:role="line"
+       id="tspan218-40"
+       x="266.37009"
+       y="138.46468"
+       style="font-size:13.33333302px">n<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230-2">4</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="266.24756"
+     y="177.60077"
+     id="text220-1"><tspan
+       sodipodi:role="line"
+       id="tspan218-13"
+       x="266.24756"
+       y="177.60077"
+       style="font-size:13.33333302px">y<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230-9">(4, Na<tspan
+   style="font-size:64.99999762%;baseline-shift:super"
+   id="tspan344">+1</tspan>)</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="266.33423"
+     y="165.37402"
+     id="text220-45"><tspan
+       sodipodi:role="line"
+       id="tspan218-79"
+       x="266.33423"
+       y="165.37402"
+       style="font-size:13.33333302px">y<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230-83">(4, Fe<tspan
+   style="font-size:64.99999762%;baseline-shift:super"
+   id="tspan338">+2</tspan>)</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="128.36618"
+     y="137.04785"
+     id="text334"><tspan
+       sodipodi:role="line"
+       id="tspan332"
+       x="128.36618"
+       y="137.04785"
+       style="font-size:29.33333397px">CSTR</tspan></text>
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path346"
+     cx="26.783537"
+     cy="132.35652"
+     r="0.61436129" />
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path346-7"
+     cx="179.31339"
+     cy="38.161972"
+     r="0.61436129" />
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path346-3"
+     cx="270.78955"
+     cy="129.78143"
+     r="0.61436129" />
+  <circle
+     style="fill:#000000;fill-opacity:1"
+     id="path346-0"
+     cx="181.90141"
+     cy="193.29578"
+     r="0.61436129" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="173.65773"
+     y="60.207951"
+     id="text220-7-2"><tspan
+       sodipodi:role="line"
+       id="tspan218-7-8"
+       x="173.65773"
+       y="60.207951"
+       style="font-size:13.33333302px">y<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230-8-2">(2, H<tspan
+   style="font-size:5.33333349px"
+   id="tspan420">2</tspan>O)</tspan></tspan></text>
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot424"
+     style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:sans-serif;font-stretch:normal;font-variant:normal"><flowRegion
+       id="flowRegion426"><rect
+         id="rect428"
+         width="62.743279"
+         height="20.286993"
+         x="13.385233"
+         y="147.24498" /></flowRegion><flowPara
+       id="flowPara430" /></flowRoot>  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="20.668839"
+     y="153.4863"
+     id="text220-4-6"><tspan
+       sodipodi:role="line"
+       id="tspan218-4-8"
+       x="20.668839"
+       y="153.4863"
+       style="font-size:13.33333302px">y<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230-7-1">(1, H<tspan
+   style="font-size:5.33333333px"
+   id="tspan456">2</tspan>O)</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="177.4213"
+     y="216.28719"
+     id="text220-2-3"><tspan
+       sodipodi:role="line"
+       id="tspan218-2-9"
+       x="177.4213"
+       y="216.28719"
+       style="font-size:13.33333302px">y<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230-3-4">(3, Fe(OH)<tspan
+   style="font-size:5.33333349px"
+   id="tspan340-6">2</tspan>)</tspan></tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="266.43567"
+     y="152.28905"
+     id="text220-20-1"><tspan
+       sodipodi:role="line"
+       id="tspan218-40-2"
+       x="266.43567"
+       y="152.28905"
+       style="font-size:13.33333302px">y<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan230-2-7">(4, H<tspan
+   style="font-size:5.33333349px"
+   id="tspan232-4-5">2</tspan>O)</tspan></tspan></text>
+</svg>
