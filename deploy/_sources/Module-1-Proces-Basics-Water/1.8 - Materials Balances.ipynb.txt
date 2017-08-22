@@ -1,0 +1,269 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1.8 &ndash; Materials Balances\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.8.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the law of conservation of mass.\n",
+    "2. Distinguish between the different types of balances.\n",
+    "3. Solve a continuous steady-state material balance.\n",
+    "4. Solve a batch material balance.\n",
+    "\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## 1.8.1 &ndash; Introduction\n",
+    "\n",
+    "There are certain restrictions imposed by nature that must be considered when designing or analyzing a process. For example, you cannot input 1000 g of lead and output 2000g of lead or gold. Similarly, if you burn 20 kg of wood, you should know that 20 kg of ash and smoke, among other constituents, would be the result of the chemical reaction. The basis of these observations is the **law of conservation of mass**.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.8.2 &ndash; The Law of Conservation of Mass\n",
+    "\n",
+    "The **law of conservation of mass** states that mass cannot be destroyed or created. This is the crux of 241, its heart and soul. All exercises, exams and (reactor) life is centered around this equation. \n",
+    "\n",
+    "We will not be concerned with the almost infinitesimal conversions between mass and energy associated with chemical reactions. This law means that in chemical reactions, the mass of the products will always be equal to the mas of the reactants. This includes anything from fires to acid-base titrations. Therefore, we can use the general balance equation:\n",
+    "\n",
+    "$$ Accumulation = Input + Generation - Output - Consumption  $$\n",
+    "\n",
+    "The units of the general mass balance is in units per time $\\frac{unit}{s}$\n",
+    "\n",
+    "\n",
+    "---\n",
+    "## 1.8.3 &ndash; Types of Balances\n",
+    "\n",
+    "### 1. Differential Balances\n",
+    "\n",
+    "**Differential balances** indicate what is happening in a system at an instant of time and are usually used in a continuous process. Each term of the balance is a rate and has units of the quantity per unit time such as $\\frac{kg}{s}$. The general mass balance is a differential mass balance.\n",
+    "\n",
+    "### 2. Integral Balances \n",
+    "\n",
+    "**Integral balances** describe what is happening in a system between two instants of time and are usually used in a batch process. Each term of the equation is an amount of the quantity such as $kg$.\n",
+    "\n",
+    "---\n",
+    "## 1.8.4 &ndash; Balances on Continuous Steady-State Processes\n",
+    "\n",
+    "In **continuous steady-state processes**, the accumulation term in the general balance equation equals zero,\n",
+    " \n",
+    "$$ Accumulation = 0  $$\n",
+    "\n",
+    "the equation simplifies to:\n",
+    "\n",
+    "$$ input + generation = output + consumption $$\n",
+    "\n",
+    "If the balance is on a **nonreactive process** or on total mass, generation, and consumption equal zero and the equation further simplifies to:\n",
+    "\n",
+    "$$input = output$$\n",
+    "\n",
+    "---\n",
+    "## 1.8.5 &ndash; Integral Balances on Batch Processes\n",
+    "\n",
+    "Integral balances on **batch processes** are solved very similarly. Since batch processes don't have continuous inputs and outputs, $generation = accumulation$. Furthermore, the accumulation in the process between $t_0$ and $t_f$ is simply $n_f - n_0$. Therefore \n",
+    "\n",
+    "$$ accumulation = final \\space output - initial \\space input $$\n",
+    "$$ accumulation = generation - consumption $$\n",
+    "\n",
+    "Equating these two expressions yields\n",
+    "\n",
+    "$$ initial \\space input + generation = final \\space output + consumption $$ \n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.8.6 &ndash; Problem 1\n",
+    "\n",
+    "### Question\n",
+    "\n",
+    "One thousand kilograms per hour of a mixture of benzene (B) and toluene (T) containing 50% benzene by mass is separated by distillation into two fractions. The mass flow rate of benzene in the top stream is 450 kg B/h and that of toluene in the bottom stream is 475 kg T/h. The operation is at steady state. Solve for $\\dot{m}_1$ and $\\dot{m}_2$\n",
+    "\n",
+    "![](../figures/Module-1/MBprob.svg)\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "### Answer by hand\n",
+    "Since we know that it is a continuous steady-state non-reactive process, we can use $input = output$.\n",
+    "\n",
+    "### 1. Toluene Balance\n",
+    "\n",
+    "$$ 500 \\space kg \\space T/h = 475 \\space kg \\space T/h + \\dot{m}_1  $$\n",
+    "    \n",
+    "$$ \\dot{m}_1= 500 \\space kg \\space T/h - 475 \\space kg \\space T/h  $$\n",
+    "    \n",
+    "$$ \\dot{m}_1   = 25 \\space kg \\space T/h  $$\n",
+    "    \n",
+    "### 2. Benzene Balance\n",
+    "    \n",
+    "$$ 500 \\space kg \\space B/h = 450 \\space kg \\space B/h + \\dot{m}_2  $$\n",
+    "\n",
+    "$$ \\dot{m}_2= 500 \\space kg \\space B/h - 450 \\space kg \\space B/h  $$\n",
+    "\n",
+    "$$ \\dot{m}_2   = 50 \\space kg \\space B/h  $$\n",
+    "\n",
+    "### Answer using python"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "m1 was found to be: 25 kg/h \n",
+      "m2 was found to be: 50 kg/h\n"
+     ]
+    }
+   ],
+   "source": [
+    "B_in = 500\n",
+    "T_in = 500\n",
+    "\n",
+    "B_out_known = 450\n",
+    "T_out_known = 475\n",
+    "\n",
+    "m1 = T_in - T_out_known\n",
+    "m2 = B_in - B_out_known\n",
+    "\n",
+    "print(\"m1 was found to be:\", m1, \"kg/h \\nm2 was found to be:\", m2, \"kg/h\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## 1.8.7 &ndash; Problem 2 \n",
+    "\n",
+    "### Question\n",
+    "Two methanol–water mixtures are contained in separate flasks. The first mixture contains\n",
+    "40.0 wt% methanol, and the second contains 70.0 wt% methanol. If 200 g of the first mixture is\n",
+    "combined with 150 g of the second, what are the mass and composition of the product?\n",
+    "\n",
+    "![](../figures/Module-1/MBprob2.svg)\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "### Answer by hand\n",
+    "Since we know this is a batch non-reactive balance, we can use $initial \\space input  = final \\space output$\n",
+    "\n",
+    "### 1. Overall Balance\n",
+    "\n",
+    "$$ m_1 = 200 \\space g $$\n",
+    "\n",
+    "$$ m_2 = 150 \\space g $$\n",
+    "\n",
+    "$$ m_3 = m_1 + m_2 = (200 + 150) \\space g = 350 \\space g $$\n",
+    "\n",
+    "### 2. $C H_3 O H$ Balance\n",
+    "\n",
+    "$$ m_3 \\cdot x_{3, \\space C H_3 O H} = m_1 \\cdot x_{1, \\space C H_3 O H} + m_2 \\cdot x_{2, \\space C H_3 O H}$$\n",
+    "\n",
+    "$$ (350) \\cdot x_{3, \\space C H_3 O H} = 200 \\space g \\cdot \\frac{0.400 \\space g \\space C H_3 O H}{g} + 150 \\space g \\cdot \\frac{0.700 \\space g \\space C H_3 O H}{g}  $$\n",
+    "\n",
+    "\n",
+    "$$ x_{3, \\space C H_3 O H} = 0.529$$\n",
+    "\n",
+    "$$ x_{3, \\space H_2 O } = (1-x_{3, \\space C H_3 O H}) = 0.471 $$\n",
+    "\n",
+    "Finally, we can test if our values are correct with the $H_2 O$ balance\n",
+    "\n",
+    "### 3. $H_2 O$ Balance\n",
+    "\n",
+    "$$ m_1 \\cdot x_{1, \\space H_2 O } + m_2 \\cdot x_{2, \\space H_2 O } = m_3 \\cdot x_{3, \\space H_2 O }$$\n",
+    "\n",
+    "$$(200)(0.600) + (150)(0.300) = (350)(0.471)$$\n",
+    "\n",
+    "$$ 165 \\space g \\space H_2 O =  165 \\space g \\space H_2 O $$\n",
+    "\n",
+    "### Answer using python"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "m3 = 350 \n",
+      "x3_CH3OH = 0.5285714285714286 \n",
+      "x3_H20 = 0.4714285714285714\n"
+     ]
+    }
+   ],
+   "source": [
+    "m1 = 200\n",
+    "x1_CH3OH = 0.4\n",
+    "x1_H20 = 0.6\n",
+    "\n",
+    "m2 = 150\n",
+    "x2_CH3OH = 0.7\n",
+    "x2_H20 = 0.3\n",
+    "\n",
+    "m3 = m1 + m2\n",
+    "x3_CH3OH = (m1*x1_CH3OH + m2*x2_CH3OH)/m3\n",
+    "x3_H20 = (1-x3_CH3OH)\n",
+    "\n",
+    "print(\"m3 =\", m3, \"\\nx3_CH3OH =\", x3_CH3OH, \"\\nx3_H20 =\", x3_H20)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

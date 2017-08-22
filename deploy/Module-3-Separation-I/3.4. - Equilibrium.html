@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.4 – Phase equilibriums &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="3.4-–-Phase-equilibriums">
+<h1>3.4 – Phase equilibriums<a class="headerlink" href="#3.4-–-Phase-equilibriums" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#Learning-objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this notebook, you should be able to:</p>
+<ol class="arabic">
+<li><p class="first">Conceptually understand Solid-Liquid, Solid-Vapour and Liquid-Liquid
+Equilibrium.</p>
+</li>
+<li><p class="first">Identify which equilibrium is present in different processes.</p>
+</li>
+<li><p class="first">Utilize densities and fractional compositions of liquid-liquid
+mixtures to determine masses before and after separation.</p>
+</li>
+<li><p class="first rubric" id="understand-the-difference-between-the-physical-and-chemical-equilibrium-cases-for-the-3-equilibrium-cases">Understand the difference between the physical and
+chemical equilibrium cases for the 3 equilibrium cases.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="Introduction">
+<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we will be exploring <strong>phase equilibriums</strong>, <strong>chemical
+and physical properties</strong> and <strong>temperatures and pressures</strong> that allow
+the equilibrium to exist in chemical processes (e.g. boiling points,
+sublimation points). We will also be learning about chemical and
+physical properties of substances. We will also be factoring in the
+phase equilibriums in our balances for separation, such as in a
+distillation column.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="Solid-Liquid-Equilibrium-–-melting-and-freezing">
+<h2>Solid-Liquid Equilibrium – melting and freezing<a class="headerlink" href="#Solid-Liquid-Equilibrium-–-melting-and-freezing" title="Permalink to this headline">¶</a></h2>
+<p>Solid-Liquid Equilibrium, as a <strong>physical</strong> property of a substance, is
+the temperature and pressure at whcih a solid and a liquid can co-exist.
+This is usually the <strong>melting or freezing points</strong> of a substance.</p>
+<p>At this stage even when the heating is continued, the temperature does
+not change until the whole of solid is converted into liquid. The state
+when solid and liquid phases of a substance coexist is called
+<strong>solid-liquid equilibrium</strong>.</p>
+<p>Since a solid is very hard to transport over a process, we usually melt
+it into liquid form and collect it as a precipitant at the end of the
+process.</p>
+</div>
+<div class="section" id="Solid-Vapour-Equilibrium">
+<h2>Solid-Vapour Equilibrium<a class="headerlink" href="#Solid-Vapour-Equilibrium" title="Permalink to this headline">¶</a></h2>
+<p>Solid-Vapour Equilibrium is the temperature and presure point where a
+solid and a vapour can co-exist. The temperature and pressure point is
+called the <strong>sublimation</strong> point. A prime example of this equilibrium is
+dry ice, which is frozen carbon dioxide.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="Liquid-Liquid-Equilibrium">
+<h2>Liquid-Liquid Equilibrium<a class="headerlink" href="#Liquid-Liquid-Equilibrium" title="Permalink to this headline">¶</a></h2>
+<p>In liquid-liquid equilbrium, the liquids can either be <strong>miscible</strong>,
+<strong>partially miscible</strong> or <strong>immiscible</strong>.</p>
+<p><strong>Miscible</strong> liquids are liquids that can mix together to form a single
+phase. If water and methyl isobutyl ketone (MIBK) are mixed at 25C, a
+single phase results; otherwise, the mixture separates into two liquid
+phases, one of which contains 98% H2O and 2% MIBK and the other 97.7%
+MIBK and 2.3% H2O. Water and MIBK are examples of <strong>partially miscible</strong>
+liquids; they would be termed <strong>immiscible</strong> if one phase contained a
+negligible amount of water and the other a negligible amount of MIBK.</p>
+<p>This principle of liquid-liquid equilibrium is used in <strong>liquid
+extraction</strong>. For example, acetone is soluble in both water and
+chloroform, but much more so in chloroform. If we wanted to separate a
+mixture of acetone and water, without using a separatory funnel, we
+might want to introduce chloroform to the mixture and find that the
+majority of the acetone will dissolve into the chloroform. Since
+chloroform and water are immiscible, we can then leave the mixture alone
+until they separate on their own.</p>
+<p>Suppose the acetone is component C, and water is component A and
+chloroform component B. A and B are two nearly immiscible liquids and C
+is a solute distributed between the phases of an A–B mixture. The
+<strong>*distribution coefficient* of component C is the ratio of the mass
+fraction of C in the B phase to that in the A phase.</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.4 – Phase equilibriums</a><ul>
+<li><a class="reference internal" href="#Learning-objectives">Learning objectives</a></li>
+<li><a class="reference internal" href="#Introduction">Introduction</a></li>
+<li><a class="reference internal" href="#Solid-Liquid-Equilibrium-–-melting-and-freezing">Solid-Liquid Equilibrium – melting and freezing</a></li>
+<li><a class="reference internal" href="#Solid-Vapour-Equilibrium">Solid-Vapour Equilibrium</a></li>
+<li><a class="reference internal" href="#Liquid-Liquid-Equilibrium">Liquid-Liquid Equilibrium</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-3-Separation-I/3.4. - Equilibrium.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, I2.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/Module-3-Separation-I/3.4. - Equilibrium.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

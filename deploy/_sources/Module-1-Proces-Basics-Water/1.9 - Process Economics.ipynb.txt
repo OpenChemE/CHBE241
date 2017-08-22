@@ -1,0 +1,155 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1.9 &ndash; Process Economics\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.9.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the concept of process economics and why it is important.\n",
+    "2. Understand the concept of the four basic figures of merit.\n",
+    "3. Identify which expense falls into a specific figure of merit\n",
+    "\n",
+    "\n",
+    "---\n",
+    "## 1.9.1 &ndash; Introduction\n",
+    "The main objective of a chemical engineer is to try to make a process as efficient as possible. If efficiency is increased, then profits for the company increase, pollution and waste decrease. These factors are vital in the process industry. \n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.9.2 &ndash; Four Basic Figures of Merit\n",
+    "\n",
+    "There are **four basic figures of merit** that determine the economic viability of a process, the **gross economic potential** (GEP), the **net economic potential** (NEP), the **capital costs** (CC), and the **return on investment** (ROI). These figures of merit are defined as:\n",
+    "\n",
+    "$$ \\text{GEP} = \\text{Value of products} - \\text{Value of feeds} $$\n",
+    "\n",
+    "$$ \\text{NEP} = \\text{GEP} - \\text{cost of}(utilities + labour + maintenance + interest) $$\n",
+    "\n",
+    "$$ \\text{CC} = \\text{The total cost of plant design, construction, and installation} $$\n",
+    "\n",
+    "$$ \\text{ROI} = \\frac{\\text{NEP}}{\\text{CC}} $$\n",
+    "\n",
+    "The units for these terms are:\n",
+    "\n",
+    "$$ \\text{GEP} = \\frac{\\$}{\\text{year}} $$\n",
+    "\n",
+    "$$ \\text{NEP} = \\frac{\\$}{\\text{year}} $$\n",
+    "\n",
+    "$$ \\text{CC} = \\$ $$\n",
+    "\n",
+    "$$ \\text{ROI} = \\frac{\\%}{\\text{year}} $$\n",
+    "\n",
+    "---\n",
+    "## 1.9.3 &ndash; Feedstock\n",
+    "\n",
+    "**Feedstock** is raw material used to supply an industrial process. The cost of the feedstock is determined by its **quantity** and **quality**. The higher the quality, which is defined by its purity, the higher the price. Although high purity feedstock is more expensive, the presence of impurities creates more **unwanted by-products** and waste products from the reaction. Impurities can also reduce the effectiveness of catalyst and increase corrosion so there is a middle ground that needs to be found. Feedstock falls under the GEP figure of merit.\n",
+    "\n",
+    "---\n",
+    "## 1.9.4 &ndash; Catalyst\n",
+    "\n",
+    "**Catalyst** greatly increase the efficiency of a process, lower operating costs and increase profits. Every catalyst works differently but the main idea behind it is that they lower the activation energy needed to allow a chemical reaction to occur. By lower the activation energy, the energy needed to produce the wanted products is greatly lowered. Catalyst falls under NEP figure of merit. ![](../figures/Module-1/CatalysisScheme.png)\n",
+    "\n",
+    "Attribution: By No machine-readable author provided. Smokefoot assumed (based on copyright claims). [Public domain], via Wikimedia Commons\n",
+    "\n",
+    "---\n",
+    "## 1.9.5 &ndash; Energy\n",
+    "\n",
+    "One of the largest if not the largest cost of a chemical process is the **energy** cost. The energy needed can be lowered by using a catalyst, discovering new ways to improve how a reaction is conducted, or renewing old unit operations. Decreasing the energy needed for the process increases profits and helps the environment by lowering the carbon footprint of the process. energy falls under the NEP figure of merit.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.9.6 &ndash; Problem Statement\n",
+    "\n",
+    "### Question\n",
+    "\n",
+    "You are the lead chemical engineer at a chemical plant in Burnaby. One of your employees has suggest using a new catalyst that costs \\$200 per tonne of product more than the current catalyst you use, but lowers energy need by 5 MWh per tonne of product. The total power used per tonne is 10 MWh the cost of energy in BC is \\$0.0858 per kWh for the first 1,350 kWh and \\$0.1287 for anything over the 1,350 kWh threshold. Is this a viable replacement? Which figure or figures of merit will you be affecting by this change?\n",
+    "\n",
+    "### Answer \n",
+    "\n",
+    "Since the plant already uses 10 MWh, we will already be past the first threshold even with the savings. Therefore the only price we need to worry about is \\$0.1287."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Using the new catalyst will save the plant $ 443.5 so it is a viable option.\n"
+     ]
+    }
+   ],
+   "source": [
+    "cost_increase = 200\n",
+    "power_needed = 5000\n",
+    "power_price = 0.1287\n",
+    "\n",
+    "cost_decrease = power_needed * power_price\n",
+    "savings = cost_decrease - cost_increase\n",
+    "\n",
+    "print(\"Using the new catalyst will save the plant $\", savings, \"so it is a viable option.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The figures of merit you will be affecting are the NEP and ROI."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

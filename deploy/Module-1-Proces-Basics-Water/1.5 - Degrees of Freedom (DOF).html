@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.5 – Degrees of Freedom (DOF) &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="1.5-–-Degrees-of-Freedom-(DOF)">
+<h1>1.5 – Degrees of Freedom (DOF)<a class="headerlink" href="#1.5-–-Degrees-of-Freedom-(DOF)" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="1.5.0-–-Learning-Objectives">
+<h2>1.5.0 – Learning Objectives<a class="headerlink" href="#1.5.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the concept of degrees of freedom.</li>
+<li>Perform a degree of freedom analysis.</li>
+</ol>
+</div>
+<div class="section" id="1.5.1-–-Introduction">
+<h2>1.5.1 – Introduction<a class="headerlink" href="#1.5.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Anyone who has done material balances knows how frustrating it is to be
+working on a question for a long period of time, only to discover that
+there was not enough information given in the question. This dilemma is
+the reason why a <strong>degree-of-freedom</strong> (DOF) analysis is very powerful.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.5.2-–-Definition">
+<h2>1.5.2 – Definition<a class="headerlink" href="#1.5.2-–-Definition" title="Permalink to this headline">¶</a></h2>
+<p>When applied to a general process, DOF is the difference between the
+number of unknown variables and the number of equations relating those
+variables.</p>
+</div>
+<div class="section" id="1.5.4-–-Problem-Statement">
+<h2>1.5.4 – Problem Statement<a class="headerlink" href="#1.5.4-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Question">
+<h3>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h3>
+<p>Humid air enters a condenser in which 85% of the water vapor in the air
+is condensed. The flow rate of the liquid leaving the condenser is
+measured to be 135 L/h. The dry air contains 21 mole % oxygen, with the
+remaining air composed of nitrogen (79 mole %). The entering air
+contains 8 mole % water. Calculate the degrees of freedom.</p>
+<div class="figure">
+<img alt="" src="../_images/DOFprob.svg" /></div>
+<p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+</div>
+<div class="section" id="Answer">
+<h3>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h3>
+<p>Right off the bat we know the number of unknowns is $ n_{unknown} = 5 $
+and now we need to find the number of relating equations.</p>
+<ol class="arabic">
+<li><p class="first"><span class="math">\(\dot{n_2} = \frac{135 \space L \space H_2 O}{h} \times \frac{1.00 \space kg \space H_2 O}{L} \times \frac{1 \space mol \space H_2 O}{18.0 \times 10^{-3} \space kg}\)</span></p>
+<div class="math">
+\[\]</div>
+</li>
+<li><p class="first"><span class="math">\(\dot{n_2} = (0.85)( 0.080 \space \dot{n_1} )\)</span></p>
+<div class="math">
+\[\]</div>
+</li>
+<li><p class="first"><span class="math">\(\dot{n_3} = (0.21)( 0.920 \space \dot{n_1} )\)</span></p>
+<div class="math">
+\[\]</div>
+</li>
+<li><p class="first"><span class="math">\(\dot{n_4} = (0.79)( 0.920 \space \dot{n_1} )\)</span></p>
+<div class="math">
+\[\]</div>
+</li>
+<li><p class="first"><span class="math">\(\dot{n_5} + \dot{n_2} = ( 0.08 \space \dot{n_1} )\)</span></p>
+</li>
+</ol>
+<p>The first equation relates the volumetric flow rate to the molar flow
+rate which will give us a value for <span class="math">\(\dot{n_2}\)</span>. The second
+equation relates <span class="math">\(\dot{n_2}\)</span> to <span class="math">\(\dot{n_1}\)</span> using the 85%
+condensation. The third equation balances <span class="math">\(O_2\)</span>. The fourth
+equation balances <span class="math">\(N_2\)</span>. The fifth equation balances the
+<span class="math">\(H_2 O\)</span>. Therefore the degrees of freedom are:</p>
+<div class="math">
+\[n_{df} = 5 - 5 = 0\]</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1.5 – Degrees of Freedom (DOF)</a><ul>
+<li><a class="reference internal" href="#1.5.0-–-Learning-Objectives">1.5.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#1.5.1-–-Introduction">1.5.1 – Introduction</a></li>
+<li><a class="reference internal" href="#1.5.2-–-Definition">1.5.2 – Definition</a></li>
+<li><a class="reference internal" href="#1.5.4-–-Problem-Statement">1.5.4 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-1-Proces-Basics-Water/1.5 - Degrees of Freedom (DOF).ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, I2.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/Module-1-Proces-Basics-Water/1.5 - Degrees of Freedom (DOF).ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

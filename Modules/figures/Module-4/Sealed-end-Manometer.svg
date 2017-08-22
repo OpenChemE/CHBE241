@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="241px"
+   height="217px"
+   version="1.1"
+   content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36&quot; version=&quot;6.9.8&quot; editor=&quot;www.draw.io&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;266859b7-01ad-c23c-98fe-5d88bda6a063&quot; name=&quot;Page-1&quot;&gt;5Vrfc6MgEP5rfOwMiknMY9P2ei83czO5mXumSoxTIh5iftxffxAhKibReNppbB5aWZbdZb8PsmAs+LTZvzKUrH/QABPLAcHegs+WIz62+CsFh1wAZUsKQhYFucguBMvoL1ZCoKRZFOC0osgpJTxKqkKfxjH2eUWGGKO7qtqKkqrXBIW4Jlj6iNSlv6OAr3OpNwGF/DuOwrX2bAPV84b895DRLFb+LAeujp+8e4O0LaWfrlFAdyURfLHgE6OU50+b/RMmMrU6bfm4bxd6T3EzHPM2A9xZPmKLSIZ1yMfA+EEnw8/YFkt924ILHAePMsGiGdNYaCzWfENUZ927CggHlXyrWF4x3WDODkJhV2RZJ3ldSrCWMUwQj7ZVlJACOzyZO3n4SSMRiQP2mobKjqKlM3OrJlKaMR+rUeW0GYZc0GCIIxZiXjMkUocOJbVEKqTtA4bAvRoXdA19p0Hfu03fnLcRj3jIZ6hbJYwL0ZGCF+jofSk6uj3R0YRxMDqaAc8b6DUx6eJd15/dqG/Oe94zHefNdLxvBpob4qQrAw1D9hy0YmAHUPTUxwtKb9uC+3Gg2GMHpWmL7bxXw+FAcUYOSq0M67p91QwNCMp05KDUCe71BYo3GCgtjkH3DUpfJ5/GiqFHUFocBu4alMZTZOeVMhwo09FXXybBvZ6qr5qh/kDRvGkJik9Qmkb+neECjWJW79k342Ia8maD4TIZPy6u/lbWNLdBR1zmTtUQHOYSw7XB2YD7ujSYn6slpkRkfZEmKK6gP/2TyZvexYrG/CE9XoM/CgUbJPuiUzyF8v9PbUZEkFvK5Sfr2ZspknbbOJyd82eX/OWGqsZlGGWXBrE53vMqlRkWHtHbUQGItkJKaE8W1uRZSFDGaR7VcQAiURiLZ4JX0tQWMx75iDwqMadJnlQ/isNfsvH84F5bMtIA3l9dNKdvAbe6SUCFamlRwTOLyjHIX14/lY3kGoHO1T33SCDnRgL1MUfRcRwkK6ILkx0TT13jhtXRlWCJp+5APLXB2O8XGi/QWhfokwZD/dUcNoAjR8VpSuYnvLS2wW0l+ghQMa/QWq8V/dblkqE+UfkCBfrpyK7z6U47LhfQYKhPYG67JR0HMPq4+N/AmIb6BKafm1IDgjMwfZ7r66772Me9U7BB/UX1EiOCgweBRQ2fesWbckbf8RMllBWgrSJCDJEudH2BFWZnSt1NFATSzWK3jjheipJX+twxlJygrxW3rcC/cC6DjtooSuSYTevk6FDvimbxO6wclOK3bvDlHw==&lt;/diagram&gt;&lt;/mxfile&gt;"
+   style="background-color: rgb(255, 255, 255);"
+   id="svg294"
+   sodipodi:docname="Sealed-end-Manometer.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata298">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="958"
+     inkscape:window-height="1008"
+     id="namedview296"
+     showgrid="false"
+     inkscape:zoom="8.7004608"
+     inkscape:cx="115.51587"
+     inkscape:cy="62.360938"
+     inkscape:window-x="-7"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg294" />
+  <defs
+     id="defs228" />
+  <g
+     transform="translate(0.5,0.5)"
+     id="g292">
+    <path
+       d="M 70 144 Q 70 174 80 184 Q 90 194 110 194 Q 130 194 140 184 Q 150 174 150 144"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path230" />
+    <path
+       d="M 90 144 Q 90 164 95 171 Q 100 178 110 178 Q 120 178 125 171 Q 130 164 130 144"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path232" />
+    <path
+       d="M 70 124 L 70 60"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path234" />
+    <path
+       d="M 90 144 L 90 60"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path236" />
+    <path
+       d="M 130 144 L 130 100"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path238" />
+    <path
+       d="M 150 124 L 150 100"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path240" />
+    <path
+       d="M 130 108 L 150 108"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path242" />
+    <path
+       d="M 70 144 L 70 124"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path244" />
+    <path
+       d="M 150 144 L 150 124"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path246" />
+    <path
+       d="M 70 154 L 90 154"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path248" />
+    <path
+       d="M 80 27 L 80 50.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path250" />
+    <path
+       d="M 80 55.88 L 76.5 48.88 L 80 50.63 L 83.5 48.88 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path252" />
+    <path
+       d="M 188 80 L 170 80 Q 160 80 154 88 L 145.82 98.91"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path254" />
+    <path
+       d="M 142.67 103.11 L 144.07 95.41 L 145.82 98.91 L 149.67 99.61 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path256" />
+    <g
+       transform="translate(75.5,9.5)"
+       id="g262">
+      <switch
+         id="switch260">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="11"
+           height="15"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:span
+                 style="font-size: 10px">P</xhtml:span>
+              <xhtml:sub>
+                <xhtml:font
+                   style="font-size: 7px">1</xhtml:font>
+              </xhtml:sub>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="6"
+           y="14"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text258">[Not supported by viewer]</text>
+      </switch>
+    </g>
+    <g
+       transform="translate(201.5,72.5)"
+       id="g268">
+      <switch
+         id="switch266">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="28"
+           height="15"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">
+              <xhtml:span
+                 style="font-size: 10px">P</xhtml:span>
+              <xhtml:sub>
+                <xhtml:font
+                   style="font-size: 7px">2</xhtml:font>
+              </xhtml:sub>
+              <xhtml:span
+                 style="font-size: 10px"> = 0</xhtml:span>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="14"
+           y="14"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text264">[Not supported by viewer]</text>
+      </switch>
+    </g>
+    <path
+       d="M 90 60 L 200 60"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path270" />
+    <path
+       d="M 0 60 L 70 60"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path272" />
+    <path
+       d="M 0 0 L 199 0"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path274" />
+    <path
+       d="M 10 16 L 43.63 16"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path276" />
+    <path
+       d="M 48.88 16 L 41.88 19.5 L 43.63 16 L 41.88 12.5 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path278" />
+    <path
+       d="M 10 45 L 43.63 45"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path280" />
+    <path
+       d="M 48.88 45 L 41.88 48.5 L 43.63 45 L 41.88 41.5 Z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path282" />
+    <path
+       d="M 130 100 L 150 100"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path284" />
+    <g
+       transform="translate(80.5,199.5)"
+       id="g290">
+      <switch
+         id="switch288">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="62"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 62px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">Sealed-end</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="31"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text286">Sealed-end</text>
+      </switch>
+    </g>
+  </g>
+  <path
+     style="fill:#b3b3b3;stroke-width:0.11493644"
+     d="m 105.76471,193.79848 c -8.231093,-0.5554 -15.095736,-2.59868 -20.350693,-6.05745 -1.561973,-1.02808 -2.439574,-1.71269 -3.861806,-3.01256 -4.861816,-4.44352 -8.066088,-12.37153 -9.522676,-23.56102 -0.265363,-2.03851 -0.580296,-5.13493 -0.580296,-5.70545 v -0.38618 h 9.466403 9.466404 l 0.07766,0.89076 c 0.122692,1.40722 0.624641,4.78063 0.940765,6.32252 1.144121,5.58042 2.769162,8.99578 5.618627,11.8087 3.649112,3.60231 8.925142,5.29574 15.191702,4.87602 3.78572,-0.25355 6.85402,-1.22531 9.5806,-3.03426 1.22488,-0.81265 3.47486,-3.09427 4.34785,-4.40899 2.43229,-3.66305 3.89335,-9.25506 4.56077,-17.45584 0.31373,-3.85483 0.39661,-9.55076 0.39894,-27.41694 l 0.002,-17.55655 h 9.4317 9.4317 l -0.0475,21.11957 c -0.0314,13.94718 -0.091,21.70508 -0.17551,22.84362 -0.57099,7.69156 -1.12512,11.61146 -2.3158,16.38172 -1.68102,6.73471 -4.17026,11.5726 -7.71769,14.99948 -5.7855,5.58891 -13.76685,8.61445 -24.69797,9.3624 -1.92294,0.13158 -7.23523,0.12609 -9.24544,-0.01 z"
+     id="path300"
+     inkscape:connector-curvature="0" />
+</svg>

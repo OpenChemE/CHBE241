@@ -1,0 +1,194 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 3.8 &ndash;Separator\n",
+    "\n",
+    "\n",
+    "### Learning Objectives\n",
+    "\n",
+    "By the end of this notebook, you shdould be able to:\n",
+    "\n",
+    "- Identify a separator process and set up the appropriate assumptions to solve\n",
+    "- Properly draw and label a separator diagram\n",
+    "- Correctly use vapor and liquid fractions in mass balances on the separator\n",
+    "\n",
+    "\n",
+    "---\n",
+    "\n",
+    "### Introduction\n",
+    "Separation is essential in chemical processes, maybe it's purifying the end products or fractioning a mixture into it's constituents for recycling or different reactions.\n",
+    "\n",
+    "By the end of the notebook, mass balances to deduce the compositions of the product streams and their masses. **We will not be covering the energy balances associated with a separator in this notebook.**\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Separator BFD\n",
+    "\n",
+    "![Figure 1.](../figures/Module-3/3.8-example.svg)\n",
+    "<div style=\"text-align:center\">Figure 1.</div>\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Figure 1. is the block flow diagram for a separator ($W$ = Water and $E$ = Ethanol). Think of a separator as a more complicated splitter. A separator is characterized with a single input, followed by 2 or more product streams **with different molar/mass compositions, sometimes even states of matter, than the feed stream.** \n",
+    "\n",
+    "For instance the overhead stream could be composed of gaseous feed versus the bottom product where the feed is still liquid. VLE calculations need to be taken into account in terms of the energy and masses conserved. \n",
+    "\n",
+    "#### Noteworthy in Figure 1:\n",
+    "\n",
+    "- A volumetric flow rate is given for the feed stream, but mass flow rates and fractions will be needed for balances. The mass flow rate of the stream should therefore be considered an unknown process variable and labeled as such on the chart. Its value will be determined from the known volumetric flow rate and density of the feed stream.\n",
+    "$$$$\n",
+    "- Since mass balances will be used, the given component mole fractions in the overhead product stream will have to be converted to mass fractions. The mass fractions are accordingly labeled as unknowns.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "![Figure 1.](../figures/Module-3/3.8-example.svg)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Steps to solve\n",
+    "\n",
+    "1. List all assumptions and relationshps. If the input stream does not have a flow rate listed in the question or the diagram, assume a mass or volumteric flow rate of a random number, preferrably a mass flow rate with a nice round number like 100 $kg/h$. \n",
+    "$$$$\n",
+    "2. Draw and label the flow chart based on the question. We will not be considering chemical reactions between constituents of the fresh feed and reactor feed in the feed streams, only when they're in the separator.\n",
+    "$$$$\n",
+    "3. Write expressions for the quantities requested in the problem statement. (e.g. $m_3$ = $m_{B3}$ + $m_{T3}$, $x_B$ = $ \\frac{m_{B3}}{m_3}$). The expressions should be written to help in solving for the missing parameters of the process.\n",
+    "$$$$\n",
+    "4. Perform a degree-of-freedom analysis on the process to determine if it is solvable. \n",
+    "$$$$\n",
+    "5. Convert all mixed units to one uniform units. In most cases, it would be converting all the units to masses, but in the case of reactive systems, you'd want to convert them to moles per unit time.\n",
+    "$$$$\n",
+    "6. **Do the algebra.** \n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Example question (Refer to figure 1.) \n",
+    "\n",
+    "The reactor in figure 1. above deals with separation of two liquids: water and ethanol. The reactor is a distillation column, which will vaporize the ethanol from the water due to the lower boiling point. \n",
+    "\n",
+    "**What are the mass fractions of the bottom and overhead feed?**\n",
+    "\n",
+    "---\n",
+    "\n",
+    "_Quantities to be solved for_\n",
+    "\n",
+    "$$\\dot{m}_2$$\n",
+    "\n",
+    "$$ \\dot{m}_3 = \\dot{m}_{W3} + \\dot{m}_{E3} $$\n",
+    "\n",
+    "$$ x_B = \\dot{m}_{W3}/\\dot{m} $$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Convert mixed units in overhead stream to a single unit\n",
+    "\n",
+    "Choose a basis: 100kmol $\\longrightarrow$ 95 kmol E, 5 kmol W\n",
+    "\n",
+    "- 95 kmol W $\\times$ 78.11 kg/kmol = 7420 kg Water\n",
+    "- 5 kmol E $\\times$ 92.13 kg/kmol = 461 kg Ethanol\n",
+    "- Total mass flow rate = 7420 kg Water + 461 kg Ethanol = 7881 kg mixture\n",
+    "- $y_{B2}$ = $\\frac{7420 kg B}{7881 kg mixture}$ = 0.942 kg B/kg\n",
+    "\n",
+    "#### Peform a degree-of-freedom analysis\n",
+    "\n",
+    "- 4 unknowns\n",
+    "- 2 species = 2 material balances\n",
+    "- 1 density relationship (relating the mass flow rate to the given volumetric flow rate of the feed)\n",
+    "- 1 specified split in the benzene composition in bottom stream\n",
+    "\n",
+    "#### Write system equations\n",
+    "\n",
+    "> $\\dot{m}_1 = (2000 \\frac{L}{h}) \\times (0.872 \\frac{kg}{L})$\n",
+    "\n",
+    "> $\\dot{m}_{B3} = 0.08 \\cdot (0.45\\dot{m}_1)$\n",
+    "\n",
+    "> Water Balance: $0.45\\dot{m}_{1} = \\dot{m}_2 y_{B2} \\cdot (0.45\\dot{m}_1) + \\dot{m}_{B3}$\n",
+    "\n",
+    "> Ethanol Balance: $0.55\\dot{m}_{1} = \\dot{m}_2 (1 - y_{B2})\\cdot (0.45\\dot{m}_1) + \\dot{m}_{T3}$\n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Python utilization"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "##Python time"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Works cited\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}
