@@ -1,0 +1,110 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 3.4 &ndash; Phase equilibriums"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Learning objectives\n",
+    "\n",
+    "By the end of this notebook, you should be able to:\n",
+    "\n",
+    "1. Conceptually understand Solid-Liquid, Solid-Vapour and Liquid-Liquid Equilibrium.\n",
+    "2. Identify which equilibrium is present in different processes.\n",
+    "3. Utilize densities and fractional compositions of liquid-liquid mixtures to determine masses before and after separation.\n",
+    "4. Understand the difference between the physical and chemical equilibrium cases for the 3 equilibrium cases.\n",
+    "---\n",
+    "\n",
+    "\n",
+    "## Introduction\n",
+    "\n",
+    "In this section, we will be exploring **phase equilibriums**, **chemical and physical properties** and **temperatures and pressures** that allow the equilibrium to exist in chemical processes (e.g. boiling points, sublimation points). We will also be learning about chemical and physical properties of substances. We will also be factoring in the phase equilibriums in our balances for separation, such as in a distillation column.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Solid-Liquid Equilibrium &ndash; melting and freezing\n",
+    "\n",
+    "Solid-Liquid Equilibrium, as a **physical** property of a substance, is the temperature and pressure at whcih a solid and a liquid can co-exist. This is usually the **melting or freezing points** of a substance. \n",
+    "\n",
+    "At this stage even when the heating is continued, the temperature does not change until the whole of solid is converted into liquid. The state when solid and liquid phases of a substance coexist is called **solid-liquid equilibrium**. \n",
+    "\n",
+    "Since a solid is very hard to transport over a process, we usually melt it into liquid form and collect it as a precipitant at the end of the process.\n",
+    "\n",
+    "---\n",
+    "## Solid-Liquid Equilibrium &ndash; solubility\n",
+    "\n",
+    "Solid-Liquid Equilibrium, as a **chemical** property of a solid substance, is the **solubility** of the solid substance. Solubility refers to the ability of a given solute to dissolve in a solvent.\n",
+    "\n",
+    "It is measured in terms of the maximum amount of solute dissolved in a solvent at equilibrium. The resulting solution is called a **saturated solution**. Under various conditions, the equilibrium solubility can be exceeded to give a so-called **supersaturated solution**.\n",
+    "\n",
+    "\n",
+    "###  Case of Two Substances\n",
+    "\n",
+    "![Figure 1](../figures/Module-3/Solid-liquid-graph1.gif)\n",
+    "<p style = \"text-align:center;\">Figure 1. http://www.tulane.edu/~sanelson/images/phdifig1.gif</p>\n",
+    "\n",
+    "Figure 1 is an solid-liquid equilibrium curve between a mixture of two substances. The mixture us lowest at $T_E$, the **equilibrium temperature** for the mixture. This is where the two componenets exists in their individual liquid and solid states in euquilibrium. \n",
+    "\n",
+    "$T_1$, $T_2$ and $T_3$ are all the melting temperatures of the mixture corresponding to different percent compositions of component A.\n",
+    "\n",
+    "---\n",
+    "## Solid-Vapour Equilibrium\n",
+    "\n",
+    "Solid-Vapour Equilibrium is the temperature and presure point where a solid and a vapour can co-exist. The temperature and pressure point is called the **sublimation** point. A prime example of this equilibrium is dry ice, which is frozen carbon dioxide. \n",
+    "\n",
+    "---\n",
+    "## Liquid-Liquid Equilibrium\n",
+    "\n",
+    "In liquid-liquid equilbrium, the liquids can either be **miscible**, **partially miscible** or **immiscible**.\n",
+    "\n",
+    "**Miscible** liquids are liquids that can mix together to form a single phase. If water and methyl isobutyl ketone (MIBK) are mixed at 25C, a single phase results; otherwise, the mixture separates into two liquid phases, one of which contains 98% H2O and 2% MIBK and the other 97.7% MIBK and 2.3% H2O. Water and MIBK are examples of **partially miscible** liquids; they would be termed **immiscible** if one phase contained a negligible amount of water and the other a negligible amount of MIBK.\n",
+    "\n",
+    "This principle of liquid-liquid equilibrium is used in **liquid extraction**. For example, acetone is soluble in both water and chloroform, but much more so in chloroform. If we wanted to separate a mixture of acetone and water, without using a separatory funnel, we might want to introduce chloroform to the mixture and find that the majority of the acetone will dissolve into the chloroform. Since chloroform and water are immiscible, we can then leave the mixture alone until they separate on their own. \n",
+    "\n",
+    "Suppose the acetone is component C, and water is component A and chloroform component B. A and B are two nearly immiscible liquids and C is a solute distributed between the phases of an A–B mixture. The **_distribution coefficient_ of component C is the ratio of the mass fraction of C in the B phase to that in the A phase.**\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

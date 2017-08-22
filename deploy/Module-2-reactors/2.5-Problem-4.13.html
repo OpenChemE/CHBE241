@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.5 – Problem-4.13 &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="2.5-–-Problem-4.13">
+<h1>2.5 – Problem-4.13<a class="headerlink" href="#2.5-–-Problem-4.13" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="2.5.0-–-Learning-Objectives">
+<h2>2.5.0 – Learning Objectives<a class="headerlink" href="#2.5.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the Product, effluent and waste streams.</li>
+<li>Plot a logarithmic plot</li>
+<li>Convert a logarithmic plot into a linear plot.</li>
+<li>Roughly asses a plot and its strengths and shortcomings</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.5.1-–-Problem-statement">
+<h2>2.5.1 – Problem statement<a class="headerlink" href="#2.5.1-–-Problem-statement" title="Permalink to this headline">¶</a></h2>
+<p>A pharmaceutical product, P, is made in a batch reactor. The reactor
+effluent goes through a purification process to yield a final product
+stream and a waste stream. The initial charge (feed) to the reactor and
+the final product are each weighed, and the reactor effluent, final
+product, and waste stream are each analyzed for P.</p>
+<p>The analyzer calibration is a series of meter readings, corresponding to
+known mass fractions of P.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">xp</th>
+<th class="head">0.08</th>
+<th class="head">0.16</th>
+<th class="head">0.25</th>
+<th class="head">0.45</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>R</td>
+<td>105</td>
+<td>160</td>
+<td>245</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+<ol class="loweralpha simple">
+<li>Plot the analyzer calibration data on logarithmic axes and determine
+an expression for ( ).</li>
+</ol>
+<p>The data sheet for one run is shown below:</p>
+<p>Batch : 23601 Date: 10/4</p>
+<p>Mass charged to reactor: 2253 kg</p>
+<p>Mass of purified product: 1239 kg</p>
+<p>Reactor effluent analysis: R= 388</p>
+<p>Final product analysis: R= 583</p>
+<p>Waste stream analysis: R= 140</p>
+<ol class="loweralpha simple" start="2">
+<li>Calculate the mass fractions of P in all three streams. Then
+calculate the percentage yield of the purification process,</li>
+</ol>
+<div class="math">
+\[\frac {kg \space P \space in \space final \space product}{kg \space P  \space in \space reactor\space effluent} *100\]</div>
+<ol class="loweralpha simple" start="3">
+<li>You are the engineer in charge of the process. You review the given
+run sheet and the calculations of part (b), perform additional
+balance calculations, and realize that all of the recorded run data
+cannot possibly be correct. State how you know, itemize possible
+causes of the problem, state which cause is most likely, and suggest
+a step to correct it</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.5.2-–-Answer">
+<h2>2.5.2 – Answer<a class="headerlink" href="#2.5.2-–-Answer" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>%matplotlib inline
+import matplotlib.pyplot as plt
+import numpy as np
+
+xp = np.array([0.08,0.16,0.25,0.45])
+R = np.array([105,160,245,360])
+log_xp= np.log(xp)
+log_R = np.log(R)
+
+fit = np.polyfit(log_R,log_xp,1)
+fit_function = np.poly1d(fit)
+# fit_function is a function which takes in x and returns an estimate for y
+
+print(&quot;Part a)&quot;)
+fig=plt.figure()
+fig1 = fig.add_subplot(221)
+plt.xlabel(&#39;R&#39;)
+plt.ylabel(&#39;xp&#39;)
+plt.title(&#39;R and  xp&#39;)
+fig2 = fig.add_subplot(222)
+# fig1.plt.plot(log_R,log_xp, &#39;yo&#39;, log_R, fit_function(log_R), &#39;--k&#39;)
+fig1.plot(log_R,log_xp, &#39;yo&#39;, log_R, fit_function(log_R), &#39;--k&#39;)
+plt.xlabel(&#39;log_R&#39;)
+plt.ylabel(&#39;log_xp&#39;)
+plt.title(&#39;log R compared to log xp+regression&#39;)
+
+fig2.plot(R,xp)
+print(&quot;slope:{},y-intercept:{}&quot;.format(fit[0],fit[1]))
+
+
+
+plt.tight_layout(pad=2, w_pad=2, h_pad=1.0)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Part a)
+slope:1.3645457425169747,y-intercept:-8.839384358742024
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/Module-2-reactors_2.5-Problem-4.13_3_1.png" src="../_images/Module-2-reactors_2.5-Problem-4.13_3_1.png" />
+</div>
+</div>
+<p>This is the logarithmic plot:</p>
+<div class="math">
+\[\log{xp} = 1.36\log{R} -8.839\]</div>
+<p>We want to <strong>linearize</strong> this logarithmic plot better correlates the
+data. Taking the exponent of this function to get an expression of x:</p>
+<div class="math">
+\[xp = e^{-8.839}*R^{1.36}\]</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>print ( &quot;Part b:&quot;)
+print (&quot;Using the derived power function from part a we will fit \neach of R values from their respective streams.\n\n&quot;)
+
+# Remember that fit[] is an array that stores the slope and the y intercept
+eff = np.exp(fit[1])*388**fit[0]
+final =np.exp(fit[1])*583**fit[0]
+waste =np.exp(fit[1])*140**fit[0]
+
+print (&quot;The mass fractions for the individual streams are: \nEffluent: {} \nFinal product: {} \nWaste stream: {}&quot;.format(eff,final,waste))
+mass_of_P_effluent = 2253 * eff
+mass_of_P_product = 1239 *final
+P_yield = mass_of_P_product/mass_of_P_effluent*100
+
+print(&quot;The yield is: {} percent&quot;.format(P_yield))
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Part b:
+Using the derived power function from part a we will fit
+each of R values from their respective streams.
+
+
+The mass fractions for the individual streams are:
+Effluent: 0.4939505334927248
+Final product: 0.860964810355995
+Waste stream: 0.12291192587049399
+The yield is: 95.8544008692822 percent
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>print(&quot;part C:&quot;)
+mass_of_P_waste = waste *(2253-1239)
+mass_of_waste = 2253-1239
+
+print( &quot;Mass of waste: {}\nMass of P: {}&quot;.format(mass_of_waste, mass_of_P_waste))
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+part C:
+Mass of waste: 1014
+Mass of P: 124.6326928326809
+</pre></div></div>
+</div>
+<p>The mass of P in the product stream plus the waste stream should equal
+to the mass of P in the effluent stream. Let us check if that is true:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>mass_of_P_effluent == mass_of_P_product+mass_of_P_waste
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[23]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>False
+</pre></div>
+</div>
+</div>
+<p>Uh oh</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>print(&quot;Mass of P in the effluent is: {}\nand the mass of the combined stream is: {}&quot;.format(mass_of_P_effluent,mass_of_P_waste+mass_of_P_product))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Mass of P in the effluent is: 1112.870551959109
+and the mass of the combined stream is: 1191.3680928637589
+</pre></div></div>
+</div>
+<p>Errors include: - few data points - inaccurate R readings - inaccurate
+xp readings - inaccurate weight readings - <strong>poor fit of regression</strong> -
+inaccurate model (what if the function is not a power fit)</p>
+<p>The error of the mass balance is relatively small. This error is due
+most likely to the fitted curve from which the R value is interpolated
+on. The <strong>ideal</strong> solution is to perform more analyses with more data
+points.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.5 – Problem-4.13</a><ul>
+<li><a class="reference internal" href="#2.5.0-–-Learning-Objectives">2.5.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#2.5.1-–-Problem-statement">2.5.1 – Problem statement</a></li>
+<li><a class="reference internal" href="#2.5.2-–-Answer">2.5.2 – Answer</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-2-reactors/2.5-Problem-4.13.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, I2.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/Module-2-reactors/2.5-Problem-4.13.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

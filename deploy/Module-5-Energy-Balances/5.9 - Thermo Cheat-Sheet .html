@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5.9 – Thermo Cheat Sheet &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="5.9-–-Thermo-Cheat-Sheet">
+<h1>5.9 – Thermo Cheat Sheet<a class="headerlink" href="#5.9-–-Thermo-Cheat-Sheet" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="5.9.0-–-Learning-Objectives">
+<h2>5.9.0 – Learning Objectives<a class="headerlink" href="#5.9.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Have a list of helpful cases in thermodynamics.</li>
+<li>Understand what keywords signify in practice problems.</li>
+<li>Have an in-depth understanding to certain cases.</li>
+</ol>
+</div>
+<div class="section" id="5.9.2-–-List-of-cases">
+<h2>5.9.2 – List of cases<a class="headerlink" href="#5.9.2-–-List-of-cases" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Energy:">
+<h3>Energy:<a class="headerlink" href="#Energy:" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>If a problem says no change in height and no acceleration <strong>kinetic
+energy</strong> <span class="math">\(E_k\)</span> <strong>and potential energy</strong> <span class="math">\(E_p\)</span> are 0.
+These are safe assumptions for chemical reactors.</li>
+<li>An <strong>ideal</strong> gas undergoing an <strong>isothermal</strong> reaction has
+<span class="math">\(U = 0\)</span>.</li>
+<li>An <strong>ideal</strong> gas&#8217; change in internal energy <span class="math">\(\Delta U\)</span> can be
+written as <span class="math">\(nC_vdT\)</span>.</li>
+<li><span class="math">\(\Delta U\)</span> alone, can only be used in a <strong>closed system</strong>.</li>
+<li><strong>Open systems</strong> require <strong>enthalpy</strong> instead of internal energy.</li>
+<li>An <strong>ideal</strong> gas&#8217; change in enthalpy <span class="math">\(\Delta H\)</span> can be written
+as <span class="math">\(nC_pdT\)</span>.</li>
+</ol>
+</div>
+<div class="section" id="Heat:">
+<h3>Heat:<a class="headerlink" href="#Heat:" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>If the temperature of the system is <strong>equal to the surrounding</strong> or
+is <strong>perfectly insulated,</strong> the system is <strong>adiabatic.</strong></li>
+<li>An adiabatic system has <span class="math">\(\Delta Q = 0\)</span></li>
+</ol>
+</div>
+<div class="section" id="Work:">
+<h3>Work:<a class="headerlink" href="#Work:" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">If there is <strong>no shaft work</strong>, no <strong>flow work</strong> and no <strong>electrical
+generation</strong>, work = <span class="math">\(P\Delta V\)</span></p>
+</li>
+<li><p class="first"><strong>In ideal, isothermal systems</strong> <span class="math">\(P\Delta V\)</span> turns into
+<span class="math">\(nRT \cdot ln \Big( \frac{V_f}{V_i} \Big)\)</span> by the ideal gas law</p>
+</li>
+<li><p class="first">In <strong>ideal, adiabatic systems</strong> Work is</p>
+<div class="math">
+\[\frac{P V^\gamma \Big(V_f^{1-\gamma}-V_i^{1-\gamma} \Big)}{1-\gamma}\]</div>
+<p>where <span class="math">\(\gamma= \frac{C_p}{C_v}\)</span> and <span class="math">\(PV^\gamma\)</span> is often
+referred as <span class="math">\(K\)</span> a constant.</p>
+</li>
+</ol>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.9.3-–-Explanation-of-certain-cases">
+<h2>5.9.3 – Explanation of certain cases<a class="headerlink" href="#5.9.3-–-Explanation-of-certain-cases" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Energy:">
+<h3>Energy:<a class="headerlink" href="#Energy:" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Self explanatory</li>
+<li>See 3</li>
+<li>Recall that internal energy is the vibrational energy held on a
+molecular level. An ideal gas exhibits elastic collisions by
+collision theory and have no interactions in between other gas
+molecules. As temperature rises, the amount of collisions increases
+proportionally thereby directly raising the internal energy.
+<a class="reference external" href="https://www.quora.com/Why-in-constant-pressure-process-the-change-in-internal-energy-becomes-%E2%88%86U-m-%C3%97-Cv-%E2%88%86T">Here</a>
+is more help understanding the idea.</li>
+<li>Assume a closed system where there is no work done by the system
+(<span class="math">\(U = Q\)</span>). The key for an open system is that the volume in an
+open system changes and pressure remains constant with the
+surrounding. This contradicts the definition of <span class="math">\(U = nC_vdT\)</span>
+where <span class="math">\(C_v\)</span> is the heat capacity at constant volume. <a class="reference external" href="https://www.boundless.com/chemistry/concepts/comparison-of-enthalpy-to-internal-energy-0-10546/">This
+article also explains the
+difference.</a></li>
+<li>Enthalpy is the correction for the open system that is also explained
+in the article above.</li>
+<li>Self explanatory.</li>
+</ol>
+</div>
+<div class="section" id="Heat:">
+<h3>Heat:<a class="headerlink" href="#Heat:" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Self explanatory.</li>
+<li>Self explanatory.</li>
+</ol>
+</div>
+<div class="section" id="Work:">
+<h3>Work:<a class="headerlink" href="#Work:" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple" start="8">
+<li><span class="math">\(W_{net} = W_{flow}+W_{shaft}+W_{electrical} + p\Delta V\)</span> This
+will collapse to the final term.</li>
+<li>The pressure term in work <span class="math">\(P\Delta V\)</span> is exchanged for
+<span class="math">\(\frac{nRT}{V}\)</span> and then integrated where the limits of the
+integrand are <span class="math">\(V_f\)</span> and <span class="math">\(V_i\)</span>.</li>
+<li>There is a long and complicated derivation for this equation that
+was covered in first year physics. It is better to just memorize
+this fact. <a class="reference external" href="http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/adiab.html">Here is a visual representative from
+hyperphysics</a>.</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5.9 – Thermo Cheat Sheet</a><ul>
+<li><a class="reference internal" href="#5.9.0-–-Learning-Objectives">5.9.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#5.9.2-–-List-of-cases">5.9.2 – List of cases</a><ul>
+<li><a class="reference internal" href="#Energy:">Energy:</a></li>
+<li><a class="reference internal" href="#Heat:">Heat:</a></li>
+<li><a class="reference internal" href="#Work:">Work:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#5.9.3-–-Explanation-of-certain-cases">5.9.3 – Explanation of certain cases</a><ul>
+<li><a class="reference internal" href="#Energy:">Energy:</a></li>
+<li><a class="reference internal" href="#Heat:">Heat:</a></li>
+<li><a class="reference internal" href="#Work:">Work:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-5-Energy-Balances/5.9 - Thermo Cheat-Sheet .ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, I2.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/Module-5-Energy-Balances/5.9 - Thermo Cheat-Sheet .ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,228 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example - 5.1\n",
+    "\n",
+    "Water flows into a process unit through a 2-cm ID (internal diameter), 4m long pipe at a rate of 2.00 $m^3/h$, at a height of 2m from the ground. Assuming 2 hours have passed and, calculate $\\dot{E_k}$, $\\dot{E_p}$ and the total energy for the system.\n",
+    "\n",
+    "![Figure 1.](../figures/Module-5/5.1-example-question1.svg)\n",
+    "\n",
+    "**Kinetic energy** - We will use m/s just to keep consistent with SI units. \n",
+    "\n",
+    "$$u = 2.00 \\space m^3/h \\cdot \\frac{1}{0.01^2\\pi} \\cdot \\frac{1hr}{3600s} = 1.77 \\space m/s$$\n",
+    "\n",
+    "$$\\dot{m} = 2.00 \\space m^3/h \\cdot \\frac{1000 \\space kg}{1 \\space m^3} \\cdot \\frac{1hr}{3600s} = 0.556 \\space kg/s$$\n",
+    "\n",
+    "$$\\dot{E_k} = \\frac{1}{2} \\cdot 0.556 \\space kg/s \\cdot 1.77 \\space m/s = 0.870 \\space J/s$$\n",
+    "\n",
+    "**Potential energy**\n",
+    "\n",
+    "$$m = 2.00 \\space m^3/h \\cdot \\frac{1000 \\space kg}{1 \\space m^3} \\cdot 2 hrs = 4000 \\space kg$$\n",
+    "\n",
+    "$$\\dot{E_p} = m \\cdot g \\cdot h$$\n",
+    "\n",
+    "$$\\dot{E_p} = 4000 \\space kg \\cdot 9.81 \\cdot 2m = 78484 \\space J$$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## Example - 5.2 Heat and work\n",
+    "\n",
+    "In a batch mixing reactor, there might be pressure and heat changes that might affect the total energy of the system. The following scenario is observed:\n",
+    "\n",
+    "There is gas in the reactor cylinder. The initial gas temperature is 20 &deg;C. The cylinder is placed in boiling water with the piston held in a fixed position. Heat in the amount of 2.00 kcal is transferred to the gas, which equilibrates at 100 &deg;C. The pressure has also found to be increased at equilibrium. The piston is then released, and the gas does 100 J of work in moving the piston to its new equilibrium position. The final gas temperature is 100 &deg;C."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "### Step 1\n",
+    "\n",
+    "![Figure 1.](../figures/Module-5/5.2-Example-1.svg)\n",
+    "\n",
+    "In this step, the system **absorbs** heat that raises it's temperatures by 80 &deg;C.\n",
+    "\n",
+    "$$\\Delta U + \\Delta E_k + \\Delta E_p = Q-W$$\n",
+    "\n",
+    "$$\\Delta E_k = 0$$ \n",
+    "\n",
+    "$$\\Delta E_p = 0$$\n",
+    "\n",
+    "$$W= 0$$\n",
+    "\n",
+    "Resulting in the equation:\n",
+    "\n",
+    "$$\\Delta U = Q$$\n",
+    "\n",
+    "$$Q = 2.00 \\space kcal $$\n",
+    "\n",
+    "We still need to convert to Joules as it is the SI unit of energy.\n",
+    "\n",
+    "$$Q = 2.00 \\space kcal \\cdot 1000 \\space cal/kcal \\cdot 4.1839 \\space J/cal = 8367.8 \\space J$$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Step 2\n",
+    "\n",
+    "![Figure 1.](../figures/Module-5/5.2-Example-1.1.svg)\n",
+    "\n",
+    "$$\\Delta U + \\Delta E_k + \\Delta E_p = Q-W$$\n",
+    "\n",
+    "$$\\Delta E_k = 0$$ \n",
+    "\n",
+    "$$\\Delta E_p = 0$$\n",
+    "\n",
+    "$$\\Delta U = 0$$\n",
+    "\n",
+    "Resulting in the equation:\n",
+    "\n",
+    "$$0 = Q-W$$\n",
+    "\n",
+    "$$W = +100J$$\n",
+    "\n",
+    "$$Q = +100J$$\n",
+    "\n",
+    "Note: The work is **positive** because the **the system is doing work on the surroundings.**\n",
+    "\n",
+    "Question text: Elementary Principlesa of Chemical Processes, 4/E by Richard M. Felder, Ronald W. Rousseau, and Lisa G. Bullard Copyright © 2016 by John Wiley & Sons, Inc."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example - 5.3 Open Systems and Enthalpy\n",
+    "\n",
+    "- Existing question\n",
+    "- minor suggestion: all * signs to be changed to $\\cdot$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example - 5.4 Review of terms\n",
+    "\n",
+    "- No technical questions needed\n",
+    "- \"Closed system: A system in which matter/mass is conserved. Open system: A system in which mass/matter is not conserved.\" (Isn't mass conservation applied for both?)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Example - 5.5, 5.6 Cv and Cp, Specific heat capacity\n",
+    "\n",
+    "- Existing questions in separate notebook, should be put the questions in the same notebook?\n",
+    "- minor suggestion: all * signs to be changed to $\\cdot$\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.7 – Reference States and State Properties\n",
+    "\n",
+    "- For existing question: Don't you need the heat of vaporization to solve it? \n",
+    "\n",
+    "### Example question\n",
+    "\n",
+    "Water is partially condensed out of a gas stream containing 66.9 mole% water vapor and the balance nitrogen.\n",
+    "\n",
+    "![Figure 1.](../figures/Module-5/module-5-example-5.7.1.svg)\n",
+    "\n",
+    "### Step 1 - Perform all required material balances\n",
+    "\n",
+    "- While none are needed, it might be helpful to fill in the missing mole fractions for nitrogen\n",
+    "\n",
+    "### Step 2 - Write the appropriate form of the energy balance (open or closed) and reduce to simpliest form (get rid of any negligible terms)\n",
+    "\n",
+    "$$\\dot{Q} - \\dot{W} = \\Delta\\dot{H} + \\dot{E_k} + \\dot{E_p}$$\n",
+    "\n",
+    "$$\\dot{E_k} = 0$$\n",
+    "\n",
+    "$$\\dot{E_p} = 0$$\n",
+    "\n",
+    "$$\\dot{W} = 0$$\n",
+    "\n",
+    "$$\\dot{Q} = \\Delta\\dot{H}$$\n",
+    "\n",
+    "$$\\Delta\\dot{H} = \\sum_{out}\\dot{n_i}\\hat{H_i} - \\sum_{in}\\dot{n_i}\\hat{H_i}$$\n",
+    "\n",
+    "### Step 3 - Choose a reference state for the constituents\n",
+    "\n",
+    "$$$$\n",
+    "\n",
+    "<div style = \"text-align: center;\">**Water**\n",
+    "\n",
+    "$l$, 25 &deg;C, $1 \\space atm$,\n",
+    "\n",
+    "**Nitrogen**\n",
+    "\n",
+    "$g$, 25 &deg;C, $1 \\space atm$</div>\n",
+    "\n",
+    "### Step 4 - For a closed constant- volume system, construct a table with columns for initial and final amounts of each species ($m_i$ or $n_i$) and specific internal energies relative to the chosen reference states. For an open system, construct a table with columns for inlet and outlet stream component flow rates ($\\dot{m_i}$ or $\\dot{n_i}$) and specific enthalpies relative to the chosen reference states.\n",
+    "\n",
+    "| Substance       | $n_{in}$ | $\\hat{H_{in}}$ | $n_{out}$ | $\\hat{H_{out}}$ | \n",
+    "| -------------   |:-------------| -----|-----|-----|\n",
+    "| H2O(v)          | 0.669 | $\\hat{H_{1}}$ |3.35|$\\hat{H_{3}}$|\n",
+    "| H2O(l)          | -   |   - |63.55||\n",
+    "| N2(v)           | 0.331   |    $\\hat{H_{2}}$ |33.1|$\\hat{H_{4}}$||\n",
+    " \n",
+    "### Step 5 - Calculate all required values of $\\hat{U}$ (or $\\hat{H}$ ) and insert the values in the appropriate places in the table.\n",
+    "\n",
+    "\n",
+    "\n",
+    "### Step 6 - Calculate the appropriate energy balances. Solve for any variable (kinetic, potential) that is not negligible."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 5.8 – Path and State functions\n",
+    "\n",
+    "- For the graphs, when you increase the volume is it the pressure of the system that is increasing or the surroundings?\n",
+    "- p used for pressure, I changed it to P, correct or no?\n",
+    "\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}
