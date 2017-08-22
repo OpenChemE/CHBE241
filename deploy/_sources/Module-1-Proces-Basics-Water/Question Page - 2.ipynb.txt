@@ -8,7 +8,7 @@
     "\n",
     "## Question\n",
     "\n",
-    "In wastewater treatment, an important step in the process is sedimentation. Sedimentation is the process of allowing particulate matter in a fluid to settle to the bottom of a tank. In the sedimentation step, a coagulant can be used to coagulate bacteria and fine particles to allow the sedimentation to occur faster. The most common molecular species used for coagulation is alum, $Al_2 (SO_4)_3 \\cdot 14H_2 O $.\n",
+    "In wastewater treatment, an important step in the process is sedimentation. Sedimentation is the process of allowing particulate matter in a fluid to settle to the bottom of a tank. In the sedimentation step, a coagulant can be used to coagulate bacteria and fine particles to allow the sedimentation to occur faster. The most common molecular species used for coagulation is alum, $Al_2 (SO_4)_3 \\cdot 14H_2 O$.\n",
     "\n",
     "You are a chemical engineer working in a waste water treatment plant. You are asked to make a material balance on the sedimentation process. Waste water flows into a sedimentation tank at 200 kg/s. The waste water contains 0.01 wt% of bacteria, 2 wt% particulate matter, and the balance pure water. Pure alum is added to the sedimentation tank in a separate stream. Alum allows 80% of the bacteria and 100 % of the particulate matter to settle. Just enough alum is added for this ratio of settlement. The sludge at the bottom of the tank exits the tank with 20 wt% of water and 40 wt% of particulate matter. The semi-treated water exits the tank in a separate stream.\n",
     "\n",

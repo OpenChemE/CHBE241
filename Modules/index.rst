@@ -45,11 +45,11 @@ Module 2
 ==================
 
 
-* :ref:`Module-2-reactors/2.1 - Reactive-Balances.ipynb`
+* :ref:`Module-2-reactors/2.1 - Reactive Balances.ipynb`
 * :ref:`Module-2-reactors/2.2 - Extent-of-reaction.ipynb`
-* :ref:`Module-2-reactors/2.3 - Solving-Reactive-Balances.ipynb`
-* :ref:`Module-2-reactors/2.4 - Fractional-coversion-Yield-and-Selectivity.ipynb`
-* :ref:`Module-2-reactors/2.5 - Problem-4.13.ipynb`
+* :ref:`Module-2-reactors/2.3 - Solving Reactive Balances.ipynb`
+* :ref:`Module-2-reactors/2.4 - Fractional Conversion Yield and Selectivity.ipynb`
+* :ref:`Module-2-reactors/2.5-Problem-4.13.ipynb`
 
 Module 3
 ==================
@@ -61,7 +61,7 @@ Module 3
 * :ref:`Module-3-Separation-I/3.5 - Temperature systems ( Kelvin, Celsius, Fahrenheit, Rankine ).ipynb`
 * :ref:`Module-3-Separation-I/3.6 - Splitter.ipynb`
 * :ref:`Module-3-Separation-I/3.7 - Recycle and purge.ipynb`
-* :ref:`Module-3-Separation-I/3.8 - Separator.ipynb`
+* :ref:`Module-3-Separation-I/3.8 - Separation Part I - Separator.ipynb`
 * :ref:`Module-3-Separation-I/3.9 - Module summary and practice questions.ipynb`
 * :ref:`Module-3-Separation-I/Equilibrium example questions.ipynb`
 * :ref:`Module-3-Separation-I/q434.ipynb`
@@ -88,15 +88,15 @@ Module 4
 Module 5
 ==================
 
-* :ref:`Module-5-Energy-Balances/5.1 - The-First-Law.ipynb`
-* :ref:`Module-5-Energy-Balances/5.2 - Heat-and-Work.ipynb`
-* :ref:`Module-5-Energy-Balances/5.3 - Open-Systems-and-Enthalpy.ipynb`
-* :ref:`Module-5-Energy-Balances/5.4 - Review-of-Terms.ipynb`
-* :ref:`Module-5-Energy-Balances/5.6 - Questions-on-Cv-and-Cp.ipynb`
-* :ref:`Module-5-Energy-Balances/5.7 - Reference-States-and-State-Properties.ipynb`
-* :ref:`Module-5-Energy-Balances/5.8 - Path-and-State-Functions.ipynb`
-* :ref:`Module-5-Energy-Balances/5.9 - thermo-cheatsheeet.ipynb`
-* :ref:`Module-5-Energy-Balances/5.10 - Psychrometric-charts-and-spraydrying.ipynb`
+* :ref:`Module-5-Energy-Balances/5.1 - The First Law.ipynb`
+* :ref:`Module-5-Energy-Balances/5.2 - Heat and Work.ipynb`
+* :ref:`Module-5-Energy-Balances/5.3 - Open Systems and Enthalpy.ipynb`
+* :ref:`Module-5-Energy-Balances/5.4 - Review of Terms.ipynb`
+* :ref:`Module-5-Energy-Balances/5.6 - Questions on Cv and Cp.ipynb`
+* :ref:`Module-5-Energy-Balances/5.7 - Reference States and State Properties.ipynb`
+* :ref:`Module-5-Energy-Balances/5.8 - Path and State Functions.ipynb`
+* :ref:`Module-5-Energy-Balances/5.9 - Thermo Cheat-Sheet.ipynb`
+* :ref:`Module-5-Energy-Balances/5.10 - Psychrometric Charts and Spray-Drying.ipynb`
 * :ref:`Module-5-Energy-Balances/7.57.ipynb`
 * :ref:`Module-5-Energy-Balances/Example questions and comments.ipynb`
 
