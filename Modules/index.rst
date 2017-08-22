@@ -3,18 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to project1's documentation!
+CHBE 241 Material and Energy Balances
 ====================================
 
 .. toctree::
 
    :maxdepth: 2
    :caption: Contents:
-* :ref:`genindex`
-* :ref:`modindex`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
 * :ref:`search`
 
-Module-0-Introduction
+Module 0 Introduction
 ====================================
 
 * :ref:`Module-0-Introduction/CHEM-154/CHEM 154 Review notebook.ipynb`
@@ -25,7 +25,7 @@ Module-0-Introduction
 * :ref:`Module-0-Introduction/using jupyter to make questions.ipynb`	
 
 
-Module-1-Proces-Basics-Water
+Module 1 Proces Basics Water
 ====================================
 
 * :ref:`Module-1-Proces-Basics-Water/1.1 - Unit Conversions.ipynb`
@@ -41,7 +41,7 @@ Module-1-Proces-Basics-Water
 * :ref:`Module-1-Proces-Basics-Water/1.11 Practice Problem 2.ipynb`	
 	
 
-Module 2
+Module 2 Reactors
 ==================
 
 
@@ -51,7 +51,7 @@ Module 2
 * :ref:`Module-2-reactors/2.4 - Fractional Conversion Yield and Selectivity.ipynb`
 * :ref:`Module-2-reactors/2.5-Problem-4.13.ipynb`
 
-Module 3
+Module 3 Separation I 
 ==================
 
 * :ref:`Module-3-Separation-I/3.1 - Density and specific gravity.ipynb`
@@ -68,7 +68,7 @@ Module 3
 
 
 
-Module 4
+Module 4 Separation II
 ==================		
 * :ref:`Module-4-Separation-II/4.1 - Separators.ipynb`
 * :ref:`Module-4-Separation-II/4.2 - Standards.ipynb`
@@ -85,7 +85,7 @@ Module 4
 
 
 
-Module 5
+Module 5 Energy Balances
 ==================
 
 * :ref:`Module-5-Energy-Balances/5.1 - The First Law.ipynb`
@@ -101,7 +101,7 @@ Module 5
 
 
 
-Module 6
+Module 6 Reactive Energy Balances
 ==================
 
 
