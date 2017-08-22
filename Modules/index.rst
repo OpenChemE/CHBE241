@@ -97,8 +97,8 @@ Module 5
 * :ref:`Module-5-Energy-Balances/5.8 - Path and State Functions.ipynb`
 * :ref:`Module-5-Energy-Balances/5.9 - Thermo Cheat-Sheet.ipynb`
 * :ref:`Module-5-Energy-Balances/5.10 - Psychrometric Charts and Spray-Drying.ipynb`
-* :ref:`Module-5-Energy-Balances/7.57.ipynb`
-* :ref:`Module-5-Energy-Balances/Example questions and comments.ipynb`
+* :ref:`Module-5-Energy-Balances/5.11 - Practice Problem 7.57.ipynb`
+
 
 
 Module 6
