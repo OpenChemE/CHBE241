@@ -28,6 +28,7 @@
     "Now we can solve for the liquid mole fractions of the two substances with two equations and two unknowns using Raoult's law and the fact that the mole fractions must add to one:\n",
     "\n",
     "1. $x_b + x_t = 1$\n",
+    "    \n",
     "2. $P = x_b \\cdot p^*_b + x_t \\cdot p^*_t$\n",
     "\n",
     "$$ x_t = 1 - x_b $$\n",
@@ -66,6 +67,15 @@
     "\n",
     "$$ \\therefore \\space w_b = \\frac{m_b}{m_b + m_t} = \\frac{68.42}{68.42 + 11.43} = 0.857 $$"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {

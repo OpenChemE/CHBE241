@@ -28,7 +28,7 @@
     "\n",
     "$$ C \\small{\\text{(s)}} + \\frac{1}{2} \\space O_2 \\small{\\text{(g)}} \\longrightarrow C O \\small{\\text{(g)}} $$\n",
     "\n",
-    "It is very difficult to measure the standard heat of reaction for this reaction because if these reactants are at $ 25 ^{\\circ} C$ and $1$ atm, the rate of reaction will be very slow. Since **calorimeters** are used to measure heat of reaction and it impossible to make calorimeters perfectly insulated, it is impractical to measure the true amount of energy released. Imagine you are trying to measure how much energy is released in the oxidation of iron. It would be very impractical to measure how much energy is realised over the course of years. However, we can use **Hess's law** to find the standard heat of reaction for this reaction.\n",
+    "It is very difficult to measure the standard heat of reaction for this reaction because if these reactants are at $25 ^{\\circ} C$ and $1$ atm, the rate of reaction will be very slow. Since **calorimeters** are used to measure heat of reaction and it impossible to make calorimeters perfectly insulated, it is impractical to measure the true amount of energy released. Imagine you are trying to measure how much energy is released in the oxidation of iron. It would be very impractical to measure how much energy is realised over the course of years. However, we can use **Hess's law** to find the standard heat of reaction for this reaction.\n",
     "\n",
     "---"
    ]
