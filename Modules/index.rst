@@ -37,8 +37,8 @@ Module-1-Proces-Basics-Water
 * :ref:`Module-1-Proces-Basics-Water/1.7 - Steady-state-and-Unsteady-State-Transience.ipynb`	
 * :ref:`Module-1-Proces-Basics-Water/1.8 - Materials Balances.ipynb`	
 * :ref:`Module-1-Proces-Basics-Water/1.9 - Process Economics.ipynb`	
-* :ref:`Module-1-Proces-Basics-Water/Question Page - 1.ipynb`	
-* :ref:`Module-1-Proces-Basics-Water/Question Page - 2.ipynb`	
+* :ref:`Module-1-Proces-Basics-Water/1.10 Practice Problem 1.ipynb`	
+* :ref:`Module-1-Proces-Basics-Water/1.11 Practice Problem 2.ipynb`	
 	
 
 Module 2
