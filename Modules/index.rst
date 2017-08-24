@@ -61,10 +61,10 @@ Module 3 Separation I
 * :ref:`Module-3-Separation-I/3.5 - Temperature systems ( Kelvin, Celsius, Fahrenheit, Rankine ).ipynb`
 * :ref:`Module-3-Separation-I/3.6 - Splitter.ipynb`
 * :ref:`Module-3-Separation-I/3.7 - Recycle and purge.ipynb`
-* :ref:`Module-3-Separation-I/3.8 - Separation Part I - Separator.ipynb`
+* :ref:`Module-3-Separation-I/3.8 - Separator.ipynb`
 * :ref:`Module-3-Separation-I/3.9 - Module summary and practice questions.ipynb`
-* :ref:`Module-3-Separation-I/Equilibrium example questions.ipynb`
-* :ref:`Module-3-Separation-I/q434.ipynb`
+* :ref:`Module-3-Separation-I/3.10 - Practice Problem 1.ipynb`
+* :ref:`Module-3-Separation-I/3.11 - Practice Problem 2.ipynb`
 
 
 
@@ -110,4 +110,4 @@ Module 6 Reactive Energy Balances
 * :ref:`Module-6-Reactive-Energy-Balances/6.3 - Hess's Law for Heats of Reaction.ipynb`
 * :ref:`Module-6-Reactive-Energy-Balances/6.4 - Latent Heats.ipynb`
 * :ref:`Module-6-Reactive-Energy-Balances/6.5 - Heat of Reaction and Formation Methods.ipynb`
-* :ref:`Module-6-Reactive-Energy-Balances/Victor - Module example questions.ipynb`
+* :ref:`Module-6-Reactive-Energy-Balances/6.6 - Practice Problem 1.ipynb`
