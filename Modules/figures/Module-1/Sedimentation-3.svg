@@ -7,8 +7,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="427.98999"
-   height="296.38254"
+   width="719.94366"
+   height="473.85916"
    version="1.1"
    content="&lt;mxfile userAgent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36&quot; version=&quot;7.0.3&quot; editor=&quot;www.draw.io&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;2cca2b4b-35ea-384a-da37-fdf6b7169ac2&quot; name=&quot;Page-1&quot;&gt;zVbJboMwEP0arhVgSHtt0+1SqVIOTY4uTMCqwZHjBNKvr8ELYBI1apESDoh5ns3vjS08NC/qF443+RtLgXqhn9YeevTCMJpF8t0ABwXMbmcKyDhJFRR0wIJ8gwZ9je5ICtuBo2CMCrIZggkrS0jEAMOcs2rotmZ0WHWDMxgBiwTTMfpBUpEr9C72O/wVSJabyoGvVz5x8pVxtit1PS9E6/ZRywU2ubT/Nscpq3oQevLQnDMm1FdRz4E21BraVNzziVXbN4dSnBMQqoA9pjswHbd9iYPhot0NNP6+hx6qnAhYbHDSrFZSfInloqDSCuTnmlA6Z5TxNhY9t4/EdRngAuqTrQaWADlXwAoQ/CBdTMBMc6ZnKoy0XXUKWZ+8r44hG+upyGzujhn5ock5ThT6nSgo0/tm9qSVULzdkmTIDdRELBsab2JtrfSKSgXpaCgdbmQ5tuMJ9LQb09WjIz7ChsE4UCzIfljxGEO6wjsjsherhj2qB3PkHZJVpzqqP4FuoshJFDmJBOYZiFGiVjC77bM0jCbQsJTVlvostMbKKnq+impLV6Ciwz3y/yiiczSRe+Km0zC+Dg0vJZhl9r+KRb9JP51kt9dwdV7snnR4Dqa6J8PJ7klpdj8cyr37qUNPPw==&lt;/diagram&gt;&lt;/mxfile&gt;"
    id="svg66"
@@ -35,23 +35,23 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1058"
-     inkscape:window-height="1328"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
      id="namedview68"
      showgrid="false"
      inkscape:measure-start="0,0"
      inkscape:measure-end="0,0"
-     inkscape:zoom="1.3653846"
-     inkscape:cx="208.41793"
-     inkscape:cy="176.75042"
-     inkscape:window-x="1080"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:zoom="2.7307692"
+     inkscape:cx="351.78467"
+     inkscape:cy="275.49394"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
      inkscape:current-layer="g64" />
   <defs
      id="defs44" />
   <g
-     transform="translate(20.991953,-7)"
+     transform="translate(120.59758,45.237185)"
      id="g64">
     <rect
        x="127"
@@ -411,28 +411,56 @@
          id="tspan399-7-2"
          x="301.95364"
          y="265.25137">=0.40</tspan></text>
+    <ellipse
+       style="fill:#000000;fill-opacity:1"
+       id="path103"
+       cx="216.30382"
+       cy="-38.279438"
+       rx="41.746479"
+       ry="6.9577465" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1"
+       id="path105"
+       cx="591.28973"
+       cy="155.07268"
+       rx="8.0563383"
+       ry="78" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1"
+       id="path107"
+       cx="-114.37223"
+       cy="133.10086"
+       rx="6.2253523"
+       ry="47.971832" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1"
+       id="path109"
+       cx="220.69818"
+       cy="419.46704"
+       rx="75.436623"
+       ry="9.1549301" />
   </g>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     x="227.40669"
-     y="133.65356"
+     x="327.01233"
+     y="185.89075"
      id="text74"><tspan
        sodipodi:role="line"
        id="tspan72"
-       x="227.40669"
-       y="133.65356"
+       x="327.01233"
+       y="185.89075"
        style="font-size:18.66666603px;text-align:center;text-anchor:middle">Sedimentation</tspan><tspan
        sodipodi:role="line"
-       x="227.40669"
-       y="156.98689"
+       x="327.01233"
+       y="209.22408"
        id="tspan76"
        style="font-size:18.66666603px;text-align:center;text-anchor:middle">Tank</tspan></text>
   <flowRoot
      xml:space="preserve"
      id="flowRoot78"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     transform="translate(20.491953,-7.5)"><flowRegion
+     transform="translate(120.09758,44.737185)"><flowRegion
        id="flowRegion80"><rect
          id="rect82"
          width="26.411932"
