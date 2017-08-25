@@ -2,3 +2,4 @@ textbook.pdf
 **/*.ipynb_checkpoints/
 **/*thumbs.db
 Makefile
+meeting-summaries/
