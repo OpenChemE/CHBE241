@@ -98,7 +98,7 @@ html_theme = 'alabaster'
 # documentation.
 #
 html_theme_options = {"font_family" : 'arial',
-                      "page_width"  : '940 px'}
+                      "page_width"  : '940px'}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
