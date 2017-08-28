@@ -11,6 +11,8 @@
     .sphinxsidebarwrapper{
         position: fixed;
         overflow: hidden;
+        max-width: 240px;
+        height: 1000px;
     }
 </style>
 <a href="#" class="scrollToTop">Scroll To Top</a>
@@ -28,14 +30,16 @@ $(document).ready(function() {
         else {
             $('.scrollToTop').fadeOut();
         }
-        if ($(this).scrollTop()>500) {
-            $('.sphinxsidebarwrapper').fadeOut();
-        }
-        else{
-            $('.sphinxsidebarwrapper').show();
-        }
-    });
-
+        // if ($(this).scrollTop()>500) {
+        //     $('.sphinxsidebarwrapper').fadeOut();
+        // }
+        // else{
+        //     $('.sphinxsidebarwrapper').show();
+        // }
+    }); 
+    // $('.sphinxsidebarwrapper').hover(function(){
+        // $(this).fadeIn();
+    // });
     //Click event to scroll to top
     $('.scrollToTop').click(function() {
         $('html, body').animate({
