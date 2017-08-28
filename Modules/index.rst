@@ -22,7 +22,6 @@ Module 0 Introduction
 * :ref:`Module-0-Introduction/MATH-152/Unique Solution, No Solution, or Infinite Solutions.ipynb`
 * :ref:`Module-0-Introduction/Getting started on Using Jupyter Notebooks and Python.ipynb`
 * :ref:`Module-0-Introduction/Learn More.ipynb`
-* :ref:`Module-0-Introduction/using jupyter to make questions.ipynb`	
 
 
 Module 1 Proces Basics Water
