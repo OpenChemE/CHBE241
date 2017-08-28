@@ -15,7 +15,7 @@ CHBE 241 Material and Energy Balances
 * :ref:`search`
 
 Module 0 Introduction
-====================================
+-----------------------------------
 
 * :ref:`Module-0-Introduction/CHEM-154/CHEM 154 Review notebook.ipynb`
 * :ref:`Module-0-Introduction/MATH-152/Solving Sets of Linear Equations.ipynb`
@@ -25,7 +25,7 @@ Module 0 Introduction
 
 
 Module 1 Proces Basics Water
-====================================
+-----------------------------------
 
 * :ref:`Module-1-Proces-Basics-Water/1.1 - Unit Conversions.ipynb`
 * :ref:`Module-1-Proces-Basics-Water/1.2 - Basic Unit Operations.ipynb`
@@ -41,7 +41,7 @@ Module 1 Proces Basics Water
 	
 
 Module 2 Reactors
-==================
+-----------------------------------
 
 
 * :ref:`Module-2-reactors/2.1 - Reactive Balances.ipynb`
@@ -52,7 +52,7 @@ Module 2 Reactors
 * :ref:`Module-2-reactors/2.6 - Practice Problem 2.ipynb`
 
 Module 3 Separation I 
-==================
+-----------------------------------
 
 * :ref:`Module-3-Separation-I/3.1 - Density and specific gravity.ipynb`
 * :ref:`Module-3-Separation-I/3.2 - Dimensional Homogeneity.ipynb`
@@ -69,7 +69,7 @@ Module 3 Separation I
 
 
 Module 4 Separation II
-==================		
+-----------------------------------		
 * :ref:`Module-4-Separation-II/4.1 - Separators.ipynb`
 * :ref:`Module-4-Separation-II/4.2 - Standards.ipynb`
 * :ref:`Module-4-Separation-II/4.3 - Non-Ideal Gas Laws.ipynb`
@@ -85,7 +85,7 @@ Module 4 Separation II
 
 
 Module 5 Energy Balances
-==================
+-----------------------------------
 
 * :ref:`Module-5-Energy-Balances/5.1 - The First Law.ipynb`
 * :ref:`Module-5-Energy-Balances/5.2 - Heat and Work.ipynb`
@@ -101,7 +101,7 @@ Module 5 Energy Balances
 
 
 Module 6 Reactive Energy Balances
-==================
+-----------------------------------
 
 
 * :ref:`Module-6-Reactive-Energy-Balances/6.1 - The Enthalpy of Mixing.ipynb`

@@ -9,10 +9,16 @@
         display: none;
     }
     .sphinxsidebarwrapper{
-        position: fixed;
+        /*position: fixed;*/
         overflow: hidden;
         max-width: 240px;
         height: 1000px;
+    }
+    .tocHover:hover {
+        color:#004B6B;
+    }
+    .toctree-wrapper h1{
+        font-size: 36px;
     }
 </style>
 <a href="#" class="scrollToTop">Scroll To Top</a>
@@ -48,7 +54,7 @@ $(document).ready(function() {
         return false;
     });
 
-
+    $('a:contains("Table Of Contents")').addClass('tocHover');
 
 
 });
