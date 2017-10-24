@@ -32,11 +32,13 @@ Module 1 Proces Basics Water
 * :ref:`Module-1-Proces-Basics-Water/1.3 - Flow Rate.ipynb`
 * :ref:`Module-1-Proces-Basics-Water/1.4 - Input-Output and Block Flow Diagrams.ipynb`
 * :ref:`Module-1-Proces-Basics-Water/1.5 - Degrees of Freedom (DOF).ipynb`
-* :ref:`Module-1-Proces-Basics-Water/1.6 - Types-of-Processes.ipynb`	
-* :ref:`Module-1-Proces-Basics-Water/1.7 - Steady-state-and-Unsteady-State-Transience.ipynb`	
-* :ref:`Module-1-Proces-Basics-Water/1.8 - Materials Balances.ipynb`	
-* :ref:`Module-1-Proces-Basics-Water/1.9 - Process Economics.ipynb`	
-* :ref:`Module-1-Proces-Basics-Water/1.10 - Practice Problem 1.ipynb`	
+* :ref:`Module-1-Proces-Basics-Water/1.6 - Types-of-Processes.ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.7 - Steady-state-and-Unsteady-State-Transience.ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.8 - Materials Balances.ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.9 - Process Economics.ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.10 - Dimensional Homogeneity.ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.11 - Practice Problem 1.ipynb`
+* :ref:`Module-1-Proces-Basics-Water/1.12 - Practice Problem 2.ipynb`
 
 	
 
@@ -47,24 +49,27 @@ Module 2 Reactors
 * :ref:`Module-2-reactors/2.1 - Reactive Balances.ipynb`
 * :ref:`Module-2-reactors/2.2 - Extent-of-reaction.ipynb`
 * :ref:`Module-2-reactors/2.3 - Solving Reactive Balances.ipynb`
-* :ref:`Module-2-reactors/2.4 - Fractional Conversion Yield and Selectivity.ipynb`
-* :ref:`Module-2-reactors/2.5 - Practice Problem 1.ipynb`
-* :ref:`Module-2-reactors/2.6 - Practice Problem 2.ipynb`
+* :ref:`Module-2-reactors/2.4 - Degrees of Freedom for Reactive Systems.ipynb`
+* :ref:`Module-2-reactors/2.5 - Fractional Conversion Yield and Selectivity.ipynb`
+* :ref:`Module-2-reactors/2.6 - Equilibrium Constants.ipynb`
+* :ref:`Module-2-reactors/2.7 - Combustion Concepts.ipynb`
+* :ref:`Module-2-reactors/2.8 - Practice Problem 1.ipynb`
+* :ref:`Module-2-reactors/2.9 - Practice Problem 2.ipynb`
+
 
 Module 3 Separation I 
 ==================
 
 * :ref:`Module-3-Separation-I/3.1 - Density and specific gravity.ipynb`
-* :ref:`Module-3-Separation-I/3.2 - Dimensional Homogeneity.ipynb`
-* :ref:`Module-3-Separation-I/3.3 - Process and Instrumentation Diagram (P&ID).ipynb`
-* :ref:`Module-3-Separation-I/3.4 - Equilibrium.ipynb`
-* :ref:`Module-3-Separation-I/3.5 - Temperature systems ( Kelvin, Celsius, Fahrenheit, Rankine ).ipynb`
-* :ref:`Module-3-Separation-I/3.6 - Splitter.ipynb`
-* :ref:`Module-3-Separation-I/3.7 - Recycle and purge.ipynb`
-* :ref:`Module-3-Separation-I/3.8 - Separator.ipynb`
-* :ref:`Module-3-Separation-I/3.9 - Module summary and practice questions.ipynb`
-* :ref:`Module-3-Separation-I/3.10 - Practice Problem 1.ipynb`
-* :ref:`Module-3-Separation-I/3.11 - Practice Problem 2.ipynb`
+* :ref:`Module-3-Separation-I/3.2 - Process and Instrumentation Diagram (P&ID).ipynb`
+* :ref:`Module-3-Separation-I/3.3 - Equilibrium.ipynb`
+* :ref:`Module-3-Separation-I/3.4 - Temperature systems ( Kelvin, Celsius, Fahrenheit, Rankine ).ipynb`
+* :ref:`Module-3-Separation-I/3.5 - Splitter.ipynb`
+* :ref:`Module-3-Separation-I/3.6 - Recycle and purge.ipynb`
+* :ref:`Module-3-Separation-I/3.7 - Separator.ipynb`
+* :ref:`Module-3-Separation-I/3.8 - Module summary and practice questions.ipynb`
+* :ref:`Module-3-Separation-I/3.9 - Practice Problem 1.ipynb`
+* :ref:`Module-3-Separation-I/3.10 - Practice Problem 2.ipynb`
 
 
 
