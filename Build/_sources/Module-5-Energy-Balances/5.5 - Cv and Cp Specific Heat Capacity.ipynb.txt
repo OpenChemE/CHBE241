@@ -1,0 +1,110 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5.5 &ndash; Cv and Cp Specific Heat Capacity\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.5.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the concept of specific heat capacity.\n",
+    "2. Understand the difference between heat capacity at constant pressure ($C_p$) and constant volume ($C_v$).\n",
+    "3. Understand the relationship between the ideal gas constant, $C_v$, and, $C_p$.\n",
+    "3. Relate internal energy $U$ with $C_v$.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.5.1 &ndash; Introduction \n",
+    "\n",
+    "**Specific heat capacity** is the measure of heat required to raise the temperature of an object. This notebook will cover heat capacity, specific heat capacity and the variants at constant volume and constant pressure.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.5.2 &ndash; Specific Heat Capacity \n",
+    "\n",
+    "Specific heat capacity at constant volume and pressure are regarded as $C_v$ and $C_p$ respectively. In reality, these values are functions of temperature. This will be covered in a separate notebook. For now, we will assume that they are constants.\n",
+    " \n",
+    "If working with an monatomic species such as Helium, The value of $C_v$ is $\\frac{3}{2}R$ and the value of $C_p$ is $\\frac{5}{2}R$. Otherwise, these values will be given to you. From the monatomic relationship, it is observed that the general rule is that $C_p = C_v + R$.\n",
+    "\n",
+    "Often, in adiabatic settings, $\\gamma$ is defined as the ratio $ \\frac{C_p}{C_v}$\n",
+    "\n",
+    "In closed systems where internal energy $U$ is used, Specific heat at constant volume is used to proportionally relate temperature to an object. $\\Delta U = n C_v \\Delta T$ or $\\Delta U = m C_v \\Delta T $\n",
+    "\n",
+    "\n",
+    "In open systems, Heat $Q$ is written as $n C_p \\Delta T $ or $m C_p \\Delta T $\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.5.3 &ndash; Specific Properties\n",
+    "\n",
+    "A specific property is obtained by dividing an extensive property by mass. This turns the property to be intensive, i.e. not reliant on the situation. \n",
+    "\n",
+    "For test purposes, when you see a specific property **remember to divide by its mass**.\n",
+    "\n",
+    "For example:\n",
+    "10kg of water has a **heat capacity** of $ 4.184\\frac{kJ}{kg\\cdot  \\Delta T}\\cdot 10kg \\cdot = 41.84\\frac{kJ}{\\Delta T}$\n",
+    "\n",
+    "Likewise, 100kg of water has a **heat capacity** of $ 4.184\\frac{kJ}{kg\\cdot  \\Delta T}\\cdot 100kg \\cdot = 418.4\\frac{kJ}{\\Delta T}$\n",
+    "\n",
+    "It takes 41kJ of energy to raise the temperature of 10kg of water by 1 degree and 418 kJ of energy to raise the temperature of 100kg of water by 1 degree. \n",
+    " \n",
+    "Both 10 and 100kg of water have a **specific heat capacity** of $4.184\\frac{kJ}{kg \\Delta T}$\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

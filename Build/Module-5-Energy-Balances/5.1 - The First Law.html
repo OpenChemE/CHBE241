@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5.1 – The First Law of Thermodynamics &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="5.1-–-The-First-Law-of-Thermodynamics">
+<h1>5.1 – The First Law of Thermodynamics<a class="headerlink" href="#5.1-–-The-First-Law-of-Thermodynamics" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="5.1.0-–-Learning-Objectives">
+<h2>5.1.0 – Learning Objectives<a class="headerlink" href="#5.1.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the relationship between the first law and energy
+conservation.</li>
+<li>Understand the breakdown of the energy term</li>
+<li>Learn about a closed system and internal energy.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.1.1-–-Introduction">
+<h2>5.1.1 – Introduction<a class="headerlink" href="#5.1.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>As Chemical engineers, the knowledge of energy flows is integral to the
+industry. How will equipment affect the energy of a system? How does a
+reactor withstand an exothermic/endothermic reaction? Thermodynamics is
+the stepping stone in the study of energy flows. This notebook will give
+you an overview of the first law of thermodynamics.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.1.2-–-The-First-Law">
+<h2>5.1.2 – The First Law<a class="headerlink" href="#5.1.2-–-The-First-Law" title="Permalink to this headline">¶</a></h2>
+<p>The first law is the concept that <strong>energy is conserved. ** The first
+law states that the energy of a **closed system</strong> <span class="math">\(E_{sys}\)</span>, is
+equal to the sum of heat added to the system <span class="math">\(Q\)</span> and the work done
+to or upon the system <span class="math">\(W\)</span>. This is written mathematically as:</p>
+<div class="math">
+\[E_{sys} = Q - W\]</div>
+<p>and</p>
+<div class="math">
+\[\Delta E_{sys} = \Delta Q-\Delta W\]</div>
+<p><strong>Important! The system must be closed. Otherwise internal energy cannot
+be used alone</strong></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.1.3-–-Units-of-the-first-law">
+<h2>5.1.3 – Units of the first law<a class="headerlink" href="#5.1.3-–-Units-of-the-first-law" title="Permalink to this headline">¶</a></h2>
+<p>Energy in chemical engineering is often described as a
+<span class="math">\(\frac{Kilojoule}{Kilogram}\)</span> or <span class="math">\(\frac{Joule}{mol}\)</span>. These
+units are used because of the massive amount of material that chemical
+engineers work with.</p>
+<p>Let&#8217;s break down these terms down one-by-one.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.1.4-–-Energy">
+<h2>5.1.4 – Energy<a class="headerlink" href="#5.1.4-–-Energy" title="Permalink to this headline">¶</a></h2>
+<p>Energy comes in many <strong>different forms</strong>. Sitting up on a chair reading
+this, you have <strong>potential energy</strong>. When you run in class to hand in
+your homework, you are demonstrating <strong>kinetic energy</strong>. Your mere
+existence and the vibrations of the atoms inside of you, is a form of
+the <strong>internal energy</strong>. There are many other energies that can be
+classified but this course will be mainly focusing on these three.</p>
+<div class="math">
+\[E_{tot} = E_{sys} = E_k + E_p + U\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.1.5-–-Fermi-question!">
+<h2>5.1.5 – Fermi question!<a class="headerlink" href="#5.1.5-–-Fermi-question!" title="Permalink to this headline">¶</a></h2>
+<p>Using only facts, you know yourself... How fast would a car have to
+drive to have the same energy to climb mount Everest? How many Oreo
+cookies would that be? <strong>An answer will be provided at the bottom</strong></p>
+<div class="section" id="A-solution-to-Fermi.">
+<h3>A solution to Fermi.<a class="headerlink" href="#A-solution-to-Fermi." title="Permalink to this headline">¶</a></h3>
+<p>I know that the Mount Everest is approximately 30000ft. The average
+person weighs 65kg. therefore, using the <strong>potential energy</strong> formula
+and rough unit conversions:</p>
+<div class="math">
+\[E_p = mgh\]</div>
+<p>we obtain:</p>
+<div class="math">
+\[E_p = 65 \space kg \cdot \bigg(30,000 \space ft \times 0.3 \space \frac{m}{ft} \bigg) \cdot 9.81 \space \frac{m}{s^2} = 5,738,850 \space J\]</div>
+<p>Let&#8217;s guess that an Oreo has 100 food calories (Cal)</p>
+<div class="math">
+\[\therefore \space 5,738,850 \space J \times \frac{1 \space Cal}{4,000 \space J} \times \frac{1 \space \text{Oreo cookies}}{100 \space Cal} = 14.3 \space \text{Oreo cookies}.\]</div>
+<p>A car weighs approximately 1000kg. Using the <strong>kinetic energy</strong> formula:</p>
+<div class="math">
+\[E_k = \frac{1}{2} \cdot m *v^2\]</div>
+<div class="math">
+\[5,738,850 \space J = \frac{1}{2} \cdot 1,000 \space kg \cdot v^2\]</div>
+<p>Solving for v results in <span class="math">\(v = 107.13 \space m/s\)</span> which is just
+over the speed of the bullet train in Japan.</p>
+<p>Click here for more fermi questions <a class="reference external" href="http://www.fermiquestions.com/play">more
+fermi!</a></p>
+</div>
+</div>
+<div class="section" id="5.1.6-–-Problem-Statement">
+<h2>5.1.6 – Problem Statement<a class="headerlink" href="#5.1.6-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Question">
+<h3>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h3>
+<p>Water flows into a process unit through a 2-cm ID (internal diameter),
+4m long pipe at a rate of 2.00 <span class="math">\(m^3/h\)</span>, at a height of 2m from the
+ground. Assuming 2 hours have passed and, calculate <span class="math">\(\dot{E_k}\)</span>,
+<span class="math">\(\dot{E_p}\)</span> and the total energy for the system.</p>
+<div class="figure" id="id1">
+<img alt="Figure 1." src="../_images/5.1-example-question1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+</div>
+<div class="section" id="Answer">
+<h3>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h3>
+<p><strong>Kinetic energy</strong> - We will use m/s just to keep consistent with SI
+units.</p>
+<div class="math">
+\[u = 2.00 \space m^3/h \cdot \frac{1}{0.01^2\pi} \cdot \frac{1hr}{3600s} = 1.77 \space m/s\]</div>
+<div class="math">
+\[\dot{m} = 2.00 \space m^3/h \cdot \frac{1000 \space kg}{1 \space m^3} \cdot \frac{1hr}{3600s} = 0.556 \space kg/s\]</div>
+<div class="math">
+\[\dot{E_k} = \frac{1}{2} \cdot 0.556 \space kg/s \cdot 1.77 \space m/s = 0.870 \space J/s\]</div>
+<p><strong>Potential energy</strong></p>
+<div class="math">
+\[m = 2.00 \space m^3/h \cdot \frac{1000 \space kg}{1 \space m^3} \cdot 2 hrs = 4000 \space kg\]</div>
+<div class="math">
+\[\dot{E_p} = m \cdot g \cdot h\]</div>
+<div class="math">
+\[\dot{E_p} = 4000 \space kg \cdot 9.81 \cdot 2m = 78484 \space J\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5.1 – The First Law of Thermodynamics</a><ul>
+<li><a class="reference internal" href="#5.1.0-–-Learning-Objectives">5.1.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#5.1.1-–-Introduction">5.1.1 – Introduction</a></li>
+<li><a class="reference internal" href="#5.1.2-–-The-First-Law">5.1.2 – The First Law</a></li>
+<li><a class="reference internal" href="#5.1.3-–-Units-of-the-first-law">5.1.3 – Units of the first law</a></li>
+<li><a class="reference internal" href="#5.1.4-–-Energy">5.1.4 – Energy</a></li>
+<li><a class="reference internal" href="#5.1.5-–-Fermi-question!">5.1.5 – Fermi question!</a><ul>
+<li><a class="reference internal" href="#A-solution-to-Fermi.">A solution to Fermi.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#5.1.6-–-Problem-Statement">5.1.6 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-5-Energy-Balances/5.1 - The First Law.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

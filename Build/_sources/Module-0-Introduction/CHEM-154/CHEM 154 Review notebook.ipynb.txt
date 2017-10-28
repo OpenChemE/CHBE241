@@ -1,0 +1,218 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# CHEM 154 review"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### The following are topics from the standard CHEM 154 syllabus (2016W) that we will be reviewing in this Notebook. No, you don't need to remember everything from CHEM 154. Yet.\n",
+    "\n",
+    "---\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Reaction stoichiometry (Ch 4)\n",
+    "\n",
+    "### Bulk Properties of Matter and Intermolecular Interactions (Ch, 10 12)\n",
+    "\n",
+    "### Gases; Liquids; Phase Diagrams.Phase transitions & vapour/liquid equilibrium calculation.\n",
+    "\n",
+    "### Thermochemistry and Thermodynamics (Ch 7, Ch 19 )\n",
+    "   - First Law\n",
+    "   - Enthalpy\n",
+    "   - Standard State\n",
+    "   - Calorimetry\n",
+    "   - Hess's Law\n",
+    "   - Kirchoff's law\n",
+    "   - Standard Enthalpy of Formation\n",
+    "   - Entropy; Spontaneity in Chemical Reactions\n",
+    "   - Second Law\n",
+    "   - Third Law\n",
+    "   - Gibbs Free Energy\n",
+    "   - Spontaneity and Approach to Equilibrium."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Reaction Stoichiometry\n",
+    "\n",
+    "Reaction stoichiometry allows us to determine the amount of substance that is consumed or produced by a reaction. Think of a molecule's molecular equation, such as \n",
+    "   \n",
+    "   $$SO_{2(g)}$$\n",
+    "\n",
+    "as the ratio of stuff in the molecule. In this case it would be 1 sulphur atom to 2 oxygen atoms in this sulfur dioxide molecule.\n",
+    "\n",
+    "Now stoichiometry is the theory of this proportion applied to chemical equations. Think of it as a mathematical equation where everything on the left has to equal everything on the left ($2 = 1 + 1$).\n",
+    "\n",
+    "Coefficients in chemistry act the same as coefficients in math, multiplying everything in the molecular equation by the coefficient to represent the total number of atoms at play.\n",
+    "\n",
+    "Building on the sulfur dioxide example, the production of sulfur dioxide is essential in the production of fertilizers, metal processing and cocaine.\n",
+    "    \n",
+    "Many metal ores occur as sulfides and are roasted to form an oxide and sulfur dioxide, for example, in the manufacture of lead:\n",
+    "\n",
+    "$$2PbS_{(s)} + 3O_{2(g)} \\longrightarrow 2PbO_{s} + 2SO_{2(g)} $$\n",
+    "\n",
+    "This equation indicates that for every 2 molecules (g-moles, lb-moles) of $PbS$ that react/3 molecules (g-mole, lb-mole) of $O_2$ reacts to produce 2 molecules (g-moles, lb-moles) of $PbO$ and 2 molecules of $SO_2$.\n",
+    "   \n",
+    "The numbers that precede the formulas for each species are the stoichiometric coefficients of the reaction components. Overall, it is akin to making the equation say\n",
+    "\n",
+    "$$2 \\space Pb \\space atoms + 2 \\space S \\space atoms + 6 \\space O \\space  atoms = 2 \\space Pb \\space atoms + 2 \\space O \\space atoms + 2 \\space S \\space atoms + 4 \\space O \\space atoms$$\n",
+    "    \n",
+    "(if we \"multiply out\" the molecular equations)\n",
+    "    \n",
+    "Note that the total number of atoms on the left equal the number on the right. Knowing the total number of atoms in the reactant and product side of the equation allows us to then use their respective molar masses to find the total mass of the reactants or products."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Steps in balancing reaction stoichiometry\n",
+    "\n",
+    "Let's use the previous example of $2PbS_{(s)} + 3O_{2(g)} $ to explore blancing a reaction. We usually don't get pre-balanced equations, so when we are asked what is the equation of the reaction of lead sulfide and oxygen, we start off with $PbS$ and $O_2$.\n",
+    "\n",
+    "1. In the first step, write out the reaction.\n",
+    "$$PbS_{(s)} + O_{2(g)} \\longrightarrow PbO_{(s)} + SO_{2(g)} $$\n",
+    "  \n",
+    "2. Give each molecule an unknown coefficient.\n",
+    "\n",
+    "$$(a)PbS_{(s)} + (b)O_{2(g)} \\longrightarrow (c)PbO_{(s)} + (d)SO_{2(g)} $$\n",
+    "    \n",
+    "3. Balance the coefficients based on the atoms found in the chemical equation\n",
+    "\n",
+    "$$(a)PbS_{(s)} + (b)O_{2(g)} \\longrightarrow (c)PbO_{(s)} + (d)SO_{2(g)} $$\n",
+    "$$Pb: a  = c $$\n",
+    "$$S: a = d $$\n",
+    "$$O: 2b = c + 2d $$\n",
+    "    \n",
+    "Notice that in this case, we cannot solve for all the unknowns, since we only have 3 equations but 4 unknowns (You will use this method to determine if material or energy balances can be solved later in the course).\n",
+    "\n",
+    "In this case, we solve for equality between 2 coefficients\n",
+    "\n",
+    "$$ 2b = a + 2a $$\n",
+    "$$ 2b = 3a $$\n",
+    "$$ b = {3/2}a $$\n",
+    "\n",
+    "We then choose a \"basis\", a random number for 'a' that will then give us all the subsequent coefficients of 'b', 'c' and 'd'.\n",
+    "\n",
+    "$$ a = 1 $$\n",
+    "$$ b = {3/2} $$\n",
+    "$$ c = 1 $$\n",
+    "$$ d = 1 $$\n",
+    "\n",
+    "$$PbS_{(s)} + {3/2}O_{2(g)} \\longrightarrow PbO_{(s)} + SO_{2(g)} $$\n",
+    " \n",
+    "Which is equivalent to\n",
+    "\n",
+    "$$2PbS_{(s)} + 3O_{2(g)} \\longrightarrow 2PbO_{s} + 2SO_{2(g)} $$\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Phase diagrams, phase transitions and vapour/liquid equilibrium calculation\n",
+    "\n",
+    "### Phase diagrams\n",
+    "\n",
+    "In material and energy balances, reactants could change states from liquid to gas and vice versa. Phase diagrams help us relate the pressure, temperature and physical state a certain substance will be in, and thus allow us to calculate the subsequent heat and energy change once a substnace changes states.\n",
+    "\n",
+    "<img src = \"../../figures/Module-0/WaterTriplePoint2.jpg\">\n",
+    "<div style = \"text-align:center;\"><h3>Figure 1. Phase diagram of water</h3></div>\n",
+    "  <p>https://www.birdvilleschools.net/cms/lib2/TX01000797/Centricity/Domain/912/ChemLessons/Lessons/Phases%20and%20Changes/image022.jpg</p>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "1. The point where ($T$ ,$P$) falls on the solid–vapor equilibrium curve is the **triple point** of the substance (A).\n",
+    "2. If ($T$ ,$P$) falls on the solid–liquid equilibrium curve, then $T$ is the **melting/freezing point** at pressure $P$ (C).\n",
+    "3. The boiling point at $P = 1 atm$ is the **normal boiling point** of the substance (D).\n",
+    "4. If ($T$ ,$P$) falls on the solid–vapor equilibrium curve, then $T$ is the **sublimation point** at pressure $P$.\n",
+    "5. If $T$ and $P$ correspond to a point on the vapor–liquid equilibrium curve for a substance, $P$ is the **vapor pressure** of the substance at the temperature $T$, and $T$ is the boiling point temperature of the substnace at $P$.\n",
+    "6. The vapor-liquid curve terminates at the **critical point**. Above and to the right of the critical point, the two phases never co-exist.\n",
+    "\n",
+    "Note: Add interactive phase graph to this portion, not just a static graph."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Phase transitions\n",
+    "\n",
+    "Phase transitions occur when the substance changes state, crossing one or more of the state equilibrium curves. Large amounts of energy are usually exchanged at this state. This energy change is characterized by the change in specific enthalpy and is termed **latent heat** of the phase change.\n",
+    "\n",
+    "The two most common latent heats are for condensing/boiling and melting/freezing, which are termed as **heat of vaporization** and **heat of fusion** respectively.\n",
+    "\n",
+    "$$ \\Delta H_{v, water} $$\n",
+    "$$ \\Delta H_{m, water} $$\n",
+    "\n",
+    "Note that latent heats are affected more by temperature than pressure.\n",
+    "\n",
+    "(Note: Make it under the chapter of thermodynamics, interactive table to explore the different heats of vaporization of different substances.)\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Vapor/liquid equilibrium calculations\n",
+    "\n",
+    "A subtance may co-exist as a vapor-liquid combination when the temperature and pressure falls on the vapor-liquid equilibrium curve. At points above the VLE curve, water is a **subcooled liquid**. On points along the VLE curve, water can be a **saturated liquid** or **vapor**. Below the VLE curve, water is **superheated vapor**.\n",
+    "\n",
+    "These keywords are used in the determination of specific internal energy ($U$)and specific enthalpy ($H$) of water at specific temperatures and pressures using a **steam table**. (Add cropped version as an exmaple.)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Works cited"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

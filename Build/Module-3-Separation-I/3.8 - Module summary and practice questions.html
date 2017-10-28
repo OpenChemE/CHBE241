@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.8 – Module Summary &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="3.8-–-Module-Summary">
+<h1>3.8 – Module Summary<a class="headerlink" href="#3.8-–-Module-Summary" title="Permalink to this headline">¶</a></h1>
+<p>In this module, we have covered:</p>
+<ul class="simple">
+<li>Density and specific gravity</li>
+<li>Dimensional Homogeneity</li>
+<li>Process and Instrumentation Diagram (P&amp;ID)</li>
+<li>Equilibrium (Solid-Liquid, Solid-Vapour and Liquid-Liquid)</li>
+<li>Temperature systems ( Kelvin, Celsius, Fahrenheit, Rankine )</li>
+<li>Recycle and purge</li>
+<li>Separator</li>
+<li>Splitter</li>
+</ul>
+<p>The purpose of this notebook is to give a summary of all the topics
+covered, and to give additional practice problems for topics focused
+more heavily in CHBE 241, which are bolded in the list above. The
+practice qustions will try and include most topics covered in the
+module.</p>
+<hr class="docutils" />
+<div class="section" id="3.8.0-–-Density-and-specific-gravity">
+<h2>3.8.0 – Density and specific gravity<a class="headerlink" href="#3.8.0-–-Density-and-specific-gravity" title="Permalink to this headline">¶</a></h2>
+<p>Density is the amount of mass per unit volume, and specific gravity
+(S.G.) is the ratio of density of the object to the density of a
+standard, usually water for a liquid or solid, and air for a gas.
+Density of a mixture can be estimated using mass fractions of mixture
+components and the components&#8217; densities.</p>
+<div class="math">
+\[Density = \rho\]</div>
+<div class="math">
+\[Specific \space gravity = \frac{{\rho}_{sample}}{{\rho}_{H_2O}}\]</div>
+<div class="math">
+\[\overline\rho = \sum_{i=1}^{n} {x_i}{\rho}_i\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.8.1-–-Dimensional-homogeneity">
+<h2>3.8.1 – Dimensional homogeneity<a class="headerlink" href="#3.8.1-–-Dimensional-homogeneity" title="Permalink to this headline">¶</a></h2>
+<p>Dimensional homogeneity is the concept where the dimensions of variables
+on both sides of an equation are the same. If the units are the same, it
+follows that the dimensions of each term must be the same.</p>
+<div class="math">
+\[Length = (Length/Time) \times (Time)\]</div>
+<p><strong>An equation could be dimensionally homogenous but invalid if the
+equation is also not fully-balanced</strong> i.e.</p>
+<div class="math">
+\[2M = M\]</div>
+<p>is only valid for 1 case of M.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.8.2-–-Temperature-systems-(-Kelvin,-Celsius,-Fahrenheit,-Rankine-)">
+<h2>3.8.2 – Temperature systems ( Kelvin, Celsius, Fahrenheit, Rankine )<a class="headerlink" href="#3.8.2-–-Temperature-systems-(-Kelvin,-Celsius,-Fahrenheit,-Rankine-)" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Conversion-table-(Kelvin-based)">
+<h3>Conversion table (Kelvin based)<a class="headerlink" href="#Conversion-table-(Kelvin-based)" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="42%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">From kelvins</th>
+<th class="head">To kelvins</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Celcius</td>
+<td>[°C] = <strong>[K]</strong> − 273.15</td>
+<td><strong>[K]</strong> = [°C] + 273.15</td>
+</tr>
+<tr class="row-odd"><td>Fahrenheit</td>
+<td>[°F] = <strong>[K]</strong> ×  <span class="math">\(9⁄5\)</span> − 459.67</td>
+<td><strong>[K]</strong> = ([°F] + 459.67) ×  <span class="math">\(5⁄9\)</span></td>
+</tr>
+<tr class="row-even"><td>Rankine</td>
+<td>[°R] = <strong>[K]</strong> ×  <span class="math">\(9⁄5\)</span></td>
+<td><strong>[K]</strong> = [°R] ×  <span class="math">\(5⁄9\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Conversion-table-(Celsius-based)">
+<h3>Conversion table (Celsius based)<a class="headerlink" href="#Conversion-table-(Celsius-based)" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="47%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">From Celsius</th>
+<th class="head">To Celsius</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Kelvin</td>
+<td>[K] = <strong>[°C]</strong> + 273.15</td>
+<td><strong>[°C]</strong> = [K] - 273.15</td>
+</tr>
+<tr class="row-odd"><td>Fahrenheit</td>
+<td>[°F] = <strong>[°C]</strong> ×  <span class="math">\(9⁄5\)</span> + 32</td>
+<td><strong>[°C]</strong> = ([°F] - 32) ×  <span class="math">\(5⁄9\)</span></td>
+</tr>
+<tr class="row-even"><td>Rankine</td>
+<td>[°R] = <strong>[°C** + 273.15**]</strong> ×  <span class="math">\(9⁄5\)</span></td>
+<td><strong>[°C]</strong> = [°R] ×  <span class="math">\(5⁄9\)</span> - 273.15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.8.3-–-Practice-questions">
+<h2>3.8.3 – Practice questions<a class="headerlink" href="#3.8.3-–-Practice-questions" title="Permalink to this headline">¶</a></h2>
+<p>The following practice problems aim to take the 3 mass balance scenarios
+(Splitter, Recycle &amp; Purge and Separator streams) and explore all 3 in a
+single process.</p>
+<div class="section" id="Practice-1">
+<h3>Practice 1<a class="headerlink" href="#Practice-1" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Figure 1." src="../_images/Module-3-main-example.png" /></p>
+<p style="text-align:center;"><p>Figure 1.</p>
+</p><p>A fresh feed of 50% ethylene ( <span class="math">\(C_2H_4\)</span> ) is fed into a process
+that produces acetaldehyde( <span class="math">\(C_2H_4O\)</span> ) and water as products. To
+increase the efficiency of the the system, a recycle stream from the
+separator bottom feed is fed back into the reactor feed. A purge stream
+carries 15.5 kg <span class="math">\(C_2 H_4/hr\)</span>, 15.4 kg <span class="math">\(O_2/hr\)</span>, 1.1 kg
+<span class="math">\(C_2 H_4 O/hr\)</span> and 18 kg <span class="math">\(CO_2/hr\)</span> out of the process. Given
+that the separator bottom feed flow rate is <span class="math">\(150 \space kg/hr\)</span> and
+its constituents are 50% <span class="math">\(C_2 H_4\)</span>, 20% <span class="math">\(O_2\)</span>, 20%
+<span class="math">\(C_2 H_4 O\)</span> and 10% <span class="math">\(CO_2\)</span>. What are the constituents of
+the:</p>
+<ol class="loweralpha simple">
+<li>recycle stream</li>
+<li>fresh feed</li>
+<li>reactor feed? Give the answer in mass flow rates of each constituent.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.8 – Module Summary</a><ul>
+<li><a class="reference internal" href="#3.8.0-–-Density-and-specific-gravity">3.8.0 – Density and specific gravity</a></li>
+<li><a class="reference internal" href="#3.8.1-–-Dimensional-homogeneity">3.8.1 – Dimensional homogeneity</a></li>
+<li><a class="reference internal" href="#3.8.2-–-Temperature-systems-(-Kelvin,-Celsius,-Fahrenheit,-Rankine-)">3.8.2 – Temperature systems ( Kelvin, Celsius, Fahrenheit, Rankine )</a><ul>
+<li><a class="reference internal" href="#Conversion-table-(Kelvin-based)">Conversion table (Kelvin based)</a></li>
+<li><a class="reference internal" href="#Conversion-table-(Celsius-based)">Conversion table (Celsius based)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#3.8.3-–-Practice-questions">3.8.3 – Practice questions</a><ul>
+<li><a class="reference internal" href="#Practice-1">Practice 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-3-Separation-I/3.8 - Module summary and practice questions.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

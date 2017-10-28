@@ -1,0 +1,224 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1.1 &ndash; Unit Conversions\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.1.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the importance of unit conversion.\n",
+    "2. Understand the concept of a conversion factor.\n",
+    "3. Convert a unit from one to the other.\n",
+    "\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.1.1 &ndash; Introduction\n",
+    "\n",
+    "Knowing how to **convert units** is vital to engineers. Improperly converted units could mean the difference between life and death. With Canada's proximity to the USA, it is very important to learn how to convert from imperial to metric and vise versa. It is also important to know how to convert from one unit to another in the same system such as $m^3$ to $l$.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.1.2 &ndash; Conversion Factors\n",
+    "\n",
+    "**Conversion factors** are ratios between two expressions of the same quantity. For an example:\n",
+    "\n",
+    "$$ \\frac{1 cm}{10 mm} \\quad \\text{(1 centimeter per 10 millimeters)} $$\n",
+    "\n",
+    "or\n",
+    "\n",
+    "$$ \\frac{1 kg^2}{1,000,000 g^2} \\quad \\text{(1 kilogram squared per 1,000,000 grams squared)} $$\n",
+    "\n",
+    "or\n",
+    "\n",
+    "$$ \\frac{1 m^3}{1,000,000,000 m m^3} \\quad \\text{(1 cubic meter per 1,000,000,000 cubic millimeters)} $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.1.3 &ndash; Converting Units\n",
+    "\n",
+    "To convert a quantity from one unit to its equivalent of another unit, we will use conversion factors. For example, if we want to convert 7.2 km to meters, we would write:\n",
+    "\n",
+    "$$ 7.2 km \\times \\frac{1,000 m}{1 km} = 7,200 m  $$\n",
+    "\n",
+    "As you can see, the original unit is km, the final unit is m, and the conversion factor is $\\frac{1,000m}{1km}$.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.1.4 &ndash; Dimensional Homogeneity\n",
+    "\n",
+    "Consider the equation\n",
+    "\n",
+    "$$ u = u_0 + gt $$\n",
+    "\n",
+    "where the corrisponding units are\n",
+    "\n",
+    "$$ [m/s] = [m/s] + [m/s^2] \\times [s] $$\n",
+    "\n",
+    "Now lets inputed values for each of the varibles in the first equation.\n",
+    "\n",
+    "$$ 45 \\space \\frac{m}{s} \\neq 12 \\space \\frac{m}{s} + 9.81 \\space \\frac{m}{s^2} \\cdot 3.36 \\space min $$\n",
+    "\n",
+    "You may ask why $45 \\neq 45$ and that is because the dimensions are not homogenous. The units are not consistent. The velocity and accelartation are measured in seconds, yet the time we used is minutes. To correct the formula, we must change the minutes to seconds.\n",
+    "\n",
+    "$$ 45 \\space \\frac{m}{s} \\neq 12 \\space \\frac{m}{s} + 9.81 \\space \\frac{m}{s^2} \\cdot 3.36 \\space s $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 1.1.5 &ndash; Problem Statement\n",
+    "\n",
+    "### Problem 1\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "Suppose the average house in Vancouver uses 342 gallons of water per day. How many $cm^3$ of water per second is used on average? What are your conversion factors?\n",
+    "\n",
+    "#### Answer"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The average house uses 14.983914583333332 cm^3/s\n"
+     ]
+    }
+   ],
+   "source": [
+    "water_use = 342 # gallons/day\n",
+    "\n",
+    "seconds_per_day = 86400 # s/day\n",
+    "litres_per_gallon = 3.78541 # l/gallon\n",
+    "cub_m_per_litre = 0.001 # m^3/l\n",
+    "cub_c_per_cub_m = 1000000 # cm^3/m^3\n",
+    "\n",
+    "water_use_1 = water_use*litres_per_gallon*cub_m_per_litre*cub_c_per_cub_m/seconds_per_day\n",
+    "\n",
+    "print(\"The average house uses\",water_use_1,\"cm^3/s\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The conversion factors are:\n",
+    "$$ \\frac{86400s}{1 day}$$\n",
+    "\n",
+    "$$ \\frac{3.78541 litre}{1 gallon}$$\n",
+    "\n",
+    "$$ \\frac{0.001 m^3}{1 litre}$$\n",
+    "\n",
+    "$$ \\frac{1,000,000 cm^3}{1 m^3}$$\n",
+    "\n",
+    "Written out, this would look like:\n",
+    "\n",
+    "$$  \\frac{342 \\space gallons }{1\\space day} \\cdot  \\frac{1\\space day}{86400s} \\cdot \\frac{3.78541 litre}{1 gallon} \\cdot \\frac{0.001 m^3}{1 litre} \\cdot \\frac{1,000,000 cm^3}{1 m^3} =  14.983914583 \\frac { cm^3}{s}\n",
+    "$$\n",
+    "\n",
+    "### Problem 2\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "Despite the odds, the Kinger-Sporgan pipeline is being built to no environmental impact, which will soon supply BC and Washington state with 40,001 barrels of oil biweekly (including weekends). As an employee of Dusty Oil in Vancouver, you keep in contact with your colleagues in the United States and update them on the amount of oil being supplied. Since they use metric and you use the imperial system, what is the amount of oil transported, in metric?\n",
+    "\n",
+    "**Note**: Use 1 oil barrel = 35 imperial gallons. Not US gallons.\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "According to the back of our text, \n",
+    "\n",
+    "$$1000 \\space L = 220.83 \\space \\text{imperial gallons}$$\n",
+    "\n",
+    "Let's find out how many litres are in an imperial gallon first:\n",
+    "\n",
+    "$$ 1000 \\space L \\space \\div \\space 220.83 \\space \\text{imperial gallons} = 4.5283 \\space \\frac{L}{\\text{imperial gallons}} $$\n",
+    "\n",
+    "Now we know that biweekly, the total amount of oil transported is:\n",
+    "\n",
+    "$$ 40,001 \\space barrels \\space \\times \\space 35 \\space 35 \\space \\frac{\\text{imperial gallons}}{barrels} \\times \\space 4.5283 \\space \\frac{L}{\\text{imperial gallons}} = 6339778 \\space litres $$\n",
+    "\n",
+    "Let's find how many litres are transported in seconds. Since I don't know how many seconds are in a fortnight off the top of my head:\n",
+    "\n",
+    "$$ 14 \\space days \\space \\times \\space 24 \\space \\frac{hours}{day} \\space \\times \\space 3600 \\space \\frac{seconds}{hour} = 1209600 \\space seconds $$\n",
+    "\n",
+    "Finally, you can report that the total amount of oil transported, in metric units, is:\n",
+    "\n",
+    "$$ 6339778 \\space litres \\div 1209600 \\space seconds = 5.241 \\space \\frac{L}{s} $$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

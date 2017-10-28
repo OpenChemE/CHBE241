@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CHEM 154 review &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="CHEM-154-review">
+<h1>CHEM 154 review<a class="headerlink" href="#CHEM-154-review" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="The-following-are-topics-from-the-standard-CHEM-154-syllabus-(2016W)-that-we-will-be-reviewing-in-this-Notebook.-No,-you-don't-need-to-remember-everything-from-CHEM-154.-Yet.">
+<h2>The following are topics from the standard CHEM 154 syllabus (2016W) that we will be reviewing in this Notebook. No, you don&#8217;t need to remember everything from CHEM 154. Yet.<a class="headerlink" href="#The-following-are-topics-from-the-standard-CHEM-154-syllabus-(2016W)-that-we-will-be-reviewing-in-this-Notebook.-No,-you-don't-need-to-remember-everything-from-CHEM-154.-Yet." title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="Reaction-stoichiometry-(Ch-4)">
+<h2>Reaction stoichiometry (Ch 4)<a class="headerlink" href="#Reaction-stoichiometry-(Ch-4)" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Bulk-Properties-of-Matter-and-Intermolecular-Interactions-(Ch,-10-12)">
+<h2>Bulk Properties of Matter and Intermolecular Interactions (Ch, 10 12)<a class="headerlink" href="#Bulk-Properties-of-Matter-and-Intermolecular-Interactions-(Ch,-10-12)" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Gases;-Liquids;-Phase-Diagrams.Phase-transitions-&amp;-vapour/liquid-equilibrium-calculation.">
+<h2>Gases; Liquids; Phase Diagrams.Phase transitions &amp; vapour/liquid equilibrium calculation.<a class="headerlink" href="#Gases;-Liquids;-Phase-Diagrams.Phase-transitions-&-vapour/liquid-equilibrium-calculation." title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Thermochemistry-and-Thermodynamics-(Ch-7,-Ch-19-)">
+<h2>Thermochemistry and Thermodynamics (Ch 7, Ch 19 )<a class="headerlink" href="#Thermochemistry-and-Thermodynamics-(Ch-7,-Ch-19-)" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>First Law</li>
+<li>Enthalpy</li>
+<li>Standard State</li>
+<li>Calorimetry</li>
+<li>Hess&#8217;s Law</li>
+<li>Kirchoff&#8217;s law</li>
+<li>Standard Enthalpy of Formation</li>
+<li>Entropy; Spontaneity in Chemical Reactions</li>
+<li>Second Law</li>
+<li>Third Law</li>
+<li>Gibbs Free Energy</li>
+<li>Spontaneity and Approach to Equilibrium.</li>
+</ul>
+<div class="section" id="Reaction-Stoichiometry">
+<h3>Reaction Stoichiometry<a class="headerlink" href="#Reaction-Stoichiometry" title="Permalink to this headline">¶</a></h3>
+<p>Reaction stoichiometry allows us to determine the amount of substance
+that is consumed or produced by a reaction. Think of a molecule&#8217;s
+molecular equation, such as</p>
+<div class="math">
+\[SO_{2(g)}\]</div>
+<p>as the ratio of stuff in the molecule. In this case it would be 1
+sulphur atom to 2 oxygen atoms in this sulfur dioxide molecule.</p>
+<p>Now stoichiometry is the theory of this proportion applied to chemical
+equations. Think of it as a mathematical equation where everything on
+the left has to equal everything on the left (<span class="math">\(2 = 1 + 1\)</span>).</p>
+<p>Coefficients in chemistry act the same as coefficients in math,
+multiplying everything in the molecular equation by the coefficient to
+represent the total number of atoms at play.</p>
+<p>Building on the sulfur dioxide example, the production of sulfur dioxide
+is essential in the production of fertilizers, metal processing and
+cocaine.</p>
+<p>Many metal ores occur as sulfides and are roasted to form an oxide and
+sulfur dioxide, for example, in the manufacture of lead:</p>
+<div class="math">
+\[2PbS_{(s)} + 3O_{2(g)} \longrightarrow 2PbO_{s} + 2SO_{2(g)}\]</div>
+<p>This equation indicates that for every 2 molecules (g-moles, lb-moles)
+of <span class="math">\(PbS\)</span> that react/3 molecules (g-mole, lb-mole) of <span class="math">\(O_2\)</span>
+reacts to produce 2 molecules (g-moles, lb-moles) of <span class="math">\(PbO\)</span> and 2
+molecules of <span class="math">\(SO_2\)</span>.</p>
+<p>The numbers that precede the formulas for each species are the
+stoichiometric coefficients of the reaction components. Overall, it is
+akin to making the equation say</p>
+<div class="math">
+\[2 \space Pb \space atoms + 2 \space S \space atoms + 6 \space O \space  atoms = 2 \space Pb \space atoms + 2 \space O \space atoms + 2 \space S \space atoms + 4 \space O \space atoms\]</div>
+<p>(if we &#8220;multiply out&#8221; the molecular equations)</p>
+<p>Note that the total number of atoms on the left equal the number on the
+right. Knowing the total number of atoms in the reactant and product
+side of the equation allows us to then use their respective molar masses
+to find the total mass of the reactants or products.</p>
+</div>
+</div>
+<div class="section" id="Steps-in-balancing-reaction-stoichiometry">
+<h2>Steps in balancing reaction stoichiometry<a class="headerlink" href="#Steps-in-balancing-reaction-stoichiometry" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s use the previous example of $2PbS_{(s)} + 3O_{2(g)} $ to explore
+blancing a reaction. We usually don&#8217;t get pre-balanced equations, so
+when we are asked what is the equation of the reaction of lead sulfide
+and oxygen, we start off with <span class="math">\(PbS\)</span> and <span class="math">\(O_2\)</span>.</p>
+<ol class="arabic">
+<li><p class="first">In the first step, write out the reaction.</p>
+<div class="math">
+\[PbS_{(s)} + O_{2(g)} \longrightarrow PbO_{(s)} + SO_{2(g)}\]</div>
+</li>
+<li><p class="first">Give each molecule an unknown coefficient.</p>
+</li>
+</ol>
+<div class="math">
+\[(a)PbS_{(s)} + (b)O_{2(g)} \longrightarrow (c)PbO_{(s)} + (d)SO_{2(g)}\]</div>
+<ol class="arabic simple" start="3">
+<li>Balance the coefficients based on the atoms found in the chemical
+equation</li>
+</ol>
+<div class="math">
+\[(a)PbS_{(s)} + (b)O_{2(g)} \longrightarrow (c)PbO_{(s)} + (d)SO_{2(g)}\]</div>
+<div class="math">
+\[Pb: a  = c\]</div>
+<div class="math">
+\[S: a = d\]</div>
+<div class="math">
+\[O: 2b = c + 2d\]</div>
+<p>Notice that in this case, we cannot solve for all the unknowns, since we
+only have 3 equations but 4 unknowns (You will use this method to
+determine if material or energy balances can be solved later in the
+course).</p>
+<p>In this case, we solve for equality between 2 coefficients</p>
+<div class="math">
+\[2b = a + 2a\]</div>
+<div class="math">
+\[2b = 3a\]</div>
+<div class="math">
+\[b = {3/2}a\]</div>
+<p>We then choose a &#8220;basis&#8221;, a random number for &#8216;a&#8217; that will then give us
+all the subsequent coefficients of &#8216;b&#8217;, &#8216;c&#8217; and &#8216;d&#8217;.</p>
+<div class="math">
+\[a = 1\]</div>
+<div class="math">
+\[b = {3/2}\]</div>
+<div class="math">
+\[c = 1\]</div>
+<div class="math">
+\[d = 1\]</div>
+<div class="math">
+\[PbS_{(s)} + {3/2}O_{2(g)} \longrightarrow PbO_{(s)} + SO_{2(g)}\]</div>
+<p>Which is equivalent to</p>
+<div class="math">
+\[2PbS_{(s)} + 3O_{2(g)} \longrightarrow 2PbO_{s} + 2SO_{2(g)}\]</div>
+<div class="section" id="Phase-diagrams,-phase-transitions-and-vapour/liquid-equilibrium-calculation">
+<h3>Phase diagrams, phase transitions and vapour/liquid equilibrium calculation<a class="headerlink" href="#Phase-diagrams,-phase-transitions-and-vapour/liquid-equilibrium-calculation" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="Phase-diagrams">
+<h2>Phase diagrams<a class="headerlink" href="#Phase-diagrams" title="Permalink to this headline">¶</a></h2>
+<p>In material and energy balances, reactants could change states from
+liquid to gas and vice versa. Phase diagrams help us relate the
+pressure, temperature and physical state a certain substance will be in,
+and thus allow us to calculate the subsequent heat and energy change
+once a substnace changes states.</p>
+<div style="text-align:center;"><h3><p>Figure 1. Phase diagram of water</p>
+</h3></div><p><p><a class="reference external" href="https://www.birdvilleschools.net/cms/lib2/TX01000797/Centricity/Domain/912/ChemLessons/Lessons/Phases%20and%20Changes/image022.jpg">https://www.birdvilleschools.net/cms/lib2/TX01000797/Centricity/Domain/912/ChemLessons/Lessons/Phases%20and%20Changes/image022.jpg</a></p>
+</p><ol class="arabic simple">
+<li>The point where (<span class="math">\(T\)</span> ,<span class="math">\(P\)</span>) falls on the solid–vapor
+equilibrium curve is the <strong>triple point</strong> of the substance (A).</li>
+<li>If (<span class="math">\(T\)</span> ,<span class="math">\(P\)</span>) falls on the solid–liquid equilibrium
+curve, then <span class="math">\(T\)</span> is the <strong>melting/freezing point</strong> at pressure
+<span class="math">\(P\)</span> (C).</li>
+<li>The boiling point at <span class="math">\(P = 1 atm\)</span> is the <strong>normal boiling
+point</strong> of the substance (D).</li>
+<li>If (<span class="math">\(T\)</span> ,<span class="math">\(P\)</span>) falls on the solid–vapor equilibrium
+curve, then <span class="math">\(T\)</span> is the <strong>sublimation point</strong> at pressure
+<span class="math">\(P\)</span>.</li>
+<li>If <span class="math">\(T\)</span> and <span class="math">\(P\)</span> correspond to a point on the vapor–liquid
+equilibrium curve for a substance, <span class="math">\(P\)</span> is the <strong>vapor
+pressure</strong> of the substance at the temperature <span class="math">\(T\)</span>, and
+<span class="math">\(T\)</span> is the boiling point temperature of the substnace at
+<span class="math">\(P\)</span>.</li>
+<li>The vapor-liquid curve terminates at the <strong>critical point</strong>. Above
+and to the right of the critical point, the two phases never
+co-exist.</li>
+</ol>
+<p>Note: Add interactive phase graph to this portion, not just a static
+graph.</p>
+</div>
+<div class="section" id="Phase-transitions">
+<h2>Phase transitions<a class="headerlink" href="#Phase-transitions" title="Permalink to this headline">¶</a></h2>
+<p>Phase transitions occur when the substance changes state, crossing one
+or more of the state equilibrium curves. Large amounts of energy are
+usually exchanged at this state. This energy change is characterized by
+the change in specific enthalpy and is termed <strong>latent heat</strong> of the
+phase change.</p>
+<p>The two most common latent heats are for condensing/boiling and
+melting/freezing, which are termed as <strong>heat of vaporization</strong> and
+<strong>heat of fusion</strong> respectively.</p>
+<div class="math">
+\[\Delta H_{v, water}\]</div>
+<div class="math">
+\[\Delta H_{m, water}\]</div>
+<p>Note that latent heats are affected more by temperature than pressure.</p>
+<p>(Note: Make it under the chapter of thermodynamics, interactive table to
+explore the different heats of vaporization of different substances.)&#8221;</p>
+</div>
+<div class="section" id="Vapor/liquid-equilibrium-calculations">
+<h2>Vapor/liquid equilibrium calculations<a class="headerlink" href="#Vapor/liquid-equilibrium-calculations" title="Permalink to this headline">¶</a></h2>
+<p>A subtance may co-exist as a vapor-liquid combination when the
+temperature and pressure falls on the vapor-liquid equilibrium curve. At
+points above the VLE curve, water is a <strong>subcooled liquid</strong>. On points
+along the VLE curve, water can be a <strong>saturated liquid</strong> or <strong>vapor</strong>.
+Below the VLE curve, water is <strong>superheated vapor</strong>.</p>
+<p>These keywords are used in the determination of specific internal energy
+(<span class="math">\(U\)</span>)and specific enthalpy (<span class="math">\(H\)</span>) of water at specific
+temperatures and pressures using a <strong>steam table</strong>. (Add cropped version
+as an exmaple.)</p>
+<div class="section" id="Works-cited">
+<h3>Works cited<a class="headerlink" href="#Works-cited" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">CHEM 154 review</a><ul>
+<li><a class="reference internal" href="#The-following-are-topics-from-the-standard-CHEM-154-syllabus-(2016W)-that-we-will-be-reviewing-in-this-Notebook.-No,-you-don't-need-to-remember-everything-from-CHEM-154.-Yet.">The following are topics from the standard CHEM 154 syllabus (2016W) that we will be reviewing in this Notebook. No, you don&#8217;t need to remember everything from CHEM 154. Yet.</a></li>
+<li><a class="reference internal" href="#Reaction-stoichiometry-(Ch-4)">Reaction stoichiometry (Ch 4)</a></li>
+<li><a class="reference internal" href="#Bulk-Properties-of-Matter-and-Intermolecular-Interactions-(Ch,-10-12)">Bulk Properties of Matter and Intermolecular Interactions (Ch, 10 12)</a></li>
+<li><a class="reference internal" href="#Gases;-Liquids;-Phase-Diagrams.Phase-transitions-&amp;-vapour/liquid-equilibrium-calculation.">Gases; Liquids; Phase Diagrams.Phase transitions &amp; vapour/liquid equilibrium calculation.</a></li>
+<li><a class="reference internal" href="#Thermochemistry-and-Thermodynamics-(Ch-7,-Ch-19-)">Thermochemistry and Thermodynamics (Ch 7, Ch 19 )</a><ul>
+<li><a class="reference internal" href="#Reaction-Stoichiometry">Reaction Stoichiometry</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Steps-in-balancing-reaction-stoichiometry">Steps in balancing reaction stoichiometry</a><ul>
+<li><a class="reference internal" href="#Phase-diagrams,-phase-transitions-and-vapour/liquid-equilibrium-calculation">Phase diagrams, phase transitions and vapour/liquid equilibrium calculation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Phase-diagrams">Phase diagrams</a></li>
+<li><a class="reference internal" href="#Phase-transitions">Phase transitions</a></li>
+<li><a class="reference internal" href="#Vapor/liquid-equilibrium-calculations">Vapor/liquid equilibrium calculations</a><ul>
+<li><a class="reference internal" href="#Works-cited">Works cited</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/Module-0-Introduction/CHEM-154/CHEM 154 Review notebook.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

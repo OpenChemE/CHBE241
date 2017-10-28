@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5.3 – Open Systems and Enthalpy &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="5.3-–-Open-Systems-and-Enthalpy">
+<h1>5.3 – Open Systems and Enthalpy<a class="headerlink" href="#5.3-–-Open-Systems-and-Enthalpy" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="5.3.0-–-Learning-Objectives">
+<h2>5.3.0 – Learning Objectives<a class="headerlink" href="#5.3.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the definition of enthalpy.</li>
+<li>Explain how enthalpy differs from internal energy</li>
+<li>Look at the steps to solving an enthalpy problem.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.3.1-–-Introduction">
+<h2>5.3.1 – Introduction<a class="headerlink" href="#5.3.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>To account for <strong>open</strong> systems. Enthalpy is used as a <strong>measurement of
+Energy</strong> in a system. This This notebook will go over a short
+explanation of enthalpy and go over problem 7.4-2 of the textbook.</p>
+<p>Recall that the energy equation in a <strong>closed system</strong> is
+<span class="math">\(E_{tot} = Q - W\)</span> and after negating potential and kinetic energy
+becomes: <span class="math">\(U = Q-W\)</span>.</p>
+<p>In an open system, there is a <strong>transfer of material</strong>. This means that
+there needs to be a correction for internal energy <span class="math">\(U\)</span> to account
+for the particles leaving the system. Enthalpy <span class="math">\(H\)</span> is a measure of
+energy accounts for open systems and the energy balance becomes:</p>
+<div class="math">
+\[H = Q-W\]</div>
+<p>and</p>
+<div class="math">
+\[\Delta H =  \Delta Q- \Delta W\]</div>
+<p>Enthalpy is extremely useful because many processes in chemical
+engineering are open systems and as a result, there are extensive
+databases that contain enthalpy values of various chemicals.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.3.2-–-Definition-of-Enthalpy">
+<h2>5.3.2 – Definition of Enthalpy<a class="headerlink" href="#5.3.2-–-Definition-of-Enthalpy" title="Permalink to this headline">¶</a></h2>
+<p>Enthalpy is defined as <span class="math">\(H= U+PV\)</span> and a change of enthalpy is
+defined as <span class="math">\(\Delta H = \Delta U + \Delta PV\)</span>. This accounts for
+the open system by noticing that the pressure of the system remains
+constant with the pressure of the surroundings.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.3.3-–-Problem-Statement">
+<h2>5.3.3 – Problem Statement<a class="headerlink" href="#5.3.3-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<p>Steam powers a turbine with a flowrate of 500 kg/h at 44 atm and
+<span class="math">\(450^{\circ} \space C\)</span>. The Steam enters the turbine at an average
+linear velocity of 60 m/s and exits 5 m below the turbine inlet at 360
+m/s. The turbine produces 70 kW of shaft work and has a heat loss of
+<span class="math">\(10^4\)</span> kcal/h. Calculate the specific enthalpy change based on
+this process.</p>
+<div class="math">
+\[\Delta \dot{H} + \Delta \dot{E_k} + \Delta \dot{E_p} = \dot{Q} - \dot {W_s}\]</div>
+<p>Useful conversions: <img alt="image0" src="../_images/Picture1.jpg" /></p>
+<div class="section" id="1.-List-the-assumptions-and-definitions">
+<h3>1. List the assumptions and definitions<a class="headerlink" href="#1.-List-the-assumptions-and-definitions" title="Permalink to this headline">¶</a></h3>
+<p>Our major assumption is that there is no extra work done except for the
+70W of electrical energy and no other forms of heat transfer.
+Essentially, the only data that is relevant is given to us explicitly.</p>
+<p>For simplicity, we will say that 4.4 MPa is close enough to 4.5MPa on
+the steam table. <strong>(all teachers are different; check with yours
+first!)</strong></p>
+<p>Let any inlet flow take the subscript <span class="math">\(i\)</span> and outlet flow take the
+subscript <span class="math">\(o\)</span>.</p>
+</div>
+<div class="section" id="2.-Draw-a-flowchart-and-write-the-full-equation-to-solve">
+<h3>2. Draw a flowchart and write the full equation to solve<a class="headerlink" href="#2.-Draw-a-flowchart-and-write-the-full-equation-to-solve" title="Permalink to this headline">¶</a></h3>
+<div class="figure">
+<img alt="" src="../_images/problem.svg" /></div>
+<div class="math">
+\[\Delta \dot{H} + \Delta \dot{E_k} + \Delta \dot{E_p} = \dot{Q} - \dot {W_s}\]</div>
+<p>Expanded this becomes</p>
+<div class="math">
+\[(\dot{H_o}-\dot{H_i} )+ (\dot{E_{ko}} -\dot{E_{ki}}) + (\dot{E_{po}}-\dot{E_{pi}} )= \dot{Q} + \dot {W_s}\]</div>
+</div>
+<div class="section" id="3.-Identify-the-known-and-unknown-variables">
+<h3>3. Identify the known and unknown variables<a class="headerlink" href="#3.-Identify-the-known-and-unknown-variables" title="Permalink to this headline">¶</a></h3>
+<p><strong>be careful with units</strong>; we want everything in terms of
+<span class="math">\(\frac{Kj}{hr}\)</span></p>
+<p><span class="math">\(\dot{H}_i\)</span> for 500kg of steam at 44 atm and 450° =
+<span class="math">\(3324.2 \space \frac{kJ}{kg \cdot hr} \cdot 500 \space kg\)</span> =
+<span class="math">\(1,662,100 \space \frac{kJ}{hr}\)</span></p>
+<p>from the
+<a class="reference external" href="https://www.nist.gov/sites/default/files/documents/srd/NISTIR5078-Tab3.pdf">nist</a>
+steam table</p>
+<p><span class="math">\(H_o\)</span> is <strong>unknown</strong> because we do not know the temperature of
+steam leaving the turbine.</p>
+<p><span class="math">\(\dot{E}_{ki}= \frac{1}{2} \cdot \dot{m} \cdot v^2 = 500 \space \frac{kg}{hr} \cdot \frac{1}{2} \cdot (60 \space \frac{m}{s})^2 \cdot \frac{1 \space kJ}{1000 \space J} = 900 \space \frac{kJ}{hr}\)</span></p>
+<p><span class="math">\(\dot{E}_{ko} = \frac{1}{2} \cdot \dot{m} \cdot v^2 = 500 \space \frac{kg}{hr} \cdot \frac{1}{2} \cdot (360 \space \frac{m}{s})^2 \cdot \frac{1k \space J}{1000 \space J} = 32,400 \space \frac{kJ}{hr}\)</span></p>
+<p><span class="math">\(\dot{E}_{pi}= \dot{m} \cdot g \cdot h = 500 \space \frac{kg}{hr} \cdot 9.81 \space \frac{m}{s}^2 \cdot \frac{1 \space kJ}{1000 \space J} \cdot 5 \space m = 24.525 \space \frac{kJ}{hr}\)</span></p>
+<p><span class="math">\(\dot{E}_{po}= \dot{m} \cdot g \cdot h = 500 \space \frac{kg}{hr} \cdot 9.81\frac{m}{s}^2 \cdot \frac{1 \space kJ}{1000 \space J} \cdot 0m = 0 \space \frac{kJ}{hr}\)</span></p>
+<p><span class="math">\(\dot{Q} = lost = -10^4 \space kcal \times 4184 \frac{J}{kcal} \times \frac{1 \space kJ}{1000 \space J} = -41,840 \space \frac{kJ}{hr}\)</span></p>
+<p><span class="math">\(\dot{W}_{net} = +W_e = 70 \space kW \cdot \frac{3600 \space s}{1 \space hr} = 252,000 \space \frac{kJ}{hr}\)</span></p>
+</div>
+<div class="section" id="4.-Solving-the-system">
+<h3>4. Solving the system<a class="headerlink" href="#4.-Solving-the-system" title="Permalink to this headline">¶</a></h3>
+<p><strong>Note:</strong> This is a relatively easy question with the challenge in the
+details. A DOF analysis will not be performed as a result</p>
+<div class="math">
+\[(\dot{H_o}-\dot{H_i} )+ (\dot{E_{ko}} -\dot{E_{ki}}) + (\dot{E_{po}}-\dot{E_{pi}} )= \dot{Q} - \dot {W_s}\]</div>
+<p>Becomes (units are omitted for clarity):</p>
+<div class="math">
+\[(\dot{H_o} - 1,662,100) + (32,400 - 900) + (0 - 24.525) =  - (41,840 + 252,000)\]</div>
+<div class="math">
+\[\dot{H_o} = 1,336,784 \space \frac{kJ}{hr}\]</div>
+<div class="math">
+\[\therefore \space \Delta \dot{H} = 1,336,784 - 1,662,100   = -325,316 \space \frac{kJ}{hr}\]</div>
+<p>Returning the enthalpy to specific property</p>
+<div class="math">
+\[\Delta H = \frac{-325,316 \space \frac{kJ}{hr} }{500 \space Kg} = - 651 \space \frac{kJ}{kg}\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5.3 – Open Systems and Enthalpy</a><ul>
+<li><a class="reference internal" href="#5.3.0-–-Learning-Objectives">5.3.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#5.3.1-–-Introduction">5.3.1 – Introduction</a></li>
+<li><a class="reference internal" href="#5.3.2-–-Definition-of-Enthalpy">5.3.2 – Definition of Enthalpy</a></li>
+<li><a class="reference internal" href="#5.3.3-–-Problem-Statement">5.3.3 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#1.-List-the-assumptions-and-definitions">1. List the assumptions and definitions</a></li>
+<li><a class="reference internal" href="#2.-Draw-a-flowchart-and-write-the-full-equation-to-solve">2. Draw a flowchart and write the full equation to solve</a></li>
+<li><a class="reference internal" href="#3.-Identify-the-known-and-unknown-variables">3. Identify the known and unknown variables</a></li>
+<li><a class="reference internal" href="#4.-Solving-the-system">4. Solving the system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-5-Energy-Balances/5.3 - Open Systems and Enthalpy.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

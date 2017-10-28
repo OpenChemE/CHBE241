@@ -1,0 +1,105 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5.11 - Practice Problem 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Cloth bag filters are used to remove particulate matter from the gases passing out through several process and boiler stacks in a large industrial plant. The bags become clogged and must be replaced frequently. Since they are quite expensive, rather than being discarded they are emptied, washed, and reused. In the washing process, a detergent solution with a specific gravity of 0.87 flows from a storage tank to a washing machine. The liquid effluent from the machine is pumped through a filter to remove dirt, and the cleaned detergent is recycled back to the storage tank.\n",
+    "\n",
+    "Detergent flows from the storage tank to the washing machine by gravity feed at a rate of 820 L/min. All pipes in the line have 10.0-cm inner diameters. Friction losses are negligible in the line from the tank to the washing machine when the valve is fully opened, and $\\hat{F} 56 \\space J/kg$ in the return line, which includes the pump and filter.\n",
+    "\n",
+    "- Calculate the value of the height required to provide the desired flow rate of detergent into the washing machine when the valve is fully opened.\n",
+    "- Suppose the pump has an efficiency of 75%; that is, it delivers 75% of its rated value as shaft work. What must the rated value (kW) of the pump be to return 600 L/min of detergent to the storage tank?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Preamble:\n",
+    "\n",
+    "This question may be found in the textbook with altered values. The textbook also contains a block flow diagram. We will also develop our own for situations where it is not given.\n",
+    "\n",
+    "1. Draw a diagram of the process taking place and write the relevant equation:\n",
+    "\n",
+    "    ![](../figures/Module-5/q7.57.svg)\n",
+    "    \n",
+    "    We will __probably__ need the energy equations:\n",
+    "    $$ H = Q - W $$\n",
+    "\n",
+    "    Since the problem statement specified gravity and since height is asked for, a breakdown of kinetic and potential energy will be considered as well. \n",
+    "\n",
+    "    $$E_{tot} = E_{sys} = E_k + E_p + U $$ \n",
+    "\n",
+    "    Because we're given a flowrate and an area, we can assume that we will need the volumetric flowrate Equation.\n",
+    "    $$ Q = A\\cdot v $$\n",
+    "\n",
+    "    Regardless if we use all the equations, it does not hurt to have them written out.\n",
+    "\n",
+    "2. Add simplifications and assumptions\n",
+    " - We will assume there are no other factors affecting the energy of the system e.g $U$\n",
+    " - assume initial states in energy terms are zero eg $E_{ki}= 0$\n",
+    "3. List the known values and solve the equation(s).\n",
+    " __note:__ all values are converted to __SI__ units\n",
+    " - $v = \\frac{Q}{A} = \\frac{0.013667\\frac{m^3}{s}}  {.0019635m^2}=6.96\\frac{m}{s}$ where A is the area in meters. \n",
+    " Since we have found $v$, We can now solve the energy balance. As energy is conserved and the assumption of zero as the initial state, \n",
+    " we can simplify the energy equation to just    $E_k = E_p$. \n",
+    " This breaks down into:\n",
+    " $$ \\frac{1}{2}mv^2 = mgh$$\n",
+    "\n",
+    " At this point, it is ok to have thought of using the specific gravity, however; this is unnecessary as the mass cancels out. Subbing in numbers and solving:\n",
+    "\n",
+    " $$ h = \\frac{v^2}{2g}\\approx 2.5m $$\n",
+    " \n",
+    "4. Part 2: List the known values and solve the equation(s).\n",
+    " As we progressed through the problem, we realize we don't need the first law equation. That is ok; as we solve more of the problem we quickly realize what is needed. \n",
+    " $$P_{req} = \\dot{m}gh + \\dot{m}\\hat{F}$$\n",
+    " \n",
+    " Conversely, it is now we need the Specific gravity \n",
+    " \n",
+    " $$870\\frac{kg}{m^3} * 0.01366\\frac{m^3}{s}(*9.81\\frac{m}{s^2}*2.5m + 56J/Kg)= 957.46 kW$$\n",
+    " \n",
+    " At 75% efficiency, this becomes\n",
+    " \n",
+    " $$\\frac{957.46}{.75}=1276.620803 kW$$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

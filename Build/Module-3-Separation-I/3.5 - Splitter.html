@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.5 – Splitter &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="3.5-–-Splitter">
+<h1>3.5 – Splitter<a class="headerlink" href="#3.5-–-Splitter" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="3.5.0-–-Learning-Objectives">
+<h2>3.5.0 – Learning Objectives<a class="headerlink" href="#3.5.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this notebook you should be able to:</p>
+<ol class="arabic simple">
+<li>Recognize and algorithmically solve a splitter stream.</li>
+<li>Draw and label a splitter stream diagram properly.</li>
+<li>Make correct assumptions to solve.</li>
+<li>Perform a mass balance on a splitter stream.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.5.1-–-Introduction">
+<h2>3.5.1 – Introduction<a class="headerlink" href="#3.5.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Separation is essential in chemical processes, mainly for redirection of
+product streams to multiple reactors, mixing chambers or separators etc.</p>
+<p>By the end of the section, you would be able to identify splitter
+streams and perform mass balances on them. Note that no energy balances
+are needed because the streams are only there to redirect mass.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.5.2-–-Splitter-BFD">
+<h2>3.5.2 – Splitter BFD<a class="headerlink" href="#3.5.2-–-Splitter-BFD" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Figure 1." src="../_images/splitter_diagram_3.svg" /></p>
+<div style="text-align:center"><p>Figure 1.</p>
+</div><p>Figure 1. is the diagram for a splitter, in this case for a stream with
+toluene and nitrogen? A splitter is characterized with a single input,
+followed by 2 or more product streams ** all with the same composition
+as the feed stream.** These streams usually also have the same state
+of matter as the feed stream.</p>
+<div class="section" id="Noteworthy:">
+<h3>Noteworthy:<a class="headerlink" href="#Noteworthy:" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>There is no mass/volumetric/molar flow rate for the fresh feed. In
+this case, we would need to assign a random value to it, such as
+100kg/hr, or deduce it from the product flow streams.</li>
+<li>Remember we need to convert the mass fractions to actual masses
+before we can add or subtract anything.</li>
+<li>Not all splitter processes are split 50/50. Be careful not to make
+this assumption when dealing with unlabelled streams.</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.5.3-–-Steps-to-solve">
+<h2>3.5.3 – Steps to solve<a class="headerlink" href="#3.5.3-–-Steps-to-solve" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>If the input stream does not have a flow rate listed in the question
+or the diagram, assume a mass or volumetric flow rate of a random
+number, preferably a mass flow rate with a nice round number like 100
+<span class="math">\(kg/h\)</span>.</li>
+<li>Draw and label the flow chart based on the question.</li>
+<li>Write expressions for the quantities requested in the problem
+statement. (e.g. <span class="math">\(m_3\)</span> = <span class="math">\(m_{B3}\)</span> + <span class="math">\(m_{T3}\)</span>,
+<span class="math">\(x_B\)</span> = <span class="math">\(m_{B3}/m_3\)</span>). The expressions should be written
+to help in solving for the missing parameters of the process.</li>
+<li>Convert all mixed units to one uniform units, such as converting all
+mass fractions into mass flow rates. In most cases, it would be
+converting all the units to masses.</li>
+<li><strong>Do the algebra.</strong></li>
+</ol>
+<hr class="docutils" />
+<div class="section" id="Solution-(To-figure-1.)">
+<h3>Solution (To figure 1.)<a class="headerlink" href="#Solution-(To-figure-1.)" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Write out the mass balance and find the total flow rates in each
+stream. (remember: <strong>Accumulation = Input + Generation - Output -
+Consumption</strong>. The following mass balance was derived by rearranging
+to get Input = Output).</p>
+<div class="math">
+\[x_{Total \space Stream} = m_{stream \space a} + m_{stream \space b}\]</div>
+<div class="math">
+\[x_{Total \space Stream} = 100 \space \frac{kg}{hr} + 50 \space \frac{kg}{hr} = 150 \space \frac{kg}{hr}\]</div>
+</li>
+<li><p class="first">Now that we know the total flow rates in each stream, we can use the
+mass fractions to find the flow rates of each component in the
+product stream.</p>
+</li>
+</ol>
+<p><strong>Toluene and nitrogen in each stream</strong></p>
+<ul>
+<li><p class="first">Fresh feed</p>
+<div class="math">
+\[Fresh \space feed_{Toluene} = 150 \frac{kg}{hr} \times 0.51 = 76.5 \frac{kg}{hr}\]</div>
+</li>
+</ul>
+<div class="math">
+\[Fresh \space feed_{Nitrogen} = 150 \frac{kg}{hr} \times 0.49 = 73.5\frac{kg}{hr}\]</div>
+<ul>
+<li><p class="first">Stream A</p>
+<div class="math">
+\[Fresh \space feed_{Toluene} = 100 \frac{kg}{hr} \times 0.51 = 51 \frac{kg}{hr}\]</div>
+</li>
+</ul>
+<div class="math">
+\[Fresh \space feed_{Nitrogen} = 100 \frac{kg}{hr} \times 0.49 = 49 \frac{kg}{hr}\]</div>
+<ul>
+<li><p class="first">Stream B (Since we know the make up of the other streams, we can just
+subtract)</p>
+<div class="math">
+\[Fresh \space feed_{Toluene} = 76.5 \frac{kg}{hr} - 51 \frac{kg}{hr} = 25.5 \frac{kg}{hr}\]</div>
+</li>
+</ul>
+<div class="math">
+\[Fresh \space feed_{Nitrogen} = 73.5 \frac{kg}{hr} - 49 \frac{kg}{hr} = 24.5 \frac{kg}{hr}\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.5 – Splitter</a><ul>
+<li><a class="reference internal" href="#3.5.0-–-Learning-Objectives">3.5.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#3.5.1-–-Introduction">3.5.1 – Introduction</a></li>
+<li><a class="reference internal" href="#3.5.2-–-Splitter-BFD">3.5.2 – Splitter BFD</a><ul>
+<li><a class="reference internal" href="#Noteworthy:">Noteworthy:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#3.5.3-–-Steps-to-solve">3.5.3 – Steps to solve</a><ul>
+<li><a class="reference internal" href="#Solution-(To-figure-1.)">Solution (To figure 1.)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-3-Separation-I/3.5 - Splitter.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,188 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5.1 &ndash; The First Law of Thermodynamics\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.1.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the relationship between the first law and energy conservation.\n",
+    "2. Understand the breakdown of the energy term\n",
+    "3. Learn about a closed system and internal energy.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "##  5.1.1 &ndash; Introduction \n",
+    "\n",
+    "As Chemical engineers, the knowledge of energy flows is integral to the industry. How will equipment affect the energy of a system? How does a reactor withstand an exothermic/endothermic reaction? Thermodynamics is the stepping stone in the study of energy flows. This notebook will give you an overview of the first law of thermodynamics.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.1.2 &ndash; The First Law\n",
+    "\n",
+    "The first law is the concept that __energy is conserved. __ The first law states that the energy of a __closed system__ $E_{sys}$, is equal to the sum of heat added to the system $Q$ and the work done to or upon the system $W$. This is written mathematically as: \n",
+    "\n",
+    "$$E_{sys} = Q - W$$ \n",
+    "\n",
+    "and \n",
+    "\n",
+    "$$\\Delta E_{sys} = \\Delta Q-\\Delta W$$\n",
+    "\n",
+    "__Important! The system must be closed. Otherwise internal energy cannot be used alone__\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.1.3 &ndash; Units of the first law\n",
+    "\n",
+    "Energy in chemical engineering is often described as a $\\frac{Kilojoule}{Kilogram}$ or $\\frac{Joule}{mol}$. These units are used because of the massive amount of material that chemical engineers work with.\n",
+    "\n",
+    "Let's break down these terms down one-by-one.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.1.4 &ndash; Energy\n",
+    "\n",
+    "Energy comes in many __different forms__. Sitting up on a chair reading this, you have __potential energy__. When you run in class to hand in your homework, you are demonstrating __kinetic energy__.  Your mere existence and the vibrations of the atoms inside of you, is a form of the __internal energy__. There are many other energies that can be classified but this course will be mainly focusing on these three.\n",
+    "\n",
+    "$$E_{tot} = E_{sys} = E_k + E_p + U$$ \n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.1.5 &ndash; Fermi question!\n",
+    "\n",
+    "Using only facts, you know yourself... How fast would a car have to drive to have the same energy to climb mount Everest? How many Oreo cookies would that be? __An answer will be provided at the bottom__"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "### A solution to Fermi. \n",
+    "\n",
+    "I know that the Mount Everest is approximately 30000ft. The average person weighs 65kg. therefore, using the __potential energy__ formula and rough unit conversions: \n",
+    "\n",
+    "$$E_p = mgh$$ \n",
+    "\n",
+    "we obtain:\n",
+    "\n",
+    "$$ E_p = 65 \\space kg \\cdot \\bigg(30,000 \\space ft \\times 0.3 \\space \\frac{m}{ft} \\bigg) \\cdot 9.81 \\space \\frac{m}{s^2} = 5,738,850 \\space J$$\n",
+    "\n",
+    "Let's guess that an Oreo has 100 food calories (Cal) \n",
+    "\n",
+    "$$ \\therefore \\space 5,738,850 \\space J \\times \\frac{1 \\space Cal}{4,000 \\space J} \\times \\frac{1 \\space \\text{Oreo cookies}}{100 \\space Cal} = 14.3 \\space \\text{Oreo cookies}. $$\n",
+    "\n",
+    "A car weighs approximately 1000kg. Using the __kinetic energy__ formula:\n",
+    "\n",
+    "$$ E_k = \\frac{1}{2} \\cdot m *v^2 $$\n",
+    "\n",
+    "$$ 5,738,850 \\space J = \\frac{1}{2} \\cdot 1,000 \\space kg \\cdot v^2 $$ \n",
+    "\n",
+    "Solving for v results in $v = 107.13 \\space m/s$ which is just over the speed of the bullet train in Japan.\n",
+    "\n",
+    "Click here for more fermi questions [more fermi!](http://www.fermiquestions.com/play)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 5.1.6 &ndash; Problem Statement\n",
+    "\n",
+    "### Question\n",
+    "\n",
+    "Water flows into a process unit through a 2-cm ID (internal diameter), 4m long pipe at a rate of 2.00 $m^3/h$, at a height of 2m from the ground. Assuming 2 hours have passed and, calculate $\\dot{E_k}$, $\\dot{E_p}$ and the total energy for the system.\n",
+    "\n",
+    "![Figure 1.](../figures/Module-5/5.1-example-question1.svg)\n",
+    "\n",
+    "### Answer\n",
+    "\n",
+    "**Kinetic energy** - We will use m/s just to keep consistent with SI units. \n",
+    "\n",
+    "$$u = 2.00 \\space m^3/h \\cdot \\frac{1}{0.01^2\\pi} \\cdot \\frac{1hr}{3600s} = 1.77 \\space m/s$$\n",
+    "\n",
+    "$$\\dot{m} = 2.00 \\space m^3/h \\cdot \\frac{1000 \\space kg}{1 \\space m^3} \\cdot \\frac{1hr}{3600s} = 0.556 \\space kg/s$$\n",
+    "\n",
+    "$$\\dot{E_k} = \\frac{1}{2} \\cdot 0.556 \\space kg/s \\cdot 1.77 \\space m/s = 0.870 \\space J/s$$\n",
+    "\n",
+    "**Potential energy**\n",
+    "\n",
+    "$$m = 2.00 \\space m^3/h \\cdot \\frac{1000 \\space kg}{1 \\space m^3} \\cdot 2 hrs = 4000 \\space kg$$\n",
+    "\n",
+    "$$\\dot{E_p} = m \\cdot g \\cdot h$$\n",
+    "\n",
+    "$$\\dot{E_p} = 4000 \\space kg \\cdot 9.81 \\cdot 2m = 78484 \\space J$$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

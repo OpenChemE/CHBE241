@@ -1,0 +1,1383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.6 – Steam Tables &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="4.6-–-Steam-Tables">
+<h1>4.6 – Steam Tables<a class="headerlink" href="#4.6-–-Steam-Tables" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="4.6.0-–-Learning-Objectives">
+<h2>4.6.0 – Learning Objectives<a class="headerlink" href="#4.6.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand what steam tables tell us.</li>
+<li>Use steam tables to solve thermodynamic problems.</li>
+<li>Interpolate between data points.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.6.1-–-Introduction">
+<h2>4.6.1 – Introduction<a class="headerlink" href="#4.6.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Water, and in specific, steam is used in many processes. Most commonly,
+it is used in the transfer of energy. Because of this, scientist and
+engineers have created extensive data tables on a variety of conditions.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.6.2-–-Table-Description">
+<h2>4.6.2 – Table Description<a class="headerlink" href="#4.6.2-–-Table-Description" title="Permalink to this headline">¶</a></h2>
+<p>Shown below is a saturated steam table. A <strong>saturated steam table</strong> will
+include data of both the liquid and vapour phases of water at a given
+temperature and pressure.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.read_excel(&#39;../figures/Module-4/SatTandPofSteam.xlsx&#39;, sheet_name=&#39;Sheet2&#39;, index_col=None, na_values=[&#39;NA&#39;])
+df.head(20)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temperature (C)</th>
+      <th>Pressure (MPa)</th>
+      <th>Volume (l, m3/kg)</th>
+      <th>Volume (v, m3/kg)</th>
+      <th>Internal Energy (l, kJ/kg)</th>
+      <th>Δ Internal Energy of Vapourization (kJ/kg)</th>
+      <th>Internal Energy (v, kJ/kg)</th>
+      <th>Enthalpy (l, kJ/kg)</th>
+      <th>Δ Enthalpy of Vapourization (kJ/kg)</th>
+      <th>Enthalpy (v, kJ/kg)</th>
+      <th>Entropy (l, J/g*K)</th>
+      <th>Δ Entropy of Vapourization (kJ/kg)</th>
+      <th>Entropy (v, J/g*K)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.01</td>
+      <td>0.000612</td>
+      <td>0.001000</td>
+      <td>205.9900</td>
+      <td>0.000</td>
+      <td>2374.900</td>
+      <td>2374.9</td>
+      <td>0.000</td>
+      <td>2500.900</td>
+      <td>2500.9</td>
+      <td>0.000000</td>
+      <td>9.155500</td>
+      <td>9.1555</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.00</td>
+      <td>0.000873</td>
+      <td>0.001000</td>
+      <td>147.0100</td>
+      <td>21.019</td>
+      <td>2360.781</td>
+      <td>2381.8</td>
+      <td>21.020</td>
+      <td>2489.080</td>
+      <td>2510.1</td>
+      <td>0.076254</td>
+      <td>8.948546</td>
+      <td>9.0248</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.00</td>
+      <td>0.001228</td>
+      <td>0.001000</td>
+      <td>106.3000</td>
+      <td>42.020</td>
+      <td>2346.580</td>
+      <td>2388.6</td>
+      <td>42.021</td>
+      <td>2477.179</td>
+      <td>2519.2</td>
+      <td>0.151090</td>
+      <td>8.748710</td>
+      <td>8.8998</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15.00</td>
+      <td>0.001706</td>
+      <td>0.001001</td>
+      <td>77.8750</td>
+      <td>62.980</td>
+      <td>2332.520</td>
+      <td>2395.5</td>
+      <td>62.981</td>
+      <td>2465.319</td>
+      <td>2528.3</td>
+      <td>0.224460</td>
+      <td>8.555840</td>
+      <td>8.7803</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20.00</td>
+      <td>0.002339</td>
+      <td>0.001002</td>
+      <td>57.7570</td>
+      <td>83.912</td>
+      <td>2318.388</td>
+      <td>2402.3</td>
+      <td>83.914</td>
+      <td>2453.486</td>
+      <td>2537.4</td>
+      <td>0.296480</td>
+      <td>8.369520</td>
+      <td>8.6660</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>25.00</td>
+      <td>0.003170</td>
+      <td>0.001003</td>
+      <td>43.3370</td>
+      <td>104.830</td>
+      <td>2304.270</td>
+      <td>2409.1</td>
+      <td>104.830</td>
+      <td>2441.670</td>
+      <td>2546.5</td>
+      <td>0.367220</td>
+      <td>8.189380</td>
+      <td>8.5566</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>30.00</td>
+      <td>0.004247</td>
+      <td>0.001004</td>
+      <td>32.8780</td>
+      <td>125.730</td>
+      <td>2290.170</td>
+      <td>2415.9</td>
+      <td>125.730</td>
+      <td>2429.770</td>
+      <td>2555.5</td>
+      <td>0.436750</td>
+      <td>8.015250</td>
+      <td>8.4520</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>35.00</td>
+      <td>0.005629</td>
+      <td>0.001006</td>
+      <td>25.2050</td>
+      <td>146.630</td>
+      <td>2276.070</td>
+      <td>2422.7</td>
+      <td>146.630</td>
+      <td>2417.870</td>
+      <td>2564.5</td>
+      <td>0.505130</td>
+      <td>7.846570</td>
+      <td>8.3517</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>40.00</td>
+      <td>0.007385</td>
+      <td>0.001008</td>
+      <td>19.5150</td>
+      <td>167.530</td>
+      <td>2261.870</td>
+      <td>2429.4</td>
+      <td>167.530</td>
+      <td>2405.970</td>
+      <td>2573.5</td>
+      <td>0.572400</td>
+      <td>7.683100</td>
+      <td>8.2555</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>45.00</td>
+      <td>0.009595</td>
+      <td>0.001010</td>
+      <td>15.2520</td>
+      <td>188.430</td>
+      <td>2247.670</td>
+      <td>2436.1</td>
+      <td>188.430</td>
+      <td>2393.970</td>
+      <td>2582.4</td>
+      <td>0.638610</td>
+      <td>7.524690</td>
+      <td>8.1633</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>50.00</td>
+      <td>0.012352</td>
+      <td>0.001012</td>
+      <td>12.0270</td>
+      <td>209.330</td>
+      <td>2233.370</td>
+      <td>2442.7</td>
+      <td>209.340</td>
+      <td>2381.960</td>
+      <td>2591.3</td>
+      <td>0.703810</td>
+      <td>7.370990</td>
+      <td>8.0748</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>55.00</td>
+      <td>0.015762</td>
+      <td>0.001015</td>
+      <td>9.5643</td>
+      <td>230.240</td>
+      <td>2219.060</td>
+      <td>2449.3</td>
+      <td>230.260</td>
+      <td>2369.840</td>
+      <td>2600.1</td>
+      <td>0.768020</td>
+      <td>7.221780</td>
+      <td>7.9898</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>60.00</td>
+      <td>0.019946</td>
+      <td>0.001017</td>
+      <td>7.6672</td>
+      <td>251.160</td>
+      <td>2204.740</td>
+      <td>2455.9</td>
+      <td>251.180</td>
+      <td>2357.620</td>
+      <td>2608.8</td>
+      <td>0.831290</td>
+      <td>7.076810</td>
+      <td>7.9081</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>65.00</td>
+      <td>0.025042</td>
+      <td>0.001020</td>
+      <td>6.1935</td>
+      <td>272.090</td>
+      <td>2190.310</td>
+      <td>2462.4</td>
+      <td>272.120</td>
+      <td>2345.380</td>
+      <td>2617.5</td>
+      <td>0.893650</td>
+      <td>6.935950</td>
+      <td>7.8296</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>70.00</td>
+      <td>0.031201</td>
+      <td>0.001023</td>
+      <td>5.0395</td>
+      <td>293.030</td>
+      <td>2175.870</td>
+      <td>2468.9</td>
+      <td>293.070</td>
+      <td>2333.030</td>
+      <td>2626.1</td>
+      <td>0.955130</td>
+      <td>6.798870</td>
+      <td>7.7540</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>75.00</td>
+      <td>0.038595</td>
+      <td>0.001026</td>
+      <td>4.1289</td>
+      <td>313.990</td>
+      <td>2161.210</td>
+      <td>2475.2</td>
+      <td>314.030</td>
+      <td>2320.570</td>
+      <td>2634.6</td>
+      <td>1.015800</td>
+      <td>6.665400</td>
+      <td>7.6812</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>80.00</td>
+      <td>0.047414</td>
+      <td>0.001029</td>
+      <td>3.4052</td>
+      <td>334.960</td>
+      <td>2146.640</td>
+      <td>2481.6</td>
+      <td>335.010</td>
+      <td>2307.990</td>
+      <td>2643.0</td>
+      <td>1.075600</td>
+      <td>6.535500</td>
+      <td>7.6111</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>85.00</td>
+      <td>0.057867</td>
+      <td>0.001032</td>
+      <td>2.8258</td>
+      <td>355.950</td>
+      <td>2131.850</td>
+      <td>2487.8</td>
+      <td>356.010</td>
+      <td>2295.290</td>
+      <td>2651.3</td>
+      <td>1.134600</td>
+      <td>6.408800</td>
+      <td>7.5434</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>90.00</td>
+      <td>0.070182</td>
+      <td>0.001036</td>
+      <td>2.3591</td>
+      <td>376.970</td>
+      <td>2117.030</td>
+      <td>2494.0</td>
+      <td>377.040</td>
+      <td>2282.460</td>
+      <td>2659.5</td>
+      <td>1.192900</td>
+      <td>6.285200</td>
+      <td>7.4781</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>95.00</td>
+      <td>0.084608</td>
+      <td>0.001040</td>
+      <td>1.9806</td>
+      <td>398.000</td>
+      <td>2102.000</td>
+      <td>2500.0</td>
+      <td>398.090</td>
+      <td>2269.510</td>
+      <td>2667.6</td>
+      <td>1.250400</td>
+      <td>6.164700</td>
+      <td>7.4151</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Another type of table is a super heated steam table at a given pressure.
+Here is an example of this type table.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.read_excel(&#39;../figures/Module-4/Steam_3MPa.xlsx&#39;, sheet_name=&#39;Sheet2&#39;, index_col=None, na_values=[&#39;NA&#39;])
+df
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temperature (C)</th>
+      <th>Pressure (MPa)</th>
+      <th>Volume (m3/kg)</th>
+      <th>Internal Energy (kJ/kg)</th>
+      <th>Enthalpy (kJ/kg)</th>
+      <th>Entropy (J/g*K)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>233.85</td>
+      <td>3</td>
+      <td>0.066664</td>
+      <td>2603.2</td>
+      <td>2803.2</td>
+      <td>6.1856</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>250.00</td>
+      <td>3</td>
+      <td>0.070627</td>
+      <td>2644.7</td>
+      <td>2856.5</td>
+      <td>6.2893</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>300.00</td>
+      <td>3</td>
+      <td>0.081179</td>
+      <td>2750.8</td>
+      <td>2994.3</td>
+      <td>6.5412</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>350.00</td>
+      <td>3</td>
+      <td>0.090556</td>
+      <td>2844.4</td>
+      <td>3116.1</td>
+      <td>6.7449</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>400.00</td>
+      <td>3</td>
+      <td>0.099379</td>
+      <td>2933.5</td>
+      <td>3231.7</td>
+      <td>6.9234</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>450.00</td>
+      <td>3</td>
+      <td>0.107890</td>
+      <td>3021.2</td>
+      <td>3344.8</td>
+      <td>7.0856</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>500.00</td>
+      <td>3</td>
+      <td>0.116200</td>
+      <td>3108.6</td>
+      <td>3457.2</td>
+      <td>7.2359</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>550.00</td>
+      <td>3</td>
+      <td>0.124370</td>
+      <td>3196.6</td>
+      <td>3569.7</td>
+      <td>7.3768</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>600.00</td>
+      <td>3</td>
+      <td>0.132450</td>
+      <td>3285.5</td>
+      <td>3682.8</td>
+      <td>7.5103</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>650.00</td>
+      <td>3</td>
+      <td>0.140450</td>
+      <td>3375.6</td>
+      <td>3796.9</td>
+      <td>7.6373</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>700.00</td>
+      <td>3</td>
+      <td>0.148410</td>
+      <td>3467.0</td>
+      <td>3912.2</td>
+      <td>7.7590</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>750.00</td>
+      <td>3</td>
+      <td>0.156320</td>
+      <td>3559.9</td>
+      <td>4028.9</td>
+      <td>7.8758</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>800.00</td>
+      <td>3</td>
+      <td>0.164200</td>
+      <td>3654.3</td>
+      <td>4146.9</td>
+      <td>7.9885</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>850.00</td>
+      <td>3</td>
+      <td>0.172050</td>
+      <td>3750.3</td>
+      <td>4266.5</td>
+      <td>8.0973</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>900.00</td>
+      <td>3</td>
+      <td>0.179880</td>
+      <td>3847.9</td>
+      <td>4387.5</td>
+      <td>8.2028</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>950.00</td>
+      <td>3</td>
+      <td>0.187690</td>
+      <td>3947.0</td>
+      <td>4510.1</td>
+      <td>8.3051</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1000.00</td>
+      <td>3</td>
+      <td>0.195490</td>
+      <td>4047.7</td>
+      <td>4634.1</td>
+      <td>8.4045</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="4.6.4-–-Interpolation">
+<h2>4.6.4 – Interpolation<a class="headerlink" href="#4.6.4-–-Interpolation" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s suppose you wanted to find out what the internal energy of steam
+is at <span class="math">\(725.00 ^{\circ} C\)</span> and <span class="math">\(3.0000 \space \text{MPa}\)</span>.
+Since the value is not given in the table, you must interpolate. The
+formula for interpolation is:</p>
+<div class="math">
+\[y = \frac{y_2 - y_1}{x_2 - x_1} (x - x_1) + y_1\]</div>
+<p>In this case the formula for internal energy at
+<span class="math">\(725.00 ^{\circ} C\)</span> is:</p>
+<div class="math">
+\[U_{3 MPa, 725 C} = \frac{U_{3 MPa, 750 C} - U_{3 MPa, 700 C}}{T_2 - T_1} (T - T_1) + U_{3 MPa, 700 C}\]</div>
+<p>and the answer is:</p>
+<div class="math">
+\[U_{3 MPa, 725 C} =  \frac{(3559.9 - 3467.0 ) \space kJ/kg}{(750 - 700) \space C} (725 - 700) \space C + 3467.0 \space kJ/kg = 3513.45 \space kJ/kg\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.6.5-–-Problem-Statement">
+<h2>4.6.5 – Problem Statement<a class="headerlink" href="#4.6.5-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Question">
+<h3>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h3>
+<p>Using the steam tables below, find the change in internal energy when
+steam is first cooled isobarically at <span class="math">\(750.00 ^{\circ} C\)</span> and
+<span class="math">\(5.0000 \space \text{MPa}\)</span> to <span class="math">\(725.00 ^{\circ} C \space\)</span> and
+<span class="math">\(5.0000 \space \text{MPa}\)</span> and then expanded isothermally at
+<span class="math">\(725.00 ^{\circ} C\)</span> from <span class="math">\(5.0000 \space \text{MPa}\)</span> to
+<span class="math">\(1.0000 \space \text{MPa}\)</span>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.read_excel(&#39;../figures/Module-4/Steam_5MPa.xlsx&#39;, sheet_name=&#39;Sheet2&#39;, index_col=None, na_values=[&#39;NA&#39;])
+df
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temperature (C)</th>
+      <th>Pressure (MPa)</th>
+      <th>Volume (m3/kg)</th>
+      <th>Internal Energy (kJ/kg)</th>
+      <th>Enthalpy (kJ/kg)</th>
+      <th>Entropy (J/g*K)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>263.94</td>
+      <td>5</td>
+      <td>0.039446</td>
+      <td>2597.0</td>
+      <td>2794.2</td>
+      <td>5.9737</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>300.00</td>
+      <td>5</td>
+      <td>0.045346</td>
+      <td>2699.0</td>
+      <td>2925.7</td>
+      <td>6.2110</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>350.00</td>
+      <td>5</td>
+      <td>0.051969</td>
+      <td>2809.5</td>
+      <td>3069.3</td>
+      <td>6.4516</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>400.00</td>
+      <td>5</td>
+      <td>0.057837</td>
+      <td>2907.5</td>
+      <td>3196.7</td>
+      <td>6.6483</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>450.00</td>
+      <td>5</td>
+      <td>0.063323</td>
+      <td>3000.6</td>
+      <td>3317.2</td>
+      <td>6.8210</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>500.00</td>
+      <td>5</td>
+      <td>0.068583</td>
+      <td>3091.7</td>
+      <td>3434.7</td>
+      <td>6.9781</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>550.00</td>
+      <td>5</td>
+      <td>0.073694</td>
+      <td>3182.4</td>
+      <td>3550.9</td>
+      <td>7.1237</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>600.00</td>
+      <td>5</td>
+      <td>0.078704</td>
+      <td>3273.3</td>
+      <td>3666.8</td>
+      <td>7.2605</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>650.00</td>
+      <td>5</td>
+      <td>0.083639</td>
+      <td>3365.0</td>
+      <td>3783.2</td>
+      <td>7.3901</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>700.00</td>
+      <td>5</td>
+      <td>0.088518</td>
+      <td>3457.7</td>
+      <td>3900.3</td>
+      <td>7.5136</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>750.00</td>
+      <td>5</td>
+      <td>0.093355</td>
+      <td>3551.6</td>
+      <td>4018.4</td>
+      <td>7.6320</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>800.00</td>
+      <td>5</td>
+      <td>0.098158</td>
+      <td>3646.9</td>
+      <td>4137.7</td>
+      <td>7.7458</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>850.00</td>
+      <td>5</td>
+      <td>0.102930</td>
+      <td>3743.6</td>
+      <td>4258.3</td>
+      <td>7.8556</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>900.00</td>
+      <td>5</td>
+      <td>0.107690</td>
+      <td>3841.8</td>
+      <td>4380.2</td>
+      <td>7.9618</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>950.00</td>
+      <td>5</td>
+      <td>0.112420</td>
+      <td>3941.5</td>
+      <td>4503.6</td>
+      <td>8.0648</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1000.00</td>
+      <td>5</td>
+      <td>0.117150</td>
+      <td>4042.6</td>
+      <td>4628.3</td>
+      <td>8.1648</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.read_excel(&#39;../figures/Module-4/Steam_1MPa.xlsx&#39;, sheet_name=&#39;Sheet2&#39;, index_col=None, na_values=[&#39;NA&#39;])
+df
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temperature (C)</th>
+      <th>Pressure (MPa)</th>
+      <th>Volume (m3/kg)</th>
+      <th>Internal Energy (kJ/kg)</th>
+      <th>Enthalpy (kJ/kg)</th>
+      <th>Entropy (J/g*K)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>179.88</td>
+      <td>1</td>
+      <td>0.19436</td>
+      <td>2582.7</td>
+      <td>2777.1</td>
+      <td>6.5850</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>200.00</td>
+      <td>1</td>
+      <td>0.20602</td>
+      <td>2622.2</td>
+      <td>2828.3</td>
+      <td>6.6955</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>250.00</td>
+      <td>1</td>
+      <td>0.23275</td>
+      <td>2710.4</td>
+      <td>2943.1</td>
+      <td>6.9265</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>300.00</td>
+      <td>1</td>
+      <td>0.25799</td>
+      <td>2793.6</td>
+      <td>3051.6</td>
+      <td>7.1246</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>350.00</td>
+      <td>1</td>
+      <td>0.28250</td>
+      <td>2875.7</td>
+      <td>3158.2</td>
+      <td>7.3029</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>400.00</td>
+      <td>1</td>
+      <td>0.30661</td>
+      <td>2957.9</td>
+      <td>3264.5</td>
+      <td>7.4669</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>450.00</td>
+      <td>1</td>
+      <td>0.33045</td>
+      <td>3040.9</td>
+      <td>3371.3</td>
+      <td>7.6200</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>500.00</td>
+      <td>1</td>
+      <td>0.35411</td>
+      <td>3125.0</td>
+      <td>3479.1</td>
+      <td>7.7641</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>550.00</td>
+      <td>1</td>
+      <td>0.37766</td>
+      <td>3210.5</td>
+      <td>3588.1</td>
+      <td>7.9008</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>600.00</td>
+      <td>1</td>
+      <td>0.40111</td>
+      <td>3297.5</td>
+      <td>3698.6</td>
+      <td>8.0310</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>650.00</td>
+      <td>1</td>
+      <td>0.42449</td>
+      <td>3386.0</td>
+      <td>3810.5</td>
+      <td>8.1557</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>700.00</td>
+      <td>1</td>
+      <td>0.44783</td>
+      <td>3476.2</td>
+      <td>3924.1</td>
+      <td>8.2755</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>750.00</td>
+      <td>1</td>
+      <td>0.47112</td>
+      <td>3568.1</td>
+      <td>4039.3</td>
+      <td>8.3909</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>800.00</td>
+      <td>1</td>
+      <td>0.49438</td>
+      <td>3661.7</td>
+      <td>4156.1</td>
+      <td>8.5024</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>850.00</td>
+      <td>1</td>
+      <td>0.51762</td>
+      <td>3757.0</td>
+      <td>4274.6</td>
+      <td>8.6103</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>900.00</td>
+      <td>1</td>
+      <td>0.54083</td>
+      <td>3853.9</td>
+      <td>4394.8</td>
+      <td>8.7150</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>950.00</td>
+      <td>1</td>
+      <td>0.56403</td>
+      <td>3952.5</td>
+      <td>4516.5</td>
+      <td>8.8166</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1000.00</td>
+      <td>1</td>
+      <td>0.58721</td>
+      <td>4052.7</td>
+      <td>4639.9</td>
+      <td>8.9155</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="Answer">
+<h3>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h3>
+<p>The internal energy at <span class="math">\(750.00 ^{\circ} C\)</span> and
+<span class="math">\(5.0000 \space \text{MPa}\)</span> is</p>
+<div class="math">
+\[U_{5 MPa, 750 C} = 3511.6 \space kJ/kg\]</div>
+<p>Since <span class="math">\(725.00 ^{\circ} C\)</span> is not present in the first table, we
+must interpolate</p>
+<div class="math">
+\[U_{5 MPa, 725 C} = \frac{U_{5 MPa, 750 C} - U_{5 MPa, 700 C}}{T_2 - T_1} (T - T_1) + U_{5 MPa, 700 C}\]</div>
+<div class="math">
+\[U_{5 MPa, 725 C} =  \frac{(3511.6 - 3457.7 ) \space kJ/kg}{(750 - 700) \space C} (725 - 700) \space C + 3457.7 \space kJ/kg\]</div>
+<div class="math">
+\[U_{5 MPa, 725 C} = 3,484.65 \space kJ/kg\]</div>
+<p>now that we have <span class="math">\(U_{5 MPa, 725 C}\)</span>, we must find
+<span class="math">\(U_{1 MPa, 725 C}\)</span> using interpolation</p>
+<div class="math">
+\[U_{1 MPa, 725 C} = \frac{U_{1 MPa, 750 C} - U_{1 MPa, 700 C}}{T_2 - T_1} (T - T_1) + U_{1 MPa, 700 C}\]</div>
+<div class="math">
+\[U_{1 MPa, 725 C} =  \frac{(3568.1 - 3476.2 ) \space kJ/kg}{(750 - 700) \space C} (725 - 700) \space C + 3476.2 \space kJ/kg\]</div>
+<div class="math">
+\[U_{1 MPa, 725 C} = 3,522.15 \space kJ/kg\]</div>
+<p>Now that we have all the necessary values, we just need to sum the
+changes in internal energy</p>
+<div class="math">
+\[\Delta U_{tot} = \Delta U_{1} + \Delta U_{2} = (U_{5 MPa, 725 C} - U_{5 MPa, 750 C}) + (U_{1 MPa, 725 C} - U_{5 MPa, 725 C})\]</div>
+<div class="math">
+\[\Delta U_{tot} = (3,484.65 \space kJ/kg -    3551.6 \space kJ/kg) + (3,522.15 \space kJ/kg - 3,484.65 \space kJ/kg)\]</div>
+<div class="math">
+\[\Delta U_{tot} = -10.6 \space kJ/kg\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.6 – Steam Tables</a><ul>
+<li><a class="reference internal" href="#4.6.0-–-Learning-Objectives">4.6.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#4.6.1-–-Introduction">4.6.1 – Introduction</a></li>
+<li><a class="reference internal" href="#4.6.2-–-Table-Description">4.6.2 – Table Description</a></li>
+<li><a class="reference internal" href="#4.6.4-–-Interpolation">4.6.4 – Interpolation</a></li>
+<li><a class="reference internal" href="#4.6.5-–-Problem-Statement">4.6.5 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-4-Separation-II/4.6 - Steam Tables.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

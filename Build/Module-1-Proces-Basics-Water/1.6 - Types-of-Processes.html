@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.6 – Types of Processes &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="1.6-–-Types-of-Processes">
+<h1>1.6 – Types of Processes<a class="headerlink" href="#1.6-–-Types-of-Processes" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="1.6.0-–-Learning-Objectives">
+<h2>1.6.0 – Learning Objectives<a class="headerlink" href="#1.6.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the three types of processes dominant in chemical
+engineering.</li>
+<li>Characterize processes into the three types of processes.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.6.1-–-Introduction">
+<h2>1.6.1 – Introduction<a class="headerlink" href="#1.6.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Chemical processes can all be classified as: <strong>Batch</strong>,
+<strong>Continuous-flow</strong>, and <strong>Semi-batch</strong>. Semi-batch can be further
+broken down as <strong>steady-state</strong> or <strong>transient</strong> (unsteady-state). This
+notebook will cover the first three classifications.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.6.2-–-Batch-Processes">
+<h2>1.6.2 – Batch Processes<a class="headerlink" href="#1.6.2-–-Batch-Processes" title="Permalink to this headline">¶</a></h2>
+<p>All reactants fed to the reactor at the beginning of the process and the
+products are removed when the reaction is complete. No reactants are fed
+to the reactor and no product is removed during the process.</p>
+<p><strong>Note:</strong> The textbook refers to this as &#8220;no mass crossing the system
+boundaries&#8221;</p>
+<div class="section" id="Alcohol-fermentation-is-a-batch-process">
+<h3>Alcohol fermentation is a batch process<a class="headerlink" href="#Alcohol-fermentation-is-a-batch-process" title="Permalink to this headline">¶</a></h3>
+<p>Beer production is a classic example of a batch process. All the
+ingredients are input into the fermentation vessel and left to react.</p>
+<div class="figure" id="id1">
+<img alt="Mani brewing for ecar" src="../_images/mani1.jpg" />
+<p class="caption"><span class="caption-text">Mani brewing for ecar</span></p>
+</div>
+<p>Our feeling when home brews take 3 weeks. 🍺 Yeast has been added and the
+primary fermenter has been sealed with an airlock, which allows carbon
+dioxide to escape but nothing to enter! -ubcchemecar</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.6.3-–-Continuous-flow-processes">
+<h2>1.6.3 – Continuous flow processes<a class="headerlink" href="#1.6.3-–-Continuous-flow-processes" title="Permalink to this headline">¶</a></h2>
+<p>Continuous flow processes are where the inputs and outputs of the
+reactor flow at a constant</p>
+<p>Hydrogen sulfide is fed continuously in a series of reactors to form
+sulphuric acid. Since the process is continuous, it can be run 24/7,
+with the only maintenance as the major factor to stop the production.</p>
+<div class="figure">
+<img alt="" src="../_images/WetSulfuricAcidProcessDiagram.svg" /></div>
+<p>Attribution: Jim1138 at English Wikipedia [FAL], via Wikimedia Commons</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.6.4-–-Semi-Batch-Processes">
+<h2>1.6.4 – Semi-Batch Processes<a class="headerlink" href="#1.6.4-–-Semi-Batch-Processes" title="Permalink to this headline">¶</a></h2>
+<p>A semi-batch process is when reactants are <strong>periodically</strong> added or
+products are periodically removed. The textbook defines semi-batch
+processes as &#8220;neither batch nor continuous.&#8221;</p>
+<div class="figure">
+<img alt="" src="../_images/Bioreactor_principle.svg" /></div>
+<p>Attribution: Par G YassineMrabetTalk ✉ (Personal work) [CC BY-SA 3.0 ou
+GFDL (<a class="reference external" href="http://www.gnu.org/copyleft/fdl.html">http://www.gnu.org/copyleft/fdl.html</a>)], via Wikimedia Commons</p>
+<p>Most drugs are produced as a semi-batch process where a second reactant
+is input into the reactor. Penicillin is produced by the penicillin
+fungus at low concentrations of <strong>glucose</strong>. Therefore, it is essential
+to periodically add glucose to the reactor to supply the fungus with
+nutrients.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.6.5-–-Quiz:-What-type-of-processes-are-these?">
+<h2>1.6.5 – Quiz: What type of processes are these?<a class="headerlink" href="#1.6.5-–-Quiz:-What-type-of-processes-are-these?" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The chocolate level of the middle tray of a chocolate fondue
+fountain.</li>
+<li>A queue for a rollercoaster?</li>
+<li>A second year class of chemical engineers going through the
+engineering process.</li>
+<li>The chemical and biological engineering program on students.</li>
+</ol>
+<div class="section" id="Answer:-What-type-of-processes-are-these?">
+<h3>Answer: What type of processes are these?<a class="headerlink" href="#Answer:-What-type-of-processes-are-these?" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>This is a <strong>continuous process</strong> as the rate of which the chocolate
+is entering the middle tray and exiting the middle tray is the same.</li>
+<li>This <strong>depends</strong> the output flow is always constant as the
+rollercoaster will take x amount of people at a constant rate. If the
+input of people is constant, then this is a continuous process. If
+there are a staggered amount of people coming in at different times
+then this is a fed-batch process.</li>
+<li>Watch the control volume of this one. The focus of this is on a
+single class. If the whole class finishes at the same time then this
+would-be a <strong>batch process</strong>, however; this is not the case. A
+<strong>fed-batch</strong> is more representative as there are students joining
+from exchange and leaving for co-op at varying rates.</li>
+<li>This problem is an extension of problem 3. now instead of the control
+volume being one class of students it is the department that hosts
+all chemical engineering students. This is best represented by a
+<strong>continuous</strong> process. Students are getting admitted at a constant
+rate and leaving at a constant rate as well.</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1.6 – Types of Processes</a><ul>
+<li><a class="reference internal" href="#1.6.0-–-Learning-Objectives">1.6.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#1.6.1-–-Introduction">1.6.1 – Introduction</a></li>
+<li><a class="reference internal" href="#1.6.2-–-Batch-Processes">1.6.2 – Batch Processes</a><ul>
+<li><a class="reference internal" href="#Alcohol-fermentation-is-a-batch-process">Alcohol fermentation is a batch process</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#1.6.3-–-Continuous-flow-processes">1.6.3 – Continuous flow processes</a></li>
+<li><a class="reference internal" href="#1.6.4-–-Semi-Batch-Processes">1.6.4 – Semi-Batch Processes</a></li>
+<li><a class="reference internal" href="#1.6.5-–-Quiz:-What-type-of-processes-are-these?">1.6.5 – Quiz: What type of processes are these?</a><ul>
+<li><a class="reference internal" href="#Answer:-What-type-of-processes-are-these?">Answer: What type of processes are these?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-1-Proces-Basics-Water/1.6 - Types-of-Processes.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

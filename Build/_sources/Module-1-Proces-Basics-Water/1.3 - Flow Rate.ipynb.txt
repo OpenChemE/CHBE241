@@ -1,0 +1,225 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1.3 &ndash; Flow Rate\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.3.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the concept of flow rate.\n",
+    "2. Convert one type of flow rate into another.\n",
+    "3. Know how flow rates are measured.\n",
+    "4. Have a basic understanding of differential pressure.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.3.1 &ndash; Introduction\n",
+    "\n",
+    "Almost every process involves the movement of material from one point to another. The movement of material is present between process units, production facilities, and transportation depots. The rate at which materials are transported is the **flow rate**.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.3.2 &ndash; Mass Flow Rate\n",
+    "**Mass flow rate** is the measurement of mass per unit time (mass/time). This flowrate is usually denoted by the character $\\dot{m}$, where $\\dot{m} = \\frac{ kg }{s}$. Since mass must be conserved, the input masses of a process must equal the output masses, unless there is accumulation (See [section 1.8.2](1.8 - Materials Balances.ipynb) for further reference). Therefore, mass flowrate is a very useful tool in solving material balances.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.3.3 &ndash; Molar Flow Rate\n",
+    "**Molar flow rate** is the measurement of moles per unit time (mole/time). This flowrate is usually denoted by the character $ \\dot{n} $, where $ \\dot{n} = \\frac{ moles }{s} $. Since the total number of moles of atomic species (eg. N, O, C) must be conserved, it is useful in solving both reactive and non-reactive problems.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.3.4 &ndash; Volumetric Flow Rate\n",
+    "**Volumetric flow rate** is the measurement of volume per unit time (volume/time) This flow rate is usually denoted by the character $\\dot{V}$, where $\\dot{V} = \\frac{ m^3 }{s}$. Volumetric flow rate may change with density. \n",
+    "\n",
+    "$$ \\rho = \\frac{m}{V} = \\frac{\\dot{m}}{\\dot{V}} = \\frac{\\frac{kg}{s}}{\\frac{m^3}{s}} = \\frac{kg}{m^3} $$\n",
+    "\n",
+    "$$ \\dot{m} = \\rho \\dot{V} $$ \n",
+    "\n",
+    "Since mass flow rate is more useful, but volumetric flow rate is easier to measure, we use the formula shown above to convert from one basis to another.\n",
+    "\n",
+    "\n",
+    "Although density is nearly conserved for solids and liquids, it is not for gases. For example, if a gas is flowing through a nozzle, the mass flow rate will not change but the gas will compress or expand. \n",
+    "\n",
+    "<img src = \"../figures/Module-1/flowratecone.svg\" style=\"height:150px\">\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.3.5 &ndash; Flow Rate Measurement\n",
+    "\n",
+    "Flow rates are measured by a device called a **flowmeter**. This device provides a continuous reading of the flow rate in the line. Two commonly used flowmeters are rotameters and orifice meters.\n",
+    "\n",
+    "### 1. Rotameters\n",
+    "\n",
+    "<img src = \"../figures/Module-1/rotameter.svg\" style=\"height:200px; float:left; margin-left: 20%;\">\n",
+    "\n",
+    "<img src = \"../figures/Module-1/Sphere.jpg\" style=\"height:200px; margin-left: 60%;\">\n",
+    "\n",
+    "<div style = \"clear:both\"></div>\n",
+    "\n",
+    "<div style = \"text-align:center\"><font size=\"1\">Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]</font></div>\n",
+    "\n",
+    "**Rotameters** are a tapered vertical tube containing a small ball (the black dot in the image). The larger the flow rate, the higher the ball rises due to the increased friction force.\n",
+    "\n",
+    "### 2. Orifice Meters\n",
+    "\n",
+    "![](../figures/Module-1/Orficemeter.svg)\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "The **orifice meter** is an obstruction in the flow channel which causes a pressure drop. The magnitude of the pressure drop dictates the flow rate. The larger the pressure drop, the larger the flow rate. A manometer measures the pressure drop.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.3.6 &ndash; Manometer\n",
+    "\n",
+    "**Manometers** are one of the earliest tools used in measuring pressure drops. This is done by measuring the heights of the different fluids in the manometer. \n",
+    "\n",
+    "<img src = \"../figures/Module-1/Manometer.svg\" style=\"height:300px\">\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani at UBC Chemical and Biological Engineering\n",
+    "\n",
+    "Writing and equation the expressions for the pressures at points (a) and (b) in the figure shown above, we get the general manometer equation:\n",
+    "\n",
+    "$$ P_1 + \\rho_1 g d_1 =  P_2 + \\rho_2 g d_2 + \\rho_f g h \\quad \\text{(General Manometer Equation)} $$\n",
+    "\n",
+    "If the densities of fluids 1 and 2 are the same, the equation simplifies to:\n",
+    "\n",
+    "$$ P_1 - P_2 =  (\\rho_f - \\rho) g h \\quad \\text{(Differential Manometer Equation)} $$\n",
+    "\n",
+    "If fluids 1 and 2 are gases, the equation simplifies further to:\n",
+    "\n",
+    "$$ P_1 - P_2 =  \\rho_f  g h \\quad \\text{(Manometer Formula for Gases)} $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.3.7 &ndash; Problem Statement\n",
+    "\n",
+    "### Question\n",
+    "A differential manometer is used to measure the drop-in pressure between two points in a process line containing water. The density of the manometer fluid is $1.10 \\space g/cm^3$. The density of the fluid that is flowing is $1.00 \\space g/cm^3$. The measured levels in each arm are shown below. Calculate the pressure drop in pascals.\n",
+    "\n",
+    "![](../figures/Module-1/Problem-1-3.svg)\n",
+    "\n",
+    "<div style = \"text-align:center\"><font size= \"1\">Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]</font></div>\n",
+    "\n",
+    "### Answer"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The pressure drop is measured to be  56.897999999999996 Pa\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Declare all known varibles\n",
+    "\n",
+    "rho = 1000  # kg/m^3\n",
+    "rho_f = 1100 # kg/m^3\n",
+    "g = 9.81 # m/s^2\n",
+    "h = 0.392 - 0.334 # m\n",
+    "\n",
+    "#Solve for pressure drop using Differential Manometer Equation\n",
+    "\n",
+    "P_drop = (rho_f-rho)*g*h\n",
+    "\n",
+    "#Print Results\n",
+    "\n",
+    "print(\"The pressure drop is measured to be \", P_drop, \"Pa\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "As you can see the value we get is not exactly 56.898 Pa due to rounding error by the computer, but if you take significant figures into account the final answer is $P_1 - P_2 = 56.9 \\space Pa$."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

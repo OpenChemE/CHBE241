@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.6 – Recycle and purge &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="3.6-–-Recycle-and-purge">
+<h1>3.6 – Recycle and purge<a class="headerlink" href="#3.6-–-Recycle-and-purge" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="3.6.0-–-Learning-objectives">
+<h2>3.6.0 – Learning objectives<a class="headerlink" href="#3.6.0-–-Learning-objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this notebook, you should be able to:</p>
+<ol class="arabic simple">
+<li>Recognize recycle and purge stream scenarios from problems and draw a
+block flow diagram based on the information</li>
+<li>Use correct assumptions to set up recycle and purge scenarios</li>
+<li>Solve BFDs that incorporate recycle and purge streams using mass
+balances</li>
+<li>Extend the splitter principle to recycle and purge streams</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.6.1-–-Introduction">
+<h2>3.6.1 – Introduction<a class="headerlink" href="#3.6.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p><strong>Recycle</strong> and <strong>purge</strong> streams are an extension of <strong>splitter</strong>
+streams, whereby one of the product streams from the splitter is routed
+back into a previous process as a recycle stream and one is directed out
+of the process as a purge stream.</p>
+<p>The purpose of a recycle stream is to take unreacted reactants and reuse
+them, ensuring the highest process efficiency possible. Purge streams
+are necessary to ensure there is little to no accumulation in the system
+from the recycle stream feeding back into the fresh feed, preventing
+dilution of reactants due to waste chemicals.</p>
+<p><strong>Note:</strong> While the splitter product streams have the same compositions,
+recycle and purge stream compositions can be different from their inlet
+stream.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.6.2-–-Recycle-and-purge-example">
+<h2>3.6.2 – Recycle and purge example<a class="headerlink" href="#3.6.2-–-Recycle-and-purge-example" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id1">
+<img alt="Acetylhyde production" src="../_images/Recycle-and-purge-new.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+<p style="text-align:center;"><p>Figure 1.</p>
+</p><div style="text-align:center"><p>Attribution: Victor Chiew Yung Hui &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+</div><p>In figure 1, the recycle and purge stream is shown alongside a product
+stream. To reiterate, the main difference between a splitter and recycle
+and purge streams is splitter streams have the same compositions whereas
+recycle and purge streams don&#8217;t necessarily do.</p>
+<p>In questions in practice or exams, ways to tell which are splitters and
+which are recycle and purge streams is different composition flow rates
+or an explicit explanation, either in the question or a pre-drawn
+diagram.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.6.3-–-Steps-to-solve-recycle-and-purge">
+<h2>3.6.3 – Steps to solve recycle and purge<a class="headerlink" href="#3.6.3-–-Steps-to-solve-recycle-and-purge" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>List all assumptions. If the <strong>fresh feed</strong> stream does not have a
+flow rate listed in the question or the diagram, assume a mass or
+molecular flow rate of a random number, preferably a mass flow rate
+with a nice round number like 100 <span class="math">\(kg/h\)</span> or 100 <span class="math">\(mol/hr\)</span>.
+We <strong>cannot</strong> assume a basis for the reactor feed, since it will
+depend on the sum of the fresh feed and the recycle stream.</li>
+<li>Convert all mixed units to one uniform units. In most cases, it would
+be converting all the units to masses, but in the case of reactive
+systems, you&#8217;d want to convert them to moles per unit time.</li>
+<li>Draw and label the flow chart based on the question. We will <strong>not</strong>
+be considering chemical reactions between constituents of the fresh
+feed and reactor feed in the feed streams, only when they&#8217;re in the
+reactor.</li>
+<li>Write expressions for the quantities requested in the problem
+statement. (e.g. <span class="math">\(m_3\)</span> = <span class="math">\(m_{B3}\)</span> + <span class="math">\(m_{T3}\)</span>,
+<span class="math">\(x_B\)</span> = <span class="math">\(m_{B3}/m_3\)</span>). The expressions should be written
+to help in solving for the missing parameters of the process, and
+useful in a degree-of-freedom analysis.</li>
+<li>Perform a degree-of-freedom analysis on the process to determine if
+it is solvable.</li>
+<li><strong>Do the algebra.</strong></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.6.4-–-Recycle-and-purge-problem-statement">
+<h2>3.6.4 – Recycle and purge problem statement<a class="headerlink" href="#3.6.4-–-Recycle-and-purge-problem-statement" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s look at the previous diagram about acetaldehyde production, but
+only focus on the recycle and purge streams, and how they affect the
+reactor feed stream. If you are familiar with this and want more
+challenging questions, refer to the <a class="reference external" href="../Module-3-Separation-I/3.9%20-%20Module%20summary%20and%20practice%20questions.ipynb">Example questions
+notebook</a>.</p>
+<p>A fresh feed of 50% ethylene is fed into a process that produces
+acetaldehyde and water as products. To increase the efficiency of the
+system, a recycle stream from the separator bottom feed is fed back into
+the reactor feed. A purge stream carries
+<span class="math">\(15.5 \space kg \space C_2H_4/h\)</span>,
+<span class="math">\(15.4 \space kg \space O_2/h\)</span>,
+<span class="math">\(1.1 \space kg \space C_2H_4O/h\)</span>, and
+<span class="math">\(18 \space kg \space CO_2/h\)</span> out of the process. Given that the
+separator bottom feed flow rate is <span class="math">\(150 \space kg/h\)</span> and its
+constituents are 50% <span class="math">\(C_2H_4\)</span>, 20% <span class="math">\(O_2\)</span>, 20%
+<span class="math">\(C_2H_4O\)</span>, and 10% <span class="math">\(CO_2\)</span>. <span class="math">\($\)</span>$ What are the
+constituents of the:</p>
+<ol class="loweralpha simple">
+<li>recycle stream.</li>
+<li>fresh feed.</li>
+<li>reactor feed? Give the answer in mass flow rates of each constituent.</li>
+</ol>
+<div class="section" id="Step-1.-List-all-assumptions">
+<h3>Step 1. List all assumptions<a class="headerlink" href="#Step-1.-List-all-assumptions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>No assumptions to list</li>
+</ul>
+<p>Note in this case, while there is no listed flow rate for the fresh feed
+stream, we do <strong>not</strong> assume a basis for the fresh feed stream. This is
+because we can deduce the fresh feed flow rate from the given feed
+rates. Through practice, you can come to this conclusion too, with more
+complicated systems.</p>
+</div>
+<div class="section" id="Step-2.-Draw-a-diagram-and-label-the-diagram-according-to-the-problem">
+<h3>Step 2. Draw a diagram and label the diagram according to the problem<a class="headerlink" href="#Step-2.-Draw-a-diagram-and-label-the-diagram-according-to-the-problem" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="id2">
+<img alt="Figure 2" src="../_images/Question-1.svg" /><p class="caption"><span class="caption-text">Figure 2</span></p>
+</div>
+<p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+</div>
+<div class="section" id="Step-3.-Write-expressions-for-the-quantities-requested-in-the-problem-statement.">
+<h3>Step 3. Write expressions for the quantities requested in the problem statement.<a class="headerlink" href="#Step-3.-Write-expressions-for-the-quantities-requested-in-the-problem-statement." title="Permalink to this headline">¶</a></h3>
+<p><strong>Reactor feed</strong></p>
+<div class="math">
+\[\dot{m}_{C_2H_4 \space reactor \space feed} = \dot{m}_{C_2H_4 \space fresh \space feed} + \dot{m}_{C_2H_4 \space recycle \space feed}\]</div>
+<div class="math">
+\[\dot{m}_{C_2H_4O \space reactor \space feed} = \dot{m}_{C_2H_4O \space fresh \space feed} + \dot{m}_{C_2H_4O \space recycle \space feed}\]</div>
+<div class="math">
+\[\dot{m}_{O_2 \space reactor \space feed} = \dot{m}_{O_2 \space fresh \space feed} + \dot{m}_{O_2 \space recycle \space feed}\]</div>
+<div class="math">
+\[\dot{m}_{CO_2 \space reactor \space feed} = \dot{m}_{CO_2 \space fresh \space feed} + \dot{m}_{CO_2 \space recycle \space feed}\]</div>
+<p>Note: The mass balance for the total</p>
+<div class="math">
+\[\dot{m}_{total \space reactor \space feed} = \dot{m}_{total \space fresh \space feed} + \dot{m}_{total \space recycle \space feed}\]</div>
+<p>is redundant, as its variables are not independent and consists of all
+the previous variables in previous equations.</p>
+<p><strong>Recycle feed</strong></p>
+<div class="math">
+\[\dot{m}_{C_2H_4 \space bottom \space feed} = \dot{m}_{C_2H_4 \space purge \space feed} + \dot{m}_{C_2H_4 \space recycle \space feed}\]</div>
+<div class="math">
+\[\dot{m}_{C_2H_4O \space bottom \space feed} = \dot{m}_{C_2H_4O \space purge \space feed} + \dot{m}_{C_2H_4O \space recycle \space feed}\]</div>
+<div class="math">
+\[\dot{m}_{O_2 \space bottom \space feed} = \dot{m}_{O_2 \space purge \space feed} + \dot{m}_{O_2 \space recycle \space feed}\]</div>
+<div class="math">
+\[\dot{m}_{CO_2 \space bottom \space feed} = \dot{m}_{CO_2 \space purge \space feed} + \dot{m}_{CO_2 \space recycle \space feed}\]</div>
+<p><strong>Fresh feed</strong></p>
+<div class="math">
+\[\dot{m}_{C_2H_4 \space fresh \space feed} = \dot{m}_{C_2H_4 \space reactor \space feed} - \dot{m}_{C_2H_4 \space recycle \space feed}\]</div>
+<div class="math">
+\[\dot{m}_{O_2 \space fresh \space feed} = \dot{m}_{O_2 \space reactor \space feed} - \dot{m}_{O_2 \space recycle \space feed}\]</div>
+<p><strong>Relationships</strong></p>
+<div class="math">
+\[\dot{m}_{C_2H_4 \space fresh \space feed} = \dot{m}_{C_2H_4 \space reactor \space feed} - \dot{m}_{C_2H_4 \space recycle \space feed}\]</div>
+</div>
+<div class="section" id="4.-Perform-a-degree-of-freedom-analysis">
+<h3>4. Perform a degree of freedom analysis<a class="headerlink" href="#4.-Perform-a-degree-of-freedom-analysis" title="Permalink to this headline">¶</a></h3>
+<div class="math">
+\[\# \space of \space unknowns \space (n) \space = \space 10\]</div>
+<div class="math">
+\[\# \space of \space mass \space balances \space (m) \space = \space 8\]</div>
+<div class="math">
+\[\# \space of \space relationships \space (r) \space = \space 2\]</div>
+<div style="text-align:center;"><p>Note that there are only 8 balances and 2 relationships, as the fresh
+feed balances are actually relationships derived from the mass balance
+of the reactor feed.</p>
+</div><p><span class="math">\($\)</span>$</p>
+<div class="math">
+\[n - m - r = 10 - 8 - 2 = 0\]</div>
+<div style="text-align:center;"><p>(The process is solvable)</p>
+</div></div>
+<div class="section" id="5.-Solve-the-problem">
+<h3>5. Solve the problem<a class="headerlink" href="#5.-Solve-the-problem" title="Permalink to this headline">¶</a></h3>
+<p>First, solve the balance between the bottom feed, recycle stream and
+purge stream. This gives us the components for the recycle stream:</p>
+<div class="section" id="Recycle-feed">
+<h4>Recycle feed<a class="headerlink" href="#Recycle-feed" title="Permalink to this headline">¶</a></h4>
+<div class="math">
+\[75 \space C_2H_4 \space kg/hr = 10.6 \space C_2H_4 \space kg/hr + \dot{m}_{C_2H_4 \space recycle \space feed}\]</div>
+<div class="math">
+\[9.4 \space C_2H_4O \space kg/hr = 9.4 \space C_2H_4O \space kg/hr + \dot{m}_{C_2H_4O \space recycle \space feed}\]</div>
+<div class="math">
+\[20 \space O_2 \space kg/hr = 20 \space O_2\space kg/hr + \dot{m}_{O_2 \space recycle \space feed}\]</div>
+<div class="math">
+\[10 \space CO_2 \space kg/hr = 10 \space CO_2 \space kg/hr + \dot{m}_{CO_2 \space recycle \space feed}\]</div>
+<div class="math">
+\[\dot{m}_{C_2H_4 \space recycle \space feed} \space = \space 74.4 \space kg/hr\]</div>
+<div class="math">
+\[\dot{m}_{C_2H_4O \space recycle \space feed} \space = \space 20.6 \space kg/hr\]</div>
+<div class="math">
+\[\dot{m}_{O_2 \space recycle \space feed} \space = \space 10 \space kg/hr\]</div>
+<div class="math">
+\[\dot{m}_{CO_2 \space recycle \space feed} \space = \space 5 \space kg/hr\]</div>
+<div class="figure" id="id3">
+<img alt="Figure 3" src="../_images/Question-2.svg" /><p class="caption"><span class="caption-text">Figure 3</span></p>
+</div>
+<div style="text-align:center"><p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+</div></div>
+<div class="section" id="Reactor-feed">
+<h4>Reactor feed<a class="headerlink" href="#Reactor-feed" title="Permalink to this headline">¶</a></h4>
+<div class="math">
+\[\dot{m}_{C_2H_4 \space reactor \space feed} = \dot{m}_{C_2H_4 \space fresh \space feed} + \space 74.4 \space kg/hr\]</div>
+<div class="math">
+\[\dot{m}_{C_2H_4O \space reactor \space feed} = \dot{m}_{C_2H_4O \space fresh \space feed} + \space 20.6 \space kg/hr\]</div>
+<div class="math">
+\[\dot{m}_{O_2 \space reactor \space feed} = \dot{m}_{O_2 \space fresh \space feed} + \space 10 \space kg/hr\]</div>
+<div class="math">
+\[\dot{m}_{CO_2 \space reactor \space feed} = \dot{m}_{CO_2 \space fresh \space feed} + \space 5 \space kg/hr\]</div>
+<p>We know that the fresh feed does not contain <span class="math">\(C_2H_4O\)</span> nor
+<span class="math">\(CO_2\)</span>, so <span class="math">\(\dot{m}_{C_2H_4O \space fresh \space feed}\)</span> and
+<span class="math">\(\dot{m}_{CO_2 \space fresh \space feed}\)</span> equal 0, hence
+<span class="math">\(\dot{m}_{C_2H_4O \space reactor \space feed} \space = \space 20.6 \space kg/hr\)</span>
+and
+<span class="math">\(\dot{m}_{CO_2 \space reactor \space feed} \space = \space 5 \space kg/hr\)</span></p>
+<p>Next, we need to find the composition as mass flow rates of the fresh
+feed stream, since we do not know what is the composition of the reactor
+feed stream. The following mass balances and relationships are needed:</p>
+</div>
+<div class="section" id="Fresh-feed">
+<h4>Fresh feed<a class="headerlink" href="#Fresh-feed" title="Permalink to this headline">¶</a></h4>
+<div class="math">
+\[\dot{m}_{C_2H_4 \space reactor \space feed} = \dot{m}_{C_2H_4 \space fresh \space feed} + \space 74.4 \space kg/hr\]</div>
+<div class="math">
+\[\dot{m}_{O_2 \space reactor \space feed} = \dot{m}_{O_2 \space fresh \space feed} + \space 10 \space kg/hr\]</div>
+<div class="math">
+\[\dot{m}_{total \space fresh \space feed} = \dot{m}_{total \space reactor \space feed} \space - \space  \dot{m}_{C_2H_4 \space recycle \space feed} - \dot{m}_{C_2H_4O \space recycle \space feed} - \dot{m}_{O_2 \space recycle \space feed}-  \dot{m}_{CO_2 \space recycle \space feed}\]</div>
+<div class="math">
+\[\dot{m}_{O_2 \space fresh \space feed} = 0.5(\dot{m}_{total \space fresh \space feed})\]</div>
+<div class="math">
+\[\dot{m}_{C_2H_4 \space fresh \space feed} = 0.5(\dot{m}_{total \space fresh \space feed})\]</div>
+<p>First, find the fresh total fresh feed:</p>
+<div class="math">
+\[\dot{m}_{total \space fresh \space feed} = 200 \space kg/hr \space - \space 64.4 \space kg/hr - 10 \space kg/hr - 20.6 \space kg/hr -  5 \space kg/hr = 50 \space kg/hr\]</div>
+<div class="math">
+\[\dot{m}_{C_2H_4 \space reactor \space feed} = 0.5(\dot{m}_{total \space fresh \space feed}) + \space 74.4 \space kg/hr = 25 \space kg/hr + \space 74.4 \space kg/hr = 99.4 \space kg/hr\]</div>
+<div class="math">
+\[\dot{m}_{O_2 \space reactor \space feed} = 25 \space kg/hr + \space 10 \space kg/hr = 35 \space kg/hr\]</div>
+<p><strong>Solution diagram</strong></p>
+<div class="figure" id="id4">
+<img alt="Figure 4" src="../_images/Question-4.svg" /><p class="caption"><span class="caption-text">Figure 4</span></p>
+</div>
+<div style="text-align:center"><p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+</div></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.6 – Recycle and purge</a><ul>
+<li><a class="reference internal" href="#3.6.0-–-Learning-objectives">3.6.0 – Learning objectives</a></li>
+<li><a class="reference internal" href="#3.6.1-–-Introduction">3.6.1 – Introduction</a></li>
+<li><a class="reference internal" href="#3.6.2-–-Recycle-and-purge-example">3.6.2 – Recycle and purge example</a></li>
+<li><a class="reference internal" href="#3.6.3-–-Steps-to-solve-recycle-and-purge">3.6.3 – Steps to solve recycle and purge</a></li>
+<li><a class="reference internal" href="#3.6.4-–-Recycle-and-purge-problem-statement">3.6.4 – Recycle and purge problem statement</a><ul>
+<li><a class="reference internal" href="#Step-1.-List-all-assumptions">Step 1. List all assumptions</a></li>
+<li><a class="reference internal" href="#Step-2.-Draw-a-diagram-and-label-the-diagram-according-to-the-problem">Step 2. Draw a diagram and label the diagram according to the problem</a></li>
+<li><a class="reference internal" href="#Step-3.-Write-expressions-for-the-quantities-requested-in-the-problem-statement.">Step 3. Write expressions for the quantities requested in the problem statement.</a></li>
+<li><a class="reference internal" href="#4.-Perform-a-degree-of-freedom-analysis">4. Perform a degree of freedom analysis</a></li>
+<li><a class="reference internal" href="#5.-Solve-the-problem">5. Solve the problem</a><ul>
+<li><a class="reference internal" href="#Recycle-feed">Recycle feed</a></li>
+<li><a class="reference internal" href="#Reactor-feed">Reactor feed</a></li>
+<li><a class="reference internal" href="#Fresh-feed">Fresh feed</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-3-Separation-I/3.6 - Recycle and purge.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

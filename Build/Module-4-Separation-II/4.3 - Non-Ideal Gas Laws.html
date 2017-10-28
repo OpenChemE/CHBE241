@@ -1,0 +1,629 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.3 – Non-Ideal Gas Laws &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="4.3-–-Non-Ideal-Gas-Laws">
+<h1>4.3 – Non-Ideal Gas Laws<a class="headerlink" href="#4.3-–-Non-Ideal-Gas-Laws" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="4.3.0-–-Learning-Objectives">
+<h2>4.3.0 – Learning Objectives<a class="headerlink" href="#4.3.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand why most gases don’t behave ideally.</li>
+<li>Use equations of the state for non-ideal gases.</li>
+<li>Find and use the compressibility factor.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.3.1-–-Introduction">
+<h2>4.3.1 – Introduction<a class="headerlink" href="#4.3.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Before this course, you most likely have used the <strong>ideal gas law</strong>,
+<span class="math">\(P V = n R T\)</span>, but this equation of state is not very accurate in
+describing gases in the real world. This is because the <strong>ideal gas
+law</strong> assumes that gas particles are infinitesimal points of mass and
+that these points of mass do not interact with each other. This is a
+flaw in the ideal gas law and causes the ideal gas law to be close to
+the truth only when pressures are relatively low or the gases are noble
+gases, especially Helium.</p>
+<p>That is why equations of state for <strong>non-ideal gases</strong> are crucial for
+calculating how <strong>real gases</strong>. In this section, we will focus on the
+<strong>compressibility factors</strong> to correct the ideal gas law and the <strong>viral
+equation</strong>, the <strong>Van der Walls equation</strong>, and the
+<strong>Soave-Redlich-Kwong equation</strong>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.3.2-–-Equations-of-the-State-for-Non-Ideal-Gases">
+<h2>4.3.2 – Equations of the State for Non-Ideal Gases<a class="headerlink" href="#4.3.2-–-Equations-of-the-State-for-Non-Ideal-Gases" title="Permalink to this headline">¶</a></h2>
+<p><strong>Critical temperature</strong>, <span class="math">\(T_c\)</span>, and <strong>critical pressure</strong>,
+<span class="math">\(P_c\)</span>, are the temperature and pressure of a species at its
+critical point. These two properties often tell us how well or poorly
+the <strong>ideal gas law</strong> is for describing the species.</p>
+<div class="section" id="The-Viral-Equation-of-State">
+<h3>The Viral Equation of State<a class="headerlink" href="#The-Viral-Equation-of-State" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>viral equation of state</strong> is an expression of the quantity
+<span class="math">\(P \hat{V} / R T\)</span> as a power series in the inverse of specific
+volume:</p>
+<div class="math">
+\[\frac{P \hat{V}}{R T} = 1 + \frac{B}{\hat{V}} + \frac{C}{\hat{V}^2} + \frac{D}{\hat{V}^3} + ...\]</div>
+<p>Where B, C, and D are the second, third, and fourth virial coefficients
+respectively. These coefficients are functions of temperature. As of
+right now, estimating the coefficients beyond B is very difficult so we
+use a truncated version:</p>
+<div class="math">
+\[\frac{P \hat{V}}{R T} = 1 + \frac{B}{\hat{V}}\]</div>
+<p>To solve the <strong>viral equation of state</strong> we must:</p>
+<ol class="arabic">
+<li><p class="first">Look up the <strong>critical temperature</strong>, <span class="math">\(T_c\)</span>, the <strong>critical
+pressure</strong>, <span class="math">\(P_c\)</span>, and the <strong>Pitzer acentric factor</strong>,
+<span class="math">\(\omega\)</span>. <strong>Pitzer acentric factor</strong> is a constant that
+reflects the geometry and polarity of a molecule.</p>
+</li>
+<li><p class="first">Calculate the <strong>reduced temperature</strong>, <span class="math">\(T_r = T / T_c\)</span>.</p>
+</li>
+<li><p class="first">Estimate B using:</p>
+<div class="math">
+\[B_0 = 0.083 - \frac{0.422}{T^{1.6}_r}\]</div>
+<div class="math">
+\[B_1 = 0.139 - \frac{0.172}{T^{4.2}_r}\]</div>
+<div class="math">
+\[B = \frac{R T_c}{P_c} (B_0 + \omega B_1)\]</div>
+</li>
+<li><p class="first">Substitute B back into the <strong>viral equation of state</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="Van-der-Waals-Equation-of-State">
+<h3>Van der Waals Equation of State<a class="headerlink" href="#Van-der-Waals-Equation-of-State" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Van der Waals equation of state</strong> is the first <strong>cubic equations
+of state</strong>. Cubic equations of state are equations that when expanded
+are third-order equations for specific volume. The equation is:</p>
+<div class="math">
+\[P = \frac{R T}{ \hat{V} - b} - \frac{a}{\hat{V}^2}\]</div>
+<p>where</p>
+<div class="math">
+\[a = \frac{27 R^2 T^2_c}{64 P_c}\]</div>
+<div class="math">
+\[b = \frac{R T_c}{8 P_c}\]</div>
+<p>The <span class="math">\(\frac{a}{\hat{V}^2}\)</span> term accounts for the attractive and
+repulsion forces between molecules. <span class="math">\(b\)</span> is the correction for the
+volume occupied by the molecules themselves</p>
+</div>
+<div class="section" id="Soave–Redlich–Kwong-Equation-of-State">
+<h3>Soave–Redlich–Kwong Equation of State<a class="headerlink" href="#Soave–Redlich–Kwong-Equation-of-State" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Soave–Redlich–Kwong</strong> (SRK) equation of state is more complex yet
+is remarkably robust in describing a variety of systems. The equation
+is:</p>
+<div class="math">
+\[P = \frac{R T}{ \hat{V} - b} - \frac{\alpha a}{\hat{V} (\hat{V} + b)}\]</div>
+<p>where</p>
+<div class="math">
+\[a = 0.42747 \frac{(R T_c)^2}{P_c}\]</div>
+<div class="math">
+\[b = 0.08664 \frac{R T_c}{P_c}\]</div>
+<div class="math">
+\[\alpha = \big[1 + m \big( 1 - \sqrt{T_r} \big) \big]^2\]</div>
+<div class="math">
+\[T_r = \frac{T}{T_c}\]</div>
+<div class="math">
+\[m = 0.48508 + 1.55171 \omega - 0.1561 \omega^2\]</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.3.3-–-Compressibility-Factor">
+<h2>4.3.3 – Compressibility Factor<a class="headerlink" href="#4.3.3-–-Compressibility-Factor" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>compressibility factor</strong> of a gas is defined as:</p>
+<div class="math">
+\[z = \frac{ P \hat{V} }{R T}\]</div>
+<p>When <span class="math">\(z = 1\)</span>, the gas behaves ideally. The amount <span class="math">\(z\)</span>
+differs from 1 is a measurement of how non-ideal the gas is.</p>
+<p>A method used to estimate <span class="math">\(z\)</span>, since every type of gas has
+different <span class="math">\(z\)</span> factors at the same pressure and temperature, is:</p>
+<ol class="arabic simple">
+<li>Look up the <strong>critical temperature</strong>, <span class="math">\(T_c\)</span>, and <strong>critical
+pressure</strong>, <span class="math">\(P_c\)</span>, of the species.</li>
+<li>Calculate the <strong>reduced temperature</strong>, <span class="math">\(T_r = \frac{T}{T_c}\)</span>
+and <strong>reduced pressure</strong>, <span class="math">\(P_r = \frac{P}{P_c}\)</span>.</li>
+<li>Look up the values of <span class="math">\(z\)</span> on a <strong>generalized compressibility
+chart</strong>, which plots <span class="math">\(z\)</span> versus <span class="math">\(P_r\)</span>.</li>
+</ol>
+<p>This method of estimating <span class="math">\(z\)</span> is the empirical <strong>law of
+corresponding states</strong>. The reduced temperature and pressure provide a
+measure of the gas&#8217;s proximity to its critical state. The closer
+<span class="math">\(T_r\)</span> and <span class="math">\(P_r\)</span> are to 1, the closer the gas is to its
+critical state. This suggests that a plot of <span class="math">\(z\)</span> verses
+<span class="math">\(T_r\)</span> and <span class="math">\(P_r\)</span> will be approximately the same for all
+substances. This type of plot is called a <a class="reference external" href="http://slideplayer.com/slide/4216345/14/images/17/Generalized+Compressibility+chart:.jpg">**generalized compressibility
+chart**</a>.</p>
+<p>Each line represents a different <span class="math">\(T_r\)</span> while <span class="math">\(P_r\)</span> is the
+x-axis. The y value of intersection between the <span class="math">\(T_r\)</span> and
+<span class="math">\(P_r\)</span> is the compressibility factor.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.3.4-–-Problem-Statement">
+<h2>4.3.4 – Problem Statement<a class="headerlink" href="#4.3.4-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Question">
+<h3>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h3>
+<p>The pressure gauge on a <span class="math">\(20.0 \space m^3\)</span> tank of nitrogen at
+<span class="math">\(25 ^{\circ} C\)</span> reads <span class="math">\(10 \space \text{bar}\)</span>. The critical
+temperature, <span class="math">\(T_c\)</span>, of nitrogen is <span class="math">\(-146.9 ^{\circ} C\)</span>. The
+critical pressure, <span class="math">\(P_c\)</span>, of nitrogen is
+<span class="math">\(33.5 \space \text{atm}\)</span>. The Pitzer acentric factor,
+<span class="math">\(\omega\)</span>, is <span class="math">\(0.039\)</span>. What is the mass, in <span class="math">\(kg\)</span>, of
+nitrogen in the tank using the:</p>
+<ol class="loweralpha simple">
+<li>Ideal gas law?</li>
+<li>Truncated viral equation of state?</li>
+</ol>
+<p>Is it reasonable to use an equation of state other than the ideal gas
+law in this case? Why/why not?</p>
+</div>
+<div class="section" id="Answer">
+<h3>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="a)-Ideal-gas-law">
+<h4>a) Ideal gas law<a class="headerlink" href="#a)-Ideal-gas-law" title="Permalink to this headline">¶</a></h4>
+<p>Since we know that the ideal gas law is <span class="math">\(P V = n R T\)</span>, we can
+solve for n. First, everything needs to be converted into SI units.</p>
+<div class="math">
+\[P = 10 \space bar \times \frac{100,000 \space Pa}{1 \space bar} = 1,000,000 \space Pa\]</div>
+<div class="math">
+\[V = 20 \space m^3\]</div>
+<div class="math">
+\[T = 25 ^{\circ} C + 273.15 = 298.15 \space K\]</div>
+<p>next we can solve for n</p>
+<div class="math">
+\[P V = n R T\]</div>
+<div class="math">
+\[n = \frac{P V}{R T}\]</div>
+<div class="math">
+\[n = \frac{(1,000,000 \space Pa)(20 \space m^3)}{\big(8.314 \frac{ m^3 \cdot Pa}{mol \cdot K} \big) \big(298.15 \space K \big)} = 8,068 \space moles\]</div>
+<p>now we must convert moles of nitrogen into mass.</p>
+<div class="math">
+\[m = n \times MW = 8,068 \space moles \times 28.00 \space g/mole = 225,914 \space g \times \frac{1 \space kg}{1000 \space g}\]</div>
+<div class="math">
+\[m = 225.9 \space kg\]</div>
+</div>
+<div class="section" id="b)-Viral-equation-of-state">
+<h4>b) Viral equation of state<a class="headerlink" href="#b)-Viral-equation-of-state" title="Permalink to this headline">¶</a></h4>
+<p>Since we know the viral equation of state is</p>
+<div class="math">
+\[\frac{P \hat{V}}{R T} = 1 + \frac{B}{\hat{V}}\]</div>
+<p>where</p>
+<div class="math">
+\[\hat{V} = \frac{V}{n}\]</div>
+<div class="math">
+\[B = \frac{R T_c}{P_c} (B_0 + \omega B_1)\]</div>
+<div class="math">
+\[B_0 = 0.083 - \frac{0.422}{T^{1.6}_r}\]</div>
+<div class="math">
+\[B_1 = 0.139 - \frac{0.172}{T^{4.2}_r}\]</div>
+<p>we can solve for <span class="math">\(n\)</span>. First let’s solve for <span class="math">\(B_0\)</span>. We know
+that</p>
+<div class="math">
+\[T_r = \frac{T}{T_c}\]</div>
+<div class="math">
+\[T_r = \frac{298.15 \space K}{126.25 \space K} = 2.362\]</div>
+<div class="math">
+\[\therefore \space B_0 = 0.083 - \frac{0.422}{T^{1.6}_r} = 0.083 - \frac{0.422}{(2.362)^{1.6}} = -0.0237\]</div>
+<p>next let’s solve for <span class="math">\(B_1\)</span></p>
+<div class="math">
+\[B_1 = 0.139 - \frac{0.172}{T^{4.2}_r} = 0.139 - \frac{0.172}{(2.362)^{4.2}} = 0.1343\]</div>
+<p>after this we can solve for <span class="math">\(B\)</span></p>
+<div class="math">
+\[B = \frac{R T_c}{P_c} (B_0 + \omega B_1) =  \frac{\big(8.314 \frac{ m^3 \cdot Pa}{mol \cdot K} \big) \big( 126.25 \space K \big)}{3393550 \space Pa } (-0.0237 + (0.039) \cdot (0.1343))\]</div>
+<div class="math">
+\[B = -5.71 \times 10 ^{-6}\]</div>
+<p>Finally, we can solve for <span class="math">\(n\)</span></p>
+<div class="math">
+\[\frac{P V}{n R T} = 1 + \frac{B n}{V}\]</div>
+<div class="math">
+\[\frac{P V}{R T} = n + \frac{B n^2}{V}\]</div>
+<div class="math">
+\[\frac{B n^2}{V} + n - \frac{P V}{R T} = 0\]</div>
+<div class="math">
+\[-2.86 \times 10 ^{-7} \space n^2 + n - 8068.35 = 0\]</div>
+<div class="math">
+\[n = \frac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a} = \frac{-1 \pm \sqrt{1 - 4 \cdot (-2.86 \times 10 ^{-7}) \cdot (- 8068.35)}}{2 \cdot (-2.86 \times 10 ^{-7})}\]</div>
+<div class="math">
+\[n = 8,087 \space moles, 3,488,416 \space moles.\]</div>
+<p>Since we have a quadratic, we get 2 answers. Since 8,087 moles is much
+more reasonable than 3,488,416, we will assume that is the correct
+answer. Finally, we can solve for the mass</p>
+<div class="math">
+\[m = n \times MW = 8,087 \space moles \times 14.00 \space g/mole = 226,436 \space g \times \frac{1 \space kg}{1000 \space g}\]</div>
+<div class="math">
+\[m = 226.4 \space kg\]</div>
+<p>No, it is not reasonable to use an equation of state other than the
+ideal gas law. This is because the $ N_2 $ is a relatively inert gas.
+It also is relatively small in both mass and volume. This makes the
+ideal gas assumption close to the truth. You can see the proof in our
+calculated masses. After significant figures, the masses are almost the
+same.</p>
+</div>
+</div>
+<div class="section" id="Answer-Using-Python">
+<h3>Answer Using Python<a class="headerlink" href="#Answer-Using-Python" title="Permalink to this headline">¶</a></h3>
+<p>One of the best things about python is the nearly limitless libraries
+avaible to use. To solve this problem we are going to use the Thermo
+library made by <a class="reference external" href="https://github.com/CalebBell">Caleb Bell</a>. By
+clicking on his name, you can find his github page and discover other
+great projects he is working to make python more useful for chemical
+engineers.</p>
+<p>We must first download the thermo library.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>!pip install thermo --user
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Requirement already satisfied: thermo in c:\users\said zaid-alkailani\appdata\roaming\python\python36\site-packages
+Requirement already satisfied: scipy in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from thermo)
+Requirement already satisfied: coolprop in c:\users\said zaid-alkailani\appdata\roaming\python\python36\site-packages (from thermo)
+Requirement already satisfied: pandas in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from thermo)
+Requirement already satisfied: fluids in c:\users\said zaid-alkailani\appdata\roaming\python\python36\site-packages (from thermo)
+Requirement already satisfied: python-dateutil&gt;=2 in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from pandas-&gt;thermo)
+Requirement already satisfied: pytz&gt;=2011k in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from pandas-&gt;thermo)
+Requirement already satisfied: numpy&gt;=1.7.0 in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from pandas-&gt;thermo)
+Requirement already satisfied: six&gt;=1.5 in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from python-dateutil&gt;=2-&gt;pandas-&gt;thermo)
+</pre></div></div>
+</div>
+<p>Now we need to import the data</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>from thermo.chemical import Chemical
+</pre></div>
+</div>
+</div>
+<p>Now lets apply the data from this library</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>V = 20
+rho = Chemical(&#39;nitrogen&#39;, T=298.15, P=1E6).rho
+mass_N2 = V*rho
+
+print(&quot;The mass of Nitrogen in the tank is &quot;, mass_N2,&quot;kg&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The mass of Nitrogen in the tank is  226.4052055389342 kg
+</pre></div></div>
+</div>
+<p>As you can see, the mass of the nitrogen in the tank is
+<span class="math">\(226.4 \space kg\)</span> which is very similar to the value we got from
+the viral equation of state.</p>
+</div>
+</div>
+<div class="section" id="Citation">
+<h2>Citation<a class="headerlink" href="#Citation" title="Permalink to this headline">¶</a></h2>
+<p>Caleb Bell (2016). thermo: Chemical properties component of Chemical
+Engineering Design Library (ChEDL) <a class="reference external" href="https://github.com/CalebBell/thermo">https://github.com/CalebBell/thermo</a>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.3 – Non-Ideal Gas Laws</a><ul>
+<li><a class="reference internal" href="#4.3.0-–-Learning-Objectives">4.3.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#4.3.1-–-Introduction">4.3.1 – Introduction</a></li>
+<li><a class="reference internal" href="#4.3.2-–-Equations-of-the-State-for-Non-Ideal-Gases">4.3.2 – Equations of the State for Non-Ideal Gases</a><ul>
+<li><a class="reference internal" href="#The-Viral-Equation-of-State">The Viral Equation of State</a></li>
+<li><a class="reference internal" href="#Van-der-Waals-Equation-of-State">Van der Waals Equation of State</a></li>
+<li><a class="reference internal" href="#Soave–Redlich–Kwong-Equation-of-State">Soave–Redlich–Kwong Equation of State</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#4.3.3-–-Compressibility-Factor">4.3.3 – Compressibility Factor</a></li>
+<li><a class="reference internal" href="#4.3.4-–-Problem-Statement">4.3.4 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a><ul>
+<li><a class="reference internal" href="#a)-Ideal-gas-law">a) Ideal gas law</a></li>
+<li><a class="reference internal" href="#b)-Viral-equation-of-state">b) Viral equation of state</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Answer-Using-Python">Answer Using Python</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Citation">Citation</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-4-Separation-II/4.3 - Non-Ideal Gas Laws.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

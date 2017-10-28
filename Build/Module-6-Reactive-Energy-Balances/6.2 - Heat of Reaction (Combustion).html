@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>6.2 – Heat of Reaction (Combustion) &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="6.2-–-Heat-of-Reaction-(Combustion)">
+<h1>6.2 – Heat of Reaction (Combustion)<a class="headerlink" href="#6.2-–-Heat-of-Reaction-(Combustion)" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="6.2.0-–-Learning-Objectives">
+<h2>6.2.0 – Learning Objectives<a class="headerlink" href="#6.2.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the concept of heat of reaction.</li>
+<li>Understand the difference between exothermic and endothermic
+reactions.</li>
+<li>Use heat of reaction in calculations.</li>
+<li>Use the extent of reaction in heat of reaction calculations.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="6.2.1-–-Introduction">
+<h2>6.2.1 – Introduction<a class="headerlink" href="#6.2.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>heat of reaction</strong>, <span class="math">\(\Delta \hat{H}_r (T,P)\)</span> is the change
+in enthalpy for a process in which the quantities of reactants at a
+temperature and pressure, T and P, <strong>react completely</strong> in a single
+reaction to form products.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="6.2.2-–-Exothermic-and-Endothermic">
+<h2>6.2.2 – Exothermic and Endothermic<a class="headerlink" href="#6.2.2-–-Exothermic-and-Endothermic" title="Permalink to this headline">¶</a></h2>
+<p>A simple example we can use to explain the difference between
+<strong>exothermic</strong> and <strong>endothermic</strong> reactions is the burning of hydrogen
+gas in oxygen.</p>
+<div class="math">
+\[2 \space H_{2} \small{\text{(g)}} + O_{2 } \small{\text{(g)}} \longrightarrow 2 \space H_2 O \small{\text{(v)}} \quad \Delta \hat{H}_r = -483.6 \space \frac{kJ}{mol}\]</div>
+<p>This reaction is exothermic. An exothermic reaction occurs when the
+<strong>products</strong> of the reaction have a <strong>lower internal energy</strong> than the
+reactants. The net energy difference, the heat of reaction, would be
+negative. This <strong>reaction releases energy</strong> in terms of heat.</p>
+<p>If you have the reverse reaction:</p>
+<div class="math">
+\[2 \space H_2 O \small{\text{(v)}} \longrightarrow 2 \space H_{2} \small{\text{(g)}} + O_{2 } \small{\text{(g)}} \quad \Delta \hat{H}_r = 483.6 \space \frac{kJ}{mol}\]</div>
+<p>The reaction will be endothermic. An endothermic reaction occurs when
+the <strong>products</strong> of the reaction have a <strong>higher internal energy</strong> than
+the reactants. The net energy difference, the heat of reaction, would be
+positive. This <strong>reaction requires heat</strong> to occur.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="6.2.3-–-How-to-Solve-Questions-Using-Heat-of-Reaction">
+<h2>6.2.3 – How to Solve Questions Using Heat of Reaction<a class="headerlink" href="#6.2.3-–-How-to-Solve-Questions-Using-Heat-of-Reaction" title="Permalink to this headline">¶</a></h2>
+<p>When using heat of reaction, the units are often given in
+<span class="math">\(kJ/mol\)</span>. The problem with this unit is moles of what? To clarify,
+when calculating for the change in enthalpy, we use this equation:</p>
+<div class="math">
+\[\Delta H = \frac{\Delta \hat{H}_r (T_0,P_0)}{\mid \nu_A \mid} \space n_{A,r}\]</div>
+<p>where</p>
+<div class="math">
+\[\Delta H = \text{Is the change in enthalpy}\]</div>
+<div class="math">
+\[\Delta \hat{H}_r (T_0,P_0) = \text{Is the heat of reaction at temperature and pressure} \space T_0 \space \text{and} \space P_0\]</div>
+<div class="math">
+\[\nu_A = \text{Is the stoichiometric coefficient of species A}\]</div>
+<div class="math">
+\[n_{A,r} = \text{Is the moles of A that reacted}\]</div>
+<p>In module 2 we defined the <strong>extent of reaction</strong>, <span class="math">\(\xi\)</span>, as a
+measure how far a reaction advanced. The equation for extent of reaction
+is:</p>
+<div class="math">
+\[\xi = \frac{n_{A,r}}{\mid \nu_A \mid}\]</div>
+<p>Using this equation, we can simplify the change in enthalpy equation to:</p>
+<div class="math">
+\[\Delta H = \Delta \hat{H}_r (T_0,P_0) \cdot \xi\]</div>
+<p>This equation states that by using the extent of reaction we can have a
+basis to evaluate the stoichiometry. Because of this, we can find the
+heat of reaction by being given any compound in the reaction.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="6.2.4-–-Important-Terms-and-Observations">
+<h2>6.2.4 – Important Terms and Observations<a class="headerlink" href="#6.2.4-–-Important-Terms-and-Observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">If <span class="math">\(\Delta \hat{H}_r (T,P)\)</span> is negative, the reaction is
+exothermic at the temperature and pressure T and P, and if
+<span class="math">\(\Delta \hat{H}_r (T,P)\)</span> is positive the reaction is
+endothermic at T and P.</p>
+</li>
+<li><p class="first">At low and moderate pressures, <span class="math">\(\Delta \hat{H}_r (T,P)\)</span> is
+nearly independent of pressure. Thus, the heat of reaction will
+become <span class="math">\(\Delta \hat{H}_r (T)\)</span>. We will mostly be using this
+type of heat of reaction.</p>
+</li>
+<li><p class="first">The value of the heat of reaction depends on the how the
+stoichiometric equation is write. For example,</p>
+<div class="math">
+\[H_{2} \small{\text{(g)}} + \frac{1}{2} \space O_{2 } \small{\text{(g)}} \longrightarrow 2 \space H_2 O \small{\text{(v)}} \quad \Delta \hat{H}_r = -241.8 \space \frac{kJ}{mol}\]</div>
+<div class="math">
+\[2 \space H_{2} \small{\text{(g)}} + O_{2 } \small{\text{(g)}} \longrightarrow 2 \space H_2 O \small{\text{(v)}} \quad \Delta \hat{H}_r = -483.6 \space \frac{kJ}{mol}\]</div>
+</li>
+<li><p class="first">The magnitude of the heat of reaction depends on the phase of the
+products, whether it be gas, liquid, or solid. For example,</p>
+<div class="math">
+\[C H_{4} \small{\text{(g)}} + 2 \space O_{2 } \small{\text{(g)}} \longrightarrow C O_{2} \small{\text{(g)}} + 2 \space H_2 O \small{\text{(v)}} \quad \Delta \hat{H}_r -802.3 \space \frac{kJ}{mol}\]</div>
+<div class="math">
+\[C H_{4} \small{\text{(g)}} + 2 \space O_{2 } \small{\text{(g)}} \longrightarrow C O_{2} \small{\text{(g)}} + 2 \space H_2 O \small{\text{(l)}} \quad \Delta \hat{H}_r -890.3 \space \frac{kJ}{mol}\]</div>
+<p>This concept will be discussed in greater detail in the <strong>latent
+heat</strong> section.</p>
+</li>
+<li><p class="first">The <strong>standard heat of reaction</strong>, denoted by
+<span class="math">\(\Delta \hat{H}_r ^{\circ}\)</span>, is the heat of reaction at a
+specific reference point, usually <span class="math">\(25 ^{\circ} C\)</span> and <span class="math">\(1\)</span>
+atm.</p>
+</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="6.2.5-–-Problem-Statement">
+<h2>6.2.5 – Problem Statement<a class="headerlink" href="#6.2.5-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Problem-1">
+<h3>Problem 1<a class="headerlink" href="#Problem-1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<p>You are a chemical engineer at one of the test facilities for renewable
+energies. You are comparing ethanol&#8217;s rate of enthalpy change to the
+amount of <span class="math">\(C O_2\)</span> produced. You measure that
+<span class="math">\(250 \space g/s\)</span> of <span class="math">\(C O_2\)</span> is produced, what is the rate of
+enthalpy change given</p>
+<div class="math">
+\[C_2 H_5 O H \small{\text{(l)}} + 3 \space O_2 \small{\text{(g)}} \longrightarrow 2 \space C O_2 \small{\text{(g)}} + 3 \space H_2 O \small{\text{(v)}} \quad \Delta \hat{H}_r = -1369 \space kJ/mol\]</div>
+<p>Is the combustion of ethanol an exothermic or endothermic reaction?</p>
+</div>
+<div class="section" id="Answer">
+<h4>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h4>
+<p>First, we need to convert the rate of <span class="math">\(C O_2\)</span> produced from a mass
+flow rate to a molar flow rate.</p>
+<div class="math">
+\[MW_{C O_2} = 44.00 \space \frac{g}{mol}\]</div>
+<div class="math">
+\[\dot{n}_{C O_2} = \dot{m}_{C O_2} \times \frac{1}{MW_{C O_2}} = 250 \space \frac{g}{s} \times \frac{mol}{44.00 \space g } = 5.682 \space \frac{mol}{s}\]</div>
+<p>Now that we have the molar flow rate, we can use the extent of reaction
+method to solve for the rate of enthalpy change.</p>
+<div class="math">
+\[\dot{\xi} = \frac{\dot{n}_{C O_2}}{\mid \nu_{C O_2} \mid} = \frac{5.682 \space \frac{mol}{s}}{2} = 2.841 \space \frac{mol}{s}\]</div>
+<div class="math">
+\[\Delta \dot{H} = \dot{\xi} \cdot \Delta \hat{H}_r = \bigg(2.841 \space \frac{mol}{s} \bigg) \cdot \bigg( -1369 \space \frac{kJ}{mol} \bigg) = -3889 \space \frac{kJ}{s}\]</div>
+<p>Since the rate of enthalpy change is negative, the combustion of ethanol
+is an exothermic reaction.</p>
+</div>
+</div>
+<div class="section" id="Problem-2">
+<h3>Problem 2<a class="headerlink" href="#Problem-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<p>The heats of vaporization of n-butane and water at 25 °C are 19.2 kJ/mol
+and 44.0 kJ/mol, respectively. What is the standard heat of the reaction
+of</p>
+<div class="math">
+\[C_4H_{10} (l) + \frac{13}{2}O_2 (g) \longrightarrow 4 CO_2 (g) + 5 H_2O(v)\]</div>
+<p>Calculate <span class="math">\(\Delta{\dot{H}}\)</span> if 2400 mol/s of <span class="math">\(CO_2\)</span> is
+produced in this reaction and the reactants and products are all at 25
+°C.</p>
+</div>
+<div class="section" id="Answer">
+<h4>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h4>
+<p>First, let&#8217;s compare the given reaction (Reaction 2) with a known
+combustion reaction of n-butane (Reaction 1):</p>
+<ol class="arabic">
+<li><div class="first math">
+\[C_4H_{10} (g) + \frac{13}{2}O_2 (g) \longrightarrow 4 CO_2 (g) + 5 H_2O(l): \space \space \Delta{\hat{H}_{r1}} = -2878 \space kJ/mol\]</div>
+</li>
+<li><div class="first math">
+\[C_4H_{10} (l) + \frac{13}{2}O_2 (g) \longrightarrow 4 CO_2 (g) + 5 H_2O(v): \space \space \Delta{\hat{H}_{r2}} = ?\]</div>
+</li>
+</ol>
+<p>According to our comparison, we should first deduce what the states of
+the reactants and the products, and their respective stoichiometric
+values, can tell us:</p>
+<ul class="simple">
+<li>The total enthalpy of the reactants in the second reaction is lower
+than the first reaction by the amount of the heat of vaporization of
+butane.</li>
+<li>The total enthalpy of the products in the second reaction is higher
+than the first reaction by 5 times the amount of the heat of
+vaporization of water.</li>
+</ul>
+<p>Deduction over, now we have the means to solve for the heat of reaction
+of the second reaction, based on our deduction and the heat of reaction
+value of the first equation. Let&#8217;s solve for the
+<span class="math">\(\Delta{\hat{H}_{r2}}\)</span>:</p>
+<div class="math">
+\[\quad \Delta \hat{H}_{r2} ^{\circ} = \quad \Delta \hat{H}_{r1} ^{\circ} + 5 \cdot \Delta{\hat{H}_{H_2O}} - (-\Delta{\hat{H}_{butane}})\]</div>
+<div class="math">
+\[\quad \Delta \hat{H}_{r2} ^{\circ} = \quad \Delta \hat{H}_{r1} ^{\circ} + 5 \cdot \Delta{\hat{H}_{v,H_2O}} + \Delta{\hat{H}_{v,butane}}\]</div>
+<div class="math">
+\[\quad \Delta \hat{H}_{r2} ^{\circ} = -2878 + 5(44) + 19.2 = -2639 \space kJ/mol\]</div>
+<p>Now that we know the heat of reaction per mol of product produced, we
+need to find out the total heat. Let&#8217;s find the extent of reaction using
+the 2400 mol/s given:</p>
+<div class="math">
+\[\dot{\xi} = \frac{n_{A,r}}{\mid \nu_A \mid} = \frac{2400 \space mol/s}{4} = 600 \space mol/s\]</div>
+<p>Now we can solve for the <span class="math">\(\Delta{\dot{H}}\)</span> of the reaction:</p>
+<div class="math">
+\[\Delta{\dot{H}} = \dot{\xi} \cdot \Delta{\hat{H}_{r2}} = 600 \space mol/s \cdot -2639 \space kJ/mol = -1.58 \times 10^6 \space kJ/s\]</div>
+<p>Tedious? Aye. Complicated? Nay. Keep at it and continue practicing and
+you will be good in no time.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">6.2 – Heat of Reaction (Combustion)</a><ul>
+<li><a class="reference internal" href="#6.2.0-–-Learning-Objectives">6.2.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#6.2.1-–-Introduction">6.2.1 – Introduction</a></li>
+<li><a class="reference internal" href="#6.2.2-–-Exothermic-and-Endothermic">6.2.2 – Exothermic and Endothermic</a></li>
+<li><a class="reference internal" href="#6.2.3-–-How-to-Solve-Questions-Using-Heat-of-Reaction">6.2.3 – How to Solve Questions Using Heat of Reaction</a></li>
+<li><a class="reference internal" href="#6.2.4-–-Important-Terms-and-Observations">6.2.4 – Important Terms and Observations</a></li>
+<li><a class="reference internal" href="#6.2.5-–-Problem-Statement">6.2.5 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Problem-1">Problem 1</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Problem-2">Problem 2</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-6-Reactive-Energy-Balances/6.2 - Heat of Reaction (Combustion).ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

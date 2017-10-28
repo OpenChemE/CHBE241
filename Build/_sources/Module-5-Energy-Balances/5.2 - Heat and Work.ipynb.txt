@@ -1,0 +1,200 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5.2 &ndash; Heat and Work\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.2.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the characteristics of heat and work.\n",
+    "2. Understand the various forms that heat and work come in.\n",
+    "3. Utilize the first law along with heat and work.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.2.1 &ndash; Introduction\n",
+    "\n",
+    "This notebook will cover the expanded form of the first law:\n",
+    "\n",
+    "$$ E_{sys} = Q_{sys} - W_{sys} $$ \n",
+    "\n",
+    "and when we are observing the change of a system the first law becomes  \n",
+    "\n",
+    "$$  \\Delta E = Q -  W  $$ \n",
+    "\n",
+    "Where $\\Delta$ is the change. This breaks down the first law into \n",
+    "\n",
+    "$$ E_f - E_i  = Q - W  $$\n",
+    "\n",
+    "Heat and Work usually do not take the delta sign in front of them be cause their value given as energy __transferred__. \n",
+    "As the past notebook states. Energy is the cumulative terms of $E_k + E_p + U$. Breaking these down into their respective initial and final states and plugging it into the first law we get  $$\n",
+    "(E_{kf}- E_{ki})+(E_{pf} - E_{pi}) + (U_f - U_i )  =Q - W $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.2.2 &ndash; Heat $Q$\n",
+    "\n",
+    "Heat is the quantity of __energy__ that is __added__ or __removed__ from the system. Clay is often fired in kilns to harden the structure of the material. This adds massive amounts of heat to the system so that the silica particles in the clay form a lattice. \n",
+    "\n",
+    "If there is no heat transfer $Q$ becomes 0 and the process is known as an __adiabatic__ process.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 5.2.3 &ndash; Work $W$\n",
+    "Work is the mechanical energy that the system either takes or gives. \n",
+    "The full term for is work = $W_{total} = W_{electrical}+ W_{flow}+ p\\Delta V$.\n",
+    "__Sign convention of work: __\n",
+    "The textbook defines \n",
+    "\n",
+    "$(+)W_{total}$ as  __work done by the system__\n",
+    "\n",
+    "and\n",
+    "\n",
+    "$(-)W_{total}$ as  __work done on the system__\n",
+    "\n",
+    "### Example\n",
+    "\n",
+    "**Pumping a water gun:** solving the work equation (which will be solved in later chapters)  gives a negative work $-W$ which is substituted into the first law equation:\n",
+    "\n",
+    "$$U = Q - (-W)$$\n",
+    "\n",
+    "Resulting in a net positive increase of internal energy assuming that $Q$ is positive (more energy to decimate your opponents... or at least before you have to pump again).\n",
+    "\n",
+    " **an ejection seat launching a pilot away:**  solving the work equation,  gives a positive work $W$ which is substituted into the first law equation : \n",
+    "\n",
+    "$$U = Q - (+W)$$\n",
+    "\n",
+    "Assuming little heat is gained, the internal energy of the seat is now smaller.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## Example - 5.2 Heat and work\n",
+    "\n",
+    "In a batch mixing reactor, there might be pressure and heat changes that might affect the total energy of the system. The following scenario is observed:\n",
+    "\n",
+    "There is gas in the reactor cylinder. The initial gas temperature is 20 &deg;C. The cylinder is placed in boiling water with the piston held in a fixed position. Heat in the amount of 2.00 kcal is transferred to the gas, which equilibrates at 100 &deg;C. The pressure has also found to be increased at equilibrium. The piston is then released, and the gas does 100 J of work in moving the piston to its new equilibrium position. The final gas temperature is 100 &deg;C."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Step 1\n",
+    "\n",
+    "![Figure 1.](../figures/Module-5/5.2-Example-1.svg)\n",
+    "\n",
+    "In this step, the system **absorbs** heat that raises it's temperatures by 80 &deg;C.\n",
+    "\n",
+    "$$\\Delta U + \\Delta E_k + \\Delta E_p = Q-W$$\n",
+    "\n",
+    "$$\\Delta E_k = 0$$ \n",
+    "\n",
+    "$$\\Delta E_p = 0$$\n",
+    "\n",
+    "$$W= 0$$\n",
+    "\n",
+    "Resulting in the equation:\n",
+    "\n",
+    "$$\\Delta U = Q$$\n",
+    "\n",
+    "$$Q = 2.00 \\space kcal $$\n",
+    "\n",
+    "We still need to convert to Joules as it is the SI unit of energy.\n",
+    "\n",
+    "$$Q = 2.00 \\space kcal \\cdot 1000 \\space cal/kcal \\cdot 4.1839 \\space J/cal = 8367.8 \\space J$$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Step 2\n",
+    "\n",
+    "![Figure 1.](../figures/Module-5/5.2-Example-1.1.svg)\n",
+    "\n",
+    "$$\\Delta U + \\Delta E_k + \\Delta E_p = Q-W$$\n",
+    "\n",
+    "$$\\Delta E_k = 0$$ \n",
+    "\n",
+    "$$\\Delta E_p = 0$$\n",
+    "\n",
+    "$$\\Delta U = 0$$\n",
+    "\n",
+    "Resulting in the equation:\n",
+    "\n",
+    "$$0 = Q-W$$\n",
+    "\n",
+    "$$W = +100J$$\n",
+    "\n",
+    "$$Q = +100J$$\n",
+    "\n",
+    "Note: The work is **positive** because the **the system is doing work on the surroundings.**\n",
+    "\n",
+    "Question text: Elementary Principlesa of Chemical Processes, 4/E by Richard M. Felder, Ronald W. Rousseau, and Lisa G. Bullard Copyright © 2016 by John Wiley & Sons, Inc."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

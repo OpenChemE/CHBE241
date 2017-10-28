@@ -1,0 +1,357 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 4.3 &ndash; Non-Ideal Gas Laws\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.3.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand why most gases don’t behave ideally.\n",
+    "2. Use equations of the state for non-ideal gases.\n",
+    "3. Find and use the compressibility factor.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.3.1 &ndash; Introduction\n",
+    "\n",
+    "Before this course, you most likely have used the **ideal gas law**, $P V = n R T$, but this equation of state is not very accurate in describing gases in the real world. This is because the **ideal gas law** assumes that gas particles are infinitesimal points of mass and that these points of mass do not interact with each other. This is a flaw in the ideal gas law and causes the ideal gas law to be close to the truth only when pressures are relatively low or the gases are noble gases, especially Helium.\n",
+    "\n",
+    "That is why equations of state for **non-ideal gases** are crucial for calculating how **real gases**. In this section, we will focus on the **compressibility factors** to correct the ideal gas law and the **viral equation**, the **Van der Walls equation**, and the **Soave-Redlich-Kwong equation**.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.3.2 &ndash; Equations of the State for Non-Ideal Gases\n",
+    "\n",
+    "**Critical temperature**, $T_c$, and **critical pressure**, $P_c$, are the temperature and pressure of a species at its critical point. These two properties often tell us how well or poorly the **ideal gas law** is for describing the species.\n",
+    "\n",
+    "### The Viral Equation of State\n",
+    "\n",
+    "The **viral equation of state** is an expression of the quantity $P \\hat{V} / R T$ as a power series in the inverse of specific volume:\n",
+    "\n",
+    "$$ \\frac{P \\hat{V}}{R T} = 1 + \\frac{B}{\\hat{V}} + \\frac{C}{\\hat{V}^2} + \\frac{D}{\\hat{V}^3} + ... $$\n",
+    "\n",
+    "Where B, C, and D are the second, third, and fourth virial coefficients respectively. These coefficients are functions of temperature. As of right now, estimating the coefficients beyond B is very difficult so we use a truncated version:\n",
+    "\n",
+    "$$ \\frac{P \\hat{V}}{R T} = 1 + \\frac{B}{\\hat{V}}$$\n",
+    "\n",
+    "To solve the **viral equation of state** we must:\n",
+    "\n",
+    "1. Look up the **critical temperature**, $T_c$, the **critical pressure**, $P_c$, and the **Pitzer acentric factor**, $\\omega$. **Pitzer acentric factor** is a constant that reflects the geometry and polarity of a molecule.\n",
+    "2. Calculate the **reduced temperature**, $T_r = T / T_c$.\n",
+    "3. Estimate B using:\n",
+    "    \n",
+    "    $$ B_0 = 0.083 - \\frac{0.422}{T^{1.6}_r} $$\n",
+    "    \n",
+    "    $$ B_1 = 0.139 - \\frac{0.172}{T^{4.2}_r} $$\n",
+    "    \n",
+    "    $$ B = \\frac{R T_c}{P_c} (B_0 + \\omega B_1) $$ \n",
+    "    \n",
+    "4. Substitute B back into the **viral equation of state**.\n",
+    "\n",
+    "### Van der Waals Equation of State\n",
+    "\n",
+    "The **Van der Waals equation of state** is the first **cubic equations of state**. Cubic equations of state are equations that when expanded are third-order equations for specific volume. The equation is:\n",
+    "\n",
+    "$$ P = \\frac{R T}{ \\hat{V} - b} - \\frac{a}{\\hat{V}^2}$$\n",
+    "\n",
+    "where\n",
+    "\n",
+    "$$ a = \\frac{27 R^2 T^2_c}{64 P_c} $$\n",
+    "\n",
+    "$$ b = \\frac{R T_c}{8 P_c} $$\n",
+    "\n",
+    "The $\\frac{a}{\\hat{V}^2}$ term accounts for the attractive and repulsion forces between molecules. $b$ is the correction for the volume occupied by the molecules themselves\n",
+    "\n",
+    "### Soave–Redlich–Kwong Equation of State\n",
+    "\n",
+    "The **Soave–Redlich–Kwong** (SRK) equation of state is more complex yet is remarkably robust in describing a variety of systems. The equation is:\n",
+    "\n",
+    "$$ P = \\frac{R T}{ \\hat{V} - b} - \\frac{\\alpha a}{\\hat{V} (\\hat{V} + b)}$$\n",
+    "\n",
+    "where \n",
+    "\n",
+    "$$ a = 0.42747 \\frac{(R T_c)^2}{P_c} $$\n",
+    "\n",
+    "$$ b = 0.08664 \\frac{R T_c}{P_c} $$\n",
+    "\n",
+    "$$ \\alpha = \\big[1 + m \\big( 1 - \\sqrt{T_r} \\big) \\big]^2 $$\n",
+    "\n",
+    "$$ T_r = \\frac{T}{T_c} $$\n",
+    "\n",
+    "$$ m = 0.48508 + 1.55171 \\omega - 0.1561 \\omega^2 $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.3.3 &ndash; Compressibility Factor\n",
+    "\n",
+    "The **compressibility factor** of a gas is defined as:\n",
+    "\n",
+    "$$ z = \\frac{ P \\hat{V} }{R T} $$ \n",
+    "\n",
+    "When $z = 1$, the gas behaves ideally. The amount $z$ differs from 1 is a measurement of how non-ideal the gas is.\n",
+    "\n",
+    "A method used to estimate $z$, since every type of gas has different $z$ factors at the same pressure and temperature, is:\n",
+    "\n",
+    "1. Look up the **critical temperature**, $T_c$, and **critical pressure**, $P_c$, of the species.\n",
+    "2. Calculate the **reduced temperature**, $T_r = \\frac{T}{T_c}$ and **reduced pressure**, $P_r = \\frac{P}{P_c}$.\n",
+    "3. Look up the values of $z$ on a **generalized compressibility chart**, which plots $z$ versus $P_r$.\n",
+    "\n",
+    "This method of estimating $z$ is the empirical **law of corresponding states**. The reduced temperature and pressure provide a measure of the gas's proximity to its critical state. The closer $T_r$ and $P_r$ are to 1, the closer the gas is to its critical state. This suggests that a plot of $z$ verses $T_r$ and $P_r$ will be approximately the same for all substances. This type of plot is called a [**generalized compressibility chart**](http://slideplayer.com/slide/4216345/14/images/17/Generalized+Compressibility+chart:.jpg).\n",
+    "\n",
+    "Each line represents a different $T_r$ while $P_r$ is the x-axis. The y value of intersection between the $T_r$ and $P_r$ is the compressibility factor.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 4.3.4 &ndash; Problem Statement\n",
+    "### Question\n",
+    "The pressure gauge on a $20.0 \\space m^3$ tank of nitrogen at $25 ^{\\circ} C$ reads $10 \\space \\text{bar}$. The critical temperature, $T_c$, of nitrogen is $-146.9 ^{\\circ} C$. The critical pressure, $P_c$, of nitrogen is $33.5 \\space \\text{atm}$. The Pitzer acentric factor, $\\omega$, is $0.039$. What is the mass, in $kg$, of nitrogen in the tank using the:\n",
+    "\n",
+    "a) Ideal gas law?\n",
+    "\n",
+    "b) Truncated viral equation of state?\n",
+    "\n",
+    "Is it reasonable to use an equation of state other than the ideal gas law in this case? Why/why not?\n",
+    "\n",
+    "\n",
+    "### Answer\n",
+    "\n",
+    "#### a) Ideal gas law\n",
+    "\n",
+    "Since we know that the ideal gas law is $P V = n R T$, we can solve for n. First, everything needs to be converted into SI units. \n",
+    "\n",
+    "$$ P = 10 \\space bar \\times \\frac{100,000 \\space Pa}{1 \\space bar} = 1,000,000 \\space Pa $$\n",
+    "\n",
+    "$$ V = 20 \\space m^3 $$\n",
+    "\n",
+    "$$ T = 25 ^{\\circ} C + 273.15 = 298.15 \\space K $$\n",
+    "\n",
+    "next we can solve for n\n",
+    "\n",
+    "$$ P V = n R T $$\n",
+    "\n",
+    "$$ n = \\frac{P V}{R T} $$\n",
+    "\n",
+    "$$ n = \\frac{(1,000,000 \\space Pa)(20 \\space m^3)}{\\big(8.314 \\frac{ m^3 \\cdot Pa}{mol \\cdot K} \\big) \\big(298.15 \\space K \\big)} = 8,068 \\space moles $$\n",
+    "\n",
+    "now we must convert moles of nitrogen into mass.\n",
+    "\n",
+    "$$ m = n \\times MW = 8,068 \\space moles \\times 28.00 \\space g/mole = 225,914 \\space g \\times \\frac{1 \\space kg}{1000 \\space g} $$\n",
+    "\n",
+    "$$ m = 225.9 \\space kg $$\n",
+    "\n",
+    "#### b) Viral equation of state\n",
+    "\n",
+    "Since we know the viral equation of state is \n",
+    "\n",
+    "$$ \\frac{P \\hat{V}}{R T} = 1 + \\frac{B}{\\hat{V}}$$\n",
+    "\n",
+    "where\n",
+    "\n",
+    "$$ \\hat{V} = \\frac{V}{n} $$\n",
+    "\n",
+    "$$ B = \\frac{R T_c}{P_c} (B_0 + \\omega B_1) $$\n",
+    "\n",
+    "$$ B_0 = 0.083 - \\frac{0.422}{T^{1.6}_r} $$\n",
+    "\n",
+    "$$ B_1 = 0.139 - \\frac{0.172}{T^{4.2}_r} $$\n",
+    "\n",
+    "we can solve for $n$. First let’s solve for $B_0$. We know that \n",
+    "\n",
+    "$$ T_r = \\frac{T}{T_c} $$\n",
+    "\n",
+    "$$ T_r = \\frac{298.15 \\space K}{126.25 \\space K} = 2.362 $$\n",
+    "\n",
+    "$$ \\therefore \\space B_0 = 0.083 - \\frac{0.422}{T^{1.6}_r} = 0.083 - \\frac{0.422}{(2.362)^{1.6}} = -0.0237 $$\n",
+    "\n",
+    "next let’s solve for $B_1$\n",
+    "\n",
+    "$$ B_1 = 0.139 - \\frac{0.172}{T^{4.2}_r} = 0.139 - \\frac{0.172}{(2.362)^{4.2}} = 0.1343 $$\n",
+    "\n",
+    "after this we can solve for $B$\n",
+    "\n",
+    "$$ B = \\frac{R T_c}{P_c} (B_0 + \\omega B_1) =  \\frac{\\big(8.314 \\frac{ m^3 \\cdot Pa}{mol \\cdot K} \\big) \\big( 126.25 \\space K \\big)}{3393550 \\space Pa } (-0.0237 + (0.039) \\cdot (0.1343)) $$\n",
+    "\n",
+    "$$ B = -5.71 \\times 10 ^{-6} $$\n",
+    "\n",
+    "Finally, we can solve for $n$\n",
+    "\n",
+    "$$ \\frac{P V}{n R T} = 1 + \\frac{B n}{V}$$\n",
+    "\n",
+    "$$ \\frac{P V}{R T} = n + \\frac{B n^2}{V}$$\n",
+    "\n",
+    "$$ \\frac{B n^2}{V} + n - \\frac{P V}{R T} = 0 $$\n",
+    "\n",
+    "$$ -2.86 \\times 10 ^{-7} \\space n^2 + n - 8068.35 = 0 $$\n",
+    "\n",
+    "$$ n = \\frac{-b \\pm \\sqrt{b^2 - 4 \\cdot a \\cdot c}}{2 \\cdot a} = \\frac{-1 \\pm \\sqrt{1 - 4 \\cdot (-2.86 \\times 10 ^{-7}) \\cdot (- 8068.35)}}{2 \\cdot (-2.86 \\times 10 ^{-7})} $$ \n",
+    "\n",
+    "$$ n = 8,087 \\space moles, 3,488,416 \\space moles. $$\n",
+    "\n",
+    "Since we have a quadratic, we get 2 answers. Since 8,087 moles is much more reasonable than 3,488,416, we will assume that is the correct answer. Finally, we can solve for the mass\n",
+    "\n",
+    "$$ m = n \\times MW = 8,087 \\space moles \\times 14.00 \\space g/mole = 226,436 \\space g \\times \\frac{1 \\space kg}{1000 \\space g} $$\n",
+    "\n",
+    "$$ m = 226.4 \\space kg $$\n",
+    "\n",
+    "No, it is not reasonable to use an equation of state other than the ideal gas law. This is because the $ N_2 $ is a relatively inert gas. It also is relatively small in both mass and volume. This makes the ideal gas assumption close to the truth. You can see the proof in our calculated masses. After significant figures, the masses are almost the same.\n",
+    "\n",
+    "### Answer Using Python\n",
+    "\n",
+    "One of the best things about python is the nearly limitless libraries avaible to use. To solve this problem we are going to use the Thermo library made by [Caleb Bell](https://github.com/CalebBell). By clicking on his name, you can find his github page and discover other great projects he is working to make python more useful for chemical engineers.\n",
+    "\n",
+    "We must first download the thermo library."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: thermo in c:\\users\\said zaid-alkailani\\appdata\\roaming\\python\\python36\\site-packages\n",
+      "Requirement already satisfied: scipy in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from thermo)\n",
+      "Requirement already satisfied: coolprop in c:\\users\\said zaid-alkailani\\appdata\\roaming\\python\\python36\\site-packages (from thermo)\n",
+      "Requirement already satisfied: pandas in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from thermo)\n",
+      "Requirement already satisfied: fluids in c:\\users\\said zaid-alkailani\\appdata\\roaming\\python\\python36\\site-packages (from thermo)\n",
+      "Requirement already satisfied: python-dateutil>=2 in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from pandas->thermo)\n",
+      "Requirement already satisfied: pytz>=2011k in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from pandas->thermo)\n",
+      "Requirement already satisfied: numpy>=1.7.0 in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from pandas->thermo)\n",
+      "Requirement already satisfied: six>=1.5 in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from python-dateutil>=2->pandas->thermo)\n"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install thermo --user"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Now we need to import the data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from thermo.chemical import Chemical"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Now lets apply the data from this library"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The mass of Nitrogen in the tank is  226.4052055389342 kg\n"
+     ]
+    }
+   ],
+   "source": [
+    "V = 20\n",
+    "rho = Chemical('nitrogen', T=298.15, P=1E6).rho\n",
+    "mass_N2 = V*rho\n",
+    "\n",
+    "print(\"The mass of Nitrogen in the tank is \", mass_N2,\"kg\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "As you can see, the mass of the nitrogen in the tank is $226.4 \\space kg$ which is very similar to the value we got from the viral equation of state."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Citation\n",
+    "\n",
+    "Caleb Bell (2016). thermo: Chemical properties component of Chemical Engineering Design Library (ChEDL) https://github.com/CalebBell/thermo."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

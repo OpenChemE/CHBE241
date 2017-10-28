@@ -1,0 +1,107 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5.10 &ndash; Psychrometric Charts and Spray Drying\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.10.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand what a psychrometric chart is and how it is used.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.10.1 &ndash; Introduction\n",
+    "**Psychrometric charts** are useful tools for engineers as they allow for a concise, visual depiction of **humidity**, **enthalpy**, and **temperature** data on a single plot. This section introduces the psychrometric chart and how to gather important physical properties from it.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.10.2 &ndash; Psychrometric charts and spray drying \n",
+    "\n",
+    "A psychrometric (or humidity chart), properties of a gas or vapour are plotted which allows the visualization of the physical data. \n",
+    "\n",
+    "The x-axis shows the __dry-bulb__ temperature; this is equivalent to normal temperature.\n",
+    "\n",
+    "The y-axis shows some form of __humidity__ such as moisture or vapor pressure. The psychrometric chart in the text book will show moisture content.\n",
+    "\n",
+    "On the slants, there are measurements of enthalpy which cross the chart.\n",
+    "\n",
+    "![](../figures/Module-5/psychrometric1.png)\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.10.3 &ndash; Terminology of properties - found on the psychrometric chart\n",
+    "\n",
+    "**Relative Humidity**: Lines curving upwards describe the relative humidity $h_r  = 100 \\cdot \\frac{\\rho H_2O}{\\dot{\\rho}H_2O(T)}$. The topmost curve, or the upper boundary of the graph shows relative humidity at 100% otherwise known as the saturation curve.\n",
+    "\n",
+    "**Dew point** $T_{dp}$: The temperature at which __humid__ air becomes saturated if cooled at constant pressure.\n",
+    "The dew point is determined by selecting the humidity and moving horizontally to the saturation curve. \n",
+    "\n",
+    "**Humid Volume** $\\hat{V}_{(H, \\space dry \\space air)}$: The volume of 1kg of dry air and any water vapour with the air. These are lines with a negative slope on the graph.\n",
+    "To determine the humid volume of given mass of air you would the formula.\n",
+    "\n",
+    "$$Volume\\space of \\space humid\\space air =  M_{humid\\space air} \\cdot \\frac{M_{dry\\space air}}{M_{humid\\space air}} \\cdot Humid Volume $$\n",
+    "\n",
+    "**Wet-bulb temperature**: Describes the temperature affected by air humidity. To find wet-bulb temperature at dry bulb temperature and a set relative humidity. Move leftwards horizontal until you reach the saturation curve and then evaluate wet-bulb temperature.\n",
+    "\n",
+    "**Specific enthalpy of saturated air**: The horizontal lines show the enthalpy of saturated air. To determine the specific enthalpy of air at a certain temperature, follow the wet-bulb temperature out to the specific enthalpy curve."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

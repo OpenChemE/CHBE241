@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.8 – Vapour Pressure &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="4.8-–-Vapour-Pressure">
+<h1>4.8 – Vapour Pressure<a class="headerlink" href="#4.8-–-Vapour-Pressure" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="4.8.0-–-Learning-Objectives">
+<h2>4.8.0 – Learning Objectives<a class="headerlink" href="#4.8.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the concept of vapour pressure.</li>
+<li>Use the Antoine equation.</li>
+<li>Know when you should use Raoult&#8217;s law.</li>
+<li>Know when you should use Henry&#8217;s law.</li>
+<li>Distinguish between the different types of saturation’s and
+humidity’s.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.8.1-–-Introduction">
+<h2>4.8.1 – Introduction<a class="headerlink" href="#4.8.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p><strong>Vapour pressure</strong> is the pressure a vapour exerts with its solid or
+liquid at a given temperature at equilibrium. This means that vapour
+pressure is a good indication of a liquid&#8217;s evaporation rate or a
+solid&#8217;s sublimation rate.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.8.2-–-Vapour-Pressure">
+<h2>4.8.2 – Vapour Pressure<a class="headerlink" href="#4.8.2-–-Vapour-Pressure" title="Permalink to this headline">¶</a></h2>
+<p>As you can see in the figure bellow, vapour pressure is at equilibrium.
+This means that there is as much vapour being produced from evaporation
+as vapour being consumed due to condensation. The magnitude of the
+vapour pressure tells you how volatile the liquid is. The higher the
+vapour pressure, the higher the volatility.</p>
+<div class="figure">
+<img alt="" src="../_images/Vapour_pressure1.png" />
+</div>
+<p>Attribution: By HellTchi (Own work) [CC BY-SA 3.0
+(<a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0">http://creativecommons.org/licenses/by-sa/3.0</a>)], via Wikimedia Commons</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.8.3-–-Antoine-equation">
+<h2>4.8.3 – Antoine equation<a class="headerlink" href="#4.8.3-–-Antoine-equation" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Antoine equation</strong> is simple yet crucial equation the relates
+<strong>vapour pressure</strong> and <strong>temperature</strong>. The equation is:</p>
+<div class="math">
+\[\log_{10} p^* = A - \frac{B}{T + C}\]</div>
+<p>Where A, B, and C are constants that can be found in tables and</p>
+<div class="math">
+\[p^* = \text{Vapour Pressure}\]</div>
+<div class="math">
+\[T = \text{Temperature}\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.8.4-–-Raoult's-Law-and-Henry's-Law">
+<h2>4.8.4 – Raoult&#8217;s Law and Henry&#8217;s Law<a class="headerlink" href="#4.8.4-–-Raoult's-Law-and-Henry's-Law" title="Permalink to this headline">¶</a></h2>
+<p><strong>Raoult&#8217;s law</strong> and <strong>Henry&#8217;s law</strong> provide us with a relationship
+between the partial pressure of a substance, <span class="math">\(P_A\)</span>, in the gas
+phase and the mole fraction of the same substance, <span class="math">\(x_A\)</span>, in the
+liquid phase. Raoult&#8217;s law is generally valid when <span class="math">\(x_A\)</span> is close
+to 1, which means the liquid is almost pure A. Henry&#8217;s law is generally
+valid when solutions of <span class="math">\(x_A\)</span> are close to 0.</p>
+<p>The expression for Raoult&#8217;s law is:</p>
+<div class="math">
+\[p_A \equiv y_A P = x_A p_A^* (T)\]</div>
+<p>where</p>
+<div class="math">
+\[p_a = \text{Is the partial pressure of substance A}\]</div>
+<div class="math">
+\[y_A = \text{Is the mole fraction of substance A in the gas phase}\]</div>
+<div class="math">
+\[P = \text{Is the pressure of the system}\]</div>
+<div class="math">
+\[x_A = \text{Is the mole fraction of substance A in the liquid phase}\]</div>
+<div class="math">
+\[p_A^* (T) = \text{Is the vapour pressure of pure liquid A at temperature T}\]</div>
+<p>The expression for Henry&#8217;s law is:</p>
+<div class="math">
+\[p_A \equiv y_A P = x_A H_A (T)\]</div>
+<p>where</p>
+<div class="math">
+\[p_a = \text{Is the partial pressure of substance A}\]</div>
+<div class="math">
+\[y_A = \text{Is the mole fraction of substance A in the gas phase}\]</div>
+<div class="math">
+\[P = \text{Is the pressure of the system}\]</div>
+<div class="math">
+\[x_A = \text{Is the mole fraction of substance A in the liquid phase}\]</div>
+<div class="math">
+\[H_A (T) = \text{Is the the Henry's law constant for A in a specific solvent}\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.8.5-–-Saturation-and-Humidity">
+<h2>4.8.5 – Saturation and Humidity<a class="headerlink" href="#4.8.5-–-Saturation-and-Humidity" title="Permalink to this headline">¶</a></h2>
+<p>The term saturation refers to any gas-vapour system. Humidity refers
+specifically to an air-water system. There are four main types of
+saturation and humidity:</p>
+<p><strong>Relative Saturation (Relative Humidity)</strong>:</p>
+<div class="math">
+\[s_r (h_r) = \frac{p_i}{p^*_i (T)} \times 100 \text{%}\]</div>
+<p>where</p>
+<div class="math">
+\[p_i = \text{The partial pressure of species i}\]</div>
+<div class="math">
+\[p^*_i (T) = \text{The vapour pressure of species i}\]</div>
+<p><strong>Molal Saturation (Molal Humidity)</strong>:</p>
+<div class="math">
+\[s_m (h_m) = \frac{p_i}{P - p_i}\]</div>
+<p>where</p>
+<div class="math">
+\[p_i = \text{The partial pressure of species i}\]</div>
+<div class="math">
+\[P = \text{The total pressure of the system}\]</div>
+<p><strong>Absolute Saturation (Absolute Humidity)</strong>:</p>
+<div class="math">
+\[s_a (h_a) = \frac{p_i M_i}{(P - p_i) M_{dry}}\]</div>
+<p>where</p>
+<div class="math">
+\[p_i = \text{The partial pressure of species i}\]</div>
+<div class="math">
+\[P = \text{The total pressure of the system}\]</div>
+<div class="math">
+\[MW_i = \text{The molecular weight of species i}\]</div>
+<div class="math">
+\[MW_{dry} = \text{The average molecular weight of all of the none vapour gas of the system}\]</div>
+<p><strong>Percentage Saturation (Percentage Humidity)</strong>:</p>
+<div class="math">
+\[s_p (h_p) = \frac{s_m}{s^*_m} \times 100 \text{%} = \frac{\frac{p_i}{P - p_i}}{\frac{p^*_i}{P - p^*_i}} \times 100 \text{%}\]</div>
+<p>where</p>
+<div class="math">
+\[p_i = \text{The partial pressure of species i}\]</div>
+<div class="math">
+\[p^*_i = \text{The vapour pressure of species i}\]</div>
+<div class="math">
+\[P = \text{The total pressure of the system}\]</div>
+<p>Each one of these different types of saturation and humidity’s are
+useful in different scenarios.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.8.6-–-Problem-Statement">
+<h2>4.8.6 – Problem Statement<a class="headerlink" href="#4.8.6-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Problem-1">
+<h3>Problem 1<a class="headerlink" href="#Problem-1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<p>Humid air at <span class="math">\(60^{\circ} C\)</span>, 1 atm, and 73 % relative humidity is
+fed into a unit operation at a rate of <span class="math">\(500 \space m^3 / h\)</span>. The
+vapor pressure of water at 1 atm and <span class="math">\(60^{\circ} C\)</span> is
+<span class="math">\(p^*_{H_2 0} = 19,920 \space Kpa\)</span>. Determine</p>
+<ol class="loweralpha simple">
+<li>the molar flow rates of water, dry air, and oxygen, assuming oxygen
+makes up 21% of dry air.</li>
+<li>the molal humidity, absolute humidity, and percentage humidity of the
+air.</li>
+</ol>
+</div>
+<div class="section" id="Answer">
+<h4>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="a)-the-molar-flow-rates-of-water,-dry-air,-and-oxygen,-assuming-oxygen-makes-up-21%-of-dry-air">
+<h5>a) the molar flow rates of water, dry air, and oxygen, assuming oxygen makes up 21% of dry air<a class="headerlink" href="#a)-the-molar-flow-rates-of-water,-dry-air,-and-oxygen,-assuming-oxygen-makes-up-21%-of-dry-air" title="Permalink to this headline">¶</a></h5>
+<p>First we must determine the partial pressure of the water.</p>
+<div class="math">
+\[p_{H_2 O}  = h_r \cdot p^*_{H_2 0} = (0.73) \cdot 19,920 = 14,540 \space Pa\]</div>
+<p>Then using Raoult&#8217;s Law, we can fine the vapour mole fraction of the
+water</p>
+<div class="math">
+\[y_{H_2 O} = \frac{p_{H_2 O}}{P} = \frac{14,540 \space Pa}{101,300 \space Pa} = 0.1435 \space \frac{mol \space H_2 O}{mol}\]</div>
+<p>Assuming the humid air behaves ideally, we can use the ideal gas law to
+solve for the molar flow rate of the wet air</p>
+<div class="math">
+\[\dot{n}_{total} = \frac{P \dot{V}}{R T} = \frac{ \big(101,300 \space Pa \big) \big(500 \space \frac{m^3}{h} \big)}{\big(8.314 \frac{ m^3 \cdot Pa}{mol \cdot K} \big) \big(333.15 \space K \big)} = 18,300 \space \frac{mol}{h}\]</div>
+<p>Since we know the mole fraction of the water is</p>
+<div class="math">
+\[y_{H_2 O} = 0.1435 \space \frac{mol \space H_2 O}{mol}\]</div>
+<p>then we can solve the mole fraction of the dry hair by</p>
+<div class="math">
+\[y_{dry} = y_{wet} - y_{H_2 O} = (1 - 0.1435) \space \frac{mol \space H_2 O}{mol} = 0.8565 \space \frac{mol \space H_2 O}{mol}\]</div>
+<p>Since the mole fraction of oxygen in dry air is</p>
+<div class="math">
+\[y_{oxy} = 0.21\]</div>
+<p>We can finally solve for the molar flow rate of water, dry air, and
+oxygen.</p>
+<div class="math">
+\[\dot{n}_{H_2 O} = \dot{n}_{total} \cdot y_{H_2 O} = \big( 18,300 \space \frac{mol}{h} \big) \cdot \big(0.1435 \space \frac{mol \space H_2 O}{mol} \big) = 2.626 \space \frac{kmol}{h}\]</div>
+<div class="math">
+\[\dot{n}_{dry} = \dot{n}_{total} \cdot y_{dry} = \big( 18,300 \space \frac{mol}{h} \big) \cdot \big(0.8565 \space \frac{mol \space H_2 O}{mol} \big) = 15.67 \space \frac{kmol}{h}\]</div>
+<div class="math">
+\[\dot{n}_{oxy} = \dot{n}_{total} \cdot y_{oxy} = \big( 15,700 \space \frac{mol}{h} \big) \cdot \big(0.21 \space \frac{mol \space H_2 O}{mol} \big) = 3.291 \space \frac{kmol}{h}\]</div>
+</div>
+<div class="section" id="b)-the-molal-humidity,-absolute-humidity,-and-percentage-humidity-of-the-air">
+<h5>b) the molal humidity, absolute humidity, and percentage humidity of the air<a class="headerlink" href="#b)-the-molal-humidity,-absolute-humidity,-and-percentage-humidity-of-the-air" title="Permalink to this headline">¶</a></h5>
+<p>We have already solved for the partial pressure of the water vapor so
+solving for the molal humidity</p>
+<div class="math">
+\[h_m = \frac{p_{H_2 O}}{P - p_{H_2 O}} = \frac{14,540 \space Pa}{101,300 \space Pa - 14,540 \space Pa} = 0.1675 \frac{mol \space H_2 O}{mol \space dry}\]</div>
+<p>The MW is 18.00 g/mol while the average MW of dry air is 28.9 g/mol.
+With that knowledge, we can solve for absolute humidity</p>
+<div class="math">
+\[h_a = \frac{p_{H_2 O} \cdot MW_{H_2 O}}{(P - p_{H_2 O}) MW_{dry}} = \frac{(14,540 \space Pa)(18.00 \space g/mol)}{(101,300 \space Pa - 14,540 \space Pa)(28.9 \space g/mol)}  = 0.104 \frac{kg \space H_2 O}{kg \space dry}\]</div>
+<p>Finally, to find the percentage humidity we must</p>
+<div class="math">
+\[h_p = \frac{\frac{p_{H_2 O}}{P - p_{H_2 O}}}{\frac{p^*_{H_2 O}}{P - p^*_{H_2 O}}} \times 100 \text{%} = \frac{\frac{14,540 \space Pa}{101,300 \space Pa - 14,540 \space Pa}}{\frac{19,920 \space Pa}{101,300 \space Pa - 19,920 \space Pa}} \times 100 \text{%} = 68.5 \text{%}\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="Problem-2">
+<h3>Problem 2<a class="headerlink" href="#Problem-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<p>Find the temperature at which the vapour pressure of water is
+<span class="math">\(6,000 \space Pa\)</span> where</p>
+<div class="math">
+\[A = 10.116\]</div>
+<div class="math">
+\[B = 1687.537\]</div>
+<div class="math">
+\[C = -42.98\]</div>
+</div>
+<div class="section" id="Answer">
+<h4>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h4>
+<p>Using Antione’s equation</p>
+<div class="math">
+\[\log_{10} p^* = A - \frac{B}{T + C}\]</div>
+<p>we can plug in the values and solve for <span class="math">\(p^*\)</span>.</p>
+<div class="math">
+\[\log_{10}(6000) = 10.116 - \frac{1687.537}{T + (-42.98)}\]</div>
+<div class="math">
+\[T = \frac{1687.537}{10.116 - \log_{10}(6000)} + 42.98\]</div>
+<div class="math">
+\[T = 308.3 \space K\]</div>
+</div>
+<div class="section" id="Answer-Using-Python">
+<h4>Answer Using Python<a class="headerlink" href="#Answer-Using-Python" title="Permalink to this headline">¶</a></h4>
+<p>Typically, Antoine’s constants are not given to you and you will have to
+look them up in a table. This may be tedious especially for chemicals
+less common than water. We can use the thermo library, show in section
+4.3, to help us find the answer.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>!pip install thermo --user
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Requirement already satisfied: thermo in c:\users\said zaid-alkailani\appdata\roaming\python\python36\site-packages
+Requirement already satisfied: fluids in c:\users\said zaid-alkailani\appdata\roaming\python\python36\site-packages (from thermo)
+Requirement already satisfied: scipy in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from thermo)
+Requirement already satisfied: pandas in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from thermo)
+Requirement already satisfied: coolprop in c:\users\said zaid-alkailani\appdata\roaming\python\python36\site-packages (from thermo)
+Requirement already satisfied: python-dateutil&gt;=2 in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from pandas-&gt;thermo)
+Requirement already satisfied: pytz&gt;=2011k in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from pandas-&gt;thermo)
+Requirement already satisfied: numpy&gt;=1.7.0 in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from pandas-&gt;thermo)
+Requirement already satisfied: six&gt;=1.5 in c:\users\said zaid-alkailani\anaconda3\lib\site-packages (from python-dateutil&gt;=2-&gt;pandas-&gt;thermo)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>from thermo.chemical import Chemical
+T = Chemical(&#39;water&#39;).VaporPressure.solve_prop(6000)
+print(&quot;The temperature at which the vapour pressure is 6,000 Pa is&quot;, T, &quot;K&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The temperature at which the vapour pressure is 6,000 Pa is 309.32672149807246 K
+</pre></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Citation">
+<h2>Citation<a class="headerlink" href="#Citation" title="Permalink to this headline">¶</a></h2>
+<p>Caleb Bell (2016). thermo: Chemical properties component of Chemical
+Engineering Design Library (ChEDL) <a class="reference external" href="https://github.com/CalebBell/thermo">https://github.com/CalebBell/thermo</a>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.8 – Vapour Pressure</a><ul>
+<li><a class="reference internal" href="#4.8.0-–-Learning-Objectives">4.8.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#4.8.1-–-Introduction">4.8.1 – Introduction</a></li>
+<li><a class="reference internal" href="#4.8.2-–-Vapour-Pressure">4.8.2 – Vapour Pressure</a></li>
+<li><a class="reference internal" href="#4.8.3-–-Antoine-equation">4.8.3 – Antoine equation</a></li>
+<li><a class="reference internal" href="#4.8.4-–-Raoult's-Law-and-Henry's-Law">4.8.4 – Raoult&#8217;s Law and Henry&#8217;s Law</a></li>
+<li><a class="reference internal" href="#4.8.5-–-Saturation-and-Humidity">4.8.5 – Saturation and Humidity</a></li>
+<li><a class="reference internal" href="#4.8.6-–-Problem-Statement">4.8.6 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Problem-1">Problem 1</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a><ul>
+<li><a class="reference internal" href="#a)-the-molar-flow-rates-of-water,-dry-air,-and-oxygen,-assuming-oxygen-makes-up-21%-of-dry-air">a) the molar flow rates of water, dry air, and oxygen, assuming oxygen makes up 21% of dry air</a></li>
+<li><a class="reference internal" href="#b)-the-molal-humidity,-absolute-humidity,-and-percentage-humidity-of-the-air">b) the molal humidity, absolute humidity, and percentage humidity of the air</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Problem-2">Problem 2</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+<li><a class="reference internal" href="#Answer-Using-Python">Answer Using Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Citation">Citation</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-4-Separation-II/4.8 - Vapour Pressure.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

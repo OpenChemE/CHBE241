@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.7 – Separator &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="3.7-–-Separator">
+<h1>3.7 – Separator<a class="headerlink" href="#3.7-–-Separator" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="3.7.0-–-Learning-Objectives">
+<h2>3.7.0 – Learning Objectives<a class="headerlink" href="#3.7.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this notebook, you shdould be able to:</p>
+<ul class="simple">
+<li>Identify a separator process and set up the appropriate assumptions
+to solve</li>
+<li>Properly draw and label a separator diagram</li>
+<li>Correctly use vapor and liquid fractions in mass balances on the
+separator</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.7.1-–-Introduction">
+<h2>3.7.1 – Introduction<a class="headerlink" href="#3.7.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Separation is essential in chemical processes, maybe it&#8217;s purifying the
+end products or fractioning a mixture into it&#8217;s constituents for
+recycling or different reactions.</p>
+<p>By the end of the notebook, you should be able to use mass balances to
+deduce the compositions of the product streams and their masses. <strong>We
+will not be covering the energy balances associated with a separator in
+this notebook.</strong></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.7.2-–-Separator-BFD">
+<h2>3.7.2 – Separator BFD<a class="headerlink" href="#3.7.2-–-Separator-BFD" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Figure 1." src="../_images/3.8-example.svg" /></p>
+<div style="text-align:center"><p>Figure 1.</p>
+</div><div style="text-align:center"><p>Attribution: Victor Chiew Yung Hui &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+</div><hr class="docutils" />
+<p>Figure 1. is the block flow diagram for a separator (<span class="math">\(W\)</span> = Water
+and <span class="math">\(E\)</span> = Ethanol). Think of a separator as a more complicated
+splitter. A separator is characterized with a single input, followed by
+2 or more product streams <strong>with different molar/mass compositions,
+sometimes even states of matter, than the feed stream.</strong></p>
+<p>For instance the overhead stream could be composed of gaseous feed
+versus the bottom product where the feed is still liquid. VLE
+calculations need to be taken into account in terms of the energy and
+masses conserved.</p>
+<div class="section" id="Noteworthy-in-Figure-1:">
+<h3>Noteworthy in Figure 1:<a class="headerlink" href="#Noteworthy-in-Figure-1:" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>A volumetric flow rate is given for the feed stream, but mass flow
+rates and fractions will be needed for balances. The mass flow rate
+of the stream should therefore be considered an unknown process
+variable and labeled as such on the chart. Its value will be
+determined from the known volumetric flow rate and density of the
+feed stream. <span class="math">\($\)</span>$</li>
+<li>Since mass balances will be used, the given component mole fractions
+in the overhead product stream will have to be converted to mass
+fractions. The mass fractions are accordingly labeled as unknowns.</li>
+</ul>
+<hr class="docutils" />
+<div class="figure" id="id3">
+<img alt="Figure 1." src="../_images/3.8-example.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="3.7.3-–-Steps-to-solve-separators">
+<h2>3.7.3 – Steps to solve separators<a class="headerlink" href="#3.7.3-–-Steps-to-solve-separators" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>List all assumptions and relationshps. If the input stream does not
+have a flow rate listed in the question or the diagram, assume a mass
+or volumteric flow rate of a random number, preferrably a mass flow
+rate with a nice round number like 100 <span class="math">\(kg/h\)</span>. <span class="math">\($\)</span>$</li>
+<li>Draw and label the flow chart based on the question. We will not be
+considering chemical reactions between constituents of the fresh feed
+and reactor feed in the feed streams, only when they&#8217;re in the
+separator. <span class="math">\($\)</span>$</li>
+<li>Write expressions for the quantities requested in the problem
+statement. (e.g. <span class="math">\(m_3\)</span> = <span class="math">\(m_{B3}\)</span> + <span class="math">\(m_{T3}\)</span>,
+<span class="math">\(x_B\)</span> = $ <a href="#id1"><span class="problematic" id="id2">:raw-latex:`\frac{m_{B3}}{m_3}`$). The expressions
+should be written to help in solving for the missing parameters of
+the process. :math:`$`</span></a>$</li>
+<li>Perform a degree-of-freedom analysis on the process to determine if
+it is solvable. <span class="math">\($\)</span>$</li>
+<li>Convert all mixed units to one uniform units. In most cases, it would
+be converting all the units to masses, but in the case of reactive
+systems, you&#8217;d want to convert them to moles per unit time.
+<span class="math">\($\)</span>$</li>
+<li><strong>Do the algebra.</strong></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.7.4-–-Separator-problem-statement-(Refer-to-figure-1.)">
+<h2>3.7.4 – Separator problem statement (Refer to figure 1.)<a class="headerlink" href="#3.7.4-–-Separator-problem-statement-(Refer-to-figure-1.)" title="Permalink to this headline">¶</a></h2>
+<p>The reactor in figure 1. above deals with separation of two liquids:
+water and ethanol. The reactor is a distillation column, which will
+vaporize the ethanol from the water due to the lower boiling point.</p>
+<p><strong>What are the mass fractions of the bottom and overhead feed?</strong></p>
+<hr class="docutils" />
+<p><em>Quantities to be solved for</em></p>
+<div class="math">
+\[\dot{m}_2\]</div>
+<div class="math">
+\[\dot{m}_3 = \dot{m}_{W3} + \dot{m}_{E3}\]</div>
+<div class="math">
+\[x_B = \dot{m}_{W3}/\dot{m}\]</div>
+<div class="section" id="Convert-mixed-units-in-overhead-stream-to-a-single-unit">
+<h3>Convert mixed units in overhead stream to a single unit<a class="headerlink" href="#Convert-mixed-units-in-overhead-stream-to-a-single-unit" title="Permalink to this headline">¶</a></h3>
+<p>Choose a basis: 100kmol <span class="math">\(\longrightarrow\)</span> 95 kmol E, 5 kmol W</p>
+<ul class="simple">
+<li>95 kmol W <span class="math">\(\times\)</span> 78.11 kg/kmol = 7420 kg Water</li>
+<li>5 kmol E <span class="math">\(\times\)</span> 92.13 kg/kmol = 461 kg Ethanol</li>
+<li>Total mass flow rate = 7420 kg Water + 461 kg Ethanol = 7881 kg
+mixture</li>
+<li><span class="math">\(y_{B2}\)</span> = <span class="math">\(\frac{7420 kg B}{7881 kg mixture}\)</span> = 0.942 kg
+B/kg</li>
+</ul>
+</div>
+<div class="section" id="Peform-a-degree-of-freedom-analysis">
+<h3>Peform a degree-of-freedom analysis<a class="headerlink" href="#Peform-a-degree-of-freedom-analysis" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>4 unknowns</li>
+<li>2 species = 2 material balances</li>
+<li>1 density relationship (relating the mass flow rate to the given
+volumetric flow rate of the feed)</li>
+<li>1 specified split in the benzene composition in bottom stream</li>
+</ul>
+</div>
+<div class="section" id="Write-system-equations">
+<h3>Write system equations<a class="headerlink" href="#Write-system-equations" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><span class="math">\(\dot{m}_1 = (2000 \frac{L}{h}) \times (0.872 \frac{kg}{L})\)</span></p>
+<p><span class="math">\(\dot{m}_{B3} = 0.08 \cdot (0.45\dot{m}_1)\)</span></p>
+<p>Water Balance:
+<span class="math">\(0.45\dot{m}_{1} = \dot{m}_2 y_{B2} \cdot (0.45\dot{m}_1) + \dot{m}_{B3}\)</span></p>
+<p>Ethanol Balance:
+<span class="math">\(0.55\dot{m}_{1} = \dot{m}_2 (1 - y_{B2})\cdot (0.45\dot{m}_1) + \dot{m}_{T3}\)</span></p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.7 – Separator</a><ul>
+<li><a class="reference internal" href="#3.7.0-–-Learning-Objectives">3.7.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#3.7.1-–-Introduction">3.7.1 – Introduction</a></li>
+<li><a class="reference internal" href="#3.7.2-–-Separator-BFD">3.7.2 – Separator BFD</a><ul>
+<li><a class="reference internal" href="#Noteworthy-in-Figure-1:">Noteworthy in Figure 1:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#3.7.3-–-Steps-to-solve-separators">3.7.3 – Steps to solve separators</a></li>
+<li><a class="reference internal" href="#3.7.4-–-Separator-problem-statement-(Refer-to-figure-1.)">3.7.4 – Separator problem statement (Refer to figure 1.)</a><ul>
+<li><a class="reference internal" href="#Convert-mixed-units-in-overhead-stream-to-a-single-unit">Convert mixed units in overhead stream to a single unit</a></li>
+<li><a class="reference internal" href="#Peform-a-degree-of-freedom-analysis">Peform a degree-of-freedom analysis</a></li>
+<li><a class="reference internal" href="#Write-system-equations">Write system equations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-3-Separation-I/3.7 - Separator.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

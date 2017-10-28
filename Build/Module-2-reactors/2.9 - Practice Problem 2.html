@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.9 – Practice Problem 2 &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="2.9-–-Practice-Problem-2">
+<h1>2.9 – Practice Problem 2<a class="headerlink" href="#2.9-–-Practice-Problem-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Question">
+<h2>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h2>
+<p>Iron can be one of the most troublesome elements in water. It is very
+important to treat water containing large amounts of iron because as
+little as 0.3 ppm (parts per million) of iron can cause damage to
+manufacturing processes and the environment. The most common forms of
+iron found in water is ferrous, <span class="math">\(\text{Fe}^{+2}\)</span>, and ferric,
+<span class="math">\(\text{Fe}^{+3}\)</span>. The ferrous and ferric increases the acidity of
+the water. To treat the water, a base is needed such as sodium
+hydroxide, <span class="math">\(\text{NaOH}\)</span>. The base causes a titration with the
+ferrous titrating to iron hydroxide, <span class="math">\(\text{Fe(OH)}_2\)</span>, and ferric
+titrating to ferric hydroxide, <span class="math">\(\text{Fe(OH)}_3\)</span>. These hydroxides
+are not soluble in water and therefore can be extracted from the water.</p>
+<div class="math">
+\[\text{Fe}^{+2}_{(aq)} + 2 \space \text{NaOH}_{(aq)} \space \rightleftharpoons \space  \text{Fe(OH)}_{2 \space (s)} + 2 \space \text{Na}_{(aq)}^{+1}\]</div>
+<div class="math">
+\[\text{Fe}^{+3}_{(aq)} + 3 \space \text{NaOH}_{(aq)} \space \rightleftharpoons \space  \text{Fe(OH)}_{3 \space (s)} + 3 \space \text{Na}_{(aq)}^{+1}\]</div>
+<p>You are a chemical engineer working at a mining company. You&#8217;re boss
+wants you to make a material balance of the water treatment of iron so
+that he can analyze the cost of the treatment. You will be using a
+continuous stirred-tank reactor (CSTR). Assume that only ferrous is
+present in the water.</p>
+<div class="math">
+\[\text{Fe}^{+2}_{(aq)} + 2 \space \text{NaOH}_{(aq)} \space \rightleftharpoons \space  \text{Fe(OH)}_{2 \space (s)} + 2 \space \text{Na}_{(aq)}^{+1}\]</div>
+<p>There are two input streams and two out put streams. The first input
+stream, stream 1, contains water, ferrous at 500 ppm. The flowrate of
+water in this stream is 450 L/h. The second input stream, stream 2, is a
+3-molar solution of sodium hydroxide. The first output stream, stream 3,
+contains pure ferrous oxide. The second output stream, stream 4,
+contains all the water that entered the system, the sodium and the legal
+amount of iron in the water at 0.1 ppm.</p>
+<ol class="loweralpha simple">
+<li>Draw and label the body flow diagram (BFD).</li>
+<li>Perform a degree of freedom analysis.</li>
+</ol>
+</div>
+<div class="section" id="Answer">
+<h2>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a)-Draw-and-label-the-body-flow-diagram-(BFD).">
+<h3>a) Draw and label the body flow diagram (BFD).<a class="headerlink" href="#a)-Draw-and-label-the-body-flow-diagram-(BFD)." title="Permalink to this headline">¶</a></h3>
+<p>First, let’s draw the basic outline of the BFD</p>
+<div class="figure">
+<img alt="" src="../_images/CSTR-1.svg" /></div>
+<p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+<p>Now let’s turn everything into a molar basis and fill out our BFD.</p>
+<div class="math">
+\[\dot{V}_{H_2 O} = 450 \frac{L}{h}\]</div>
+<div class="math">
+\[\dot{n}_{H_2 O} = 450 \space \frac{L}{h} \times 1,000 \space \frac{g}{L} \times 0.0556 \space \frac{mol}{g} = 25,000 \space \frac{mol}{h}\]</div>
+<p>Since we know that the ferrous in stream 1 is 500 ppm and the mole
+fractions of stream 1 must add to one, we find that:</p>
+<div class="math">
+\[y_{(1, Fe^{+2})} = 0.0005\]</div>
+<div class="math">
+\[y_{(1, H_2 O)} = 1 - y_{(1, Fe^{+2})} = 1 - 0.0005 = 0.9995\]</div>
+<p>and that</p>
+<div class="math">
+\[\dot{n}_1 = \frac{\dot{n}_{H_2 O}}{y_{(1, H_2 O)}} = \frac{25,000 \space \frac{mol}{h}}{0.9995 } = 25.01 \space \frac{kmol}{h}\]</div>
+<p>Since we know that only pure ferrous oxide exists stream there we find
+that:</p>
+<div class="math">
+\[y_{(1, Fe(OH)_2)} = 1\]</div>
+<p>We can now label our BFD to the fullest extent without solving the
+problem.</p>
+<div class="figure">
+<img alt="" src="../_images/CSTR-2.svg" /></div>
+<p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+</div>
+<div class="section" id="b)-Perform-a-degree-of-freedom-analysis.">
+<h3>b) Perform a degree of freedom analysis.<a class="headerlink" href="#b)-Perform-a-degree-of-freedom-analysis." title="Permalink to this headline">¶</a></h3>
+<p>We have 8 unknown labeled variables but since we can deduce two of the
+mole fractions from the others, let’s just say we have 6 unknown labeled
+variables. We will use the atomic species balance for this question. The
+degree of freedom analysis for a atomic species balance is:</p>
+<div class="math">
+\[DOF = \text{Unknown variables} - \text{independent atomic species balance} - \text{molecular balances on independent nonreactive species} -\text{other equations relating unknown variables}\]</div>
+<p>We know that:</p>
+<div class="math">
+\[\text{Unknown variables} = 6\]</div>
+<div class="math">
+\[\text{independent atomic species balance} = 4 \space (H, \space Fe, \space Na, \text{and} \space O)\]</div>
+<div class="math">
+\[\text{molecular balances on independent nonreactive species} = 0\]</div>
+<div class="math">
+\[\text{other equations relating unknown variables} = 2\]</div>
+<p>Where other equations relating unknow variables is</p>
+<div class="math">
+\[y_{(4, Fe^{+2})} = 0.0001\]</div>
+<p>and that <span class="math">\(NaOH\)</span> is 3 moles per litre.</p>
+<div class="math">
+\[3 \space \frac{NaOH \space mol}{H_2 O \space l} \times \frac{ 1 \space l}{ 1,000 \space g} \times \frac{ 18 \space g}{1 \space mol \space H_2 O} = 0.054  \space \frac{NaOH \space mol}{H_2 O \space mol}\]</div>
+<div class="math">
+\[y_{(2, \space NaOH)} = \frac{0.054}{0.054  + 1} = 0.0512\]</div>
+<div class="math">
+\[\therefore \space DOF = 6 - 4 - 0 - 2 = 0\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.9 – Practice Problem 2</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a><ul>
+<li><a class="reference internal" href="#a)-Draw-and-label-the-body-flow-diagram-(BFD).">a) Draw and label the body flow diagram (BFD).</a></li>
+<li><a class="reference internal" href="#b)-Perform-a-degree-of-freedom-analysis.">b) Perform a degree of freedom analysis.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-2-reactors/2.9 - Practice Problem 2.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

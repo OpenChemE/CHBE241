@@ -1,0 +1,227 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 6.2 &ndash; Heat of Reaction (Combustion)\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.2.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the concept of heat of reaction.\n",
+    "2. Understand the difference between exothermic and endothermic reactions.\n",
+    "3. Use heat of reaction in calculations.\n",
+    "4. Use the extent of reaction in heat of reaction calculations.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.2.1 &ndash; Introduction\n",
+    "\n",
+    "The **heat of reaction**, $\\Delta \\hat{H}_r (T,P)$ is the change in enthalpy for a process in which the quantities of reactants at a temperature and pressure, T and P, __react completely__ in a single reaction to form products.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.2.2 &ndash; Exothermic and Endothermic\n",
+    "\n",
+    "A simple example we can use to explain the difference between **exothermic** and **endothermic** reactions is the burning of hydrogen gas in oxygen.\n",
+    "\n",
+    "$$ 2 \\space H_{2} \\small{\\text{(g)}} + O_{2 } \\small{\\text{(g)}} \\longrightarrow 2 \\space H_2 O \\small{\\text{(v)}} \\quad \\Delta \\hat{H}_r = -483.6 \\space \\frac{kJ}{mol}$$\n",
+    "\n",
+    "This reaction is exothermic. An exothermic reaction occurs when the __products__ of the reaction have a __lower internal energy__ than the reactants. The net energy difference, the heat of reaction, would be negative. This __reaction releases energy__ in terms of heat.\n",
+    "\n",
+    "If you have the reverse reaction:\n",
+    "\n",
+    "$$ 2 \\space H_2 O \\small{\\text{(v)}} \\longrightarrow 2 \\space H_{2} \\small{\\text{(g)}} + O_{2 } \\small{\\text{(g)}} \\quad \\Delta \\hat{H}_r = 483.6 \\space \\frac{kJ}{mol}$$\n",
+    "\n",
+    "The reaction will be endothermic. An endothermic reaction occurs when the __products__ of the reaction have a __higher internal energy__ than the reactants. The net energy difference, the heat of reaction, would be positive. This __reaction requires heat__ to occur.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.2.3 &ndash; How to Solve Questions Using Heat of Reaction\n",
+    "\n",
+    "When using heat of reaction, the units are often given in $kJ/mol$. The problem with this unit is moles of what? To clarify, when calculating for the change in enthalpy, we use this equation:\n",
+    "\n",
+    "$$ \\Delta H = \\frac{\\Delta \\hat{H}_r (T_0,P_0)}{\\mid \\nu_A \\mid} \\space n_{A,r} $$\n",
+    "\n",
+    "where\n",
+    "\n",
+    "$$ \\Delta H = \\text{Is the change in enthalpy} $$\n",
+    "\n",
+    "$$ \\Delta \\hat{H}_r (T_0,P_0) = \\text{Is the heat of reaction at temperature and pressure} \\space T_0 \\space \\text{and} \\space P_0 $$\n",
+    "\n",
+    "$$ \\nu_A = \\text{Is the stoichiometric coefficient of species A} $$\n",
+    "\n",
+    "$$ n_{A,r} = \\text{Is the moles of A that reacted} $$\n",
+    "\n",
+    "In module 2 we defined the **extent of reaction**, $\\xi$, as a measure how far a reaction advanced. The equation for extent of reaction is:\n",
+    "\n",
+    "$$ \\xi = \\frac{n_{A,r}}{\\mid \\nu_A \\mid} $$\n",
+    "\n",
+    "Using this equation, we can simplify the change in enthalpy equation to:\n",
+    "\n",
+    "$$ \\Delta H = \\Delta \\hat{H}_r (T_0,P_0) \\cdot \\xi $$\n",
+    "\n",
+    "This equation states that by using the extent of reaction we can have a basis to evaluate the stoichiometry. Because of this, we can find the heat of reaction by being given any compound in the reaction.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.2.4 &ndash; Important Terms and Observations\n",
+    "\n",
+    "1. If $\\Delta \\hat{H}_r (T,P)$ is negative, the reaction is exothermic at the temperature and pressure T and P, and if $\\Delta \\hat{H}_r (T,P)$ is positive the reaction is endothermic at T and P.\n",
+    "2. At low and moderate pressures, $\\Delta \\hat{H}_r (T,P)$ is nearly independent of pressure. Thus, the heat of reaction will become $\\Delta \\hat{H}_r (T)$. We will mostly be using this type of heat of reaction.\n",
+    "3. The value of the heat of reaction depends on the how the stoichiometric equation is write. For example,\n",
+    "\n",
+    "    $$ H_{2} \\small{\\text{(g)}} + \\frac{1}{2} \\space O_{2 } \\small{\\text{(g)}} \\longrightarrow 2 \\space H_2 O \\small{\\text{(v)}} \\quad \\Delta \\hat{H}_r = -241.8 \\space \\frac{kJ}{mol}$$\n",
+    "    \n",
+    "    $$ 2 \\space H_{2} \\small{\\text{(g)}} + O_{2 } \\small{\\text{(g)}} \\longrightarrow 2 \\space H_2 O \\small{\\text{(v)}} \\quad \\Delta \\hat{H}_r = -483.6 \\space \\frac{kJ}{mol}$$\n",
+    "    \n",
+    "4. The magnitude of the heat of reaction depends on the phase of the products, whether it be gas, liquid, or solid. For example,\n",
+    "    \n",
+    "    $$ C H_{4} \\small{\\text{(g)}} + 2 \\space O_{2 } \\small{\\text{(g)}} \\longrightarrow C O_{2} \\small{\\text{(g)}} + 2 \\space H_2 O \\small{\\text{(v)}} \\quad \\Delta \\hat{H}_r -802.3 \\space \\frac{kJ}{mol}$$\n",
+    "    \n",
+    "    $$ C H_{4} \\small{\\text{(g)}} + 2 \\space O_{2 } \\small{\\text{(g)}} \\longrightarrow C O_{2} \\small{\\text{(g)}} + 2 \\space H_2 O \\small{\\text{(l)}} \\quad \\Delta \\hat{H}_r -890.3 \\space \\frac{kJ}{mol}$$\n",
+    "    \n",
+    "    This concept will be discussed in greater detail in the **latent heat** section.\n",
+    "5. The **standard heat of reaction**, denoted by $\\Delta \\hat{H}_r ^{\\circ}$, is the heat of reaction at a specific reference point, usually $25 ^{\\circ} C$ and $1$ atm.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 6.2.5 &ndash; Problem Statement\n",
+    "\n",
+    "### Problem 1\n",
+    "\n",
+    "#### Question\n",
+    "You are a chemical engineer at one of the test facilities for renewable energies. You are comparing ethanol's rate of enthalpy change to the amount of $C O_2$ produced. You measure that $250 \\space g/s$ of $C O_2$ is produced, what is the rate of enthalpy change given\n",
+    "\n",
+    "$$ C_2 H_5 O H \\small{\\text{(l)}} + 3 \\space O_2 \\small{\\text{(g)}} \\longrightarrow 2 \\space C O_2 \\small{\\text{(g)}} + 3 \\space H_2 O \\small{\\text{(v)}} \\quad \\Delta \\hat{H}_r = -1369 \\space kJ/mol $$\n",
+    "\n",
+    "Is the combustion of ethanol an exothermic or endothermic reaction?\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "First, we need to convert the rate of $C O_2$ produced from a mass flow rate to a molar flow rate.\n",
+    "\n",
+    "$$ MW_{C O_2} = 44.00 \\space \\frac{g}{mol} $$\n",
+    "\n",
+    "$$ \\dot{n}_{C O_2} = \\dot{m}_{C O_2} \\times \\frac{1}{MW_{C O_2}} = 250 \\space \\frac{g}{s} \\times \\frac{mol}{44.00 \\space g } = 5.682 \\space \\frac{mol}{s} $$\n",
+    "\n",
+    "Now that we have the molar flow rate, we can use the extent of reaction method to solve for the rate of enthalpy change.\n",
+    "\n",
+    "$$ \\dot{\\xi} = \\frac{\\dot{n}_{C O_2}}{\\mid \\nu_{C O_2} \\mid} = \\frac{5.682 \\space \\frac{mol}{s}}{2} = 2.841 \\space \\frac{mol}{s} $$\n",
+    "\n",
+    "$$ \\Delta \\dot{H} = \\dot{\\xi} \\cdot \\Delta \\hat{H}_r = \\bigg(2.841 \\space \\frac{mol}{s} \\bigg) \\cdot \\bigg( -1369 \\space \\frac{kJ}{mol} \\bigg) = -3889 \\space \\frac{kJ}{s} $$\n",
+    "\n",
+    "Since the rate of enthalpy change is negative, the combustion of ethanol is an exothermic reaction.\n",
+    "\n",
+    "### Problem 2\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "The heats of vaporization of n-butane and water at 25 &deg;C are 19.2 kJ/mol and 44.0 kJ/mol, respectively. What is the standard heat of the reaction of \n",
+    "\n",
+    "$$C_4H_{10} (l) + \\frac{13}{2}O_2 (g) \\longrightarrow 4 CO_2 (g) + 5 H_2O(v)$$\n",
+    "\n",
+    "Calculate $\\Delta{\\dot{H}}$ if 2400 mol/s of $CO_2$ is produced in this reaction and the reactants and products are all at 25 &deg;C.\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "First, let's compare the given reaction (Reaction 2) with a known combustion reaction of n-butane (Reaction 1):\n",
+    "\n",
+    "1. $$C_4H_{10} (g) + \\frac{13}{2}O_2 (g) \\longrightarrow 4 CO_2 (g) + 5 H_2O(l): \\space \\space \\Delta{\\hat{H}_{r1}} = -2878 \\space kJ/mol$$\n",
+    "\n",
+    "2. $$C_4H_{10} (l) + \\frac{13}{2}O_2 (g) \\longrightarrow 4 CO_2 (g) + 5 H_2O(v): \\space \\space \\Delta{\\hat{H}_{r2}} = ?$$\n",
+    "\n",
+    "According to our comparison, we should first deduce what the states of the reactants and the products, and their respective stoichiometric values, can tell us:\n",
+    "\n",
+    "- The total enthalpy of the reactants in the second reaction is lower than the first reaction by the amount of the heat of vaporization of butane.\n",
+    "\n",
+    "- The total enthalpy of the products in the second reaction is higher than the first reaction by 5 times the amount of the heat of vaporization of water. \n",
+    "\n",
+    "Deduction over, now we have the means to solve for the heat of reaction of the second reaction, based on our deduction and the heat of reaction value of the first equation. Let's solve for the $\\Delta{\\hat{H}_{r2}}$:\n",
+    "\n",
+    "$$\\quad \\Delta \\hat{H}_{r2} ^{\\circ} = \\quad \\Delta \\hat{H}_{r1} ^{\\circ} + 5 \\cdot \\Delta{\\hat{H}_{H_2O}} - (-\\Delta{\\hat{H}_{butane}})$$\n",
+    "\n",
+    "$$\\quad \\Delta \\hat{H}_{r2} ^{\\circ} = \\quad \\Delta \\hat{H}_{r1} ^{\\circ} + 5 \\cdot \\Delta{\\hat{H}_{v,H_2O}} + \\Delta{\\hat{H}_{v,butane}}$$\n",
+    "\n",
+    "$$\\quad \\Delta \\hat{H}_{r2} ^{\\circ} = -2878 + 5(44) + 19.2 = -2639 \\space kJ/mol$$\n",
+    "\n",
+    "Now that we know the heat of reaction per mol of product produced, we need to find out the total heat. Let's find the extent of reaction using the 2400 mol/s given:\n",
+    "\n",
+    "$$\\dot{\\xi} = \\frac{n_{A,r}}{\\mid \\nu_A \\mid} = \\frac{2400 \\space mol/s}{4} = 600 \\space mol/s$$\n",
+    "\n",
+    "Now we can solve for the $\\Delta{\\dot{H}}$ of the reaction:\n",
+    "\n",
+    "$$\\Delta{\\dot{H}} = \\dot{\\xi} \\cdot \\Delta{\\hat{H}_{r2}} = 600 \\space mol/s \\cdot -2639 \\space kJ/mol = -1.58 \\times 10^6 \\space kJ/s$$\n",
+    "\n",
+    "Tedious? Aye. Complicated? Nay. Keep at it and continue practicing and you will be good in no time."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

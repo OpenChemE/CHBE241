@@ -1,0 +1,1170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting started on Using Jupyter Notebooks and Python &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="Getting-started-on-Using-Jupyter-Notebooks-and-Python">
+<h1>Getting started on Using Jupyter Notebooks and Python<a class="headerlink" href="#Getting-started-on-Using-Jupyter-Notebooks-and-Python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Learning-Objectives">
+<h2>Learning Objectives<a class="headerlink" href="#Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>The goal of this notebook is to learn how to use Python for solving
+chemical engineering problems. We assume that you are familiar with
+content from APSC 160 (or any other introductory programming courses if
+you are a transfer student), but have no prior experience with Python.</p>
+<p>By the end of this section, you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand how to use Jupyter notebooks</li>
+<li>Write simple Markdown and Python code</li>
+</ol>
+</div>
+<div class="section" id="Introduction-and-Motivation">
+<h2>Introduction and Motivation<a class="headerlink" href="#Introduction-and-Motivation" title="Permalink to this headline">¶</a></h2>
+<p>Welcome to <strong>CHBE 241: Material and Energy Balances</strong>!</p>
+<p>In this course, we will use Jupyter notebooks to illustrate how to apply
+modern, open-source software tools for chemical engineering
+applications. We will be using Python, a free, open-source and powerful
+computing environment. It is one of the most popular languages in the
+data science community alongside R, which you will learn in STAT 241.</p>
+<p>Coding is one of the most useful, transfereable skills that you can
+learn in the 21st century. According to the <a class="reference external" href="https://www.bls.gov/ooh/architecture-and-engineering/chemical-engineers.htm">U.S. Department of
+Labor</a>,
+the chemical engineering industry is projected to grow 2% between
+2014-2024. Over the same period, the software industry is projected to
+grow by a staggering 17%. Software, automation and data science will
+serve an increasingly important role in the field of chemical
+engineering. For example, researchers in the <a class="reference external" href="http://dais.chbe.ubc.ca/">DAIS
+Lab</a> here in CHBE are investigating
+applications of machine learning techniques to design better controllers
+for industrial processes.</p>
+<p>The goal of using Python in this course is to provide you with a gentle
+introduction to the language of modern software development and equip
+you with the necessary foundations to pursue further explore this area
+if you are interested in learning more.</p>
+<hr></div>
+<div class="section" id="Running-Jupyter-Notebooks">
+<h2>Running Jupyter Notebooks<a class="headerlink" href="#Running-Jupyter-Notebooks" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter notebooks are documents that combines Python code, text,
+equations and images. These notebooks are meant to be accessed through a
+browser. They are easily shareable and downloadable into other file
+types (e.g. PDF and HTML) for your convenience.</p>
+<p>To interact with and edit these notebooks, you will need to open them
+using a Jupyter server. In this course, we will use a Jupyter server
+hosted by UBC at <a class="reference external" href="https://ubc.syzygy.ca/">https://ubc.syzygy.ca/</a>.</p>
+<div class="section" id="Running-Jupyter-on-the-Cloud:-Syzygy">
+<h3>Running Jupyter on the Cloud: <a class="reference external" href="https://ubc.syzygy.ca/">Syzygy</a><a class="headerlink" href="#Running-Jupyter-on-the-Cloud:-Syzygy" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Go to the Syzygy server in the link above</li>
+<li>Sign in to Syzygy with your CWL login</li>
+<li>Click &#8220;Start My Server&#8221; and the Jupyter interface will open</li>
+<li>Go to File &gt; New &gt; Python3 and create a new file <img alt="image0" src="../_images/newnotebook_rwest.gif" /></li>
+<li>Enter this into the box
+<code class="docutils literal"><span class="pre">!git</span> <span class="pre">clone</span> <span class="pre">https://github.com/UBCEnvision/CHBE241</span></code> and press
+&#8220;Shift+Enter&#8221;</li>
+<li>Go to File &gt; Open and you should see the course syllabus downloaded
+into a folder called <strong>CHBE241</strong></li>
+</ol>
+</div>
+</div>
+<div class="section" id="Using-Jupyter">
+<h2>Using Jupyter<a class="headerlink" href="#Using-Jupyter" title="Permalink to this headline">¶</a></h2>
+<p>A notebook consists of <strong>cells</strong> that contain either <strong>text</strong> or
+<strong>code</strong>. Cells that contain text are known as <strong>Markdown</strong> cells, and
+they can support formatted text, images, HTML and equations written in $
+:raw-latex:<a href="#id1"><span class="problematic" id="id2">`</span></a>LaTeX <a href="#id3"><span class="problematic" id="id4">`</span></a>$. To swtich between Markdown and code in each cell,
+use the dropdown menu at the top of the page.</p>
+<p>Let&#8217;s take a few minutes to familiarize ourselves with Jupyter. The
+Jupyter interface is very user-friendly and the best way to learn is to
+explore by clicking on different buttons. Try doing the following:</p>
+<ol class="arabic simple">
+<li>Take a look at the course materials and observe the different folders
+and files</li>
+<li>Create a new Python 3 notebook</li>
+<li>Rename the notebook and save it</li>
+</ol>
+<p>Jupyter notebooks have a <strong>``.ipynb``</strong> extension with a notebook icon
+beside the filename.</p>
+</div>
+<div class="section" id="Edit-Mode-and-Command-Mode">
+<h2>Edit Mode and Command Mode<a class="headerlink" href="#Edit-Mode-and-Command-Mode" title="Permalink to this headline">¶</a></h2>
+<p>There are 2 modes in Jupyter notebooks: edit mode and command mode.</p>
+<p>Edit mode is indicated by a green cell border and a prompt showing in
+the editor area:</p>
+<div class="figure" id="id5">
+<img alt="Edit Mode" src="../_images/edit_mode.png" />
+<p class="caption"><span class="caption-text">Edit Mode</span></p>
+</div>
+<p>When a cell is in edit mode, you can type into the cell, like a normal
+text editor. Enter edit mode by pressing <code class="docutils literal"><span class="pre">Enter</span></code> or using the mouse to
+double click on a cell.</p>
+<p>Command mode is indicated by a grey cell border with a blue left margin:</p>
+<div class="figure" id="id6">
+<img alt="Edit Mode" src="../_images/command_mode.png" />
+<p class="caption"><span class="caption-text">Edit Mode</span></p>
+</div>
+<p>When you are in command mode you will be able to perform operations on
+cells like copy, paste and delete but not type into individual cells.
+Enter command mode by pressing <code class="docutils literal"><span class="pre">Esc</span></code>.</p>
+<p>Here are some of the shortcuts available in command mode:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="69%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command Mode Action</th>
+<th class="head">Shortcut</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Insert empty cell above</td>
+<td><code class="docutils literal"><span class="pre">a</span></code></td>
+</tr>
+<tr class="row-odd"><td>Insert empty cell below</td>
+<td><code class="docutils literal"><span class="pre">b</span></code></td>
+</tr>
+<tr class="row-even"><td>Copy cell</td>
+<td><code class="docutils literal"><span class="pre">c</span></code></td>
+</tr>
+<tr class="row-odd"><td>Cut cell</td>
+<td><code class="docutils literal"><span class="pre">x</span></code></td>
+</tr>
+<tr class="row-even"><td>Paste cell below</td>
+<td><code class="docutils literal"><span class="pre">v</span></code></td>
+</tr>
+<tr class="row-odd"><td>To code</td>
+<td><code class="docutils literal"><span class="pre">y</span></code></td>
+</tr>
+<tr class="row-even"><td>To markdown</td>
+<td><code class="docutils literal"><span class="pre">m</span></code></td>
+</tr>
+<tr class="row-odd"><td>Save and checkpoint</td>
+<td><code class="docutils literal"><span class="pre">s</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Python-Code">
+<h2>Python Code<a class="headerlink" href="#Python-Code" title="Permalink to this headline">¶</a></h2>
+<p>We will start with some basic variable assignment and printing in
+Python. Create a new notebook, enter edit mode then write this in the
+cell:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>and then hit <em>Shift+Enter</em>.</p>
+<p>Make sure you use <strong>Shift+Enter</strong>. If you just hit Enter you&#8217;ll find
+that it will simply add another line to the current cell. In this new
+cell, we can print out the value using:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and then hit <strong>Shift+Enter</strong>. The output of that command is printed
+immediately below the cell.</p>
+<p>The whole procedure should look something like this:</p>
+<div class="figure" id="id7">
+<img alt="runandprint" src="../_images/GIF2.gif" />
+<p class="caption"><span class="caption-text">runandprint</span></p>
+</div>
+</div>
+<div class="section" id="Overwriting-variables">
+<h2>Overwriting variables<a class="headerlink" href="#Overwriting-variables" title="Permalink to this headline">¶</a></h2>
+<p>Since each cell is interacting with the same Python instance, if we give
+<code class="docutils literal"><span class="pre">x</span></code> a new value and then enter <code class="docutils literal"><span class="pre">print(x)</span></code> we&#8217;ll get that new value.
+That&#8217;s pretty straight forward —but what if we then delete the cell
+where we gave <code class="docutils literal"><span class="pre">x</span></code> a new value?</p>
+<p>Let&#8217;s take a look!</p>
+<div class="figure" id="id8">
+<img alt="overwrite" src="../_images/GIF3.gif" />
+<p class="caption"><span class="caption-text">overwrite</span></p>
+</div>
+<p>Even though we deleted the cell where we assigned <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">7</span></code>, the
+assignment is still valid. In fact, the assignment will remain valid
+until we explicitly execute a cell that sets x equal to a new value, or
+until we completely restart this Jupyter Notebook instance.</p>
+<p>If you move cells around or execute them in a nosequential order, you
+might confuse yourself (and others). To start again and clear things up,
+use the button or the Kernel menu to clear outputs and restart the
+kernel, then choose &#8220;Run All&#8221; from the Cell menu.</p>
+<div class="section" id="Basic-Arithmetic">
+<h3>Basic Arithmetic<a class="headerlink" href="#Basic-Arithmetic" title="Permalink to this headline">¶</a></h3>
+<p>Python can easily perform basic arithmetic operations.</p>
+<p>Using Python is as simple as <span class="math">\(1+1\)</span>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>1+1
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[11]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>2
+</pre></div>
+</div>
+</div>
+<p>You can also assign numbers to variables:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>x = 3
+y = 4
+print (&quot;x + y = &quot;, x + y)
+print (&quot;x * y = &quot;, x*y)
+print (&quot;x ^ y = &quot;, x**y )
+print (&quot;x / y = &quot;, x/y)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+x + y =  7
+x * y =  12
+x ^ y =  81
+x / y =  0.75
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Numpy">
+<h3>Numpy<a class="headerlink" href="#Numpy" title="Permalink to this headline">¶</a></h3>
+<p>More advanced functions require a numerical computation library called
+Numpy (numerical Py). We will be using this library in almost every
+notebook.</p>
+<p>When using functions in the numpy library, you must first import the
+library using the following command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>In the code above, <code class="docutils literal"><span class="pre">numpy</span></code> is the name of the library that we are
+importing. <code class="docutils literal"><span class="pre">np</span></code> is just the name of a variable that we are assigning
+the library to. Assigning a variable is optional and just a matter of
+convenience. It makes our code look cleaner and easier to type if the
+name of the library is long.</p>
+<p>For example, here&#8217;s how to print the value of <span class="math">\(\cos(\pi)\)</span> and
+<span class="math">\(\sin\big(\frac{\pi}{2}\big)\)</span> using <code class="docutils literal"><span class="pre">numpy</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>import numpy as np
+
+x = np.pi
+print (np.cos(x))
+print (np.sin(0.5*x))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+-1.0
+1.0
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Markdown-Math">
+<h2>Markdown Math<a class="headerlink" href="#Markdown-Math" title="Permalink to this headline">¶</a></h2>
+<p>Markdown can be used to render nice <span class="math">\(\LaTeX\)</span>-styled equations. For
+example, here&#8217;s the Thiele modulus written in <span class="math">\(\LaTeX\)</span>:
+<span class="math">\(\Phi=\frac{R}{3}\sqrt{\frac{V_\text{M}}{K_M\cdot D_eff}}\)</span>.</p>
+<p>To write equations in Markdown, first make sure you change your cell
+type to <strong>Markdown</strong> instead of Code.</p>
+<ul class="simple">
+<li>For inline math, wrap LaTeX inside single dollar signs: <code class="docutils literal"><span class="pre">$...$</span></code></li>
+<li>For single-line rendering, wrap LaTeX inside double dollar signs:
+<code class="docutils literal"><span class="pre">$$...$$</span></code></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$$
+f&#39;(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}
+$$
+</pre></div>
+</div>
+<p>Would render as:</p>
+<div class="math">
+\[f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}\]</div>
+<div class="figure">
+<img alt="" src="../_images/GIF4.gif" />
+</div>
+</div>
+<div class="section" id="Using-Lists">
+<h2>Using Lists<a class="headerlink" href="#Using-Lists" title="Permalink to this headline">¶</a></h2>
+<p>Lists are a very useful way of organizing data in Python. If you can
+recall from APSC160, an array is a collection of similar data elements.
+Lists in Python are very similar to arrays in C.</p>
+<p>Here are some examples:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>my_numbers = [2, 4, 6, 8]
+print(my_numbers)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2, 4, 6, 8]
+</pre></div></div>
+</div>
+<p>Concatenation is combing two lists together. This is done by using
+<strong>``+``</strong> operation.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>a = [2, 4, 6, 8]
+b = [10, 12, 14]
+
+print(a + b)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2, 4, 6, 8, 10, 12, 14]
+</pre></div></div>
+</div>
+<p>To sum elements in your list, you can do:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>print(np.sum(a + b))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+56
+</pre></div></div>
+</div>
+<div class="section" id="For-loops">
+<h3><code class="docutils literal"><span class="pre">For</span></code> loops<a class="headerlink" href="#For-loops" title="Permalink to this headline">¶</a></h3>
+<p>For loops can also be used in Python to iterate over a list. For loops
+work by first typing <code class="docutils literal"><span class="pre">for</span></code>, then the variable or list your iterating
+over, then <code class="docutils literal"><span class="pre">in</span></code>, then the length or list that you want to iterate
+until. A colon, <code class="docutils literal"><span class="pre">:</span></code> is used to signify the start of the for loop and
+everything that is in the for loop needs to be indented using the
+<code class="docutils literal"><span class="pre">TAB</span></code> key.</p>
+<p>Here are two examples that will take numbers from a list and print out
+the square of those numbers. You might be familiar with the <code class="docutils literal"><span class="pre">^</span></code> symbol
+as the power operator. In Python, we use <code class="docutils literal"><span class="pre">**</span></code> as the power operator.
+To get the square of two, we would write <code class="docutils literal"><span class="pre">2**2</span></code>.</p>
+<p>Example 1:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>a = [2, 4, 5, 6, 8]
+for i in a:
+    print(&quot;a =&quot;, i, &quot;a^2 =&quot;, i**2)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a = 2 a^2 = 4
+a = 4 a^2 = 16
+a = 5 a^2 = 25
+a = 6 a^2 = 36
+a = 8 a^2 = 64
+</pre></div></div>
+</div>
+<p>Example 2:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [76]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>b = [10, 12, 14]
+for i in b:
+    print(&quot;b =&quot;, i, &quot;b^2 =&quot;, i**2)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+b = 10 b^2 = 100
+b = 12 b^2 = 144
+b = 14 b^2 = 196
+</pre></div></div>
+</div>
+<p>As you can see in both examples, <code class="docutils literal"><span class="pre">i</span></code> iterated through <code class="docutils literal"><span class="pre">a</span></code> in the
+first example and <code class="docutils literal"><span class="pre">b</span></code> in the second example.</p>
+</div>
+<div class="section" id="List-Comprehension">
+<h3>List Comprehension<a class="headerlink" href="#List-Comprehension" title="Permalink to this headline">¶</a></h3>
+<p>In Python, instead of writing a for loop, we can also use <a class="reference external" href="http://www.secnetix.de/olli/Python/list_comprehensions.hawk">List
+Comprehension</a>
+as a shortcut to perform operations on elements in a list. Click on the
+link to find out more.</p>
+<p>Here&#8217;s an example of using list comprehension to square the numbers in a
+list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">a_squared</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Let&#8217;s break it down into 2 parts, we&#8217;ll start with the second half of
+the statement:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span>
+</pre></div>
+</div>
+<p>means that we are taking each element in the list <code class="docutils literal"><span class="pre">a</span></code>, and assigning
+it to <code class="docutils literal"><span class="pre">x</span></code></p>
+<p>In the first half of the statement, we tell Python what we want to do
+with <code class="docutils literal"><span class="pre">x</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>would square the number in <code class="docutils literal"><span class="pre">x</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span># Using list comprehension to square numbers in list a
+a_squared = [x**2 for x in a]
+print(a_squared)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[4, 16, 36, 64]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span># Using list comprehension to return only even numbers in list a
+a_squared = [x for x in a if (x % 2 == 0)]
+print(a_squared)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[2, 4, 6, 8]
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Using-Dictionaries">
+<h2>Using Dictionaries<a class="headerlink" href="#Using-Dictionaries" title="Permalink to this headline">¶</a></h2>
+<p>Just like lists, dictionaries are another type of useful data structure
+in Python. They work by having key-value pairs. It is common to have the
+key as a string and numbers as the values. Dictionaries are useful for
+storing and retrieving data.</p>
+<p>A <strong>key</strong> is something we can use to lookup values of interest. For
+example, in an actual dictionary, a key would be an unfamiliar word that
+we are interested in looking up, and the value would be the dictionary
+entry explaining the meaning of the word.</p>
+<p>Just like an actual dictionary, where no words are repeated, <strong>keys are
+always unique in Python dictionaries</strong>.</p>
+<p>Here is an example of atoms and the number of protons associated with
+that atom. The keys are the element names as a string, the values are
+the proton numbers, and our dictionary is called <code class="docutils literal"><span class="pre">number_of_protons</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>number_of_protons = {&#39;Pb&#39; : 72,&#39;H&#39; : 1, &#39;F&#39; : 9,&#39;C&#39; : 6, &#39;Fe&#39; : 26}
+print(number_of_protons)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;Pb&#39;: 72, &#39;H&#39;: 1, &#39;F&#39;: 9, &#39;C&#39;: 6, &#39;Fe&#39;: 26}
+</pre></div></div>
+</div>
+<p>You may have noticed that we made a mistake with the number of protons
+that lead has. It should be 82 instead of 72.</p>
+<p>Rather than rewriting the whole dictionary, we can change a single key&#8217;s
+value using this syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">number_of_protons</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_value</span>
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>number_of_protons[&#39;Pb&#39;] = 82
+print(number_of_protons)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;Pb&#39;: 82, &#39;H&#39;: 1, &#39;F&#39;: 9, &#39;C&#39;: 6, &#39;Fe&#39;: 26}
+</pre></div></div>
+</div>
+<p>Now that the dictionary is fixed, let&#8217;s add another atom, Radon.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>number_of_protons[&#39;Rn&#39;] = 86
+print(number_of_protons)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;Pb&#39;: 82, &#39;H&#39;: 1, &#39;F&#39;: 9, &#39;C&#39;: 6, &#39;Fe&#39;: 26, &#39;Rn&#39;: 86}
+</pre></div></div>
+</div>
+<p>We can easily get all key-value pairs in a dictionary using a for loop.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [80]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>for atoms in number_of_protons.keys():
+    print(&quot;The number of protons in {:&lt;s} is {:&lt;7.2f}&quot;.format(atoms,number_of_protons[atoms]))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The number of protons in Pb is 82.00
+The number of protons in H is 1.00
+The number of protons in F is 9.00
+The number of protons in C is 6.00
+The number of protons in Fe is 26.00
+The number of protons in Rn is 86.00
+</pre></div></div>
+</div>
+<p>Unlike lists, the keys in a dictionary are not sorted or ordered
+(<a class="reference external" href="https://developers.google.com/edu/python/dict-files">Further
+Reading</a> for
+details). Since the outputed values looks random, we can sort it
+alphabetically based on the keys by calling the <code class="docutils literal"><span class="pre">sorted()</span></code> function.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">number_of_protons</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>for atoms in sorted(number_of_protons.keys()):
+    print(&quot;The number of protons in {:&lt;s} is {:&lt;7.2f}&quot;.format(atoms,number_of_protons[atoms]))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The number of protons in C is 6.00
+The number of protons in F is 9.00
+The number of protons in Fe is 26.00
+The number of protons in H is 1.00
+The number of protons in Pb is 82.00
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Plotting-with-Python">
+<h2>Plotting with Python<a class="headerlink" href="#Plotting-with-Python" title="Permalink to this headline">¶</a></h2>
+<p>To plot in Python, we need to import the <code class="docutils literal"><span class="pre">matplotlib.pyplot</span></code> library.
+This alows Python plotting functionality similar to MATLAB. Here are
+some examples:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>import matplotlib.pyplot as plt
+import numpy as np
+%matplotlib inline
+
+x = np.linspace(0.01,2)
+y = np.exp(x)
+z = np.log(x)
+
+plt.plot(x, y, &#39;b&#39;, x, z, &#39;r&#39;)
+plt.xlabel(&#39;x&#39;);
+plt.ylabel(&#39;f(x)&#39;);
+plt.title(&#39;Plotting e^(x) and ln(x)&#39;)
+plt.legend([&#39;e^(x)&#39;,&#39;ln(x)&#39;])
+plt.grid()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/Module-0-Introduction_Getting_started_on_Using_Jupyter_Notebooks_and_Python_37_0.png" src="../_images/Module-0-Introduction_Getting_started_on_Using_Jupyter_Notebooks_and_Python_37_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>x = np.linspace(0,np.pi/2)
+a = np.sin(x)
+b = np.cos(x)
+plt.plot(a,b)
+plt.axis(&#39;equal&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[7]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>(-0.050000000000000003, 1.05, -0.049999999999999933, 1.05)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/Module-0-Introduction_Getting_started_on_Using_Jupyter_Notebooks_and_Python_38_1.png" src="../_images/Module-0-Introduction_Getting_started_on_Using_Jupyter_Notebooks_and_Python_38_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>x = np.linspace(0,np.pi)
+a = np.sin(x)
+b = np.cos(x)
+plt.plot(a,b)
+plt.axis(&#39;equal&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[8]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>(-0.049974310810034395,
+ 1.0494605270107222,
+ -1.1000000000000001,
+ 1.1000000000000001)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/Module-0-Introduction_Getting_started_on_Using_Jupyter_Notebooks_and_Python_39_1.png" src="../_images/Module-0-Introduction_Getting_started_on_Using_Jupyter_Notebooks_and_Python_39_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>x = np.linspace(0,2*np.pi)
+a = np.sin(x)
+b = np.cos(x)
+plt.plot(a,b)
+plt.axis(&#39;equal&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[9]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>(-1.0994348378207568,
+ 1.0994348378207568,
+ -1.0978426623878532,
+ 1.0998972696375169)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/Module-0-Introduction_Getting_started_on_Using_Jupyter_Notebooks_and_Python_40_1.png" src="../_images/Module-0-Introduction_Getting_started_on_Using_Jupyter_Notebooks_and_Python_40_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>x = np.linspace(0.01,2)
+plt.subplot(2,1,1)
+plt.plot(x,y)
+plt.title(&#39;e^(x)&#39;)
+
+plt.subplot(2,1,2)
+plt.plot(x,z)
+plt.title(&#39;ln(x)&#39;)
+plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/Module-0-Introduction_Getting_started_on_Using_Jupyter_Notebooks_and_Python_41_0.png" src="../_images/Module-0-Introduction_Getting_started_on_Using_Jupyter_Notebooks_and_Python_41_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Solving-Equations">
+<h2>Solving Equations<a class="headerlink" href="#Solving-Equations" title="Permalink to this headline">¶</a></h2>
+<p>One of the best features of Python is its massive amounts of libraries
+to extend its functionallity. Here is an example of solving some
+algebraic equations using the <strong>``sympy``</strong> library.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [87]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>import sympy as sym
+
+sym.var(&#39;P V n R T&#39;);
+
+# Gas constant
+R = 8.314      #J/K*mol
+
+#Moles of Helium
+n = 2.3        #Moles
+
+#Temperature
+T = 293.15     #Kelvin
+
+#Equation
+eqn = sym.Eq(P*V,n*R*T)
+
+#Solve for P
+f1 = sym.solve(eqn,P)
+print(f1[0])
+
+#Solve for V
+f2 = sym.solve(eqn,V)
+print(f2[0])
+
+#Give value for V
+V = 0.121
+eqn = sym.Eq(P*V,n*R*T)
+
+#Solve for P again
+f3 = sym.solve(eqn,P)
+print(f3[0])
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+5605.67293/V
+5605.67293/P
+46327.8754545455
+</pre></div></div>
+</div>
+<hr><div class="section" id="Credits">
+<h3>Credits<a class="headerlink" href="#Credits" title="Permalink to this headline">¶</a></h3>
+<p>This notebook uses material from the following sources:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/rwest/CHME4510/">https://github.com/rwest/CHME4510/</a></li>
+<li><a class="reference external" href="https://github.com/jckantor/CBE20255">https://github.com/jckantor/CBE20255</a></li>
+<li><a class="reference external" href="https://github.com/patrickwalls/arc-summer-school/">https://github.com/patrickwalls/arc-summer-school/</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Getting started on Using Jupyter Notebooks and Python</a><ul>
+<li><a class="reference internal" href="#Learning-Objectives">Learning Objectives</a></li>
+<li><a class="reference internal" href="#Introduction-and-Motivation">Introduction and Motivation</a></li>
+<li><a class="reference internal" href="#Running-Jupyter-Notebooks">Running Jupyter Notebooks</a><ul>
+<li><a class="reference internal" href="#Running-Jupyter-on-the-Cloud:-Syzygy">Running Jupyter on the Cloud: Syzygy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Using-Jupyter">Using Jupyter</a></li>
+<li><a class="reference internal" href="#Edit-Mode-and-Command-Mode">Edit Mode and Command Mode</a></li>
+<li><a class="reference internal" href="#Python-Code">Python Code</a></li>
+<li><a class="reference internal" href="#Overwriting-variables">Overwriting variables</a><ul>
+<li><a class="reference internal" href="#Basic-Arithmetic">Basic Arithmetic</a></li>
+<li><a class="reference internal" href="#Numpy">Numpy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Markdown-Math">Markdown Math</a></li>
+<li><a class="reference internal" href="#Using-Lists">Using Lists</a><ul>
+<li><a class="reference internal" href="#For-loops"><code class="docutils literal"><span class="pre">For</span></code> loops</a></li>
+<li><a class="reference internal" href="#List-Comprehension">List Comprehension</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Using-Dictionaries">Using Dictionaries</a></li>
+<li><a class="reference internal" href="#Plotting-with-Python">Plotting with Python</a></li>
+<li><a class="reference internal" href="#Solving-Equations">Solving Equations</a><ul>
+<li><a class="reference internal" href="#Credits">Credits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-0-Introduction/Getting started on Using Jupyter Notebooks and Python.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

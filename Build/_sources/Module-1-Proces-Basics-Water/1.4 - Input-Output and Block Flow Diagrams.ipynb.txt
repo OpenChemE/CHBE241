@@ -1,0 +1,128 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1.4 &ndash; Input-Output and Block Flow Diagrams\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.4.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the difference of an input-output diagram and a block flow diagram.\n",
+    "2. Construct a block flow diagram.\n",
+    "3. Solve a basic input-output problem.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.4.1 &ndash; Introduction\n",
+    "\n",
+    "**Input-output diagrams** are the first step in designing a chemical process. An input-output diagram is the simplest form of flow diagrams used in industry. Input-output diagrams consist of one block with the inputs coming in one end and the outputs going out the other. \n",
+    "\n",
+    "The next step in designing a chemical process is constructing a **block flow diagram** (BFD). A BFD is similar to an input-output diagram except a BFD has multiple blocks. The blocks in a BFD can represent anything from a single piece of equipment to multiple pieces of equipment.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.4.2 &ndash; Input-Output Diagrams\n",
+    "\n",
+    "**Input-output diagrams** are the simplest form of flow diagrams. The diagram consists of input arrows, one block for the complete process, and output arrows. For example:\n",
+    "\n",
+    "![input-output-diagrams](../figures/Module-1/Input-Output_Diagrams1.jpg)\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.4.3 &ndash; Block Flow Diagrams\n",
+    "\n",
+    "**Block flow diagrams** are what we will mainly focus on later in the course. This model focuses on a section, sections, or a whole chemical plant. This model is also much more detailed than an input-output diagram. Each block can represent a specific step in the process. Here is an example of benzene production:\n",
+    "\n",
+    "![](../figures/Module-1/BFD.svg)\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "As you can see, there are two inputs, 2,000 kg/h of Toluene, and 164 kg/h of Hydrogen. There are also two outputs, 522 kg/h of Mixed Gas, and 1,642 kg/h of Benzene. In-between the outputs and inputs are the specific **unit operations**. This example may seem complicated but by the end of this course it will be a walk in the park.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.4.4 &ndash; Problem Statement\n",
+    "\n",
+    "### Question\n",
+    "\n",
+    "Stream 1 Inputs 1,700 kg/h of water and stream 2 inputs 1,000 kg/h of flour. Stream 3 outputs 700 kg/h of steam. How much bread comes out of stream 4?\n",
+    "\n",
+    "### Answer\n",
+    "\n",
+    "First draw your BFD, in this case it will be an input-output diagram.\n",
+    "\n",
+    "<img src = \"../figures/Module-1/BakerOven-1.png\" style = \"height:250px\">\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "Then write the mass balance and solve.\n",
+    "\n",
+    "$$ 1,700 \\space kg/h + 1,000 \\space kg/h = \\dot{m}_1 + 700 \\space kg/h $$\n",
+    "\n",
+    "$$ \\dot{m}_1 = 2,000 kg/h $$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

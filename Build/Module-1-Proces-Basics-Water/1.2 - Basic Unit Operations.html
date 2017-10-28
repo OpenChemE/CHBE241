@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.2 – Basic Unit Operations &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="1.2-–-Basic-Unit-Operations">
+<h1>1.2 – Basic Unit Operations<a class="headerlink" href="#1.2-–-Basic-Unit-Operations" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="1.2.0-–-Learning-Objectives">
+<h2>1.2.0 – Learning Objectives<a class="headerlink" href="#1.2.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Know the four basic unit operations covered in this course.</li>
+<li>Understand how each of the unit operations work.</li>
+<li>Understand the purpose of each unit operation.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.2.1-–-Introduction">
+<h2>1.2.1 – Introduction<a class="headerlink" href="#1.2.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>In chemical engineering, a unit operation is a step in a process. Each
+of these steps gets the raw feedstock closer to the final products.
+Different unit operations have different functionalities and purposes.
+We will cover <strong>mixers</strong>, <strong>reactors</strong>, <strong>separators</strong>, and
+<strong>splitters</strong> in this course.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.2.2-–-Mixer">
+<h2>1.2.2 – Mixer<a class="headerlink" href="#1.2.2-–-Mixer" title="Permalink to this headline">¶</a></h2>
+<p>In a process, a <strong>mixer</strong> is a unit operation that attempts to make a
+<strong>heterogeneous</strong> system into a <strong>homogenous</strong> system. Examples include
+scrambling eggs, mixing sugar and cream into coffee, and a Continuous
+Stirred-Tank Reactor used in water treatment. A mixer allows heat and/or
+mass transfer to occur between one or more streams.</p>
+<p><img alt="mixer" src="../_images/mixer.svg" /> Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+<div class="figure" id="id1">
+<img alt="reverse osmosis image" src="Module-1-Proces-Basics-Water\../figures/Module-1/Reverse_osmosis_desalination_plant1.jpeg" />
+<p class="caption"><span class="caption-text">reverse osmosis image</span></p>
+</div>
+<p>By James Grellier - Own work <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0">Creative commons Attribution-Share Alike
+3.0</a></p>
+<hr class="docutils" />
+</div>
+<div class="section" id="1.2.3-–-Reactor">
+<h2>1.2.3 – Reactor<a class="headerlink" href="#1.2.3-–-Reactor" title="Permalink to this headline">¶</a></h2>
+<p>In a process, a <strong>reactor</strong> is a unit operation that is designed to
+contain a chemical reaction. These reactions can include anything from
+burning natural gas to chlorination of water for purification purposes.</p>
+<div class="figure" id="id2">
+<img alt="Batch Reactor" src="../_images/Batch_reactor.21.jpg" />
+<p class="caption"><span class="caption-text">Batch Reactor</span></p>
+</div>
+<p>Attribution: Echis at English Wikipedia [GFDL
+(<a class="reference external" href="http://www.gnu.org/copyleft/fdl.html">http://www.gnu.org/copyleft/fdl.html</a>), CC-BY-SA-3.0
+(<a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>) or CC BY 2.5
+(<a class="reference external" href="http://creativecommons.org/licenses/by/2.5">http://creativecommons.org/licenses/by/2.5</a>)], via Wikimedia Commons</p>
+<div class="figure" id="id3">
+<img alt="Chemical Reactor" src="../_images/Chemical_reactor1.jpg" />
+<p class="caption"><span class="caption-text">Chemical Reactor</span></p>
+</div>
+<p>Attribution: By Oregon State University (Chemical reactor) <a class="reference external" href="http://creativecommons.org/licenses/by-sa/2.0">CC BY-SA
+2.0&lt;</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File%3AChemical_reactor_(31569180781).jpg">via Wikimedia
+Commons</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.2.4-–-Separator">
+<h2>1.2.4 – Separator<a class="headerlink" href="#1.2.4-–-Separator" title="Permalink to this headline">¶</a></h2>
+<p>In a process, a <strong>separator</strong> is a unit operation that converts a
+mixture of chemical species to two or more distinct products. Think of
+separators as opposite of mixers. An example of a separator is in
+distillation, where you are trying to separate the impurities from the
+alcohol.</p>
+<div class="figure" id="id4">
+<img alt="Batch Distillation" src="../_images/BatchDistill.svg" /><p class="caption"><span class="caption-text">Batch Distillation</span></p>
+</div>
+<p>Attribution: User A1 at English Wikipedia [FAL], via Wikimedia Commons</p>
+<div class="figure" id="id5">
+<img alt="fractional column" src="../_images/fractional_column1.jpg" />
+<p class="caption"><span class="caption-text">fractional column</span></p>
+</div>
+<p>By <a class="reference external" href="commons.wikimedia.org/wiki/">User:Luigi Chiesa</a> - Own work, <a class="reference external" href="http://creativecommons.org/licenses/by/3.0">CC
+BY
+3.0</a><a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=516874">link</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.2.5-–-Splitter">
+<h2>1.2.5 – Splitter<a class="headerlink" href="#1.2.5-–-Splitter" title="Permalink to this headline">¶</a></h2>
+<p>In a process, a <strong>splitter</strong> is a unit operation that splits a line into
+two or more directions. This is similar to a separator except the
+product lines have the same chemical makings.</p>
+<div class="figure" id="id6">
+<img alt="splitter" src="../_images/splitter.svg" /><p class="caption"><span class="caption-text">splitter</span></p>
+</div>
+<p>Attribution: Said Zaid-Alkailani &amp; UBC <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0
+de</a></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1.2 – Basic Unit Operations</a><ul>
+<li><a class="reference internal" href="#1.2.0-–-Learning-Objectives">1.2.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#1.2.1-–-Introduction">1.2.1 – Introduction</a></li>
+<li><a class="reference internal" href="#1.2.2-–-Mixer">1.2.2 – Mixer</a></li>
+<li><a class="reference internal" href="#1.2.3-–-Reactor">1.2.3 – Reactor</a></li>
+<li><a class="reference internal" href="#1.2.4-–-Separator">1.2.4 – Separator</a></li>
+<li><a class="reference internal" href="#1.2.5-–-Splitter">1.2.5 – Splitter</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-1-Proces-Basics-Water/1.2 - Basic Unit Operations.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

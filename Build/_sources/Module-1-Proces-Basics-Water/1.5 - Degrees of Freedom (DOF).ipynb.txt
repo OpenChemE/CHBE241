@@ -1,0 +1,175 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1.5 &ndash; Degrees of Freedom (DOF)\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "##  1.5.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the concept of degrees of freedom.\n",
+    "2. Perform a degree of freedom analysis.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.5.1 &ndash;  Introduction\n",
+    "\n",
+    "Anyone who has done material balances knows how frustrating it is to be working on a question for a long period of time, only to discover that there was not enough information given in the question. This dilemma is the reason why a **degree-of-freedom** (DOF) analysis is very powerful.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "##  1.5.2 &ndash; Definition\n",
+    "\n",
+    "When applied to a general process, DOF is the difference between the number of unknown variables and the number of equations relating those variables.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.5.3 &ndash; Performing a DOF Analysis\n",
+    "\n",
+    "To perform a DOF analysis, we need to first draw and completely label a block flow diagram (BFD). Next, we need to count the unknown variables on the BFD. After this, we need to count the independent equations relating them. Finally, we subtract the number of equations from the number of unknown variables. The result is the DOF of the process, $n_{df}$. From this calculation, there are three possibilities:\n",
+    "\n",
+    "1. If $n_{df} = 0$ then there is the same number of unknown variables and equating equations and the problem can be solved.\n",
+    "2. If $n_{df} > 0$ then there are more unknown variables than equating equations and the system cannot be solved yet. When this inequality happens, we say the question is underspecified and has infinitely many solutions.\n",
+    "3. If $n_{df} < 0$ then there are less unknown variables than equating equations. This inequality means that either the BFD was incorrectly labeled or the problem was over specified with useless information. Still, the problem can be solved.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.5.4 &ndash; Problem Statement\n",
+    "\n",
+    "### Problem 1\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "Humid air enters a condenser in which 85% of the water vapor in the air is condensed. The flow rate of the liquid leaving the condenser is measured to be 135 L/h. The dry air contains 21 mol % oxygen, with the remaining air composed of nitrogen (79 mole %). The entering air contains 8 mol % water. Calculate the degrees of freedom.\n",
+    "\n",
+    "![](../figures/Module-1/DOFprob.svg)\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "Right off the bat we know the number of unknowns is $n_{unknown} = 5$ and now we need to find the number of relating equations.\n",
+    "\n",
+    "1. $\\dot{n_2} = \\frac{135 \\space L \\space H_2 O}{h} \\times \\frac{1.00 \\space kg \\space H_2 O}{L} \\times \\frac{1 \\space mol \\space H_2 O}{18.0 \\times 10^{-3} \\space kg}$\n",
+    "\n",
+    "    $$ $$\n",
+    "    \n",
+    "2. $\\dot{n_2} = (0.85)( 0.080 \\space \\dot{n_1} )$ \n",
+    "    \n",
+    "    $$ $$\n",
+    "    \n",
+    "3. $\\dot{n_3} = (0.21)( 0.920 \\space \\dot{n_1} )$\n",
+    "\n",
+    "    $$ $$\n",
+    "\n",
+    "4. $\\dot{n_4} = (0.79)( 0.920 \\space \\dot{n_1} )$\n",
+    "\n",
+    "    $$ $$\n",
+    "\n",
+    "5. $\\dot{n_5} + \\dot{n_2} = ( 0.08 \\space \\dot{n_1} )$\n",
+    "\n",
+    "The first equation relates the volumetric flow rate to the molar flow rate which will give us a value for $\\dot{n_2}$. The second equation relates $\\dot{n_2}$ to $\\dot{n_1}$ using the 85% condensation. The third equation balances $O_2$. The fourth equation balances $N_2$. The fifth equation balances the $H_2 O$. Therefore, the degrees of freedom are:\n",
+    "\n",
+    "$$ n_{df} = 5 - 5 = 0 $$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Problem 2\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "Determine whether the process below is solvable.\n",
+    "\n",
+    "![](../figures/Module-1/degree-of-freedom-example.svg)\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "First, let's break up the process into its components.\n",
+    "\n",
+    "![](../figures/Module-1/degree-of-freedom-example1.svg)\n",
+    "\n",
+    "With all of the components labelled, we can move on to figuring out if our process is solvable.\n",
+    "\n",
+    "**Overall process (A)**\n",
+    "\n",
+    "$$ 2 \\space \\text{unknowns} \\space (\\dot{m}_3, \\space x_3) - 2 \\space \\text{balances} \\space (\\text{A, B}) = 0 \\space \\text{degrees of freedom}$$\n",
+    "\n",
+    "**Unit 1 (B)**\n",
+    "\n",
+    "$$ 2 \\space \\text{unknowns} \\space (\\dot{m}_1, \\space x_1) - 2 \\space \\text{balances} \\space (\\text{A, B}) = 0 \\space \\text{degrees of freedom}$$\n",
+    "\n",
+    "**Mixing Point (D)**\n",
+    "\n",
+    "$$ 2 \\space \\text{unknowns} \\space (\\dot{m}_2, \\space x_2) - 2 \\space \\text{balances} \\space (\\text{A, B}) = 0 \\space \\text{degrees of freedom}$$\n",
+    "\n",
+    "*Noteworthy*: Assuming we tried to solve for D first, we would have 4 unknowns $(\\dot{m}_1, \\space x_1, \\space \\dot{m}_2, \\space x_2)$ with only 2 species balances, thus having 2 degrees of freedom, giving the illusion that that component cannot be solved for._\n",
+    "\n",
+    "Verdict: Since all balances have 0 degrees of freedom, the system and every part of the system is solvable."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

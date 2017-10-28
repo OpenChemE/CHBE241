@@ -1,0 +1,225 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 4.4 &ndash; Pressure Measurement\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.4.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the difference between gauge, atmospheric, and absolute pressure.\n",
+    "2. Know the different ways pressure can be measured.\n",
+    "3. Understand how manometers and Bourdon gauges operate.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.4.1 &ndash; Introduction\n",
+    "Pressure measurement is vital to any process. Measuring pressure can give you a lot of information about your system. We will go over different types of pressure, and ways to measure pressure.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.4.2 &ndash; Gauge vs. Absolute Pressure\n",
+    "\n",
+    "**Absolute pressure** is a measurement of pressure with a perfect vacuum as a reference point. This means that absolute pressure can never be negative. **Gauge pressure** is a measurement of pressure with the ambient air pressure (**atmospheric pressure**) as a reference point. This means that gauge pressure can be both negative and positive.\n",
+    "\n",
+    "A similar example to gauge and absolute pressure is Celsius and Kelvin. Kelvin uses absolute zero as its reference point. This means that you can never have negative values of Kelvin. Celsius uses the freezing point of water as its reference point. This means that Celsius can be both negative and positive.\n",
+    "\n",
+    "The equation used to relate gauge, atmospheric, and absolute pressure is:\n",
+    "\n",
+    "$$ P_{abs} = P_{gauge} + P_{atm} $$\n",
+    "\n",
+    "where\n",
+    "\n",
+    "$$ P_{abs} = \\text{Absolute pressure} $$\n",
+    "\n",
+    "$$ P_{gauge} = \\text{Gauge pressure} $$\n",
+    "\n",
+    "$$ P_{atm} = \\text{Atmospheric pressure} $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.4.3 &ndash; Ways to measure pressure\n",
+    "\n",
+    "### Manometers\n",
+    "\n",
+    "**Manometers** are one of the most common tools used to measure pressure. As specified in Module-1, they are simple to use and can give you instantaneous feedback on your system. There are three main types of manometers, open-end, differential, and sealed-end.\n",
+    "\n",
+    "![](../figures/Module-4/Combined-Mano-2.svg)\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "As you can see, **open-end manometers** have one end connected to a line or system and the other end open to the atmosphere. Open-end manometers measure **gauge pressure**. **Differential manometers** have each end connected to the same line and measure pressure drops. Differential manometers measure **differential pressure**. Finally, sealed-end manometers have the one end connected to a line or system and the other end closed to the near vacuum. **Sealed-end manometers** measure **absolute pressure**.\n",
+    "\n",
+    "### Bourdon Gauges\n",
+    "\n",
+    "**Bourdon gauges** are the most common mechanical devices used to measure pressure. A bourdon gauge is a hollow metal tube that is closed at one end and bent into a C configuration. The open end is exposed to the fluid whose pressure is being measured. As the pressure increases, the tube tends to straighten to equalize the pressure in the tube. This straightening causes gears to turn which in turn will cause a pointer to rotate which will inform you on its pressure.\n",
+    "\n",
+    "![](../figures/Module-4/Bourdon-cover1.png)\n",
+    "\n",
+    "![](../figures/Module-4/Bourdon-workings1.png)\n",
+    "\n",
+    "\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 4.4.4 &ndash; Problem Statement\n",
+    "\n",
+    "### Problem 1\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "An open-end manometer, shown below is used to measure the pressure of the stream. If $d_1 = 1.0 \\space m$ and $h = 0.7 \\space m$, what is the absolute pressure at $P_1$?\n",
+    "\n",
+    "![](../figures/Module-4/PMprob1.svg)\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "Sine we know $d_1 = 1.0 \\space m$ and $h = 0.7 \\space m$, we can solve for $d_2$\n",
+    "\n",
+    "$$ d_2 = d_1 - h = 1.0 \\space m - 0.7 \\space m = 0.3 \\space m $$\n",
+    "\n",
+    "next we can use the general manometer equation to solve for $P_1$\n",
+    "\n",
+    "$$ P_1 + \\rho_1 g d_1 =  P_2 + \\rho_2 g d_2 + \\rho_f g h $$\n",
+    "\n",
+    "Since the density of air, relative to the other terms, is practically 0, we can ignore $\\rho_2$.\n",
+    "\n",
+    "$$ P_1 + \\rho_1 g d_1 =  P_2  + \\rho_f g h $$\n",
+    "\n",
+    "$$ P_1 =  P_2  + \\rho_f g h - \\rho_1 g d_1 $$\n",
+    "\n",
+    "$$ P_1 =  101,300 \\space Pa  + (1,000 \\space kg/m^3) (9.81 \\space m/s^2) (0.7 \\space m) - (950 \\space kg/m^3) (9.81 \\space m/s^2) (1 \\space m) $$\n",
+    "\n",
+    "$$ P_1 =  98,800 \\space Pa $$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "### Problem 2\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "![](../figures/Module-1/manometer_problem_2.svg)\n",
+    "\n",
+    "A U-tube manometer is connected to a closed tank. The air pressure inside the tank is 0.50 psi and the liquid is oil ($\\gamma$ = 54.0 $lb/ft^3$, S.G. = $3.05$). The pressure at point A is 2.00 psi. Find \n",
+    "\n",
+    "a) the depth of oil\n",
+    "\n",
+    "b) the reading $h$ on the manometer.\n",
+    "\n",
+    "\n",
+    "**Note:** that the 2' above the 2. does not mean 2 prime, it denotes 2 feet.\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "$$ P_1 = P_{air} = 0.5 \\space psi $$\n",
+    "\n",
+    "$$ P_1 - P_2 =  (\\rho_f - \\rho) g h \\quad \\text{(Differential Manometer Equation)} $$\n",
+    "\n",
+    "$$ P_1 - P_2 = -\\gamma(h_2 - h_1) $$\n",
+    "\n",
+    "**a)**\n",
+    "Note: We are using (1.) as the reference point.\n",
+    "\n",
+    "$$ P_{1.} - P_A = -\\gamma_{oil}(-Z - 0) $$\n",
+    "\n",
+    "$$ 0.5 \\space psi - 2.0 psi = -54.0 lb/ft^3 \\cdot (-Z) $$\n",
+    "\n",
+    "Notice that we need to convert all units to a single uniform unit:\n",
+    "\n",
+    "$$ -1.5 psi \\times 144 \\frac{in^2}{ft^2} = -54.0 lb/ft^3 \\cdot (-Z) $$\n",
+    "\n",
+    "$$ Z = 4.00 ft $$\n",
+    "\n",
+    "**b)** \n",
+    "Note: We are using (1.) as the reference point.\n",
+    "\n",
+    "$$ P_{2.} - P_A = -\\gamma_{oil}(-(Z+2') - (-4)) $$\n",
+    "\n",
+    "$$ P_{2.} - 2.0 psi \\times \\frac{in^2}{ft^2} = -54.0 lb/ft^3 \\cdot (-(4+2)+4) $$\n",
+    "\n",
+    "$$ P_{2.} - 2.0 psi \\times \\frac{in^2}{ft^2} = -54.0 lb/ft^3 \\cdot 2 $$\n",
+    "\n",
+    "$$ P_{2.} = 396 \\space lb/ft^3 $$\n",
+    "\n",
+    "$$ P_{3.} - P_2 = -\\gamma_{oil}(-(6-h) - (-4-2)) $$\n",
+    "\n",
+    "$$ S.G. = \\frac{\\gamma_{oil}}{\\gamma_{water}} $$\n",
+    "\n",
+    "$$ 0-396 = -3.05(62.4)(h)$$\n",
+    "\n",
+    "$$ h = 2.08 \\space ft $$\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5.7 – Reference States and State Properties &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="5.7-–-Reference-States-and-State-Properties">
+<h1>5.7 – Reference States and State Properties<a class="headerlink" href="#5.7-–-Reference-States-and-State-Properties" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="5.7.0-–-Learning-Objectives">
+<h2>5.7.0 – Learning Objectives<a class="headerlink" href="#5.7.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand reference states and their importance.</li>
+<li>Understand the steam table chart and its reference point.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.7.1-–-Introduction">
+<h2>5.7.1 – Introduction<a class="headerlink" href="#5.7.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Often, we do not know the absolute value of internal energy or enthalpy
+(<span class="math">\(\hat{U}, \hat{H}\)</span>). To give us a way of measuring these values,
+a <strong>reference state</strong> is chosen to represent <strong>0</strong> and the values are
+determined as a <strong>difference to the reference state.</strong></p>
+<p>This notebook will go over the concept of reference state and state
+properties.7</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.7.2-–-Internal-energy-of-Water">
+<h2>5.7.2 – Internal energy of Water<a class="headerlink" href="#5.7.2-–-Internal-energy-of-Water" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s look at water at 0 C<span class="math">\(^\circ\)</span> and 1 atm. If asked to find
+the <strong>specific</strong> energy <span class="math">\(U\)</span> of this water, you might think right
+away that you can use <span class="math">\(C_p\Delta T\)</span> but this is wrong. We cannot
+use this formula because we need to consider the <span class="math">\(\Delta T\)</span> which
+refers to a change in temperature.</p>
+<p>What we can do is use the 0 C<span class="math">\(^\circ\)</span> 1 atm water as a
+<strong>reference</strong> and compare it to changes in energy.</p>
+<p>We can take liquid water at 50 C<span class="math">\(^\circ\)</span> 1 atm and say that <strong>in
+reference to 0</strong> C<span class="math">\(^\circ\)</span> <strong>water</strong>, 100 C<span class="math">\(^\circ\)</span>
+water has <span class="math">\(210 \space \frac{kJ}{kg}\)</span> more energy than 0
+C<span class="math">\(^\circ\)</span> liquid water.</p>
+<p>Likewise, 100 C<span class="math">\(^\circ\)</span> liquid water at 1 atm has
+<span class="math">\(420 \space \frac{kJ}{kg}\)</span> more energy than water at 0
+C<span class="math">\(^\circ\)</span>.</p>
+<p>By setting water at 0 C<span class="math">\(^\circ\)</span>. We can use the referenced
+values as variables known as <strong>state variables</strong> also known as
+<span class="math">\(\hat{U}\)</span> and <span class="math">\(\hat{H}\)</span>.</p>
+<p>A state variable is a variable that its property only depends on its
+<strong>initial and final state</strong>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.read_excel(&#39;../figures/Module-5/isoT600k.xlsx&#39;, sheet_name=&#39;Sheet1&#39;, index_col=0, na_values=[&#39;NA&#39;])
+df
+df.truncate(before=0, after=10)
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temperature (K)</th>
+      <th>Pressure (MPa)</th>
+      <th>Volume (l/mol)</th>
+      <th>Internal Energy (kJ/mol)</th>
+      <th>Enthalpy (kJ/mol)</th>
+      <th>Entropy (J/mol*K)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>600</td>
+      <td>0.0</td>
+      <td>infinite</td>
+      <td>51.415</td>
+      <td>56.404</td>
+      <td>500.13</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>600</td>
+      <td>1.0</td>
+      <td>4.8861</td>
+      <td>51.123</td>
+      <td>56.009</td>
+      <td>130.11</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>600</td>
+      <td>2.0</td>
+      <td>2.3891</td>
+      <td>50.811</td>
+      <td>55.589</td>
+      <td>123.82</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>600</td>
+      <td>3.0</td>
+      <td>1.5548</td>
+      <td>50.477</td>
+      <td>55.142</td>
+      <td>119.88</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>600</td>
+      <td>4.0</td>
+      <td>1.1361</td>
+      <td>50.119</td>
+      <td>54.664</td>
+      <td>116.88</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>600</td>
+      <td>5.0</td>
+      <td>0.8834</td>
+      <td>49.734</td>
+      <td>54.151</td>
+      <td>114.36</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>600</td>
+      <td>6.0</td>
+      <td>0.71355</td>
+      <td>49.318</td>
+      <td>53.599</td>
+      <td>112.11</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>600</td>
+      <td>7.0</td>
+      <td>0.59087</td>
+      <td>48.864</td>
+      <td>53.000</td>
+      <td>110.03</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>600</td>
+      <td>8.0</td>
+      <td>0.49741</td>
+      <td>48.366</td>
+      <td>52.345</td>
+      <td>108.04</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>600</td>
+      <td>9.0</td>
+      <td>0.42316</td>
+      <td>47.811</td>
+      <td>51.620</td>
+      <td>106.06</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>600</td>
+      <td>10.0</td>
+      <td>0.36195</td>
+      <td>47.183</td>
+      <td>50.802</td>
+      <td>104.05</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>If you recall the steam tables&#8221; from module 4:
+<a class="reference external" href="http://webbook.nist.gov/cgi/fluid.cgi?Action=Load&amp;ID=C7732185&amp;Type=SatP&amp;Digits=5&amp;THigh=373.946&amp;TLow=0.01&amp;TInc=5&amp;RefState=DEF&amp;TUnit=C&amp;PUnit=MPa&amp;DUnit=kg%2Fm3&amp;HUnit=kJ%2Fkg&amp;WUnit=m%2Fs&amp;VisUnit=uPa*s&amp;STUnit=N%2Fm">NIST</a>
+steam tables from module 4, these values are all state variables
+referenced to <strong>water at its triple point</strong>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.73-–-Example-question">
+<h2>5.73 – Example question<a class="headerlink" href="#5.73-–-Example-question" title="Permalink to this headline">¶</a></h2>
+<p>Water is partially condensed out of a gas stream containing 66.9 mole%
+water vapor and the balance nitrogen.</p>
+<div class="figure" id="id1">
+<img alt="Figure 1." src="../_images/module-5-example-5.7.1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+<div class="section" id="Step-1---Perform-all-required-material-balances">
+<h3>Step 1 - Perform all required material balances<a class="headerlink" href="#Step-1---Perform-all-required-material-balances" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>While none are needed, it might be helpful to fill in the missing
+mole fractions for nitrogen</li>
+</ul>
+</div>
+<div class="section" id="Step-2---Write-the-appropriate-form-of-the-energy-balance-(open-or-closed)-and-reduce-to-simplest-form-(get-rid-of-any-negligible-terms)">
+<h3>Step 2 - Write the appropriate form of the energy balance (open or closed) and reduce to simplest form (get rid of any negligible terms)<a class="headerlink" href="#Step-2---Write-the-appropriate-form-of-the-energy-balance-(open-or-closed)-and-reduce-to-simplest-form-(get-rid-of-any-negligible-terms)" title="Permalink to this headline">¶</a></h3>
+<div class="math">
+\[\dot{Q} - \dot{W} = \Delta\dot{H} + \dot{E_k} + \dot{E_p}\]</div>
+<div class="math">
+\[\dot{E_k} = 0\]</div>
+<div class="math">
+\[\dot{E_p} = 0\]</div>
+<div class="math">
+\[\dot{W} = 0\]</div>
+<div class="math">
+\[\dot{Q} = \Delta\dot{H}\]</div>
+<div class="math">
+\[\Delta\dot{H} = \sum_{out}\dot{n_i}\hat{H_i} - \sum_{in}\dot{n_i}\hat{H_i}\]</div>
+</div>
+<div class="section" id="Step-3---Choose-a-reference-state-for-the-constituents">
+<h3>Step 3 - Choose a reference state for the constituents<a class="headerlink" href="#Step-3---Choose-a-reference-state-for-the-constituents" title="Permalink to this headline">¶</a></h3>
+<p><strong>Water</strong></p>
+<p><span class="math">\(l\)</span>, 25 °C, <span class="math">\(1 \space atm\)</span>,</p>
+<p><strong>Nitrogen</strong></p>
+<p><span class="math">\(g\)</span>, 25 °C, <span class="math">\(1 \space atm\)</span></p>
+</div>
+<div class="section" id="Step-4---For-a-closed-constant--volume-system,-construct-a-table-with-columns-for-initial-and-final-amounts-of-each-species-(-or-)-and-specific-internal-energies-relative-to-the-chosen-reference-states.-For-an-open-system,-construct-a-table-with-columns-for-inlet-and-outlet-stream-component-flow-rates-(-or-)-and-specific-enthalpies-relative-to-the-chosen-reference-states.">
+<h3>Step 4 - For a closed constant- volume system, construct a table with columns for initial and final amounts of each species (<span class="math">\(m_i\)</span> or <span class="math">\(n_i\)</span>) and specific internal energies relative to the chosen reference states. For an open system, construct a table with columns for inlet and outlet stream component flow rates (<span class="math">\(\dot{m_i}\)</span> or <span class="math">\(\dot{n_i}\)</span>) and specific enthalpies relative to the chosen reference states.<a class="headerlink" href="#Step-4---For-a-closed-constant--volume-system,-construct-a-table-with-columns-for-initial-and-final-amounts-of-each-species-(-or-)-and-specific-internal-energies-relative-to-the-chosen-reference-states.-For-an-open-system,-construct-a-table-with-columns-for-inlet-and-outlet-stream-component-flow-rates-(-or-)-and-specific-enthalpies-relative-to-the-chosen-reference-states." title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="18%" />
+<col width="24%" />
+<col width="19%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Substance</th>
+<th class="head"><span class="math">\(n_{in}\)</span></th>
+<th class="head"><span class="math">\(\hat{H_{in}}\)</span></th>
+<th class="head"><span class="math">\(n_{out}\)</span></th>
+<th class="head"><span class="math">\(\hat{H_{out}}\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>H2O(v)</td>
+<td>0.669</td>
+<td><span class="math">\(\hat{H_{1}}\)</span></td>
+<td>3.35</td>
+<td><span class="math">\(\hat{H_{3}}\)</span></td>
+</tr>
+<tr class="row-odd"><td>H2O(l)</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>63.55</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>N2(v)</td>
+<td>0.331</td>
+<td><span class="math">\(\hat{H_{2}}\)</span></td>
+<td>33.1</td>
+<td><span class="math">\(\hat{H_{4}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Step-5---Calculate-all-required-values-of--(or--)-and-insert-the-values-in-the-appropriate-places-in-the-table.">
+<h3>Step 5 - Calculate all required values of <span class="math">\(\hat{U}\)</span> (or <span class="math">\(\hat{H}\)</span> ) and insert the values in the appropriate places in the table.<a class="headerlink" href="#Step-5---Calculate-all-required-values-of--(or--)-and-insert-the-values-in-the-appropriate-places-in-the-table." title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="Step-6---Calculate-the-appropriate-energy-balances.-Solve-for-any-variable-(kinetic,-potential)-that-is-not-negligible.">
+<h3>Step 6 - Calculate the appropriate energy balances. Solve for any variable (kinetic, potential) that is not negligible.<a class="headerlink" href="#Step-6---Calculate-the-appropriate-energy-balances.-Solve-for-any-variable-(kinetic,-potential)-that-is-not-negligible." title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5.7 – Reference States and State Properties</a><ul>
+<li><a class="reference internal" href="#5.7.0-–-Learning-Objectives">5.7.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#5.7.1-–-Introduction">5.7.1 – Introduction</a></li>
+<li><a class="reference internal" href="#5.7.2-–-Internal-energy-of-Water">5.7.2 – Internal energy of Water</a></li>
+<li><a class="reference internal" href="#5.73-–-Example-question">5.73 – Example question</a><ul>
+<li><a class="reference internal" href="#Step-1---Perform-all-required-material-balances">Step 1 - Perform all required material balances</a></li>
+<li><a class="reference internal" href="#Step-2---Write-the-appropriate-form-of-the-energy-balance-(open-or-closed)-and-reduce-to-simplest-form-(get-rid-of-any-negligible-terms)">Step 2 - Write the appropriate form of the energy balance (open or closed) and reduce to simplest form (get rid of any negligible terms)</a></li>
+<li><a class="reference internal" href="#Step-3---Choose-a-reference-state-for-the-constituents">Step 3 - Choose a reference state for the constituents</a></li>
+<li><a class="reference internal" href="#Step-4---For-a-closed-constant--volume-system,-construct-a-table-with-columns-for-initial-and-final-amounts-of-each-species-(-or-)-and-specific-internal-energies-relative-to-the-chosen-reference-states.-For-an-open-system,-construct-a-table-with-columns-for-inlet-and-outlet-stream-component-flow-rates-(-or-)-and-specific-enthalpies-relative-to-the-chosen-reference-states.">Step 4 - For a closed constant- volume system, construct a table with columns for initial and final amounts of each species (<span class="math">\(m_i\)</span> or <span class="math">\(n_i\)</span>) and specific internal energies relative to the chosen reference states. For an open system, construct a table with columns for inlet and outlet stream component flow rates (<span class="math">\(\dot{m_i}\)</span> or <span class="math">\(\dot{n_i}\)</span>) and specific enthalpies relative to the chosen reference states.</a></li>
+<li><a class="reference internal" href="#Step-5---Calculate-all-required-values-of--(or--)-and-insert-the-values-in-the-appropriate-places-in-the-table.">Step 5 - Calculate all required values of <span class="math">\(\hat{U}\)</span> (or <span class="math">\(\hat{H}\)</span> ) and insert the values in the appropriate places in the table.</a></li>
+<li><a class="reference internal" href="#Step-6---Calculate-the-appropriate-energy-balances.-Solve-for-any-variable-(kinetic,-potential)-that-is-not-negligible.">Step 6 - Calculate the appropriate energy balances. Solve for any variable (kinetic, potential) that is not negligible.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-5-Energy-Balances/5.7 - Reference States and State Properties.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

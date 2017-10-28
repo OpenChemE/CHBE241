@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.9 – Vapour-Liquid Equilibrium &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="4.9-–-Vapour-Liquid-Equilibrium">
+<h1>4.9 – Vapour-Liquid Equilibrium<a class="headerlink" href="#4.9-–-Vapour-Liquid-Equilibrium" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="4.9.0-–-Learning-Objectives">
+<h2>4.9.0 – Learning Objectives<a class="headerlink" href="#4.9.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this unit you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the concept of Vapour-Liquid Equilibrium.</li>
+<li>Understand what bubble point temperature and pressure is.</li>
+<li>Understand what dew point temperature and pressure is.</li>
+<li>Calculate for bubble point temperature and pressure.</li>
+<li>Calculate for dew point temperature and pressure.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.9.1-–-Introduction">
+<h2>4.9.1 – Introduction<a class="headerlink" href="#4.9.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p><strong>Vapour-Liquid Equilibrium</strong> (VLE) occurs under certain circumstances
+where both a liquid and a vapour of one or more substances coexist. An
+example of this is half full jerrycan with gasoline. Gasoline is
+comprised of multiple types of hydrocarbons. At the bottom half of the
+can, there is only liquid gasoline. At the top half, there is gasoline
+vapour. The vapour and liquid are at equilibrium, meaning that there is
+as much vapour becoming liquid as liquid becoming vapour.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.9.2-–-Bubble-Point-and-Dew-Point-Temperatures">
+<h2>4.9.2 – Bubble-Point and Dew-Point Temperatures<a class="headerlink" href="#4.9.2-–-Bubble-Point-and-Dew-Point-Temperatures" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>bubble-point temperature</strong> is the temperature at which the first
+vapour bubbles form when a liquid is heated slowly at given pressure. On
+the other hand, <strong>dew-point temperature</strong> is the temperature at which
+the first liquid droplets form when a vapour is cooled slowly at given
+pressure. Calculating the bubble-point and dew-point temperatures can be
+difficult but if the liquid and gas behave ideally, then the
+calculations are relatively straightforward.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.9.3-–-Calculations-for-Bubble-Point-and-Dew-Point-Pressure">
+<h2>4.9.3 – Calculations for Bubble-Point and Dew-Point Pressure<a class="headerlink" href="#4.9.3-–-Calculations-for-Bubble-Point-and-Dew-Point-Pressure" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we have an ideal liquid solution that follows Raoult&#8217;s law and
+contains species A, B, C, ... with mole fractions <span class="math">\(x_A\)</span>,
+<span class="math">\(x_B\)</span>, <span class="math">\(x_C\)</span>, .... If the mixture is heated at a constant
+pressure P to its bubble-point temperature <span class="math">\(T_{bp}\)</span>, the partial
+pressures of the components are given by Raoult&#8217;s:</p>
+<div class="math">
+\[p_i = x_i p_i^* (T_{bp}), \quad i = \text{A, B, C, ...}\]</div>
+<p>and the total pressure of the system is:</p>
+<div class="math">
+\[P = p_A + p_B + p_C + \space ... \space =  x_A p_A^* (T_{bp}) + x_B p_B^* (T_{bp}) + x_C p_C^* (T_{bp}) + \space ...\]</div>
+<p><strong>Bubble-point pressure</strong> is the pressure at which the first vapour
+forms when a liquid is decompressed at constant temperature. The mole
+fractions of the vapor can be determined by using the equation:</p>
+<div class="math">
+\[y_i = \frac{p_i}{P_{bp}} = \frac{x_i p_i^* (T)}{P_{bp}}\]</div>
+<p>The dew-point temperature can be found using a similar method as to that
+of the bubble-point temperature Suppose we have an ideal vapour the
+follows Raoult&#8217;s law and contains species A, B, C, ... with mole
+fractions <span class="math">\(x_A\)</span>, <span class="math">\(x_B\)</span>, <span class="math">\(x_C\)</span>, .... If the vapour is
+cooled slowly to its dew-point temperature, <span class="math">\(T_{dp}\)</span>, the mole
+fractions are given by the equation:</p>
+<div class="math">
+\[x_i = \frac{y_i P}{p_i^* (T_{dp})}, \quad i = \text{A, B, C, ...}\]</div>
+<p>The <strong>dew-point pressure</strong> is the condensation of a vapour at an
+increasing pressure and constant pressure is given by the equation:</p>
+<div class="math">
+\[P_{dp} = \frac{1}{\frac{y_A P}{p_i^* (T_{dp})} + \frac{y_B P}{p_i^* (T_{dp})} + \frac{y_C P}{p_i^* (T_{dp})} + ...}\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.9 – Vapour-Liquid Equilibrium</a><ul>
+<li><a class="reference internal" href="#4.9.0-–-Learning-Objectives">4.9.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#4.9.1-–-Introduction">4.9.1 – Introduction</a></li>
+<li><a class="reference internal" href="#4.9.2-–-Bubble-Point-and-Dew-Point-Temperatures">4.9.2 – Bubble-Point and Dew-Point Temperatures</a></li>
+<li><a class="reference internal" href="#4.9.3-–-Calculations-for-Bubble-Point-and-Dew-Point-Pressure">4.9.3 – Calculations for Bubble-Point and Dew-Point Pressure</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-4-Separation-II/4.9 - Vapour-Liquid Equilibrium.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

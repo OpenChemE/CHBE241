@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.11 – Practice Problem 2 &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="4.11-–-Practice-Problem-2">
+<h1>4.11 – Practice Problem 2<a class="headerlink" href="#4.11-–-Practice-Problem-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Saturated-Steam-table-B.6">
+<h2>Saturated Steam table B.6<a class="headerlink" href="#Saturated-Steam-table-B.6" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.read_excel(&#39;../figures/Module-4/Sat-steam-p-int1.xlsx&#39;, sheet_name=&#39;Sheet2&#39;, index_col=None, na_values=[&#39;NA&#39;])
+df.truncate(before  = 25, after = 38)
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pressure (bar)</th>
+      <th>Temperature (C)</th>
+      <th>Volume (l, m3/kg)</th>
+      <th>Volume (v, m3/kg)</th>
+      <th>Internal Energy (l, kJ/kg)</th>
+      <th>Internal Energy (v, kJ/kg)</th>
+      <th>Enthalpy (l, kJ/kg)</th>
+      <th>Enthalpy (v, kJ/kg)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>25</th>
+      <td>5.5</td>
+      <td>155.46</td>
+      <td>0.001097</td>
+      <td>0.34260</td>
+      <td>655.16</td>
+      <td>2563.9</td>
+      <td>655.76</td>
+      <td>2752.3</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>6.0</td>
+      <td>158.83</td>
+      <td>0.001101</td>
+      <td>0.31558</td>
+      <td>669.72</td>
+      <td>2566.8</td>
+      <td>670.38</td>
+      <td>2756.1</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>6.5</td>
+      <td>161.98</td>
+      <td>0.001104</td>
+      <td>0.29259</td>
+      <td>683.36</td>
+      <td>2569.4</td>
+      <td>684.08</td>
+      <td>2759.6</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>7.0</td>
+      <td>164.95</td>
+      <td>0.001108</td>
+      <td>0.27277</td>
+      <td>696.23</td>
+      <td>2571.8</td>
+      <td>697.00</td>
+      <td>2762.8</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>7.5</td>
+      <td>167.75</td>
+      <td>0.001111</td>
+      <td>0.25551</td>
+      <td>708.40</td>
+      <td>2574.0</td>
+      <td>709.24</td>
+      <td>2765.6</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>8.0</td>
+      <td>170.41</td>
+      <td>0.001115</td>
+      <td>0.24034</td>
+      <td>719.97</td>
+      <td>2576.0</td>
+      <td>720.86</td>
+      <td>2768.3</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>8.5</td>
+      <td>172.94</td>
+      <td>0.001118</td>
+      <td>0.22689</td>
+      <td>731.00</td>
+      <td>2577.9</td>
+      <td>731.95</td>
+      <td>2770.8</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>9.0</td>
+      <td>175.35</td>
+      <td>0.001121</td>
+      <td>0.21489</td>
+      <td>741.55</td>
+      <td>2579.6</td>
+      <td>742.56</td>
+      <td>2773.0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>9.5</td>
+      <td>177.66</td>
+      <td>0.001124</td>
+      <td>0.20410</td>
+      <td>751.67</td>
+      <td>2581.2</td>
+      <td>752.74</td>
+      <td>2775.1</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>10.0</td>
+      <td>179.88</td>
+      <td>0.001127</td>
+      <td>0.19436</td>
+      <td>761.39</td>
+      <td>2582.7</td>
+      <td>762.52</td>
+      <td>2777.1</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>10.5</td>
+      <td>182.01</td>
+      <td>0.001130</td>
+      <td>0.18552</td>
+      <td>770.75</td>
+      <td>2584.1</td>
+      <td>771.94</td>
+      <td>2778.9</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>11.0</td>
+      <td>184.06</td>
+      <td>0.001133</td>
+      <td>0.17745</td>
+      <td>779.78</td>
+      <td>2585.5</td>
+      <td>781.03</td>
+      <td>2780.6</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>11.5</td>
+      <td>186.04</td>
+      <td>0.001136</td>
+      <td>0.17006</td>
+      <td>788.51</td>
+      <td>2586.7</td>
+      <td>789.82</td>
+      <td>2782.2</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>12.0</td>
+      <td>187.96</td>
+      <td>0.001138</td>
+      <td>0.16326</td>
+      <td>796.96</td>
+      <td>2587.8</td>
+      <td>798.33</td>
+      <td>2783.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="Excerpt-off-steam-table-of-B.7">
+<h2>Excerpt off steam table of B.7<a class="headerlink" href="#Excerpt-off-steam-table-of-B.7" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.read_excel(&#39;../figures/Module-4/superheated-team-p10.xlsx&#39;, sheet_name=&#39;Sheet2&#39;, index_col=None, na_values=[&#39;NA&#39;])
+df
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Temperature (C)</th>
+      <th>Pressure (bar)</th>
+      <th>Volume (m3/kg)</th>
+      <th>Internal Energy (kJ/kg)</th>
+      <th>Enthalpy (kJ/kg)</th>
+      <th>Entropy (J/g*K)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>50.00</td>
+      <td>10</td>
+      <td>0.001012</td>
+      <td>209.18</td>
+      <td>210.19</td>
+      <td>0.70335</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>100.00</td>
+      <td>10</td>
+      <td>0.001043</td>
+      <td>418.80</td>
+      <td>419.84</td>
+      <td>1.30650</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>150.00</td>
+      <td>10</td>
+      <td>0.001090</td>
+      <td>631.41</td>
+      <td>632.50</td>
+      <td>1.84120</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>179.88</td>
+      <td>10</td>
+      <td>0.001127</td>
+      <td>761.39</td>
+      <td>762.52</td>
+      <td>2.13810</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>179.88</td>
+      <td>10</td>
+      <td>0.194360</td>
+      <td>2582.70</td>
+      <td>2777.10</td>
+      <td>6.58500</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>200.00</td>
+      <td>10</td>
+      <td>0.206020</td>
+      <td>2622.20</td>
+      <td>2828.30</td>
+      <td>6.69550</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>250.00</td>
+      <td>10</td>
+      <td>0.232750</td>
+      <td>2710.40</td>
+      <td>2943.10</td>
+      <td>6.92650</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>300.00</td>
+      <td>10</td>
+      <td>0.257990</td>
+      <td>2793.60</td>
+      <td>3051.60</td>
+      <td>7.12460</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>350.00</td>
+      <td>10</td>
+      <td>0.282500</td>
+      <td>2875.70</td>
+      <td>3158.20</td>
+      <td>7.30290</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="Modified-question-of-7.35">
+<h2>Modified question of 7.35<a class="headerlink" href="#Modified-question-of-7.35" title="Permalink to this headline">¶</a></h2>
+<p>Problem Statement</p>
+<p>A turbine discharges 200 kg/h of saturated steam at 10.0 bar absolute.
+It is desired to generate steam at 300 C and 10.0 bar by mixing the
+turbine discharge with a second stream of superheated steam of 350 C and
+10.0 bar.</p>
+<ul class="simple">
+<li>If 300 kg/h of the product steam is to be generated, how much heat
+must be added to the mixer?</li>
+<li>If instead the mixing is carried out adiabatically, at what rate is
+the product steam generated?</li>
+</ul>
+<p>Preamble: This question is relatively basic and engages you on how to
+use the steam tables. Heat is covered in-depth in the next module but
+for now, you can consider the question as, how much more <strong>enthalpy</strong> is
+needed to be added to the mixer.</p>
+<ol class="arabic simple">
+<li>Draw a diagram of the process taking place and write the relevant
+equation:</li>
+</ol>
+<div class="figure">
+<img alt="" src="../_images/question1.svg" /></div>
+<div class="math">
+\[\dot{m_1}H_1 + \dot{m_2}H_2 = \dot{m_3}H_3\]</div>
+<div class="math">
+\[H = Q  -W  \space or \space H_{total} = \sum {H}\]</div>
+<ol class="arabic simple" start="2">
+<li>List simplifications and assumptions</li>
+</ol>
+<ul class="simple">
+<li>As mentioned above, treat heat as enthalpy.</li>
+<li>If you have read into module 5; then assume work is negligable.</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li>List known values</li>
+</ol>
+<ul class="simple">
+<li>Input Stream 1:</li>
+<li><span class="math">\(\dot{m_1} = 200\frac{kg}{hr}\)</span></li>
+<li><span class="math">\(H_1 = 762.5 \frac{kj}{kg}\)</span></li>
+<li>Input Stream 2:</li>
+<li><span class="math">\(\dot{m_2} = ?\)</span></li>
+<li><span class="math">\(H_2 = 3051.6 \frac{kj}{kg}\)</span> From steam table B.6</li>
+<li>Output Stream 3:</li>
+<li><span class="math">\(\dot{m_3} = ?\)</span></li>
+<li><span class="math">\(H_3 = 3158.2 \frac{kj}{kg}\)</span> From steam table B.7</li>
+</ul>
+<ol class="arabic simple" start="4">
+<li>Solve the equations. In part i) we are given the total mass flow rate
+<span class="math">\(\dot{m_3}\)</span> So we can solve for <span class="math">\(\dot{m_2}\)</span> using
+conservation of mass.</li>
+</ol>
+<div class="math">
+\[300 = 200 + \dot {m_2}\]</div>
+<p>Using this value we plug into the <strong>first half</strong> of the energy balance</p>
+<div class="math">
+\[200\frac{kg}{hr} \cdot  762.5 \frac{kj}{kg} + 100\frac{kg}{hr} \cdot  3051.6 \frac{kj}{kg} =  457660 \frac{kj}{hr}\]</div>
+<p>Since we want the exit stream at 350 C we need to check to see if the
+enthalpy we obtained corresponds with the desired enthalpy in the exit
+stream.</p>
+<div class="math">
+\[\dot{m_3}\cdot H_3 = 300\frac{kg}{hr} \cdot  3158.2 \frac{kj}{kg} =  947460 \frac{kj}{hr}\]</div>
+<p>It Doesn&#8217;t correspond. There is missing energy that needs to be added.
+This is simple addition:</p>
+<div class="math">
+\[Energy\space Needed = 947460 \frac{kj}{hr} - 457660 \frac{kj}{hr} =  489800 \frac {kj}{hr}\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.11 – Practice Problem 2</a><ul>
+<li><a class="reference internal" href="#Saturated-Steam-table-B.6">Saturated Steam table B.6</a></li>
+<li><a class="reference internal" href="#Excerpt-off-steam-table-of-B.7">Excerpt off steam table of B.7</a></li>
+<li><a class="reference internal" href="#Modified-question-of-7.35">Modified question of 7.35</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-4-Separation-II/4.11 - Practice Problem 2.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

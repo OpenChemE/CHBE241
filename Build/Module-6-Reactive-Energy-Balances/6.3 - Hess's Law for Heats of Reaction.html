@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>6.3 – Hess’s Law for Heats of Reaction &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="6.3-–-Hess's-Law-for-Heats-of-Reaction">
+<h1>6.3 – Hess&#8217;s Law for Heats of Reaction<a class="headerlink" href="#6.3-–-Hess's-Law-for-Heats-of-Reaction" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="6.3.0-–-Learning-Objectives">
+<h2>6.3.0 – Learning Objectives<a class="headerlink" href="#6.3.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Apply the concept of path dependence and independence.</li>
+<li>Understand the concept of Hess&#8217;s law.</li>
+<li>Use Hess&#8217;s law to solve standard heat of reaction problems.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="6.3.1-–-Introduction">
+<h2>6.3.1 – Introduction<a class="headerlink" href="#6.3.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Suppose you wish to determine the <strong>standard heat of reaction</strong> for the
+reaction</p>
+<div class="math">
+\[C \small{\text{(s)}} + \frac{1}{2} \space O_2 \small{\text{(g)}} \longrightarrow C O \small{\text{(g)}}\]</div>
+<p>It is very difficult to measure the standard heat of reaction for this
+reaction because if these reactants are at <span class="math">\(25 ^{\circ} C\)</span> and
+<span class="math">\(1\)</span> atm, the rate of reaction will be very slow. Since
+<strong>calorimeters</strong> are used to measure heat of reaction and it impossible
+to make calorimeters perfectly insulated, it is impractical to measure
+the true amount of energy released. Imagine you are trying to measure
+how much energy is released in the oxidation of iron. It would be very
+impractical to measure how much energy is realised over the course of
+years. However, we can use <strong>Hess&#8217;s law</strong> to find the standard heat of
+reaction for this reaction.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="6.3.2-–-Hess's-Law">
+<h2>6.3.2 – Hess&#8217;s Law<a class="headerlink" href="#6.3.2-–-Hess's-Law" title="Permalink to this headline">¶</a></h2>
+<p>Since it is impractical to measure the standard heat of reaction for the
+reaction</p>
+<div class="math">
+\[C \small{\text{(s)}} + \frac{1}{2} \space O_2 \small{\text{(g)}} \longrightarrow C O \small{\text{(g)}}\]</div>
+<p>we can use Hess&#8217;s law by using other measurable standard heat of
+reactions to solve for the immeasurable quantity.</p>
+<div class="math">
+\[C \small{\text{(s)}} + O_2 \small{\text{(g)}} \longrightarrow C O_2 \small{\text{(g)}} \quad \Delta \hat{H}_{r1} ^{\circ} = -393.51 \space kJ/mol\]</div>
+<div class="math">
+\[C O \small{\text{(g)}} + \frac{1}{2} \space O_2 \small{\text{(g)}} \longrightarrow C O_2 \small{\text{(g)}} \quad \Delta \hat{H}_{r2} ^{\circ} = -282.99 \space kJ/mol\]</div>
+<p>If we subtract reaction two from reaction three, we will receive the
+first reaction stoichiometrically balanced and the heat of reaction from
+that reaction.</p>
+<div class="math">
+\[C \small{\text{(s)}} + O_2 \small{\text{(g)}} - C O \small{\text{(g)}} - \frac{1}{2} \space O_2 \longrightarrow C O_2 \small{\text{(g)}} - C O_2 \small{\text{(g)}}: \quad \Delta \hat{H}_{r1} ^{\circ} = ((-393.51) - (-282.99)) \space kJ/mol\]</div>
+<div class="math">
+\[C \small{\text{(s)}} + \frac{1}{2} \space O_2 \small{\text{(g)}} \longrightarrow C O \small{\text{(g)}} \quad \Delta \hat{H}_{r1} ^{\circ} = -110.52 \space kJ/mol\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="6.3.3-–-Problem-Statement">
+<h2>6.3.3 – Problem Statement<a class="headerlink" href="#6.3.3-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Problem-1">
+<h3>Problem 1<a class="headerlink" href="#Problem-1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<p>The standard heats of the follow reactions are determined
+experimentally:</p>
+<p><strong>1.</strong>
+<span class="math">\(2 \space C_2 H_6 \small{\text{(g)}} + 7 O_2 \small{\text{(g)}} \rightarrow 4 \space C O_2 \small{\text{(g)}} + 6 \space H_2 O \small{\text{(v)}} \quad \Delta \hat{H}_{r1} ^{\circ} = -3119.6 \space kJ/mol\)</span></p>
+<p><strong>2.</strong>
+<span class="math">\(C \small{\text{(s)}} + O_2 \small{\text{(g)}} \rightarrow C O_2 \small{\text{(g)}} \quad \Delta \hat{H}_{r2} ^{\circ} = -393.5 \space kJ/mol\)</span></p>
+<p><strong>3.</strong>
+<span class="math">\(2 \space H_2 \small{\text{(g)}} + O_2 \small{\text{(g)}} \rightarrow 2 H_2 O \small{\text{(v)}} \quad \Delta \hat{H}_{r3} ^{\circ} = -285.8 \space kJ/mol\)</span></p>
+<p>Using Hess&#8217;s law, determine the standard heat of reaction for the
+following reaction.</p>
+<p><strong>4.</strong>
+<span class="math">\(C \small{\text{(s)}} + 3 \space H_2 \small{\text{(g)}} \rightarrow C_2 H_6 \small{\text{(g)}} \quad \Delta \hat{H}_{r4} ^{\circ} = ?\)</span></p>
+</div>
+<div class="section" id="Answer">
+<h4>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h4>
+<p>To find the standard heat of reaction of the fourth formula, we must
+first balance the three previous one so that they equate to the last
+one. There is no simple trick to this, although, the more you practice,
+the easier it becomes.</p>
+<div class="math">
+\[\big(\space formula_{\space 4} \space \big) = 2 \times \big(\space formula_{\space 2} \space \big) + 1.5 \times \big(\space formula_{\space 3} \space \big) - 0.5 \times \big(\space formula_{\space 1} \space \big)\]</div>
+<p>Therefore,</p>
+<div class="math">
+\[\Delta \hat{H}_{r4} = 2 \times \Big(\Delta \hat{H}_{r2} ^{\circ}\Big) + 1.5 \times \Big(\Delta \hat{H}_{r3} ^{\circ}\Big) - 0.5 \times \Big(\Delta \hat{H}_{r1} ^{\circ}\Big)\]</div>
+<div class="math">
+\[\Delta \hat{H}_{r4} = 2 \times \Big(-393.5 \space \frac{kJ}{mol}\Big) + 1.5 \times \Big(-285.8 \space \frac{kJ}{mol} \Big) - 0.5 \times \Big(-3119.6 \space \frac{kJ}{mol} \Big)\]</div>
+<div class="math">
+\[\Delta \hat{H}_{r4} = -84.6 \space \frac{kJ}{mol}\]</div>
+</div>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<p>Suppose heats of reaction at 25 °C are measured experimentally for the
+following set of reactions:</p>
+<div class="math">
+\[A+B \longrightarrow C: \space \space \quad \Delta \hat{H}_{r1} ^{\circ} = -1000 \space kJ/mol\]</div>
+<div class="math">
+\[A+D \longrightarrow 3C + E: \space \space \quad \Delta \hat{H}_{r2} ^{\circ} = -2000 \space kJ/mol\]</div>
+<p>What is the heat of reaction of the equation involving 2D as part of the
+products?</p>
+</div>
+<div class="section" id="Answer">
+<h4>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h4>
+<div class="math">
+\[A+B \longrightarrow C\]</div>
+<div class="math">
+\[A+D \longrightarrow 3C + E\]</div>
+<hr class="docutils" />
+<div class="math">
+\[A+B \longrightarrow C\]</div>
+<div class="math">
+\[3C + E \longrightarrow  A+D\]</div>
+<hr class="docutils" />
+<div class="math">
+\[2A+2B \longrightarrow 2C\]</div>
+<div class="math">
+\[6C + 2E \longrightarrow  2A+2D\]</div>
+<hr class="docutils" />
+<div class="math">
+\[6C + 2E+2B \longrightarrow 2C + 2D: \space \space \quad \Delta \hat{H}_{r} ^{\circ} = 2000\space kJ/mol\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">6.3 – Hess&#8217;s Law for Heats of Reaction</a><ul>
+<li><a class="reference internal" href="#6.3.0-–-Learning-Objectives">6.3.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#6.3.1-–-Introduction">6.3.1 – Introduction</a></li>
+<li><a class="reference internal" href="#6.3.2-–-Hess's-Law">6.3.2 – Hess&#8217;s Law</a></li>
+<li><a class="reference internal" href="#6.3.3-–-Problem-Statement">6.3.3 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Problem-1">Problem 1</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-6-Reactive-Energy-Balances/6.3 - Hess&#39;s Law for Heats of Reaction.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

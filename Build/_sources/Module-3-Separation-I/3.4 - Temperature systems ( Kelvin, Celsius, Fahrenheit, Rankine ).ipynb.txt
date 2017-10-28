@@ -1,0 +1,125 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 3.4 &ndash; Temperature systems\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.4.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section, you should be able to:\n",
+    "1. Recognize different temperature units used.\n",
+    "2. Convert between temperature units.\n",
+    "\n",
+    "---\n",
+    "## 3.4.1 &ndash; Introduction\n",
+    "\n",
+    "There are 4 main temperature units that we will focus on and use in CHBE 241, **Kelvin**, **Celsius**, **Fahrenheit**, and **Rankine**. Each of the temperatures measurements have different histories and different uses.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.4.2 &ndash; Kelvin\n",
+    "\n",
+    "The Kelvin scale is named after the Belfast-born, Glasgow University engineer and physicist William Thomson, 1st Baron Kelvin (1824–1907). Unlike the degree Fahrenheit and degree Celsius, **the Kelvin is not referred to or typeset as a degree**. \n",
+    "\n",
+    "The kelvin is the primary unit of temperature measurement in the physical sciences, but is often used in conjunction with the degree Celsius. The definition implies that absolute zero (0 K) is equivalent to −273.15 °C (−459.67 °F).\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.4.3 &ndash; Celsius\n",
+    "\n",
+    "The Celsius scale, also known as the **centigrade scale**, is an SI scale and unit of measurement for temperature. As an SI derived unit, it is used by most countries in the world. It is named after the Swedish astronomer Anders Celsius (1701–1744), who developed a similar temperature scale. \n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.4.4 &ndash; Fahrenheit\n",
+    "\n",
+    "The Fahrenheit scale is a temperature scale based on one proposed in 1724 by Amsterdam-based physicist Daniel Gabriel Fahrenheit (1686–1736), after whom the scale is named. It uses the degree Fahrenheit (symbol: °F) as the unit. \n",
+    "\n",
+    "Several accounts of how he originally defined his scale exist. According to one account, the lower defining point, 0 °F, was established as the temperature of a solution of brine made from equal parts of ice and salt. Further limits were established as the melting point of ice (32 °F) and his best estimate of the average human body temperature (96 °F, about 2.6 °F less than the modern value due to a later redefinition of the scale).\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.4.5 &ndash; Rankine\n",
+    "\n",
+    "The Rankine scale is a thermodynamic temperature based on an absolute scale named after the Glasgow University engineer and physicist William John Macquorn Rankine, who proposed it in 1859.\n",
+    "\n",
+    "The symbol for degrees Rankine is °R. By analogy with kelvin, some authors term the unit Rankine, omitting the degree symbol. Zero on both the Kelvin and Rankine scales is absolute zero, **but a temperature difference of one Rankine degree is defined as equal to one Fahrenheit degree**, rather than the Celsius degree used on the Kelvin scale. A temperature of −459.67 °F is exactly equal to 0 °R.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.4.6 &ndash; Conversion table (Kelvin based)\n",
+    "\n",
+    "|  | From Kelvins   | To Kelvin     |\n",
+    "|------|------|------|\n",
+    "|   Celsius  | [°C] = **[K]** − 273.15| **[K]** = [°C] + 273.15     |\n",
+    "|Fahrenheit|[°F] = **[K]** ×  $9⁄5$ − 459.67 | **[K]** = ([°F] + 459.67) ×  $5⁄9$ |\n",
+    "|Rankine| [°R] = **[K]** ×  $9⁄5$ | **[K]** = [°R] ×  $5⁄9$ |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

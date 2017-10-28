@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.4 – Pressure Measurement &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="4.4-–-Pressure-Measurement">
+<h1>4.4 – Pressure Measurement<a class="headerlink" href="#4.4-–-Pressure-Measurement" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="4.4.0-–-Learning-Objectives">
+<h2>4.4.0 – Learning Objectives<a class="headerlink" href="#4.4.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the difference between gauge, atmospheric, and absolute
+pressure.</li>
+<li>Know the different ways pressure can be measured.</li>
+<li>Understand how manometers and Bourdon gauges operate.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.4.1-–-Introduction">
+<h2>4.4.1 – Introduction<a class="headerlink" href="#4.4.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Pressure measurement is vital to any process. Measuring pressure can
+give you a lot of information about your system. We will go over
+different types of pressure, and ways to measure pressure.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.4.2-–-Gauge-vs.-Absolute-Pressure">
+<h2>4.4.2 – Gauge vs. Absolute Pressure<a class="headerlink" href="#4.4.2-–-Gauge-vs.-Absolute-Pressure" title="Permalink to this headline">¶</a></h2>
+<p><strong>Absolute pressure</strong> is a measurement of pressure with a perfect vacuum
+as a reference point. This means that absolute pressure can never be
+negative. <strong>Gauge pressure</strong> is a measurement of pressure with the
+ambient air pressure (<strong>atmospheric pressure</strong>) as a reference point.
+This means that gauge pressure can be both negative and positive.</p>
+<p>A similar example to gauge and absolute pressure is Celsius and Kelvin.
+Kelvin uses absolute zero as its reference point. This means that you
+can never have negative values of Kelvin. Celsius uses the freezing
+point of water as its reference point. This means that Celsius can be
+both negative and positive.</p>
+<p>The equation used to relate gauge, atmospheric, and absolute pressure
+is:</p>
+<div class="math">
+\[P_{abs} = P_{gauge} + P_{atm}\]</div>
+<p>where</p>
+<div class="math">
+\[P_{abs} = \text{Absolute pressure}\]</div>
+<div class="math">
+\[P_{gauge} = \text{Gauge pressure}\]</div>
+<div class="math">
+\[P_{atm} = \text{Atmospheric pressure}\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.4.3-–-Ways-to-measure-pressure">
+<h2>4.4.3 – Ways to measure pressure<a class="headerlink" href="#4.4.3-–-Ways-to-measure-pressure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Manometers">
+<h3>Manometers<a class="headerlink" href="#Manometers" title="Permalink to this headline">¶</a></h3>
+<p><strong>Manometers</strong> are one of the most common tools used to measure
+pressure. As specified in Module-1, they are simple to use and can give
+you instantaneous feedback on your system. There are three main types of
+manometers, open-end, differential, and sealed-end.</p>
+<div class="figure">
+<img alt="" src="../_images/Combined-Mano-2.svg" /></div>
+<p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+<p>As you can see, <strong>open-end manometers</strong> have one end connected to a line
+or system and the other end open to the atmosphere. Open-end manometers
+measure <strong>gauge pressure</strong>. <strong>Differential manometers</strong> have each end
+connected to the same line and measure pressure drops. Differential
+manometers measure <strong>differential pressure</strong>. Finally, sealed-end
+manometers have the one end connected to a line or system and the other
+end closed to the near vacuum. <strong>Sealed-end manometers</strong> measure
+<strong>absolute pressure</strong>.</p>
+</div>
+<div class="section" id="Bourdon-Gauges">
+<h3>Bourdon Gauges<a class="headerlink" href="#Bourdon-Gauges" title="Permalink to this headline">¶</a></h3>
+<p><strong>Bourdon gauges</strong> are the most common mechanical devices used to
+measure pressure. A bourdon gauge is a hollow metal tube that is closed
+at one end and bent into a C configuration. The open end is exposed to
+the fluid whose pressure is being measured. As the pressure increases,
+the tube tends to straighten to equalize the pressure in the tube. This
+straightening causes gears to turn which in turn will cause a pointer to
+rotate which will inform you on its pressure.</p>
+<div class="figure">
+<img alt="" src="../_images/Bourdon-cover1.png" />
+</div>
+<div class="figure">
+<img alt="" src="../_images/Bourdon-workings1.png" />
+</div>
+<p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.4.4-–-Problem-Statement">
+<h2>4.4.4 – Problem Statement<a class="headerlink" href="#4.4.4-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Problem-1">
+<h3>Problem 1<a class="headerlink" href="#Problem-1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<p>An open-end manometer, shown below is used to measure the pressure of
+the stream. If <span class="math">\(d_1 = 1.0 \space m\)</span> and <span class="math">\(h = 0.7 \space m\)</span>,
+what is the absolute pressure at <span class="math">\(P_1\)</span>?</p>
+<div class="figure">
+<img alt="" src="../_images/PMprob1.svg" /></div>
+<p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+</div>
+<div class="section" id="Answer">
+<h4>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h4>
+<p>Sine we know <span class="math">\(d_1 = 1.0 \space m\)</span> and <span class="math">\(h = 0.7 \space m\)</span>, we
+can solve for <span class="math">\(d_2\)</span></p>
+<div class="math">
+\[d_2 = d_1 - h = 1.0 \space m - 0.7 \space m = 0.3 \space m\]</div>
+<p>next we can use the general manometer equation to solve for <span class="math">\(P_1\)</span></p>
+<div class="math">
+\[P_1 + \rho_1 g d_1 =  P_2 + \rho_2 g d_2 + \rho_f g h\]</div>
+<p>Since the density of air, relative to the other terms, is practically 0,
+we can ignore <span class="math">\(\rho_2\)</span>.</p>
+<div class="math">
+\[P_1 + \rho_1 g d_1 =  P_2  + \rho_f g h\]</div>
+<div class="math">
+\[P_1 =  P_2  + \rho_f g h - \rho_1 g d_1\]</div>
+<div class="math">
+\[P_1 =  101,300 \space Pa  + (1,000 \space kg/m^3) (9.81 \space m/s^2) (0.7 \space m) - (950 \space kg/m^3) (9.81 \space m/s^2) (1 \space m)\]</div>
+<div class="math">
+\[P_1 =  98,800 \space Pa\]</div>
+</div>
+</div>
+<div class="section" id="Problem-2">
+<h3>Problem 2<a class="headerlink" href="#Problem-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<div class="figure">
+<img alt="" src="../_images/manometer_problem_21.svg" /></div>
+<p>A U-tube manometer is connected to a closed tank. The air pressure
+inside the tank is 0.50 psi and the liquid is oil (<span class="math">\(\gamma\)</span> = 54.0
+<span class="math">\(lb/ft^3\)</span>, S.G. = <span class="math">\(3.05\)</span>). The pressure at point A is 2.00
+psi. Find</p>
+<ol class="loweralpha simple">
+<li>the depth of oil</li>
+<li>the reading <span class="math">\(h\)</span> on the manometer.</li>
+</ol>
+<p><strong>Note:</strong> that the 2&#8217; above the 2. does not mean 2 prime, it denotes 2
+feet.</p>
+</div>
+<div class="section" id="Answer">
+<h4>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h4>
+<div class="math">
+\[P_1 = P_{air} = 0.5 \space psi\]</div>
+<div class="math">
+\[P_1 - P_2 =  (\rho_f - \rho) g h \quad \text{(Differential Manometer Equation)}\]</div>
+<div class="math">
+\[P_1 - P_2 = -\gamma(h_2 - h_1)\]</div>
+<p><strong>a)</strong> Note: We are using (1.) as the reference point.</p>
+<div class="math">
+\[P_{1.} - P_A = -\gamma_{oil}(-Z - 0)\]</div>
+<div class="math">
+\[0.5 \space psi - 2.0 psi = -54.0 lb/ft^3 \cdot (-Z)\]</div>
+<p>Notice that we need to convert all units to a single uniform unit:</p>
+<div class="math">
+\[-1.5 psi \times 144 \frac{in^2}{ft^2} = -54.0 lb/ft^3 \cdot (-Z)\]</div>
+<div class="math">
+\[Z = 4.00 ft\]</div>
+<p><strong>b)</strong> Note: We are using (1.) as the reference point.</p>
+<div class="math">
+\[P_{2.} - P_A = -\gamma_{oil}(-(Z+2') - (-4))\]</div>
+<div class="math">
+\[P_{2.} - 2.0 psi \times \frac{in^2}{ft^2} = -54.0 lb/ft^3 \cdot (-(4+2)+4)\]</div>
+<div class="math">
+\[P_{2.} - 2.0 psi \times \frac{in^2}{ft^2} = -54.0 lb/ft^3 \cdot 2\]</div>
+<div class="math">
+\[P_{2.} = 396 \space lb/ft^3\]</div>
+<div class="math">
+\[P_{3.} - P_2 = -\gamma_{oil}(-(6-h) - (-4-2))\]</div>
+<div class="math">
+\[S.G. = \frac{\gamma_{oil}}{\gamma_{water}}\]</div>
+<div class="math">
+\[0-396 = -3.05(62.4)(h)\]</div>
+<div class="math">
+\[h = 2.08 \space ft\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.4 – Pressure Measurement</a><ul>
+<li><a class="reference internal" href="#4.4.0-–-Learning-Objectives">4.4.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#4.4.1-–-Introduction">4.4.1 – Introduction</a></li>
+<li><a class="reference internal" href="#4.4.2-–-Gauge-vs.-Absolute-Pressure">4.4.2 – Gauge vs. Absolute Pressure</a></li>
+<li><a class="reference internal" href="#4.4.3-–-Ways-to-measure-pressure">4.4.3 – Ways to measure pressure</a><ul>
+<li><a class="reference internal" href="#Manometers">Manometers</a></li>
+<li><a class="reference internal" href="#Bourdon-Gauges">Bourdon Gauges</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#4.4.4-–-Problem-Statement">4.4.4 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Problem-1">Problem 1</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Problem-2">Problem 2</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-4-Separation-II/4.4 - Pressure Measurement.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

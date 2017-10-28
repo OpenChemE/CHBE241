@@ -1,0 +1,236 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 6.4 &ndash; Latent Heats\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.4.0 &ndash; Learning objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the concept of latent heat.\n",
+    "2. Differentiate between heat of melting, fusion, and vaporization.\n",
+    "3. Understand the concept of higher heating value and lower heating value.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.4.1 &ndash; Introduction\n",
+    "\n",
+    "The change in **specific enthalpy** of substance that occurs when that substance transitions from one phase to another is known as **latent heat**.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.4.2 &ndash; Heat of Vaporization \n",
+    "\n",
+    "The change in specific enthalpy for liquid water to steam at $100 ^{\\circ} C$ and $1$ atm is $\\Delta \\hat{H}_v (T,P) = 2,255.6 \\space kJ/kg$. This change specific enthalpy in is called the **heat of vaporization**. The condensation of this steam back to liquid water at $100 ^{\\circ} C$ and $1$ atm would result in a change specific enthalpy of $\\Delta \\hat{H}_v (T,P) = -2,255.6 \\space kJ/kg$.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.4.3 &ndash; Heat of Melting and Heat of fusion\n",
+    "\n",
+    "The change in specific enthalpy for liquid water to ice at $0 ^{\\circ} C$ and $1$ atm is $\\Delta \\hat{H}_f (T,P) = -333 \\space kJ/kg$. This change specific enthalpy in is called the **heat of fusion**. The melting of this ice back to liquid water at $100 ^{\\circ} C$ and $1$ atm would result in a change specific enthalpy of $\\Delta \\hat{H}_m (T,P) = 333 \\space kJ/kg$. This change specific enthalpy in is called the **heat of melting**.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.4.4 &ndash; Higher Heat Value and Lower Heat Value\n",
+    "\n",
+    "The __heating value__ is the amount of energy released by the combustion of a material. it shares the same value as the __heat of combustion__ but has the __opposite sign__.\n",
+    "\n",
+    "The __higher heating value (HHV)__ is the amount of energy to bring a material to combustion and turn any liquid products into vapor.\n",
+    "\n",
+    "The __ lower heating value (LHV)__ is the amount of energy to bring a material to combustion and without turning liquid products into vapour.\n",
+    "\n",
+    "To calculate the higher heating value or lower heating value we need the number of moles of water $n$, and we can use the equation.\n",
+    "\n",
+    "$$ HHV = LHV + n \\space \\Delta \\hat{H}_v \\space (H_2 O, 25 ^{\\circ} C) $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 6.4.5 &ndash; Problem Statement\n",
+    "\n",
+    "### Problem 1\n",
+    "\n",
+    "#### Question \n",
+    "\n",
+    "A sample of natural gas contains 75% methane, 15% ethane, and 10 % propane by volume. The heat of combustion of the methane, ethane, and propane at $25 ^{\\circ} C$ and $1$ atm with water vapour as the product are shown below:\n",
+    "\n",
+    "$$ C H_4 \\small{\\text{(g)}} + 2 \\space O_2 \\small{\\text{(g)}} \\longrightarrow C O_2 \\small{\\text{(g)}} + 2 \\space H_2 O \\small{\\text{(v)}} \\quad \\Delta \\hat{H}_c ^{\\circ} = -802 \\space kJ/mol $$\n",
+    "\n",
+    "$$ C_2 H_6 \\small{\\text{(g)}} + \\frac{7}{2} \\space O_2 \\small{\\text{(g)}} \\longrightarrow 2 \\space C O_2 \\small{\\text{(g)}} + 3 \\space H_2 O \\small{\\text{(v)}} \\quad \\Delta \\hat{H}_c ^{\\circ} = -1,428 \\space kJ/mol $$\n",
+    "\n",
+    "$$ C_3 H_8 \\small{\\text{(g)}} + 5 \\space O_2 \\small{\\text{(g)}} \\longrightarrow 3 \\space C O_2 \\small{\\text{(g)}} + 4 \\space H_2 O \\small{\\text{(v)}} \\quad \\Delta \\hat{H}_c ^{\\circ} = -2,039 \\space kJ/mol $$\n",
+    "\n",
+    "Calculate the higher heating value, in $MJ/kg$, of the natural gas given\n",
+    "\n",
+    "$$ \\Delta \\hat{H}_{v, H_2 O} = 44.013 kJ/mol $$\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "Since we want the higher heating value per unit mass, we must first convert the volume fraction to mass fraction. Assuming the gasses behave ideally, 1 mol of natural gas is:\n",
+    "\n",
+    "$$ 0.75 mol \\space C H_4 = 12 \\space g \\space C H_4 $$\n",
+    "\n",
+    "$$ 0.15 mol \\space C_2 H_6 = 4.5 \\space g \\space C_2 H_6 $$\n",
+    "\n",
+    "$$ 0.10 mol \\space C_3 H_8 = 4.4 \\space g \\space C_3 H_8 $$\n",
+    "\n",
+    "Therefore,\n",
+    "\n",
+    "$$ m_{total} = m_{C H_4} + m_{C_2 H_6} + m_{C_3 H_8} = (12 + 4.5 + 4.4) \\space g = 20.9 \\space g $$\n",
+    "\n",
+    "$$ x_{C H_4} = \\frac{m_{C H_4}}{m_{total}} = \\frac{12 \\space g}{20.9 \\space g} =  0.574 $$\n",
+    "\n",
+    "$$ x_{C_2 H_6} = \\frac{m_{C_2 H_6}}{m_{total}} = \\frac{4.5 \\space g}{20.9 \\space g} =  0.215 $$\n",
+    "\n",
+    "$$ x_{C_3 H_8} = \\frac{m_{C_3 H_8}}{m_{total}} = \\frac{4.4 \\space g}{20.9 \\space g} =  0.211 $$\n",
+    "\n",
+    "Now we can solve for the higher heating value for each species\n",
+    "\n",
+    "$$ (HHV)_{C H_4} = (LHV)_{C H_4} + n_{H_2 O} \\Big( \\Delta \\hat{H}_{v, H_2 O} \\Big) $$\n",
+    "\n",
+    "$$ (HHV)_{C H_4} = \\Bigg[802 \\space \\frac{kJ}{mol \\space C H_4} + \\frac{2 \\space mol \\space H_2 O}{mol \\space C H_4}  \\Bigg(  44.013 \\frac{kJ}{mol \\space H_2 O} \\Bigg) \\Bigg] \\times \\frac{1 \\space mol}{0.0160 \\space kg \\space C H_4} $$\n",
+    "\n",
+    "$$ (HHV)_{C H_4} = 55.6 \\space \\frac{MJ}{kg} $$\n",
+    "\n",
+    "$$ (HHV)_{C_2 H_6} = (LHV)_{C_2 H_6} + n_{H_2 O} \\Big( \\Delta \\hat{H}_{v, H_2 O} \\Big) $$\n",
+    "\n",
+    "$$ (HHV)_{C_2 H_6} = \\Bigg[1,428 \\space \\frac{kJ}{mol \\space C_2 H_6} + \\frac{3 \\space mol \\space H_2 O}{mol \\space C_2 H_6}  \\Bigg(  44.013 \\frac{kJ}{mol \\space H_2 O} \\Bigg) \\Bigg] \\times \\frac{1 \\space mol}{0.0300 \\space kg \\space C_2 H_6} $$\n",
+    "\n",
+    "$$ (HHV)_{C_2 H_6} = 52.0 \\space \\frac{MJ}{kg} $$\n",
+    "\n",
+    "$$ (HHV)_{C_3 H_8} = (LHV)_{C_3 H_8} + n_{H_2 O} \\Big( \\Delta \\hat{H}_{v, H_2 O} \\Big) $$\n",
+    "\n",
+    "$$ (HHV)_{C_3 H_8} = \\Bigg[2,039 \\space \\frac{kJ}{mol \\space C_3 H_8} + \\frac{4 \\space mol \\space H_2 O}{mol \\space C_3 H_8}  \\Bigg(  44.013 \\frac{kJ}{mol \\space H_2 O} \\Bigg) \\Bigg] \\times \\frac{1 \\space mol}{0.0440 \\space kg \\space C_3 H_8} $$\n",
+    "\n",
+    "$$ (HHV)_{C_3 H_8} = 50.3 \\space \\frac{MJ}{kg} $$\n",
+    "\n",
+    "Now we can finally solve for the higher heating value of the mixture\n",
+    "\n",
+    "$$ (HHV) = x_{C H_4} \\cdot (HHV)_{C H_4} + x_{C_2 H_6} \\cdot (HHV)_{C_2 H_6} + x_{C_3 H_8} \\cdot (HHV)_{C_3 H_8} $$\n",
+    "\n",
+    "$$ (HHV) = [(0.574) \\cdot (55.6) + (0.215) \\cdot (52.0) + (0.211) \\cdot (50.3)] $$\n",
+    "\n",
+    "$$ (HHV) = 53.7 \\frac{MJ}{kg} $$\n",
+    "\n",
+    "### Problem 2\n",
+    "\n",
+    "#### Question \n",
+    "\n",
+    "An equimolar liquid mixture of water and ethanol at 25 &deg;C is fed continuously to a vessel in which the mixture is heated to 80 &deg;C. The liquid product is 0.6 mole % E, and the vapor product is 99.4 mole % E. How much heat must be transferred to the mixture per g-mole of feed? (Bit unrealistic since almost all the ethanol would have been evaporated, but hey, question the world). \n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "List all assumptions:\n",
+    "\n",
+    "- Basis: 1 mol feed\n",
+    "\n",
+    "Let'ss figure out the mass balance of this process first:\n",
+    "\n",
+    "$$ \\text{Total balance:} \\space1.00 mol = n_V + n_L $$\n",
+    "\n",
+    "$$ \\text{Ethanol balance:} \\space 0.500 mol = 0.006 \\cdot n_V + 0.994 \\cdot n_L $$\n",
+    "\n",
+    "**Next**\n",
+    "\n",
+    "Our energy balance has the form:\n",
+    "\n",
+    "$$ Q = \\Delta{H}$$\n",
+    "\n",
+    "And our enthalpy table for the process is:\n",
+    "\n",
+    "| Substance       | $n_{in}$ | $\\hat{H_{in}}$ | $n_{out}$ | $\\hat{H_{out}}$ | \n",
+    "| -------------   |:-------------| -----|-----|-----|\n",
+    "| $H2O_{(l)}$          | 0.5 | 0 |3.35|$\\hat{H_{1}}$|\n",
+    "| $Ethanol_{(l)}$          | 0.5 | 0 |3.35|$\\hat{H_{2}}$|\n",
+    "| $H2O_{(v)}$       | -   | - |63.55|$\\hat{H_{3}}$|\n",
+    "| $Ethanol_{(v)}$         | -   | - |33.1|$\\hat{H_{4}}$|\n",
+    "<p style=\"text-align:center\">References: H2O, liquid, 25 &deg;C; Ethanol, liquid, 25 &deg;C</p>\n",
+    "\n",
+    "**Note**: We do not know the feed-stream pressure and so we assume that $\\Delta{H}$ for the change from 1 atm to $P_{feed}$ is negligible, and since the process is not running at an unusually low temperature or high pressure, we neglect the effects of pressure on the enthalpy calculations. The tables used in the calculations are referenced here [(Ethanol)](https://en.wikipedia.org/wiki/Ethanol_(data_page)) and here [(Water)](http://webbook.nist.gov/cgi/cbook.cgi?ID=C7732185&Type=JANAFL&Plot=on#JANAFL).\n",
+    "\n",
+    "$$ \\hat{H_{1}} = \\int\\limits_{25C}^{80C}(C_p)_{H_2O_{(L)}}dT $$\n",
+    "\n",
+    "$$ \\hat{H_{2}} = \\int\\limits_{25C}^{80C}(C_p)_{Ethanol_{(L)}}dT $$\n",
+    "\n",
+    "$$ \\hat{H_{3}} = \\int\\limits_{25C}^{100C}(C_p)_{H_2O_{(L)}}dT +(\\Delta\\hat{H})_{V,H_2O}(100C)+ \\int\\limits_{100C}^{80C}(C_p)_{H_2O_{(V)}}dT $$\n",
+    "\n",
+    "$$ \\hat{H_{4}} = \\int\\limits_{25C}^{100C}(C_p)_{Ethanol_{(L)}}dT +(\\Delta\\hat{H})_{V,Ethanol}(100C)+ \\int\\limits_{100C}^{80C}(C_p)_{Ethanol_{(V)}}dT $$\n",
+    "\n",
+    "**Final Solution**\n",
+    "\n",
+    "The energy balance is:\n",
+    "\n",
+    "$$ Q = \\Delta{H}$$\n",
+    "\n",
+    "$$Q = \\sum_{out}(n_i \\cdot \\Delta{H}_i) + \\sum_{in}(n_i \\cdot \\Delta{H}_i) = $$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

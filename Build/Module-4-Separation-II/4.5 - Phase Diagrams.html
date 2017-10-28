@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.5 – Phase Diagrams &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="4.5-–-Phase-Diagrams">
+<h1>4.5 – Phase Diagrams<a class="headerlink" href="#4.5-–-Phase-Diagrams" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="4.5.0-–-Learning-Objectives">
+<h2>4.5.0 – Learning Objectives<a class="headerlink" href="#4.5.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand what each line in a phase diagram represent.</li>
+<li>Understand what is in each region of a phase diagram.</li>
+<li>Understand what important points are on the phase diagram.</li>
+<li>Understand what the difference is between a vapour and gas.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.5.1-–-Introduction">
+<h2>4.5.1 – Introduction<a class="headerlink" href="#4.5.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p><strong>Phase diagrams</strong> are used to show all the phases of a substance at
+different pressures and temperatures. Each line represents phase
+equilibrium or boundaries.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.5.2-–-Diagram">
+<h2>4.5.2 – Diagram<a class="headerlink" href="#4.5.2-–-Diagram" title="Permalink to this headline">¶</a></h2>
+<p>Shown bellow is a typical phase diagram.</p>
+<div class="figure">
+<img alt="" src="../_images/Phase_Diagram1.png" />
+</div>
+<p>Attribution: [[::User:Matthieumarechal|Matthieumarechal]] [GFDL
+(http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0
+(http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons</p>
+<p>The <strong>red line</strong> represents the boundary between a solid and a vapour.
+In this area, solid will directly turn to a vapour or a vapour will
+directly turn into a solid such as dry ice and <span class="math">\(CO_2\)</span>. The
+<strong>dotted green line</strong> represents the boundary between a liquid and a
+solid for polar fluids such as water. Since ice is less dense than
+liquid water, it causes the dotted line to skew to the left. The <strong>solid
+green line</strong> represents the same thing as the <strong>dotted green line</strong>
+except for non-polar fluids. Finally, the <strong>blue line</strong> represents the
+boundary between a liquid and a vapour.</p>
+<p>Two main points of interest are the <strong>triple point</strong> and the <strong>critical
+point</strong>. The triple point is the point at which all three phases coexist
+at a certain pressure and temperature. The critical point is the point
+at which if you increase the pressure or temperature, a gas becomes
+indistinguishable from the liquid. The phase in this region is called a
+<strong>supercritical fluid</strong>.</p>
+<p>Another example of a phase diagram is shown below. This is the phase
+diagram of water.</p>
+<div class="figure">
+<img alt="" src="../_images/Phase_diagram_of_water1.png" />
+</div>
+<p>Attribution: By Cmglee (Own work) [CC BY-SA 3.0
+(<a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0">http://creativecommons.org/licenses/by-sa/3.0</a>)], via Wikimedia Commons</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.5.3-–-Difference-Between-Vapour-and-Gas">
+<h2>4.5.3 – Difference Between Vapour and Gas<a class="headerlink" href="#4.5.3-–-Difference-Between-Vapour-and-Gas" title="Permalink to this headline">¶</a></h2>
+<p>A substance is considered a <strong>gas</strong> when its temperature is <strong>higher</strong>
+than the critical temperature and below the critical pressure. A gas can
+not become a liquid by just increasing the pressure, you must also lower
+the temperature.</p>
+<p>A substance is considered a <strong>vapour</strong> when its temperature is <strong>lower</strong>
+than the critical temperature and below the critical pressure. A vapour
+can become a liquid by just increasing the pressure.</p>
+</div>
+<div class="section" id="4.5.4-–-Phase-diagrams-for-ternary-systems">
+<h2>4.5.4 – Phase diagrams for ternary systems<a class="headerlink" href="#4.5.4-–-Phase-diagrams-for-ternary-systems" title="Permalink to this headline">¶</a></h2>
+<p>Partially miscible systems with 3 components can be represented in a
+ternary phase diagram. It&#8217;s actually shaped like an equililateral
+triangle:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.5 – Phase Diagrams</a><ul>
+<li><a class="reference internal" href="#4.5.0-–-Learning-Objectives">4.5.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#4.5.1-–-Introduction">4.5.1 – Introduction</a></li>
+<li><a class="reference internal" href="#4.5.2-–-Diagram">4.5.2 – Diagram</a></li>
+<li><a class="reference internal" href="#4.5.3-–-Difference-Between-Vapour-and-Gas">4.5.3 – Difference Between Vapour and Gas</a></li>
+<li><a class="reference internal" href="#4.5.4-–-Phase-diagrams-for-ternary-systems">4.5.4 – Phase diagrams for ternary systems</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-4-Separation-II/4.5 - Phase Diagrams.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

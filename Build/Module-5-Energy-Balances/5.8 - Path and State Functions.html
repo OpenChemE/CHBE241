@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5.8 – Path and State functions &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="5.8-–-Path-and-State-functions">
+<h1>5.8 – Path and State functions<a class="headerlink" href="#5.8-–-Path-and-State-functions" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="5.8.0-–-Learning-Objectives">
+<h2>5.8.0 – Learning Objectives<a class="headerlink" href="#5.8.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Build further knowledge of state variable and state functions.</li>
+<li>Explain the difference between state and path functions.</li>
+<li>Classify thermodynamic terms as state or path variables.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.8.1-–-Introduction">
+<h2>5.8.1 – Introduction<a class="headerlink" href="#5.8.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>State and path functions are how variables in a system change from an
+initial state to a final state. In this notebook, you will learn about
+state and path variables, state and path functions, their differences,
+and their uses.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.8.2-–-State-Functions">
+<h2>5.8.2 – State Functions<a class="headerlink" href="#5.8.2-–-State-Functions" title="Permalink to this headline">¶</a></h2>
+<p>Remember that guy who went up Mount Everest? Imagine you are a tourist
+at the bottom and see that guy on top of the mountain. <strong>Regardless of
+how he got there</strong>, that guy got there and is 8,848m higher than you are
+and thus he has 8679888J of potential energy more than you (assuming
+they weigh 100kg).</p>
+<p>A <strong>State function</strong> is the change of the state of a variable
+<strong>regardless of the path it takes</strong>. <strong>Internal Energy</strong> <span class="math">\(U\)</span>,
+<strong>Enthalpy</strong> <span class="math">\(H\)</span>, <strong>Pressure</strong> <span class="math">\(P\)</span>, <strong>Temperature</strong>
+<span class="math">\(T\)</span>, and <strong>Volume</strong> <span class="math">\(V\)</span> are state functions.</p>
+<p>But <strong>how</strong> did that guy get up there? Did he skydive out of a plane?
+Did he climb up there himself? Was he carried up by a Sherpa? Now we are
+concerned about the path the guy took to get up there.</p>
+<p>A <strong>Path function</strong> is the transition of <strong>path variables</strong> from one
+state to another. <strong>Work</strong> <span class="math">\(W\)</span> and <strong>Heat</strong> <span class="math">\(Q\)</span> are path
+variables. They change depending on what path is chosen to reach a
+state.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.8.3-–-Path-functions-change-the-amount-of-work-done-on/by-a-system:">
+<h2>5.8.3 – Path functions change the amount of work done on/by a system:<a class="headerlink" href="#5.8.3-–-Path-functions-change-the-amount-of-work-done-on/by-a-system:" title="Permalink to this headline">¶</a></h2>
+<p>Let’s take a look at the diagram below:</p>
+<div class="figure">
+<img alt="" src="../_images/state1.svg" /></div>
+<p><span class="math">\(U1\)</span> is at an initial state of <span class="math">\(P_i\)</span> and <span class="math">\(T_i\)</span>. Our
+goal is to get to <span class="math">\(U2\)</span>. Here we are presented with 2 options.</p>
+<div class="figure">
+<img alt="" src="../_images/paths.svg" /></div>
+<p>In <strong>Path 1</strong>, the system is isochorically compressed and then expanded
+to the state U2. In <strong>Path 2</strong>, the system is isobarically expanded,
+then isochorically compressed to the state U2.</p>
+<div class="figure">
+<img alt="" src="../_images/workdone.svg" /></div>
+<p>As Work is <span class="math">\(P \Delta V\)</span>, it is clear that the work done is much
+greater in the first path. This is because the magnitude of volumetric
+expansion was executed at a higher pressure than the second path.</p>
+<p><strong>Furthermore:</strong> We can infer that there is more heat transferred to
+system 1 since U2 is constant for both and using the information from
+the first law <span class="math">\(U = Q - W\)</span> , if W is larger, than Q must be larger
+to raise the value of U2</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5.8 – Path and State functions</a><ul>
+<li><a class="reference internal" href="#5.8.0-–-Learning-Objectives">5.8.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#5.8.1-–-Introduction">5.8.1 – Introduction</a></li>
+<li><a class="reference internal" href="#5.8.2-–-State-Functions">5.8.2 – State Functions</a></li>
+<li><a class="reference internal" href="#5.8.3-–-Path-functions-change-the-amount-of-work-done-on/by-a-system:">5.8.3 – Path functions change the amount of work done on/by a system:</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-5-Energy-Balances/5.8 - Path and State Functions.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

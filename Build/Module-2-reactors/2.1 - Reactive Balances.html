@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1 – Reactive Balances &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="2.1-–-Reactive-Balances">
+<h1>2.1 – Reactive Balances<a class="headerlink" href="#2.1-–-Reactive-Balances" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="2.1.0-–-Learning-Objectives">
+<h2>2.1.0 – Learning Objectives<a class="headerlink" href="#2.1.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand two of the three reactive balance methods.</li>
+<li>Solve two of the three reactive balance methods.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.1.1-–-Introduction">
+<h2>2.1.1 – Introduction<a class="headerlink" href="#2.1.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>Often when we evaluate processes, <strong>chemical reactions</strong> take place.
+These chemical reactions <strong>add complexity</strong> to our system by introducing
+new unknowns. To reduce these complexities, we can use <strong>molecular
+species balances</strong>, <strong>atomic balances</strong> or the <strong>extent of reactions</strong>
+to help solve problems.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.1.2-–-The-Production-of-Ethylene">
+<h2>2.1.2 – The Production of Ethylene<a class="headerlink" href="#2.1.2-–-The-Production-of-Ethylene" title="Permalink to this headline">¶</a></h2>
+<p>Ethylene is a major chemical product primarily used to form the plastic
+polyethylene. It is also a natural chemical released by fruits to ripen.
+You can separate your bananas to help them ripen faster.</p>
+<p>Let&#8217;s consider the production of ethylene in steady-state. In
+production, the dehydrogenation of Ethane forms Ethylene:</p>
+<div class="math">
+\[C_2H_{6 \space (g)} \longrightarrow C_2H_{4 \space (g)} + H_{2 \space (g)}\]</div>
+<div class="figure">
+<img alt="" src="../_images/Flow-2.1-2.svg" /></div>
+<p>Attribution: Said Zaid-Alkailani, Ngai To Lo &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.1.3-–-Molecular-Species-Balance">
+<h2>2.1.3 – Molecular Species Balance<a class="headerlink" href="#2.1.3-–-Molecular-Species-Balance" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>molecular species balances</strong> are the balances of all chemical
+compounds in this reaction. For example:</p>
+<div class="math">
+\[C_2 H_6 \space \text{balance}: \space Accumulation = Input -Output +Generation - Consumption\]</div>
+<p>Since the system is in steady state and the reaction does not produce
+Ethane:</p>
+<div class="math">
+\[Accumulation = 0 , \space Generation = 0\]</div>
+<p>Rearranging and applying similar logic to the all of the species gives
+us 3 equations:</p>
+<div class="section" id="-balance:-">
+<h3><span class="math">\(C_2 H_6\)</span> balance: <span class="math">\(Input = Output + Consumption\)</span><a class="headerlink" href="#-balance:-" title="Permalink to this headline">¶</a></h3>
+<div class="math">
+\[10 \space \frac{kmol}{h} = \dot{n}_{(1, \space C_2 H_6)} + Consumption_{C_2 H_6}\]</div>
+</div>
+<div class="section" id="-balance:-">
+<h3><span class="math">\(C_2 H_4\)</span> balance: <span class="math">\(Generation = Output\)</span><a class="headerlink" href="#-balance:-" title="Permalink to this headline">¶</a></h3>
+<div class="math">
+\[Generation_{C_2 H_4} = \dot{n}_{(2, \space C_2 H_4)}\]</div>
+</div>
+<div class="section" id="-balance:-">
+<h3><span class="math">\(H_2\)</span> balance: <span class="math">\(Generation = Output\)</span><a class="headerlink" href="#-balance:-" title="Permalink to this headline">¶</a></h3>
+<div class="math">
+\[Generation_{H_2} = 4 \space \frac{kmol}{h}\]</div>
+<p>Since the reaction above has stoichiometric ratio of 1:1:1, we can
+determine
+<span class="math">\(Generation_{H_2} = Generation_{C_2 H_4} = Consumption_{C_2 H_6}\)</span>.
+Therefore,</p>
+<div class="math">
+\[\dot{n}_{(2, \space C_2 H_4)} = 4 \space \frac{kmol}{h}\]</div>
+<div class="math">
+\[\dot{n}_{(1, \space C_2 H_6)} = 6 \space \frac{kmol}{h}\]</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.1.4-–-Atomic-Species-Balance">
+<h2>2.1.4 – Atomic Species Balance<a class="headerlink" href="#2.1.4-–-Atomic-Species-Balance" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>atomic species balances</strong> are the balances of all the elemental
+species in this reaction. The Two species in the above reaction are
+Hydrogen and Carbon. Atomic species <strong>must</strong> follow the law of
+conservation of mass, thus both species take on the equation:</p>
+<div class="section" id="Carbon-(C)-balance:-">
+<h3>Carbon (C) balance: <span class="math">\(Input = Output\)</span><a class="headerlink" href="#Carbon-(C)-balance:-" title="Permalink to this headline">¶</a></h3>
+<div class="math">
+\[10 \space \frac{kmol \space C_2 H_6}{h} \times \frac{2 \space kmol \space C}{1 \space kmol \space C_2 H_6} = \dot{n}_{(1, \space C_2 H_6)} \times \frac{2 \space kmol \space C}{1 \space kmol \space C_2 H_6} + \dot{n}_{(2, \space C_2 H_4)} \times \frac{2 \space kmol \space C}{1 \space kmol \space C_2 H_4}\]</div>
+<div class="math">
+\[10 \space \frac{kmol \space C}{h} = \dot{n}_{(1, \space C_2 H_6)} + \dot{n}_{(2, \space C_2 H_4)}\]</div>
+</div>
+<div class="section" id="Hydrogen-(H)-balance:-">
+<h3>Hydrogen (H) balance: <span class="math">\(Input = Output\)</span><a class="headerlink" href="#Hydrogen-(H)-balance:-" title="Permalink to this headline">¶</a></h3>
+<div class="math">
+\[10 \space \frac{kmol \space C_2 H_6}{h} \times \frac{6 \space kmol \space H}{1 \space kmol \space C_2 H_6} = 4 \space \frac{kmol \space H_2}{h} \times \frac{2 \space kmol \space H}{1 \space kmol \space H_2} + \dot{n}_{(1, \space C_2 H_6)} \times \frac{6 \space kmol \space H}{1 \space kmol \space C_2 H_6} + \dot{n}_{(2, \space C_2 H_4)} \times \frac{6 \space kmol \space H}{1 \space kmol \space C_2 H_4}\]</div>
+<div class="math">
+\[52 \space \frac{kmol \space C}{h} = 6 \space \dot{n}_{(1, \space C_2 H_6)} + 4 \space \dot{n}_{(2, \space C_2 H_4)}\]</div>
+<div class="math">
+\[\therefore \space \dot{n}_{(1, \space C_2 H_6)} = 6 \space \frac{kmol}{h}\]</div>
+<div class="math">
+\[\therefore \space \dot{n}_{(2, \space C_2 H_4)} = 4 \space \frac{kmol}{h}\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1 – Reactive Balances</a><ul>
+<li><a class="reference internal" href="#2.1.0-–-Learning-Objectives">2.1.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#2.1.1-–-Introduction">2.1.1 – Introduction</a></li>
+<li><a class="reference internal" href="#2.1.2-–-The-Production-of-Ethylene">2.1.2 – The Production of Ethylene</a></li>
+<li><a class="reference internal" href="#2.1.3-–-Molecular-Species-Balance">2.1.3 – Molecular Species Balance</a><ul>
+<li><a class="reference internal" href="#-balance:-"><span class="math">\(C_2 H_6\)</span> balance: <span class="math">\(Input = Output + Consumption\)</span></a></li>
+<li><a class="reference internal" href="#-balance:-"><span class="math">\(C_2 H_4\)</span> balance: <span class="math">\(Generation = Output\)</span></a></li>
+<li><a class="reference internal" href="#-balance:-"><span class="math">\(H_2\)</span> balance: <span class="math">\(Generation = Output\)</span></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#2.1.4-–-Atomic-Species-Balance">2.1.4 – Atomic Species Balance</a><ul>
+<li><a class="reference internal" href="#Carbon-(C)-balance:-">Carbon (C) balance: <span class="math">\(Input = Output\)</span></a></li>
+<li><a class="reference internal" href="#Hydrogen-(H)-balance:-">Hydrogen (H) balance: <span class="math">\(Input = Output\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-2-reactors/2.1 - Reactive Balances.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

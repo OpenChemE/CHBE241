@@ -1,0 +1,69 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Learn More About Python"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## Interactive Learning\n",
+    "### [Codecademy](https://www.codecademy.com/learn/python)\n",
+    "Codecademy is a website that has free interactive tutorials on diffrent programming languauges. The python tutorial is useful in informing you on proper syntax and learning the basic ins and outs of python\n",
+    "### [Khan Academy Videos](https://www.khanacademy.org/computing/computer-science)\n",
+    "Khan Academy has very informative videos on programming and the general nature of computer science.\n",
+    "### [The Python Tutorial](https://docs.python.org/3.6/tutorial/)\n",
+    "The Python Tutorial has a very thorough textbook style tutorial with lots of information on everything you need to know about python. It is not necessary to read the whole tutorial, but it is a good refrence if you are getting errors."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Information on Libraries\n",
+    "### [numpy](http://cs231n.github.io/python-numpy-tutorial/#numpy)\n",
+    "Numpy is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays.\n",
+    "### [scipy](http://cs231n.github.io/python-numpy-tutorial/#scipy)\n",
+    "SciPy builds on numpy, and provides a large number of functions that operate on numpy arrays and are useful for different types of scientific and engineering applications.\n",
+    "### [matplotlib](http://cs231n.github.io/python-numpy-tutorial/#matplotlib)\n",
+    "Matplotlib is a plotting library that is very simmilar to matlab."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

@@ -1,0 +1,129 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5.9 &ndash; Thermo Cheat Sheet\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.9.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Have a list of helpful cases in thermodynamics.\n",
+    "2. Understand what keywords signify in practice problems.\n",
+    "3. Have an in-depth understanding to certain cases.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.9.1 &ndash; Introduction\n",
+    "The first law of thermodynamics is used in chemical engineering very often. To help, it is important to know when simplifications of the first law can be used to help analyze problems. Recall the equation of the first law: \n",
+    "\n",
+    "$$ E_{tot} = Q - W  $$ \n",
+    "\n",
+    "This notebook will cover cases when you can add simplifications and the rationale behind the simplifications.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.9.2 &ndash; List of cases\n",
+    "\n",
+    "### Energy:\n",
+    "\n",
+    "1. If a problem says no change in height and no acceleration __kinetic energy__ $E_k$ __and potential energy__ $E_p$ are 0. These are safe assumptions for chemical reactors.\n",
+    "2. An __ideal__ gas undergoing an __isothermal__ reaction has $U = 0$.\n",
+    "3. An __ideal__ gas' change in internal energy $\\Delta U$ can be written as $nC_vdT$.\n",
+    "4. $\\Delta U$ alone, can only be used in a __closed system__.\n",
+    "5. __Open systems__ require __enthalpy__ instead of internal energy. \n",
+    "6. An __ideal__ gas' change in enthalpy $\\Delta H$ can be written as $nC_pdT$.\n",
+    "\n",
+    "### Heat:\n",
+    "\n",
+    "1. If the temperature of the system is __equal to the surrounding__ or is __perfectly insulated,__  the system is __adiabatic.__ \n",
+    "2. An adiabatic system has $\\Delta Q = 0$\n",
+    "\n",
+    "### Work: \n",
+    "\n",
+    "1. If there is __no shaft work__, no __flow work__ and no __electrical generation__, work = $P\\Delta V$\n",
+    "2. __In ideal, isothermal systems__ $P\\Delta V$ turns into $nRT \\cdot ln \\Big( \\frac{V_f}{V_i} \\Big)$ by the ideal gas law\n",
+    "3. In __ideal, adiabatic systems__ Work is $$\\frac{P V^\\gamma \\Big(V_f^{1-\\gamma}-V_i^{1-\\gamma} \\Big)}{1-\\gamma}$$  where $\\gamma= \\frac{C_p}{C_v}$ and $PV^\\gamma$ is often referred as $K$ a constant.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.9.3 &ndash; Explanation of certain cases\n",
+    "\n",
+    "### Energy:\n",
+    "\n",
+    "1. Self explanatory\n",
+    "2. See 3 \n",
+    "3. Recall that internal energy is the vibrational energy held on a molecular level. An ideal gas exhibits elastic collisions by collision theory and have no interactions in between other gas molecules. As temperature rises, the amount of collisions increases proportionally thereby directly raising the internal energy. [Here](https://www.quora.com/Why-in-constant-pressure-process-the-change-in-internal-energy-becomes-%E2%88%86U-m-%C3%97-Cv-%E2%88%86T) is more help understanding the idea.\n",
+    "4. Assume a closed system where there is no work done by the system ($U = Q$). The key for an open system is that the volume in an open system changes and pressure remains constant with the surrounding. This contradicts the definition of  $U = nC_vdT$ where $C_v$ is the heat capacity at constant volume. [This article also explains the difference.](https://www.boundless.com/chemistry/concepts/comparison-of-enthalpy-to-internal-energy-0-10546/)\n",
+    "5. Enthalpy is the correction for the open system that is also explained in the article above.\n",
+    "6. Self explanatory.\n",
+    "\n",
+    "### Heat:\n",
+    "\n",
+    "1. Self explanatory.\n",
+    "2. Self explanatory.\n",
+    "\n",
+    "### Work: \n",
+    "\n",
+    "8. $W_{net} = W_{flow}+W_{shaft}+W_{electrical} + p\\Delta V$ This will collapse to the final term. \n",
+    "9. The pressure term in work $P\\Delta V$ is exchanged for $\\frac{nRT}{V}$ and then integrated where the limits of the integrand are $V_f$ and $V_i$.\n",
+    "10. There is a long and complicated derivation for this equation that was covered in first year physics. It is better to just memorize this fact. [Here is a visual representative from hyperphysics](http://hyperphysics.phy-astr.gsu.edu/hbase/thermo/adiab.html)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

@@ -1,0 +1,361 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 4.8 &ndash; Vapour Pressure\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.8.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the concept of vapour pressure.\n",
+    "2. Use the Antoine equation.\n",
+    "2. Know when you should use Raoult's law.\n",
+    "3. Know when you should use Henry's law.\n",
+    "3. Distinguish between the different types of saturation’s and humidity’s.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.8.1 &ndash; Introduction\n",
+    "\n",
+    "**Vapour pressure** is the pressure a vapour exerts with its solid or liquid at a given temperature at equilibrium. This means that vapour pressure is a good indication of a liquid's evaporation rate or a solid's sublimation rate.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.8.2 &ndash; Vapour Pressure\n",
+    "\n",
+    "As you can see in the figure bellow, vapour pressure is at equilibrium. This means that there is as much vapour being produced from evaporation as vapour being consumed due to condensation. The magnitude of the vapour pressure tells you how volatile the liquid is. The higher the vapour pressure, the higher the volatility.\n",
+    "\n",
+    "![](../figures/Module-4/Vapour_pressure1.png)\n",
+    "\n",
+    "Attribution: By HellTchi (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.8.3 &ndash; Antoine equation\n",
+    "\n",
+    "The **Antoine equation** is simple yet crucial equation the relates **vapour pressure** and **temperature**. The equation is:\n",
+    "\n",
+    "$$ \\log_{10} p^* = A - \\frac{B}{T + C} $$\n",
+    "\n",
+    "Where A, B, and C are constants that can be found in tables and\n",
+    "\n",
+    "$$ p^* = \\text{Vapour Pressure} $$\n",
+    "\n",
+    "$$ T = \\text{Temperature} $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.8.4 &ndash; Raoult's Law and Henry's Law\n",
+    "\n",
+    "**Raoult's law** and **Henry's law** provide us with a relationship between the partial pressure of a substance, $P_A$, in the gas phase and the mole fraction of the same substance, $x_A$, in the liquid phase. Raoult's law is generally valid when $x_A$ is close to 1, which means the liquid is almost pure A. Henry's law is generally valid when solutions of $x_A$ are close to 0.\n",
+    "\n",
+    "The expression for Raoult's law is:\n",
+    "\n",
+    "$$ p_A \\equiv y_A P = x_A p_A^* (T) $$\n",
+    "\n",
+    "where\n",
+    "\n",
+    "$$ p_a = \\text{Is the partial pressure of substance A} $$\n",
+    "\n",
+    "$$ y_A = \\text{Is the mole fraction of substance A in the gas phase} $$\n",
+    "\n",
+    "$$ P = \\text{Is the pressure of the system} $$\n",
+    "\n",
+    "$$ x_A = \\text{Is the mole fraction of substance A in the liquid phase} $$\n",
+    "\n",
+    "$$ p_A^* (T) = \\text{Is the vapour pressure of pure liquid A at temperature T} $$\n",
+    "\n",
+    "The expression for Henry's law is:\n",
+    "\n",
+    "$$ p_A \\equiv y_A P = x_A H_A (T) $$\n",
+    "\n",
+    "where\n",
+    "\n",
+    "$$ p_a = \\text{Is the partial pressure of substance A} $$\n",
+    "\n",
+    "$$ y_A = \\text{Is the mole fraction of substance A in the gas phase} $$\n",
+    "\n",
+    "$$ P = \\text{Is the pressure of the system} $$\n",
+    "\n",
+    "$$ x_A = \\text{Is the mole fraction of substance A in the liquid phase} $$\n",
+    "\n",
+    "$$ H_A (T) = \\text{Is the the Henry's law constant for A in a specific solvent} $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4.8.5 &ndash; Saturation and Humidity\n",
+    "\n",
+    "The term saturation refers to any gas-vapour system. Humidity refers specifically to an air-water system. There are four main types of saturation and humidity:\n",
+    "\n",
+    "**Relative Saturation (Relative Humidity)**: \n",
+    "\n",
+    "$$ s_r (h_r) = \\frac{p_i}{p^*_i (T)} \\times 100 \\text{%} $$\n",
+    "\n",
+    "where \n",
+    "\n",
+    "$$ p_i = \\text{The partial pressure of species i} $$\n",
+    "\n",
+    "$$ p^*_i (T) = \\text{The vapour pressure of species i} $$\n",
+    "\n",
+    "**Molal Saturation (Molal Humidity)**: \n",
+    "\n",
+    "$$ s_m (h_m) = \\frac{p_i}{P - p_i} $$\n",
+    "\n",
+    "where\n",
+    "\n",
+    "$$ p_i = \\text{The partial pressure of species i} $$\n",
+    "\n",
+    "$$ P = \\text{The total pressure of the system} $$\n",
+    "\n",
+    "**Absolute Saturation (Absolute Humidity)**: \n",
+    "\n",
+    "$$ s_a (h_a) = \\frac{p_i M_i}{(P - p_i) M_{dry}} $$\n",
+    "\n",
+    "where\n",
+    "\n",
+    "$$ p_i = \\text{The partial pressure of species i} $$\n",
+    "\n",
+    "$$ P = \\text{The total pressure of the system} $$\n",
+    "\n",
+    "$$ MW_i = \\text{The molecular weight of species i} $$\n",
+    "\n",
+    "$$ MW_{dry} = \\text{The average molecular weight of all of the none vapour gas of the system} $$\n",
+    "\n",
+    "**Percentage Saturation (Percentage Humidity)**: \n",
+    "\n",
+    "$$ s_p (h_p) = \\frac{s_m}{s^*_m} \\times 100 \\text{%} = \\frac{\\frac{p_i}{P - p_i}}{\\frac{p^*_i}{P - p^*_i}} \\times 100 \\text{%} $$\n",
+    "\n",
+    "where\n",
+    "\n",
+    "$$ p_i = \\text{The partial pressure of species i} $$\n",
+    "\n",
+    "$$ p^*_i = \\text{The vapour pressure of species i} $$\n",
+    "\n",
+    "$$ P = \\text{The total pressure of the system} $$\n",
+    "\n",
+    "Each one of these different types of saturation and humidity’s are useful in different scenarios.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 4.8.6 &ndash; Problem Statement\n",
+    "\n",
+    "### Problem 1\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "Humid air at $60^{\\circ} C$, 1 atm, and 73 % relative humidity is fed into a unit operation at a rate of $500 \\space m^3 / h$. The vapor pressure of water at 1 atm and $60^{\\circ} C$ is $p^*_{H_2 0} = 19,920 \\space Kpa$. Determine\n",
+    "\n",
+    "a) the molar flow rates of water, dry air, and oxygen, assuming oxygen makes up 21% of dry air.\n",
+    "\n",
+    "b) the molal humidity, absolute humidity, and percentage humidity of the air.\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "##### a) the molar flow rates of water, dry air, and oxygen, assuming oxygen makes up 21% of dry air\n",
+    "\n",
+    "First we must determine the partial pressure of the water.\n",
+    "\n",
+    "$$ p_{H_2 O}  = h_r \\cdot p^*_{H_2 0} = (0.73) \\cdot 19,920 = 14,540 \\space Pa $$ \n",
+    "\n",
+    "Then using Raoult's Law, we can fine the vapour mole fraction of the water\n",
+    "\n",
+    "$$ y_{H_2 O} = \\frac{p_{H_2 O}}{P} = \\frac{14,540 \\space Pa}{101,300 \\space Pa} = 0.1435 \\space \\frac{mol \\space H_2 O}{mol}  $$\n",
+    "\n",
+    "Assuming the humid air behaves ideally, we can use the ideal gas law to solve for the molar flow rate of the wet air\n",
+    "\n",
+    "$$ \\dot{n}_{total} = \\frac{P \\dot{V}}{R T} = \\frac{ \\big(101,300 \\space Pa \\big) \\big(500 \\space \\frac{m^3}{h} \\big)}{\\big(8.314 \\frac{ m^3 \\cdot Pa}{mol \\cdot K} \\big) \\big(333.15 \\space K \\big)} = 18,300 \\space \\frac{mol}{h}$$\n",
+    "\n",
+    "Since we know the mole fraction of the water is \n",
+    "\n",
+    "$$ y_{H_2 O} = 0.1435 \\space \\frac{mol \\space H_2 O}{mol}  $$\n",
+    "\n",
+    "then we can solve the mole fraction of the dry hair by\n",
+    "\n",
+    "$$ y_{dry} = y_{wet} - y_{H_2 O} = (1 - 0.1435) \\space \\frac{mol \\space H_2 O}{mol} = 0.8565 \\space \\frac{mol \\space H_2 O}{mol} $$\n",
+    "\n",
+    "Since the mole fraction of oxygen in dry air is \n",
+    "\n",
+    "$$ y_{oxy} = 0.21 $$\n",
+    "\n",
+    "We can finally solve for the molar flow rate of water, dry air, and oxygen.\n",
+    "\n",
+    "$$ \\dot{n}_{H_2 O} = \\dot{n}_{total} \\cdot y_{H_2 O} = \\big( 18,300 \\space \\frac{mol}{h} \\big) \\cdot \\big(0.1435 \\space \\frac{mol \\space H_2 O}{mol} \\big) = 2.626 \\space \\frac{kmol}{h}$$\n",
+    "\n",
+    "$$ \\dot{n}_{dry} = \\dot{n}_{total} \\cdot y_{dry} = \\big( 18,300 \\space \\frac{mol}{h} \\big) \\cdot \\big(0.8565 \\space \\frac{mol \\space H_2 O}{mol} \\big) = 15.67 \\space \\frac{kmol}{h}$$\n",
+    "\n",
+    "$$ \\dot{n}_{oxy} = \\dot{n}_{total} \\cdot y_{oxy} = \\big( 15,700 \\space \\frac{mol}{h} \\big) \\cdot \\big(0.21 \\space \\frac{mol \\space H_2 O}{mol} \\big) = 3.291 \\space \\frac{kmol}{h}$$\n",
+    "\n",
+    "##### b) the molal humidity, absolute humidity, and percentage humidity of the air\n",
+    "\n",
+    "We have already solved for the partial pressure of the water vapor so solving for the molal humidity\n",
+    "\n",
+    "$$ h_m = \\frac{p_{H_2 O}}{P - p_{H_2 O}} = \\frac{14,540 \\space Pa}{101,300 \\space Pa - 14,540 \\space Pa} = 0.1675 \\frac{mol \\space H_2 O}{mol \\space dry}$$\n",
+    "\n",
+    "The MW is 18.00 g/mol while the average MW of dry air is 28.9 g/mol. With that knowledge, we can solve for absolute humidity\n",
+    "\n",
+    "$$ h_a = \\frac{p_{H_2 O} \\cdot MW_{H_2 O}}{(P - p_{H_2 O}) MW_{dry}} = \\frac{(14,540 \\space Pa)(18.00 \\space g/mol)}{(101,300 \\space Pa - 14,540 \\space Pa)(28.9 \\space g/mol)}  = 0.104 \\frac{kg \\space H_2 O}{kg \\space dry} $$\n",
+    "\n",
+    "Finally, to find the percentage humidity we must \n",
+    "\n",
+    "$$ h_p = \\frac{\\frac{p_{H_2 O}}{P - p_{H_2 O}}}{\\frac{p^*_{H_2 O}}{P - p^*_{H_2 O}}} \\times 100 \\text{%} = \\frac{\\frac{14,540 \\space Pa}{101,300 \\space Pa - 14,540 \\space Pa}}{\\frac{19,920 \\space Pa}{101,300 \\space Pa - 19,920 \\space Pa}} \\times 100 \\text{%} = 68.5 \\text{%}$$\n",
+    "\n",
+    "### Problem 2\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "Find the temperature at which the vapour pressure of water is $6,000 \\space Pa$ where\n",
+    "\n",
+    "$$ A = 10.116 $$\n",
+    "\n",
+    "$$ B = 1687.537 $$\n",
+    "\n",
+    "$$ C = -42.98 $$\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "Using Antione’s equation\n",
+    "\n",
+    "$$ \\log_{10} p^* = A - \\frac{B}{T + C} $$\n",
+    "\n",
+    "we can plug in the values and solve for $p^*$.\n",
+    "\n",
+    "$$ \\log_{10}(6000) = 10.116 - \\frac{1687.537}{T + (-42.98)} $$\n",
+    "\n",
+    "$$ T = \\frac{1687.537}{10.116 - \\log_{10}(6000)} + 42.98 $$\n",
+    "\n",
+    "$$ T = 308.3 \\space K $$\n",
+    "\n",
+    "#### Answer Using Python\n",
+    "\n",
+    "Typically, Antoine’s constants are not given to you and you will have to look them up in a table. This may be tedious especially for chemicals less common than water. We can use the thermo library, show in section 4.3, to help us find the answer."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: thermo in c:\\users\\said zaid-alkailani\\appdata\\roaming\\python\\python36\\site-packages\n",
+      "Requirement already satisfied: fluids in c:\\users\\said zaid-alkailani\\appdata\\roaming\\python\\python36\\site-packages (from thermo)\n",
+      "Requirement already satisfied: scipy in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from thermo)\n",
+      "Requirement already satisfied: pandas in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from thermo)\n",
+      "Requirement already satisfied: coolprop in c:\\users\\said zaid-alkailani\\appdata\\roaming\\python\\python36\\site-packages (from thermo)\n",
+      "Requirement already satisfied: python-dateutil>=2 in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from pandas->thermo)\n",
+      "Requirement already satisfied: pytz>=2011k in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from pandas->thermo)\n",
+      "Requirement already satisfied: numpy>=1.7.0 in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from pandas->thermo)\n",
+      "Requirement already satisfied: six>=1.5 in c:\\users\\said zaid-alkailani\\anaconda3\\lib\\site-packages (from python-dateutil>=2->pandas->thermo)\n"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install thermo --user"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The temperature at which the vapour pressure is 6,000 Pa is 309.32672149807246 K\n"
+     ]
+    }
+   ],
+   "source": [
+    "from thermo.chemical import Chemical\n",
+    "T = Chemical('water').VaporPressure.solve_prop(6000)\n",
+    "print(\"The temperature at which the vapour pressure is 6,000 Pa is\", T, \"K\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## Citation\n",
+    "\n",
+    "Caleb Bell (2016). thermo: Chemical properties component of Chemical Engineering Design Library (ChEDL) https://github.com/CalebBell/thermo."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

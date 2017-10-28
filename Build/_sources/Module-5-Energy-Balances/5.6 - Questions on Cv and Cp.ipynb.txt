@@ -1,0 +1,184 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5.6 &ndash; Questions on $C_v$ and $C_p$ \n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.6.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Visualize how $C_v$ and $C_p$ are used to calculate and solve various problems.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.6.1 &ndash; Introduction \n",
+    "\n",
+    "This notebook will cover questions relating to the $C_v$ and $C_p$.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.6.2 &ndash; Question 1: \n",
+    "\n",
+    "Argon is in a closed system at P = 100 atm, V = 300 L, and T = 600 K is brought to a state at P = 200 atm, volume at 300 L and 900 K. What is the change of internal energy in the system? \n",
+    "\n",
+    "1. Draw a diagram of the process taking place and write the relevant equation:\n",
+    "\n",
+    "   ![](../figures/Module-5/cvcpq1.svg)\n",
+    "\n",
+    "   $$ \\Delta U = Q - W $$ \n",
+    "\n",
+    "2. Add simplifications and assumptions\n",
+    "\n",
+    " - We assume the only work done is via $P\\Delta V$ but since there is no change in volume $P\\Delta V = 0,\\space  \\therefore \\space W =  0$  and the equation is reduced to $\\Delta U = Q$.\n",
+    "\n",
+    " - Since we are working with a closed system, internal energy can be substituted as $nC_v\\Delta T$\n",
+    "\n",
+    " - Since we are working with argon which is an ideal monatomic gas, we can use the ideal gas law to fairly accurately estimate the number of moles and use $C_v$ as $\\frac{3}{2} \\space R$ where $R = 0.08206 \\frac{L \\cdot atm}{mol \\cdot K}$\n",
+    "\n",
+    "   __note:__ watch out for units sometimes you will get $m^3$ and Pa!\n",
+    "\n",
+    "3. Solve equations\n",
+    "\n",
+    "- Since we are given a direct relationship between $U$ and $T$ we do not need to know any formulas for the heat.   \n",
+    "\n",
+    "$$ n = \\frac{P_1 V_1}{R T}  =  \\frac{300 \\cdot 100 }{0.08206 \\cdot 600}  = 609.3 \\space mol$$ \n",
+    "\n",
+    "$$ \\Delta U = nC_v\\Delta T = 609.3 \\cdot \\bigg( \\frac {3}{2} \\cdot 0.08206 \\bigg) \\cdot \\bigg( 900 - 600 \\bigg) = 22,500 \\space L \\cdot atm $$\n",
+    "\n",
+    "$$ \\Delta U = 2,279,925 \\space J $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 5.6.3 &ndash; Question 2: \n",
+    "\n",
+    "18 kg of ice stored at -22 $^\\circ$C is melted then brought to 32 $^\\circ$C. How much energy is transferred in this system?\n",
+    "\n",
+    "Assume heat capacity is a constant value. The specific heat capacity of ice is 2.108 $kJ/kg \\cdot$ $^{\\circ}C$; the latent heat of fusion is -334 $J/g \\cdot$ $^{\\circ}C$ and the specific heat capacity of water is 4.184 $J/g \\cdot$ $^{\\circ}C$.\n",
+    "\n",
+    "1. Draw the diagram of the process taking place and write down the relevant equations.\n",
+    "\n",
+    "    ![](../figures/Module-5/cvcpq2.svg)\n",
+    "\n",
+    "  $$ \\sum^n_{i=1} \\Delta H_i = \\Delta H_{ice} + \\Delta H_{melting}+ \\Delta H_{water} $$\n",
+    "  $$ \\Delta H = mC_p\\Delta T  $$\n",
+    "  $$ \\Delta H_{melting} = - \\Delta H_{fusion} = m H_{lm} $$\n",
+    "\n",
+    "2. List simplifications and assumptions\n",
+    " - Any specific heat capacity used here are assumed to be constant because no information suggests otherwise. __ This is often the case __\n",
+    " - The mass $m$ is constant in the system.\n",
+    " - Since all units are in Celsius and heat is in terms of a reference, we are not concerned with converting to kelvin.\n",
+    "3. Solve equations. __Mind the units__\n",
+    "\n",
+    "$\\Delta H_{ice} = m C_{(p, \\space ice)} \\Delta T = 18 \\space kg \\cdot 2.108\\frac{kJ}{Kg \\cdot ^{\\circ}C} \\cdot (0-(-22)) \\space K = 835 \\space kJ$\n",
+    "\n",
+    "$\\Delta H_{melting} = 18 \\space kg \\cdot 334 \\space \\frac{J}{g \\cdot ^{\\circ}C} \\cdot \\frac{1 \\space kJ}{1,000 \\space J} * \\frac{1,000g}{1kg} = 6,012 \\space kJ$\n",
+    "\n",
+    "$\\Delta H_{water} = 18 \\space kg \\cdot 4.184\\frac{kJ}{kg \\cdot ^{\\circ}C} \\cdot (32-0) \\space K = 2,410  \\space kJ$ (by the same unit conversion of ice).\n",
+    "\n",
+    "$\\sum^n_{i=1} \\Delta H_i = \\Delta H_{ice} + \\Delta H_{melting}+ \\Delta H_{water} = ( 835 + 6,012 + 2,410) \\space kJ = 9,257 \\space kJ$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.6.4 &ndash; Question 3:\n",
+    "\n",
+    "n-butane is brought from 450 $^\\circ$C to 923$^\\circ$C. Using the formal definition and formula of heat capacities, find the heat required to bring n-butane to this temperature.\n",
+    "\n",
+    "Preamble: Because the temperature range that we are measuring is extremely large, it is important to capture the true heat capacity to evaluate the enthalpy. Here we must assume that the pressure is adequately low to assume ideal gas law.\n",
+    "1. Draw the diagram of the process taking place and write down the relevant equations.\n",
+    "$$ \\Delta H  = \\int^{T_2}_{T_1}C_pdT$$\n",
+    " \n",
+    "2.  List simplifications and assumptions\n",
+    " \n",
+    "3. Solve equations __Note mind your units! Kelvin and Celsius matter!__ For us, we  are told to use Celsius.\n",
+    " \n",
+    " Taking the tabulated data from table B2 and expanding the enthalpy equation:\n",
+    " \n",
+    " **Note:** table B2's powers are all supposed to be negative.\n",
+    " $$ \\Delta H  = \\int^{T_2}_{T_1}C_pdT = \\int^{T_2}_{T_1}(A + BT + CT^2+DT^3)dT $$\n",
+    " \n",
+    " $A = 92.3\\times 10^{-3}$\n",
+    " \n",
+    " $B = 27.88 \\times 10^{-5}$\n",
+    " \n",
+    " $C = -15.47 \\times 10^{-8}$\n",
+    " \n",
+    " $D = -34.98 \\times 10^{-12}$\n",
+    " \n",
+    " $(T_1, \\space T_2)=(450, \\space 923 ) \\space C$\n",
+    " \n",
+    " $$ \\Delta H  =  \\int^{923}_{450} \\big(A + BT + CT^2 +DT^3\\big)dT$$\n",
+    " \n",
+    " $$ \\Delta H  = \\bigg[ \\bigg(AT + B\\frac{T^2}{2} + C\\frac{T^3}{3} +D\\frac{T^4}{4}\\bigg) \\bigg]^{923}_{450}$$\n",
+    " \n",
+    "  $$ \\Delta H  = \\bigg[ \\bigg(92.3\\times 10^{-3} T + 27.88 \\times 10^{-5} \\frac{T^2}{2}  -15.47 \\times 10^{-8} \\frac{T^3}{3} +34.98 \\times 10^{-12}\\frac{T^4}{4}  \\bigg) \\bigg]^{923}_{450} $$\n",
+    "  \n",
+    "  $$ \\Delta H  = 104 \\space \\frac{kJ}{kg} $$\n",
+    "  \n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

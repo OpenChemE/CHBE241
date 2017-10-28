@@ -1,0 +1,222 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Solving Sets of Linear Equations\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Solve a linear system using the **substitution method**.\n",
+    "2. Solve a linear system using the **row reduction method**.\n",
+    "3. Use **Python** to solve a linear system.\n",
+    "\n",
+    "## Introduction\n",
+    "Being able to solve sets of linear equations is very important to a chemical engineer. There will be times where you have over 10 unknown variables and need to solve for them. This can be done by hand and can also be solved using a computer, more specifically, a programming language, such as python.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## By Hand\n",
+    "\n",
+    "### Substitution Method for Solving Linear Systems\n",
+    "\n",
+    "One of the simplest methods to solve a system of linear equations is the **substitution method**. The substitution method functions by substituting one of the variables for another. Here is an example:\n",
+    "\n",
+    "$$ y = 2x + 4 $$\n",
+    "$$ 3x + y = 9 $$\n",
+    "\n",
+    "We can now substitute the y in the first equation into the second equation and solve.\n",
+    "\n",
+    "$$ 3x + (2x + 4) = 9 $$\n",
+    "$$ 5x = 5 $$\n",
+    "$$ x = 1 $$\n",
+    "\n",
+    "Finally, we can solve for y using x.\n",
+    "\n",
+    "$$ y = 2(1) + 4 $$\n",
+    "$$ y = 6 $$\n",
+    "\n",
+    "### Row Reduction Method for Solving Linear Systems\n",
+    "\n",
+    "A more complicated but more practical method, for large systems, to solve large matrices is **row reduction**. Row reduction is done through matrix manipulation. There are four main rules to matrix manipulation:\n",
+    "\n",
+    "1. Multiply a row by a non-zero constant.\n",
+    "2. Add one row to another.\n",
+    "3. Interchange between rows.\n",
+    "4. Add a multiple of one row to another.\n",
+    "\n",
+    "We will be using these rules to help us solve a system of linear equations.\n",
+    "\n",
+    "In this example, we must first convert the system of linear equations into a matrix. Then, we must row reduce the matrix until we get ones along the diagonal of the matrix and a lower triangle of zeros. Here is the system of equations:\n",
+    "\n",
+    "$$ x + y - z = 5 $$\n",
+    "$$ 2x + y + 3z = 2 $$\n",
+    "$$ 4x - y + 2z = -1 $$\n",
+    "\n",
+    "We must convert this system into an augmented matrix.\n",
+    "\n",
+    "$$\n",
+    "\\begin{vmatrix}\n",
+    "1 & 1 & -1 & | & 5 \\\\\n",
+    "2 & 1 & 3 & | & 2 \\\\\n",
+    "4 & -1 & 2 & | & -1 \n",
+    "\\end{vmatrix}\n",
+    "$$\n",
+    "\n",
+    "Now we shall row reduce the augmented matrix using the previous rules stated. First, we will $ \\mathbf{R}_2 - 2\\mathbf{R}_1 $\n",
+    "\n",
+    "$$\n",
+    "\\begin{equation*}\n",
+    "\\begin{vmatrix}\n",
+    "1 & 1 & -1 & | & 5 \\\\\n",
+    "0 & -1 & 5 & | & -8 \\\\\n",
+    "4 & -1 & 2 & | & -1 \n",
+    "\\end{vmatrix}\n",
+    "\\end{equation*}\n",
+    "$$\n",
+    "\n",
+    "Second, we will $ \\mathbf{R}_3 - 4\\mathbf{R}_1 $\n",
+    "\n",
+    "$$\n",
+    "\\begin{vmatrix}\n",
+    "1 & 1 & -1 & | & 5 \\\\\n",
+    "0 & -1 & 5 & | & -8 \\\\\n",
+    "0 & -5 & 6 & | & -21 \n",
+    "\\end{vmatrix}\n",
+    "$$\n",
+    "\n",
+    "Next, we will $ -1 \\times \\mathbf{R}_2 $\n",
+    "\n",
+    "$$\n",
+    "\\begin{vmatrix}\n",
+    "1 & 1 & -1 & | & 5 \\\\\n",
+    "0 & 1 & -5 & | & 8 \\\\\n",
+    "0 & -5 & 6 & | & -21 \n",
+    "\\end{vmatrix}\n",
+    "$$\n",
+    "\n",
+    "After this, we will $ \\mathbf{R}_3 + 5\\mathbf{R}_2 $\n",
+    "\n",
+    "$$\n",
+    "\\begin{vmatrix}\n",
+    "1 & 1 & -1 & | & 5 \\\\\n",
+    "0 & 1 & -5 & | & 8 \\\\\n",
+    "0 & 0 & -19 & | & 19 \n",
+    "\\end{vmatrix}\n",
+    "$$\n",
+    "\n",
+    "Finally we will $ \\frac{\\mathbf{R}_3}{-19}  $\n",
+    "\n",
+    "$$\n",
+    "\\begin{vmatrix}\n",
+    "1 & 1 & -1 & | & 5 \\\\\n",
+    "0 & 1 & -5 & | & 8 \\\\\n",
+    "0 & 0 & 1 & | & -1 \n",
+    "\\end{vmatrix}\n",
+    "$$\n",
+    "\n",
+    "---\n",
+    "Since now we know $$ z = -1 $$ we can solve for y which is $$ y = 3 $$ and finally solve for x which is $$ x = 1 $$\n",
+    "\n",
+    "## Using Python\n",
+    "As stated before, **Python** is a very powerful high-level programming language that can be used to compute tedious and complex arithmetic questions. Here is a simple example of how you can use Python to solve a system of linear equations.\n",
+    "\n",
+    "Let's say we have the same system of equations as shown above. Let's solve it using Python!\n",
+    "\n",
+    "$$ x + y - z = 5 $$\n",
+    "$$ 2x + y + 3z = 2 $$\n",
+    "$$ 4x - y + 2z = -1 $$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[ 1.],\n",
+       "       [ 3.],\n",
+       "       [-1.]])"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import numpy as py\n",
+    "from scipy.linalg import solve\n",
+    "\n",
+    "A = [[1, 1, -1], [2, 1, 3], [4, -1, 2]]\n",
+    "b = [[5], [2], [-1]]\n",
+    "\n",
+    "x = solve(A,b)\n",
+    "x"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Here you can see what took multiple steps of matrix manipulation is easily solved in a few lines of code in Python.\n",
+    "\n",
+    "Now you try using Python to solve this system of linear equations!\n",
+    "\n",
+    "$$ x + 3y - z = 2 $$\n",
+    "\n",
+    "$$ 2x + 5 + 3z = 1 $$\n",
+    "\n",
+    "$$ x - 3y + 2z = -4 $$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

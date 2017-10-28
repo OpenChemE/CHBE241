@@ -1,0 +1,115 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 1.7 &ndash; Steady state, Unsteady State/Transience\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.7.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the difference between steady-state and unsteady state classification.\n",
+    "2. Characterize the two classifications. \n",
+    "3. Understand the math in the classifications.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "##  1.7.1&ndash; Introduction\n",
+    "\n",
+    "Steady-state and unsteady-state processes describe the time interval that a process occurs over. Steady-state refers to the time where the __variable of interest doesn't change__. Unsteady-state is when the variable of interest __changes over time. __ While all processes have a steady-state and __transient__ phase, it is more beneficial to evaluate certain processes with steady-state or transience.\n",
+    "\n",
+    "__ Note: __ Steady-state is often referred to as __S.S__, you may see that written in problems. Transience is used __interchangeably__ with unsteady-state. It will be referred in this section interchangeably You may see problems using __U.S.S__\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 1.7.2 &ndash; When to use Steady State and Unsteady state\n",
+    "\n",
+    "Except for minor fluctuations, steady-state indicates that there is no change in the variable of interest. A can of pop lying outside is at steady-state because it will not change temperature suddenly.\n",
+    "\n",
+    "As such, it is best to analyze continuous flow reactors using steady state analysis.\n",
+    "\n",
+    "Unsteady state processes have a definitive change over time. Boiling water takes room temperature water and raises it to 100 &deg;C over a set time. Because of this, batch and fed-batch reactors are often analyzed using unsteady-state methods.\n",
+    "\n",
+    "The following section will cover how the analysis is carried out.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1.7.3 &ndash; Transient or steady-state?\n",
+    "\n",
+    "For the following problems, determine whether a steady-state model or a transient model is the appropriate method to solve the problem. You do not need to solve the problem\n",
+    "\n",
+    "1. A balloon deflating. \n",
+    "\n",
+    "2. Putting a can of iced tea in an insulated cooler half filled with ice and water.\n",
+    "\n",
+    "3. The direct impact of floodwater at the site C dam.\n",
+    "\n",
+    "\n",
+    "### Answers\n",
+    "\n",
+    "1.  The unsteady-state model would be the better way to model either the volume of the balloon shrinking or the pressure of the balloon. At steady-state, the balloon is deflated and there is no information in that model.\n",
+    "\n",
+    "2. The U.S.S (Unsteady-state) model would be an appropriate model to measure the **rate** of heat being transferred from the can to the ice/water bath. The steady-state model would show the **total ** heat that the iced tea contains.  \n",
+    "\n",
+    "3. Both models have merit in this situation. In transience, the rate of water flooding the geographical land is important such that the force of the water flooding is not too strong. In steady-state, it would be important to see the height of the floodwater to seethe amount of land displaced."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

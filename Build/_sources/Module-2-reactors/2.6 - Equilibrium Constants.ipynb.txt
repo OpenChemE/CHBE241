@@ -1,0 +1,98 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2.6 &ndash; Equilibrium Constants\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2.6.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the concept of equilibium.\n",
+    "2. Calculate equilibrium constants.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2.6.1 &ndash; Introduction\n",
+    "\n",
+    "There are some reactions that are **irreversable**, such as combustion, where the reaction proceeds in only one direction. On the other hand, there are reactions that are **reversable**, such as the hydrolysis of ehtylene to ethanol. \n",
+    "\n",
+    "$$ C_2 H_4 + H_2 O \\rightleftharpoons C_2 H_5 O H $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2.6.2 &ndash; Equilibrium\n",
+    "\n",
+    "In the reaction shown above, the reactants form products and the products form reactants. When you put the ethylene in water, the forward reaction occurs. Once ethanol is present, the revese reaction begins. As the concentrations of the $C_2 H_5$ and $H_2 O$ decrease, the rate of the decreases until the a point is reached where the forward and reverse reaction rate are the same. This forward and reverse reaction is an **equilibrium**.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2.6.3 &ndash; Calculcating the Equilibrium Constant\n",
+    "\n",
+    "The equilibrium constant is a function of tempreture. Lets take the water-gas shift reaction as an example.\n",
+    "\n",
+    "$$ C O {(g)} + H_2 O {(g)} \\rightleftharpoons C O_2 {(g)} + H_2 {(g)} $$\n",
+    "\n",
+    "The equilibrium constant will be:\n",
+    "\n",
+    "$$ K(T) = \\frac{y_{C O_2} y_{H_2}}{y_{C O} y_{H_2 O}} $$\n",
+    "\n",
+    "This equation shows that if your equilibrium constant is large, then you will have more prodcuts than reactants which means the forward reaction is strong. The opposite is true for a small equilibrium constant."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

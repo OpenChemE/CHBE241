@@ -1,0 +1,239 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Unique Solution, No Solution, or Infinite Solutions\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the diffrence between unique solutions, no solutions, and infinitely many solutions.\n",
+    "2. Reconize when a matrix has a unique solutions, no solutions, or infinitely many solutions.\n",
+    "3. Reconize when a matrix has a unique solutions, no solutions, or infinitely many solutions using python.\n",
+    "\n",
+    "---\n",
+    "## Introduction\n",
+    "There are three different types of solutions for a system of linear equations: **unique solutions**, **no solutions**, or **infinitely many solutions**. The structure of your matrix after you row reduce will inform you one what type of solution you have.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Unique Solution\n",
+    "\n",
+    "The example shown previously in this module had a **unique solution**. The structure of the row reduced matrix was\n",
+    "\n",
+    "$$\n",
+    "\\begin{vmatrix}\n",
+    "1 & 1 & -1 & | & 5 \\\\\n",
+    "0 & 1 & -5 & | & 8 \\\\\n",
+    "0 & 0 & 1 & | & -1 \n",
+    "\\end{vmatrix}\n",
+    "$$\n",
+    "\n",
+    "and the solution was \n",
+    "\n",
+    "$$ x = 1 $$\n",
+    "$$ y = 3 $$\n",
+    "$$ z = -1 $$\n",
+    "\n",
+    "As you can see, each variable in the matrix can have only one possible value, and this is how you know that this matrix has one unique solution\n",
+    "\n",
+    "---\n",
+    "## No solution\n",
+    "\n",
+    "Let's suppose you have a system of linear equations that consist of:\n",
+    "\n",
+    "$$ x + y + z = 2 $$\n",
+    "$$ y - 3z = 1 $$\n",
+    "$$ 2x + y + 5z = 0 $$\n",
+    "\n",
+    "The augmented matrix is\n",
+    "\n",
+    "$$\n",
+    "\\begin{vmatrix}\n",
+    "1 & 1 & 1 & | & 2 \\\\\n",
+    "0 & 1 & -3 & | & 1 \\\\\n",
+    "2 & 1 & 5 & | & 0 \n",
+    "\\end{vmatrix}\n",
+    "$$\n",
+    "\n",
+    "and the row reduced matrix is\n",
+    "\n",
+    "$$\n",
+    "\\begin{vmatrix}\n",
+    "1 & 0 & 4 & | & 1 \\\\\n",
+    "0 & 1 & -3 & | & 1 \\\\\n",
+    "0 & 0 & 0 & | & -3 \n",
+    "\\end{vmatrix}\n",
+    "$$\n",
+    "\n",
+    "As you can see, the final row states that\n",
+    "\n",
+    "$$ 0x + 0y + 0z = -3 $$\n",
+    "\n",
+    "which impossible, 0 cannot equal -3. Therefore this system of linear equations has **no solution**.\n",
+    "\n",
+    "Let's use python and see what answer we get."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "LinAlgError",
+     "evalue": "Matrix is singular.",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mLinAlgError\u001b[0m                               Traceback (most recent call last)",
+      "\u001b[1;32m<ipython-input-1-afc47691740d>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m()\u001b[0m\n\u001b[0;32m      5\u001b[0m \u001b[0mb\u001b[0m \u001b[1;33m=\u001b[0m \u001b[1;33m[\u001b[0m\u001b[1;33m[\u001b[0m\u001b[1;36m2\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;33m[\u001b[0m\u001b[1;36m1\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;33m[\u001b[0m\u001b[1;36m0\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      6\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m----> 7\u001b[1;33m \u001b[0mx\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0msolve\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mA\u001b[0m\u001b[1;33m,\u001b[0m\u001b[0mb\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m      8\u001b[0m \u001b[0mx\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
+      "\u001b[1;32mC:\\Users\\Said Zaid-Alkailani\\Anaconda3\\lib\\site-packages\\scipy\\linalg\\basic.py\u001b[0m in \u001b[0;36msolve\u001b[1;34m(a, b, sym_pos, lower, overwrite_a, overwrite_b, debug, check_finite, assume_a, transposed)\u001b[0m\n\u001b[0;32m    217\u001b[0m         \u001b[1;32mreturn\u001b[0m \u001b[0mx\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    218\u001b[0m     \u001b[1;32melif\u001b[0m \u001b[1;36m0\u001b[0m \u001b[1;33m<\u001b[0m \u001b[0minfo\u001b[0m \u001b[1;33m<=\u001b[0m \u001b[0mn\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 219\u001b[1;33m         \u001b[1;32mraise\u001b[0m \u001b[0mLinAlgError\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m'Matrix is singular.'\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m    220\u001b[0m     \u001b[1;32melif\u001b[0m \u001b[0minfo\u001b[0m \u001b[1;33m>\u001b[0m \u001b[0mn\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    221\u001b[0m         warnings.warn('scipy.linalg.solve\\nIll-conditioned matrix detected.'\n",
+      "\u001b[1;31mLinAlgError\u001b[0m: Matrix is singular."
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as py\n",
+    "from scipy.linalg import solve\n",
+    "\n",
+    "A = [[1, 1, 1], [0, 1, -3], [2, 1, 5]]\n",
+    "b = [[2], [1], [0]]\n",
+    "\n",
+    "x = solve(A,b)\n",
+    "x\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "As you can see the code gives us an **error** suggesting there is no solution to the matrix.\n",
+    "\n",
+    "---\n",
+    "## Infinite Solutions\n",
+    "\n",
+    "Let's suppose you have a system of linear equations that consist of:\n",
+    "\n",
+    "$$ -3x - 5y + 36z = 10 $$\n",
+    "$$ -x + 7z = 5 $$\n",
+    "$$ x + y - 10z = -4 $$\n",
+    "\n",
+    "The augmented matrix is\n",
+    "\n",
+    "$$\n",
+    "\\begin{vmatrix}\n",
+    "-3 & -5 & 36 & | & 10 \\\\\n",
+    "-1 & 0 & 7 & | & 5 \\\\\n",
+    "1 & 1 & -10 & | & -4 \n",
+    "\\end{vmatrix}\n",
+    "$$\n",
+    "\n",
+    "and the row reduced matrix is\n",
+    "\n",
+    "$$\n",
+    "\\begin{vmatrix}\n",
+    "1 & 0 & -7 & | & -5 \\\\\n",
+    "0 & 2 & -3 & | & 1 \\\\\n",
+    "0 & 0 & 0 & | & 0 \n",
+    "\\end{vmatrix}\n",
+    "$$\n",
+    "\n",
+    "As you can see, the final row of the row reduced matrix consists of 0. This means that for any value of Z, there will be a unique solution of x and y, therefore this system of linear equations has **infinite solutions**.\n",
+    "\n",
+    "Let's use python and see what answer we get."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "C:\\Users\\Said Zaid-Alkailani\\Anaconda3\\lib\\site-packages\\scipy\\linalg\\basic.py:223: RuntimeWarning: scipy.linalg.solve\n",
+      "Ill-conditioned matrix detected. Result is not guaranteed to be accurate.\n",
+      "Reciprocal condition number: 3.808655316038273e-19\n",
+      "  ' condition number: {}'.format(rcond), RuntimeWarning)\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "array([[-12.],\n",
+       "       [ -2.],\n",
+       "       [ -1.]])"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import numpy as py\n",
+    "from scipy.linalg import solve\n",
+    "\n",
+    "A = [[-3, -5, 36], [-1, 0, 7], [1, 1, -10]]\n",
+    "b = [[10], [5], [-4]]\n",
+    "\n",
+    "x = solve(A,b)\n",
+    "x\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "As you can see we get a different type of error from this code. It states that the matrix is **ill-conditioned** and that there is a **RuntimeWarning**. This means that the computer took to long to find a unique solution so it spat out a random answer. When RuntimeWarings occur, the matrix is likely to have infinite solutions."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

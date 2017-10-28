@@ -1,0 +1,130 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2.2 &ndash; The Extent of Reaction\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2.2.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Understand the last reactive balance method. \n",
+    "2. Characterize the extent of reaction. \n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2.2.1 &ndash; Introduction \n",
+    "\n",
+    "The extent of reaction is another method to solve reactive balances that occur. Although less intuitive than the molecular and atomic species balances, the extent of reaction is very useful when solving systems with computer aided software.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2.2.2 &ndash; The extent of reaction  \n",
+    "\n",
+    "The extent of reaction $\\xi$ (xi) is the basis of how far a given reaction has progressed. We break down the every molecular species in the form:\n",
+    "\n",
+    "$$ \\dot{n}_{(species, \\space output)} = \\dot{n}_{(species, \\space input)} + \\nu \\xi $$\n",
+    "\n",
+    "Which is often written as \n",
+    "\n",
+    "$$ \\dot{n}_{i} = \\dot{n}_{io} + \\nu_i\\xi $$\n",
+    "\n",
+    "Where\n",
+    "\n",
+    "$$\\dot{n} = \\text{the molar flowrate in a system.} $$\n",
+    "\n",
+    "$$\\nu = \\text{the stoichiometric coefficient a species of the reaction} $$\n",
+    "\n",
+    "$$\\xi = \\text{the extent of reaction} $$\n",
+    "\n",
+    "(remember that the __left__ side of the reaction is __negative__ since it is being consumed).\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2.2.3 &ndash; Example \n",
+    "\n",
+    "Let's look at the oxidation of glucose as an example (ignore the ATP production):\n",
+    "\n",
+    "$$\n",
+    "    C_6 H_{12} O_6 + 6 O_2 \\longrightarrow + 6 H_2 O+ 6 C O_2\n",
+    "$$\n",
+    "\n",
+    "![](../figures/Module-2/Flow-2.2-2.svg)\n",
+    "\n",
+    "Attribution: Said Zaid-Alkailani, Ngai To Lo, & UBC [CC BY 4.0 de creative commons](https://creativecommons.org/licenses/by/4.0/)\n",
+    "\n",
+    "$$\\dot{n}_{(C_6 H_{12} O_6, \\space output)} = 20 \\space \\frac{kmol}{h} - \\xi$$\n",
+    "\n",
+    "$$\\dot{n}_{(O_2, \\space output)} = 400 \\space \\frac{kmol}{h} - 6 \\xi$$\n",
+    "\n",
+    "$$\\dot{n}_{(H_2 O, \\space output)} = 6 \\xi$$\n",
+    "\n",
+    "$$\\dot{n}_{(C O_2, \\space output)} = 6 \\xi$$\n",
+    "\n",
+    "Since this is a complete reaction, $\\xi$ is $20 \\space \\frac{kmol}{h}$. Using $\\xi$ we can solve for the other values present.\n",
+    "\n",
+    "$$\\dot{n}_{(C_6 H_{12} O_6, \\space output)} = 0$$\n",
+    "\n",
+    "$$\\dot{n}_{(O_2, \\space output)} = 280 \\space \\frac{kmol}{h} $$\n",
+    "\n",
+    "$$\\dot{n}_{(H_2 O, \\space output)} = 120 \\space \\frac{kmol}{h} $$\n",
+    "\n",
+    "$$\\dot{n}_{(C O_2, \\space output)} = 120 \\space \\frac{kmol}{h} $$\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

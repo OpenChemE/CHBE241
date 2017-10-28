@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.4 – Input-Output and Block Flow Diagrams &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="1.4-–-Input-Output-and-Block-Flow-Diagrams">
+<h1>1.4 – Input-Output and Block Flow Diagrams<a class="headerlink" href="#1.4-–-Input-Output-and-Block-Flow-Diagrams" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="1.4.0-–-Learning-Objectives">
+<h2>1.4.0 – Learning Objectives<a class="headerlink" href="#1.4.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand the difference of an input-output diagram and a block flow
+diagram.</li>
+<li>Construct a block flow diagram.</li>
+<li>Solve a basic input-output problem.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.4.1-–-Introduction">
+<h2>1.4.1 – Introduction<a class="headerlink" href="#1.4.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p><strong>Input-output diagrams</strong> are the first step in designing a chemical
+process. An input-output diagram is the simplest form of flow diagrams
+used in industry. Input-output diagrams consist of one block with the
+inputs coming in one end and the outputs going out the other.</p>
+<p>The next step in designing a chemical process is constructing a <strong>block
+flow diagram</strong> (BFD). A BFD is similar to an input-output diagram except
+a BFD has multiple blocks. The blocks in a BFD can represent anything
+from a single piece of equipment to multiple pieces of equipment.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.4.2-–-Input-Output-Diagrams">
+<h2>1.4.2 – Input-Output Diagrams<a class="headerlink" href="#1.4.2-–-Input-Output-Diagrams" title="Permalink to this headline">¶</a></h2>
+<p><strong>Input-output diagrams</strong> are the simplest form of flow diagrams. The
+diagram consists of input arrows, one block for the complete process,
+and output arrows. For example:</p>
+<p><img alt="input-output-diagrams" src="../_images/Input-Output_Diagrams1.jpg" /> Attribution: Said Zaid-Alkailani &amp; UBC [CC BY
+4.0 de (<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="1.4.3-–-Block-Flow-Diagrams">
+<h2>1.4.3 – Block Flow Diagrams<a class="headerlink" href="#1.4.3-–-Block-Flow-Diagrams" title="Permalink to this headline">¶</a></h2>
+<p><strong>Block flow diagrams</strong> are what we will mainly focus on later in the
+course. This model focuses on a section, sections, or a whole chemical
+plant. This model is also much more detailed than an input-output
+diagram. Each block can represent a specific step in the process. Here
+is an example of benzene production:</p>
+<div class="figure">
+<img alt="" src="../_images/BFD.svg" /></div>
+<p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+<p>As you can see, there are two inputs, 2,000 kg/h of Toluene, and 164
+kg/h of Hydrogen. There are also two outputs, 522 kg/h of Mixed Gas, and
+1,642 kg/h of Benzene. In-between the outputs and inputs are the
+specific <strong>unit operations</strong>. This example may seem complicated but by
+the end of this course it will be a walk in the park.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="1.4.4-–-Problem-Statement">
+<h2>1.4.4 – Problem Statement<a class="headerlink" href="#1.4.4-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Question">
+<h3>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h3>
+<p>Stream 1 Inputs 1,700 kg/h of water and stream 2 inputs 1,000 kg/h of
+flour. Stream 3 outputs 700 kg/h of steam. How much bread comes out of
+stream 4?</p>
+</div>
+<div class="section" id="Answer">
+<h3>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h3>
+<p>First draw your BFD, in this case it will be an input-output diagram.</p>
+<p>Attribution: Said Zaid-Alkailani &amp; UBC [CC BY 4.0 de
+(<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)]</p>
+<p>Then write the mass balance and solve.</p>
+<div class="math">
+\[1,700 \space kg/h + 1,000 \space kg/h = \dot{m}_1 + 700 \space kg/h\]</div>
+<div class="math">
+\[\dot{m}_1 = 2,000 kg/h\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1.4 – Input-Output and Block Flow Diagrams</a><ul>
+<li><a class="reference internal" href="#1.4.0-–-Learning-Objectives">1.4.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#1.4.1-–-Introduction">1.4.1 – Introduction</a></li>
+<li><a class="reference internal" href="#1.4.2-–-Input-Output-Diagrams">1.4.2 – Input-Output Diagrams</a></li>
+<li><a class="reference internal" href="#1.4.3-–-Block-Flow-Diagrams">1.4.3 – Block Flow Diagrams</a></li>
+<li><a class="reference internal" href="#1.4.4-–-Problem-Statement">1.4.4 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-1-Proces-Basics-Water/1.4 - Input-Output and Block Flow Diagrams.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

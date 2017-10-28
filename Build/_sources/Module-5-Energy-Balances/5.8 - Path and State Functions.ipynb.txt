@@ -1,0 +1,110 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5.8 &ndash; Path and State functions \n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.8.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Build further knowledge of state variable and state functions.\n",
+    "2. Explain the difference between state and path functions.\n",
+    "3. Classify thermodynamic terms as state or path variables. \n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.8.1 &ndash; Introduction\n",
+    "\n",
+    "State and path functions are how variables in a system change from an initial state to a final state. In this notebook, you will learn about state and path variables, state and path functions, their differences, and their uses.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.8.2 &ndash; State Functions\n",
+    "Remember that guy who went up Mount Everest? Imagine you are a tourist at the bottom and see that guy on top of the mountain. __Regardless of how he got there__, that guy got there and is 8,848m higher than you are and thus he has 8679888J of potential energy more than you (assuming they weigh 100kg). \n",
+    "\n",
+    " A __State function__ is the change of the state of a variable __regardless of the path it takes__. __Internal Energy__ $U$, __Enthalpy__ $H$, __Pressure__ $P$, __Temperature__ $T$, and __Volume__ $V$ are state functions. \n",
+    "\n",
+    "But __how__ did that guy get up there? Did he skydive out of a plane? Did he climb up there himself? Was he carried up by a Sherpa? Now we are concerned about the path the guy took to get up there. \n",
+    "\n",
+    "A __Path function__ is the transition of __path variables__ from one state to another. __Work__ $W$ and __Heat__ $Q$ are path variables. They change depending on what path is chosen to reach a state.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5.8.3 &ndash; Path functions change the amount of work done on/by a system: \n",
+    "\n",
+    "Let’s take a look at the diagram below:\n",
+    "\n",
+    "![](../figures/Module-5/state1.svg)\n",
+    "\n",
+    "$U1$ is at an initial state of $P_i$ and $T_i$. Our goal is to get to $U2$. Here we are presented with 2 options.\n",
+    "\n",
+    "\n",
+    "![](../figures/Module-5/paths.svg)\n",
+    "\n",
+    "In **Path 1**, the system is isochorically compressed and then expanded to the state U2. In **Path 2**, the system is isobarically expanded, then isochorically compressed to the state U2. \n",
+    "\n",
+    "![](../figures/Module-5/workdone.svg)\n",
+    "\n",
+    "As Work is $P \\Delta V$,  it is clear that the work done is much greater in the first path. This is because the magnitude of volumetric expansion was executed at a higher pressure than the second path. \n",
+    "\n",
+    "__Furthermore:__ We can infer that there is more heat transferred to system 1 since U2 is constant for both and using the information from the first law $U = Q  - W$ , if W is larger, than Q must be larger to raise the value of U2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

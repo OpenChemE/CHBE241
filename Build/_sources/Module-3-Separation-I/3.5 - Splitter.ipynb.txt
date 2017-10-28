@@ -1,0 +1,156 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 3.5 &ndash; Splitter\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.5.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this notebook you should be able to:\n",
+    "\n",
+    "1. Recognize and algorithmically solve a splitter stream.\n",
+    "2. Draw and label a splitter stream diagram properly.\n",
+    "3. Make correct assumptions to solve.\n",
+    "4. Perform a mass balance on a splitter stream.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## 3.5.1 &ndash; Introduction\n",
+    "Separation is essential in chemical processes, mainly for redirection of product streams to multiple reactors, mixing chambers or separators etc.\n",
+    "\n",
+    "By the end of the section, you would be able to identify splitter streams and perform mass balances on them. Note that no energy balances are needed because the streams are only there to redirect mass. \n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.5.2 &ndash; Splitter BFD \n",
+    "\n",
+    "![Figure 1.](../figures/Module-3/splitter_diagram_3.svg)\n",
+    "<div style=\"text-align:center\">Figure 1.</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Figure 1. is the diagram for a splitter, in this case for a stream with toluene and nitrogen? A splitter is characterized with a single input, followed by 2 or more product streams ** all with the same composition as the feed stream.** These streams usually also have the same state of matter as the feed stream.\n",
+    "\n",
+    "### Noteworthy:\n",
+    "\n",
+    "- There is no mass/volumetric/molar flow rate for the fresh feed. In this case, we would need to assign a random value to it, such as 100kg/hr, or deduce it from the product flow streams. \n",
+    "\n",
+    "\n",
+    "\n",
+    "- Remember we need to convert the mass fractions to actual masses before we can add or subtract anything. \n",
+    "\n",
+    "\n",
+    "- Not all splitter processes are split 50/50. Be careful not to make this assumption when dealing with unlabelled streams.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.5.3 &ndash; Steps to solve\n",
+    "\n",
+    "1. If the input stream does not have a flow rate listed in the question or the diagram, assume a mass or volumetric flow rate of a random number, preferably a mass flow rate with a nice round number like 100 $kg/h$. \n",
+    "      \n",
+    "      &nbsp;\n",
+    "      \n",
+    "2. Draw and label the flow chart based on the question.\n",
+    "\n",
+    " &nbsp;\n",
+    "      \n",
+    "3. Write expressions for the quantities requested in the problem statement. (e.g. $m_3$ = $m_{B3}$ + $m_{T3}$, $x_B$ = $m_{B3}/m_3$). The expressions should be written to help in solving for the missing parameters of the process.\n",
+    "\n",
+    " &nbsp;\n",
+    "    \n",
+    "4. Convert all mixed units to one uniform units, such as converting all mass fractions into mass flow rates. In most cases, it would be converting all the units to masses.\n",
+    "\n",
+    " &nbsp;\n",
+    "    \n",
+    "5. **Do the algebra.** \n",
+    "            \n",
+    " ---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Solution (To figure 1.)\n",
+    "\n",
+    "1. Write out the mass balance and find the total flow rates in each stream. (remember: **Accumulation = Input + Generation - Output - Consumption**. The following mass balance was derived by rearranging to get Input = Output).\n",
+    "    \n",
+    "    $$x_{Total \\space Stream} = m_{stream \\space a} + m_{stream \\space b}$$\n",
+    "\n",
+    "    $$x_{Total \\space Stream} = 100 \\space \\frac{kg}{hr} + 50 \\space \\frac{kg}{hr} = 150 \\space \\frac{kg}{hr}$$\n",
+    "    \n",
+    "2. Now that we know the total flow rates in each stream, we can use the mass fractions to find the flow rates of each component in the product stream.\n",
+    "\n",
+    "**Toluene and nitrogen in each stream**\n",
+    "\n",
+    "- Fresh feed\n",
+    "$$Fresh \\space feed_{Toluene} = 150 \\frac{kg}{hr} \\times 0.51 = 76.5 \\frac{kg}{hr}$$\n",
+    "              \n",
+    "$$Fresh \\space feed_{Nitrogen} = 150 \\frac{kg}{hr} \\times 0.49 = 73.5\\frac{kg}{hr}$$\n",
+    " \n",
+    "- Stream A\n",
+    "$$Fresh \\space feed_{Toluene} = 100 \\frac{kg}{hr} \\times 0.51 = 51 \\frac{kg}{hr}$$\n",
+    "            \n",
+    "$$Fresh \\space feed_{Nitrogen} = 100 \\frac{kg}{hr} \\times 0.49 = 49 \\frac{kg}{hr}$$\n",
+    " \n",
+    "- Stream B (Since we know the make up of the other streams, we can just subtract)\n",
+    "$$Fresh \\space feed_{Toluene} = 76.5 \\frac{kg}{hr} - 51 \\frac{kg}{hr} = 25.5 \\frac{kg}{hr}$$\n",
+    "            \n",
+    "$$Fresh \\space feed_{Nitrogen} = 73.5 \\frac{kg}{hr} - 49 \\frac{kg}{hr} = 24.5 \\frac{kg}{hr}$$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

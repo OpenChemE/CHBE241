@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.2 – Standards &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="4.2-–-Standards">
+<h1>4.2 – Standards<a class="headerlink" href="#4.2-–-Standards" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="4.2.0-–-Learning-Objectives">
+<h2>4.2.0 – Learning Objectives<a class="headerlink" href="#4.2.0-–-Learning-Objectives" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this section you should be able to:</p>
+<ol class="arabic simple">
+<li>Understand what standard temperature and pressure (STP) is.</li>
+<li>Understand what standard cubic meters and feet are.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.2.1-–-Introduction">
+<h2>4.2.1 – Introduction<a class="headerlink" href="#4.2.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>In engineering and science, it is useful to have <strong>standards</strong> to use as
+<strong>reference points</strong>. If most people in the field you work in use one
+type of standard, then confusion, mistakes, and conversions can be
+prevented.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.2.2-–-Standard-Temperature-and-Pressure-(STP)">
+<h2>4.2.2 – Standard Temperature and Pressure (STP)<a class="headerlink" href="#4.2.2-–-Standard-Temperature-and-Pressure-(STP)" title="Permalink to this headline">¶</a></h2>
+<p><strong>Standard temperature and pressure (STP)</strong>, <span class="math">\(T_s\)</span> and
+<span class="math">\(\hat{V}_s\)</span>, are used as a reference point for many laws,
+including the ideal gas law. When the ideal gas law</p>
+<div class="math">
+\[P V = n R T\]</div>
+<p>is divided by the reference point ideal gas law</p>
+<div class="math">
+\[P_s \hat{V}_s = R T_s\]</div>
+<p>you get</p>
+<div class="math">
+\[\frac{P V}{P_s \hat{V}_s} = n \frac{T}{T_s}\]</div>
+<p>Since we got rid of the R, the constant is not needed anymore. The SI
+units for <strong>(STP)</strong> are</p>
+<div class="math">
+\[T_s = 273.15 \space K\]</div>
+<div class="math">
+\[P_s = 101,300 \space Pa\]</div>
+<div class="math">
+\[V_s = 0.022415 \space m^3/mol\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.2.3-–-Standard-Cubic-Meters-and-Standard-Cubic-Feet">
+<h2>4.2.3 – Standard Cubic Meters and Standard Cubic Feet<a class="headerlink" href="#4.2.3-–-Standard-Cubic-Meters-and-Standard-Cubic-Feet" title="Permalink to this headline">¶</a></h2>
+<p><strong>Standard cubic meters (SCM)</strong>, is used to denote <span class="math">\(m^3\)</span> at
+<strong>STP</strong>. <strong>Standard cubic feet (SCF)</strong>, is used to denote <span class="math">\(ft^3\)</span>
+at <strong>STP</strong>. A volumetric flow rate of 21.3 SCMH is
+<span class="math">\(21.3 \space m^3/h\)</span> at <span class="math">\(0 ^{\circ} C\)</span> and 1 atm.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.2.4-–-Problem-Statement">
+<h2>4.2.4 – Problem Statement<a class="headerlink" href="#4.2.4-–-Problem-Statement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Problem-1">
+<h3>Problem 1<a class="headerlink" href="#Problem-1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<p>You are a chemical engineer at the Burnaby oil refinery. Your colleague
+has asked you to inform him on how much gasoline is flowing through a
+pipe in <strong>SCFH</strong>. You measure the flow rate and find that gasoline is
+flowing at <span class="math">\(1.2 \space m^3/s\)</span> at <span class="math">\(30 ^{\circ} C\)</span> The
+reference point for the density of gasoline is
+<span class="math">\(\rho = 730 \space kg/m^3\)</span> at <span class="math">\(15 ^{\circ} C\)</span>. The
+correction factor for the gasoline at <span class="math">\(30 ^{\circ} C\)</span> is
+<span class="math">\(\alpha_{\space 30 ^{\circ} C} = 0.9811\)</span>. The correction factor
+for the gasoline at <span class="math">\(0 ^{\circ} C\)</span> is
+<span class="math">\(\alpha_{\space 0 ^{\circ} C} = 1.0187\)</span>. What is the flow
+volumetric SCFH flow rate?</p>
+</div>
+<div class="section" id="Answer">
+<h4>Answer<a class="headerlink" href="#Answer" title="Permalink to this headline">¶</a></h4>
+<p>First, we must find the mass flow rate at <span class="math">\(30 ^{\circ} C\)</span>. This is
+because mass must be conserved at any temperature.</p>
+<div class="math">
+\[\dot{m} = \dot{V}_{\space 30 ^{\circ} C} \cdot (\rho_{\space 15 ^{\circ} C} \cdot \alpha_{\space 30 ^{\circ} C}) = 1.2 \space \frac{m^3}{s} \cdot \bigg(  730 \space \frac{kg}{m^3} \cdot 0.9811 \bigg) = 859 \space \frac{kg}{s}\]</div>
+<p>Now that we have the mass flow rate, we can calculate the volumetric
+flow rate at <span class="math">\(0 ^{\circ} C\)</span>.</p>
+<div class="math">
+\[\dot{V}_{\space 0 ^{\circ} C} = \frac{\dot{m}}{\rho_{\space 15 ^{\circ} C} \cdot \alpha_{\space 0 ^{\circ} C}} = \frac{859 \space \frac{kg}{s}}{730 \space \frac{kg}{m^3} \cdot 1.0187} = 1.06 \space \frac{m^3}{s}\]</div>
+<p>Finally, we can convert the volumetric flow rate to the proper units of
+<span class="math">\(ft^3/h\)</span>.</p>
+<div class="math">
+\[\dot{V}_{\space 0 ^{\circ} C} = 1.06 \space \frac{m^3}{s} \times \frac{35.31 \space ft^3}{1 \space m^3} \times \frac{3600 \space s}{1 \space h} = 134,700 \space \text{SCFH}\]</div>
+</div>
+</div>
+<div class="section" id="Problem-2">
+<h3>Problem 2<a class="headerlink" href="#Problem-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="Question">
+<h4>Question<a class="headerlink" href="#Question" title="Permalink to this headline">¶</a></h4>
+<div class="figure">
+<img alt="" src="../_images/standard-example.svg" /></div>
+<p>(A = Evaporator, B = Compressor)</p>
+<p>Acetone (<span class="math">\(C_3H_6O_{(L)}\)</span>) is fed at a rate of 400 L/min into a
+heated chamber, where it evaporates into a nitrogen stream. The gas
+leaving the heater is diluted by another nitrogen stream flowing at a
+measured rate of 419 <span class="math">\(m^3\)</span> (STP)/min. The combined gases are then
+compressed to a total pressure <span class="math">\(P\)</span> = 6.3 atm gauge at a
+temperature of 325 °C. The partial pressure of acetone in this stream is
+<span class="math">\(P_a\)</span> = 501 mm Hg. Atmospheric pressure is 763 mm Hg</p>
+<p>What is the volumetric flow rate of the nitrogen entering the evaporator
+if the temperature and pressure of this stream are 27 °C and 475 mm Hg
+gauge?</p>
+</div>
+</div>
+<div class="section" id="Solution">
+<h3>Solution<a class="headerlink" href="#Solution" title="Permalink to this headline">¶</a></h3>
+<p>Since there are no assumptions to write, let us go ahead solve the
+question, first by changing all of the relevant units to a single
+uniform unit:</p>
+<div class="math">
+\[400 \space L \space C_3H_6O/min \times 791 \space \frac{g}{L} \times \frac{1 \space mol}{58.08 \space g} = 5450 \space \frac{mol \space C_3H_6O}{min}\]</div>
+<p>Note: The density of acetone was found in Table B1. of Elementary
+Principles of Chemical Processes.</p>
+<p>We then should calculate the mole fractions of the exit streams, based
+on the partial pressures of the components.</p>
+<p>Remember that the actual pressure of a system is gauge pressure added
+onto atmospheric pressure:</p>
+<div class="math">
+\[P = P_{atm}+P_{gauge}\]</div>
+<div class="math">
+\[P = 763 \space mmHg + 6.3 \space atm \space \times 760 \space \frac{mmHg}{atm} = 5550 \space mmHg\]</div>
+<div class="math">
+\[y_3 = \frac{501}{5550} = 0.0903 \space \frac{mol \space C_3H_6O}{mol}\]</div>
+<div class="math">
+\[1- y_3 = 0.9097 \space \frac{mol \space N_2}{mol}\]</div>
+<p>Let us turn our attention to <span class="math">\(n_3\)</span> now. Based on our knowledge of
+standards, we now know that we can deduce the moles of <span class="math">\(N_2\)</span> in
+the stream based on STP conditions, using the Ideal Gas Law:</p>
+<div class="math">
+\[PV = nRT\]</div>
+<div class="math">
+\[(1 \space atm)(419 \space m^3) = (\dot{n}_3)(8.206 \times 10^{-5} \space \frac{atm \space m^3}{K \space mol})(298 \space K)\]</div>
+<div class="math">
+\[\dot{n}_3 = 17,134.295 \space \frac{moles}{min}\]</div>
+<p>Now with all the necessary information, we can move onto the mass
+balances:</p>
+<p><span class="math">\(Acetone\)</span></p>
+<div class="math">
+\[\dot{n}_2 = \dot{n}_4y_4\]</div>
+<div class="math">
+\[5450 \space \frac{mol}{min} = 0.0903\dot{n}_4\]</div>
+<div class="math">
+\[\dot{n}_4=60,400 \space \frac{mol}{min}\]</div>
+<p><span class="math">\(Overall \space Mole \space Balance\)</span></p>
+<div class="math">
+\[\dot{n}_1 + \dot{n}_2 + \dot{n}_3 = \dot{n}_4\]</div>
+<div class="math">
+\[\dot{n}_1 + 5450 \space \frac{mol}{min} + 17,134.295 \space \frac{moles}{min} = 60,400 \space \frac{moles}{min}\]</div>
+<div class="math">
+\[\dot{n}_1 = 37,817.705 \space \frac{mol}{min}\]</div>
+<p><strong>Finally</strong>, we can solve for the volume of nitrogen that is entering
+the system, as we can go back to the Ideal Gas Equation:</p>
+<div class="math">
+\[PV = nRT\]</div>
+<div class="math">
+\[P_{inlet} = 475 \space mmHg + 763 \space mmHg = 1238 \space mmHg = 1.6225 \space atm\]</div>
+<div class="math">
+\[P_{inlet}V_1 = n_1RT_1\]</div>
+<div class="math">
+\[1.6225 \space atm \times V_1 = 37,817.705 \space \frac{mol}{min} \times (8.206 \times 10^{-5} \space \frac{atm \space m^3}{K \space mol}) \times (27 + 273)K = 573.8036 \space \frac{m^3 \space N_2}{min}\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.2 – Standards</a><ul>
+<li><a class="reference internal" href="#4.2.0-–-Learning-Objectives">4.2.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#4.2.1-–-Introduction">4.2.1 – Introduction</a></li>
+<li><a class="reference internal" href="#4.2.2-–-Standard-Temperature-and-Pressure-(STP)">4.2.2 – Standard Temperature and Pressure (STP)</a></li>
+<li><a class="reference internal" href="#4.2.3-–-Standard-Cubic-Meters-and-Standard-Cubic-Feet">4.2.3 – Standard Cubic Meters and Standard Cubic Feet</a></li>
+<li><a class="reference internal" href="#4.2.4-–-Problem-Statement">4.2.4 – Problem Statement</a><ul>
+<li><a class="reference internal" href="#Problem-1">Problem 1</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+<li><a class="reference internal" href="#Answer">Answer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Problem-2">Problem 2</a><ul>
+<li><a class="reference internal" href="#Question">Question</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Solution">Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-4-Separation-II/4.2 - Standards.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Example - 5.1 &#8212; project1 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="Example---5.1">
+<h1>Example - 5.1<a class="headerlink" href="#Example---5.1" title="Permalink to this headline">¶</a></h1>
+<p>Water flows into a process unit through a 2-cm ID (internal diameter),
+4m long pipe at a rate of 2.00 <span class="math">\(m^3/h\)</span>, at a height of 2m from the
+ground. Assuming 2 hours have passed and, calculate <span class="math">\(\dot{E_k}\)</span>,
+<span class="math">\(\dot{E_p}\)</span> and the total energy for the system.</p>
+<div class="figure" id="id1">
+<img alt="Figure 1." src="../_images/5.1-example-question1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+<p><strong>Kinetic energy</strong> - We will use m/s just to keep consistent with SI
+units.</p>
+<div class="math">
+\[u = 2.00 \space m^3/h \cdot \frac{1}{0.01^2\pi} \cdot \frac{1hr}{3600s} = 1.77 \space m/s\]</div>
+<div class="math">
+\[\dot{m} = 2.00 \space m^3/h \cdot \frac{1000 \space kg}{1 \space m^3} \cdot \frac{1hr}{3600s} = 0.556 \space kg/s\]</div>
+<div class="math">
+\[\dot{E_k} = \frac{1}{2} \cdot 0.556 \space kg/s \cdot 1.77 \space m/s = 0.870 \space J/s\]</div>
+<p><strong>Potential energy</strong></p>
+<div class="math">
+\[m = 2.00 \space m^3/h \cdot \frac{1000 \space kg}{1 \space m^3} \cdot 2 hrs = 4000 \space kg\]</div>
+<div class="math">
+\[\dot{E_p} = m \cdot g \cdot h\]</div>
+<div class="math">
+\[\dot{E_p} = 4000 \space kg \cdot 9.81 \cdot 2m = 78484 \space J\]</div>
+</div>
+<div class="section" id="Example---5.2-Heat-and-work">
+<h1>Example - 5.2 Heat and work<a class="headerlink" href="#Example---5.2-Heat-and-work" title="Permalink to this headline">¶</a></h1>
+<p>In a batch mixing reactor, there might be pressure and heat changes that
+might affect the total energy of the system. The following scenario is
+observed:</p>
+<p>There is gas in the reactor cylinder. The initial gas temperature is 20
+°C. The cylinder is placed in boiling water with the piston held in a
+fixed position. Heat in the amount of 2.00 kcal is transferred to the
+gas, which equilibrates at 100 °C. The pressure has also found to be
+increased at equilibrium. The piston is then released, and the gas does
+100 J of work in moving the piston to its new equilibrium position. The
+final gas temperature is 100 °C.</p>
+<div class="section" id="Step-1">
+<h2>Step 1<a class="headerlink" href="#Step-1" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id2">
+<img alt="Figure 1." src="../_images/5.2-Example-1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+<p>In this step, the system <strong>absorbs</strong> heat that raises it&#8217;s temperatures
+by 80 °C.</p>
+<div class="math">
+\[\Delta U + \Delta E_k + \Delta E_p = Q-W\]</div>
+<div class="math">
+\[\Delta E_k = 0\]</div>
+<div class="math">
+\[\Delta E_p = 0\]</div>
+<div class="math">
+\[W= 0\]</div>
+<p>Resulting in the equation:</p>
+<div class="math">
+\[\Delta U = Q\]</div>
+<div class="math">
+\[Q = 2.00 \space kcal\]</div>
+<p>We still need to convert to Joules as it is the SI unit of energy.</p>
+<div class="math">
+\[Q = 2.00 \space kcal \cdot 1000 \space cal/kcal \cdot 4.1839 \space J/cal = 8367.8 \space J\]</div>
+</div>
+<div class="section" id="Step-2">
+<h2>Step 2<a class="headerlink" href="#Step-2" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id3">
+<img alt="Figure 1." src="../_images/5.2-Example-1.1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+<div class="math">
+\[\Delta U + \Delta E_k + \Delta E_p = Q-W\]</div>
+<div class="math">
+\[\Delta E_k = 0\]</div>
+<div class="math">
+\[\Delta E_p = 0\]</div>
+<div class="math">
+\[\Delta U = 0\]</div>
+<p>Resulting in the equation:</p>
+<div class="math">
+\[0 = Q-W\]</div>
+<div class="math">
+\[W = +100J\]</div>
+<div class="math">
+\[Q = +100J\]</div>
+<p>Note: The work is <strong>positive</strong> because the <strong>the system is doing work on
+the surroundings.</strong></p>
+<p>Question text: Elementary Principlesa of Chemical Processes, 4/E by
+Richard M. Felder, Ronald W. Rousseau, and Lisa G. Bullard Copyright ©
+2016 by John Wiley &amp; Sons, Inc.</p>
+</div>
+</div>
+<div class="section" id="Example---5.3-Open-Systems-and-Enthalpy">
+<h1>Example - 5.3 Open Systems and Enthalpy<a class="headerlink" href="#Example---5.3-Open-Systems-and-Enthalpy" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Existing question</li>
+<li>minor suggestion: all * signs to be changed to <span class="math">\(\cdot\)</span></li>
+</ul>
+</div>
+<div class="section" id="Example---5.4-Review-of-terms">
+<h1>Example - 5.4 Review of terms<a class="headerlink" href="#Example---5.4-Review-of-terms" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>No technical questions needed</li>
+<li>&#8220;Closed system: A system in which matter/mass is conserved. Open
+system: A system in which mass/matter is not conserved.&#8221; (Isn&#8217;t mass
+conservation applied for both?)</li>
+</ul>
+</div>
+<div class="section" id="Example---5.5,-5.6-Cv-and-Cp,-Specific-heat-capacity">
+<h1>Example - 5.5, 5.6 Cv and Cp, Specific heat capacity<a class="headerlink" href="#Example---5.5,-5.6-Cv-and-Cp,-Specific-heat-capacity" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Existing questions in separate notebook, should be put the questions
+in the same notebook?</li>
+<li>minor suggestion: all * signs to be changed to <span class="math">\(\cdot\)</span></li>
+</ul>
+</div>
+<div class="section" id="5.7-–-Reference-States-and-State-Properties">
+<h1>5.7 – Reference States and State Properties<a class="headerlink" href="#5.7-–-Reference-States-and-State-Properties" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>For existing question: Don&#8217;t you need the heat of vaporization to
+solve it?</li>
+</ul>
+<div class="section" id="Example-question">
+<h2>Example question<a class="headerlink" href="#Example-question" title="Permalink to this headline">¶</a></h2>
+<p>Water is partially condensed out of a gas stream containing 66.9 mole%
+water vapor and the balance nitrogen.</p>
+<div class="figure" id="id4">
+<img alt="Figure 1." src="../_images/module-5-example-5.7.1.svg" /><p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+</div>
+<div class="section" id="Step-1---Perform-all-required-material-balances">
+<h2>Step 1 - Perform all required material balances<a class="headerlink" href="#Step-1---Perform-all-required-material-balances" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>While none are needed, it might be helpful to fill in the missing
+mole fractions for nitrogen</li>
+</ul>
+</div>
+<div class="section" id="Step-2---Write-the-appropriate-form-of-the-energy-balance-(open-or-closed)-and-reduce-to-simpliest-form-(get-rid-of-any-negligible-terms)">
+<h2>Step 2 - Write the appropriate form of the energy balance (open or closed) and reduce to simpliest form (get rid of any negligible terms)<a class="headerlink" href="#Step-2---Write-the-appropriate-form-of-the-energy-balance-(open-or-closed)-and-reduce-to-simpliest-form-(get-rid-of-any-negligible-terms)" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[\dot{Q} - \dot{W} = \Delta\dot{H} + \dot{E_k} + \dot{E_p}\]</div>
+<div class="math">
+\[\dot{E_k} = 0\]</div>
+<div class="math">
+\[\dot{E_p} = 0\]</div>
+<div class="math">
+\[\dot{W} = 0\]</div>
+<div class="math">
+\[\dot{Q} = \Delta\dot{H}\]</div>
+<div class="math">
+\[\Delta\dot{H} = \sum_{out}\dot{n_i}\hat{H_i} - \sum_{in}\dot{n_i}\hat{H_i}\]</div>
+</div>
+<div class="section" id="Step-3---Choose-a-reference-state-for-the-constituents">
+<h2>Step 3 - Choose a reference state for the constituents<a class="headerlink" href="#Step-3---Choose-a-reference-state-for-the-constituents" title="Permalink to this headline">¶</a></h2>
+<p><span class="math">\($\)</span>$</p>
+<div style="text-align: center;"><p><strong>Water</strong></p>
+<p><span class="math">\(l\)</span>, 25 °C, <span class="math">\(1 \space atm\)</span>,</p>
+<p><strong>Nitrogen</strong></p>
+<p><span class="math">\(g\)</span>, 25 °C, <span class="math">\(1 \space atm\)</span></p>
+</div></div>
+<div class="section" id="Step-4---For-a-closed-constant--volume-system,-construct-a-table-with-columns-for-initial-and-final-amounts-of-each-species-(-or-)-and-specific-internal-energies-relative-to-the-chosen-reference-states.-For-an-open-system,-construct-a-table-with-columns-for-inlet-and-outlet-stream-component-flow-rates-(-or-)-and-specific-enthalpies-relative-to-the-chosen-reference-states.">
+<h2>Step 4 - For a closed constant- volume system, construct a table with columns for initial and final amounts of each species (<span class="math">\(m_i\)</span> or <span class="math">\(n_i\)</span>) and specific internal energies relative to the chosen reference states. For an open system, construct a table with columns for inlet and outlet stream component flow rates (<span class="math">\(\dot{m_i}\)</span> or <span class="math">\(\dot{n_i}\)</span>) and specific enthalpies relative to the chosen reference states.<a class="headerlink" href="#Step-4---For-a-closed-constant--volume-system,-construct-a-table-with-columns-for-initial-and-final-amounts-of-each-species-(-or-)-and-specific-internal-energies-relative-to-the-chosen-reference-states.-For-an-open-system,-construct-a-table-with-columns-for-inlet-and-outlet-stream-component-flow-rates-(-or-)-and-specific-enthalpies-relative-to-the-chosen-reference-states." title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="18%" />
+<col width="24%" />
+<col width="19%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Substance</th>
+<th class="head"><span class="math">\(n_{in}\)</span></th>
+<th class="head"><span class="math">\(\hat{H_{in}}\)</span></th>
+<th class="head"><span class="math">\(n_{out}\)</span></th>
+<th class="head"><span class="math">\(\hat{H_{out}}\)</span></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>H2O(v)</td>
+<td>0.669</td>
+<td><span class="math">\(\hat{H_{1}}\)</span></td>
+<td>3.35</td>
+<td><span class="math">\(\hat{H_{3}}\)</span></td>
+</tr>
+<tr class="row-odd"><td>H2O(l)</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>63.55</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>N2(v)</td>
+<td>0.331</td>
+<td><span class="math">\(\hat{H_{2}}\)</span></td>
+<td>33.1</td>
+<td><span class="math">\(\hat{H_{4}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Step-5---Calculate-all-required-values-of--(or--)-and-insert-the-values-in-the-appropriate-places-in-the-table.">
+<h2>Step 5 - Calculate all required values of <span class="math">\(\hat{U}\)</span> (or <span class="math">\(\hat{H}\)</span> ) and insert the values in the appropriate places in the table.<a class="headerlink" href="#Step-5---Calculate-all-required-values-of--(or--)-and-insert-the-values-in-the-appropriate-places-in-the-table." title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Step-6---Calculate-the-appropriate-energy-balances.-Solve-for-any-variable-(kinetic,-potential)-that-is-not-negligible.">
+<h2>Step 6 - Calculate the appropriate energy balances. Solve for any variable (kinetic, potential) that is not negligible.<a class="headerlink" href="#Step-6---Calculate-the-appropriate-energy-balances.-Solve-for-any-variable-(kinetic,-potential)-that-is-not-negligible." title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="5.8-–-Path-and-State-functions">
+<h1>5.8 – Path and State functions<a class="headerlink" href="#5.8-–-Path-and-State-functions" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>For the graphs, when you increase the volume is it the pressure of
+the system that is increasing or the surroundings?</li>
+<li>p used for pressure, I changed it to P, correct or no?</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Example - 5.1</a></li>
+<li><a class="reference internal" href="#Example---5.2-Heat-and-work">Example - 5.2 Heat and work</a><ul>
+<li><a class="reference internal" href="#Step-1">Step 1</a></li>
+<li><a class="reference internal" href="#Step-2">Step 2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Example---5.3-Open-Systems-and-Enthalpy">Example - 5.3 Open Systems and Enthalpy</a></li>
+<li><a class="reference internal" href="#Example---5.4-Review-of-terms">Example - 5.4 Review of terms</a></li>
+<li><a class="reference internal" href="#Example---5.5,-5.6-Cv-and-Cp,-Specific-heat-capacity">Example - 5.5, 5.6 Cv and Cp, Specific heat capacity</a></li>
+<li><a class="reference internal" href="#5.7-–-Reference-States-and-State-Properties">5.7 – Reference States and State Properties</a><ul>
+<li><a class="reference internal" href="#Example-question">Example question</a></li>
+<li><a class="reference internal" href="#Step-1---Perform-all-required-material-balances">Step 1 - Perform all required material balances</a></li>
+<li><a class="reference internal" href="#Step-2---Write-the-appropriate-form-of-the-energy-balance-(open-or-closed)-and-reduce-to-simpliest-form-(get-rid-of-any-negligible-terms)">Step 2 - Write the appropriate form of the energy balance (open or closed) and reduce to simpliest form (get rid of any negligible terms)</a></li>
+<li><a class="reference internal" href="#Step-3---Choose-a-reference-state-for-the-constituents">Step 3 - Choose a reference state for the constituents</a></li>
+<li><a class="reference internal" href="#Step-4---For-a-closed-constant--volume-system,-construct-a-table-with-columns-for-initial-and-final-amounts-of-each-species-(-or-)-and-specific-internal-energies-relative-to-the-chosen-reference-states.-For-an-open-system,-construct-a-table-with-columns-for-inlet-and-outlet-stream-component-flow-rates-(-or-)-and-specific-enthalpies-relative-to-the-chosen-reference-states.">Step 4 - For a closed constant- volume system, construct a table with columns for initial and final amounts of each species (<span class="math">\(m_i\)</span> or <span class="math">\(n_i\)</span>) and specific internal energies relative to the chosen reference states. For an open system, construct a table with columns for inlet and outlet stream component flow rates (<span class="math">\(\dot{m_i}\)</span> or <span class="math">\(\dot{n_i}\)</span>) and specific enthalpies relative to the chosen reference states.</a></li>
+<li><a class="reference internal" href="#Step-5---Calculate-all-required-values-of--(or--)-and-insert-the-values-in-the-appropriate-places-in-the-table.">Step 5 - Calculate all required values of <span class="math">\(\hat{U}\)</span> (or <span class="math">\(\hat{H}\)</span> ) and insert the values in the appropriate places in the table.</a></li>
+<li><a class="reference internal" href="#Step-6---Calculate-the-appropriate-energy-balances.-Solve-for-any-variable-(kinetic,-potential)-that-is-not-negligible.">Step 6 - Calculate the appropriate energy balances. Solve for any variable (kinetic, potential) that is not negligible.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#5.8-–-Path-and-State-functions">5.8 – Path and State functions</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Module-5-Energy-Balances/Example questions and comments.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<style type="text/css">
+    .scrollToTop {
+        text-align: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 60px;
+        right: 40px;
+        display: none;
+    }
+</style>
+<a href="#" class="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+$(document).ready(function() {
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+  </body>
+</html>

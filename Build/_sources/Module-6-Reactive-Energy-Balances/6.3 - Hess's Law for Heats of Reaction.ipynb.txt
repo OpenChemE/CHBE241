@@ -1,0 +1,171 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 6.3 &ndash; Hess's Law for Heats of Reaction\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.3.0 &ndash; Learning Objectives\n",
+    "\n",
+    "By the end of this section you should be able to:\n",
+    "\n",
+    "1. Apply the concept of path dependence and independence.\n",
+    "2. Understand the concept of Hess's law.\n",
+    "3. Use Hess's law to solve standard heat of reaction problems.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.3.1 &ndash; Introduction\n",
+    "\n",
+    "Suppose you wish to determine the **standard heat of reaction** for the reaction\n",
+    "\n",
+    "$$ C \\small{\\text{(s)}} + \\frac{1}{2} \\space O_2 \\small{\\text{(g)}} \\longrightarrow C O \\small{\\text{(g)}} $$\n",
+    "\n",
+    "It is very difficult to measure the standard heat of reaction for this reaction because if these reactants are at $25 ^{\\circ} C$ and $1$ atm, the rate of reaction will be very slow. Since **calorimeters** are used to measure heat of reaction and it impossible to make calorimeters perfectly insulated, it is impractical to measure the true amount of energy released. Imagine you are trying to measure how much energy is released in the oxidation of iron. It would be very impractical to measure how much energy is realised over the course of years. However, we can use **Hess's law** to find the standard heat of reaction for this reaction.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6.3.2 &ndash; Hess's Law\n",
+    "\n",
+    "Since it is impractical to measure the standard heat of reaction for the reaction\n",
+    "\n",
+    "$$ C \\small{\\text{(s)}} + \\frac{1}{2} \\space O_2 \\small{\\text{(g)}} \\longrightarrow C O \\small{\\text{(g)}} $$\n",
+    "\n",
+    "we can use Hess's law by using other measurable standard heat of reactions to solve for the immeasurable quantity. \n",
+    "\n",
+    "$$ C \\small{\\text{(s)}} + O_2 \\small{\\text{(g)}} \\longrightarrow C O_2 \\small{\\text{(g)}} \\quad \\Delta \\hat{H}_{r1} ^{\\circ} = -393.51 \\space kJ/mol $$\n",
+    "\n",
+    "$$C O \\small{\\text{(g)}} + \\frac{1}{2} \\space O_2 \\small{\\text{(g)}} \\longrightarrow C O_2 \\small{\\text{(g)}} \\quad \\Delta \\hat{H}_{r2} ^{\\circ} = -282.99 \\space kJ/mol $$\n",
+    "\n",
+    "If we subtract reaction two from reaction three, we will receive the first reaction stoichiometrically balanced and the heat of reaction from that reaction.\n",
+    "\n",
+    "$$ C \\small{\\text{(s)}} + O_2 \\small{\\text{(g)}} - C O \\small{\\text{(g)}} - \\frac{1}{2} \\space O_2 \\longrightarrow C O_2 \\small{\\text{(g)}} - C O_2 \\small{\\text{(g)}}: \\quad \\Delta \\hat{H}_{r1} ^{\\circ} = ((-393.51) - (-282.99)) \\space kJ/mol $$\n",
+    "\n",
+    "$$ C \\small{\\text{(s)}} + \\frac{1}{2} \\space O_2 \\small{\\text{(g)}} \\longrightarrow C O \\small{\\text{(g)}} \\quad \\Delta \\hat{H}_{r1} ^{\\circ} = -110.52 \\space kJ/mol $$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "## 6.3.3 &ndash; Problem Statement\n",
+    "\n",
+    "### Problem 1\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "The standard heats of the follow reactions are determined experimentally:\n",
+    "\n",
+    "**1.** $2 \\space C_2 H_6 \\small{\\text{(g)}} + 7 O_2 \\small{\\text{(g)}} \\rightarrow 4 \\space C O_2 \\small{\\text{(g)}} + 6 \\space H_2 O \\small{\\text{(v)}} \\quad \\Delta \\hat{H}_{r1} ^{\\circ} = -3119.6 \\space kJ/mol$\n",
+    "\n",
+    "**2.** $C \\small{\\text{(s)}} + O_2 \\small{\\text{(g)}} \\rightarrow C O_2 \\small{\\text{(g)}} \\quad \\Delta \\hat{H}_{r2} ^{\\circ} = -393.5 \\space kJ/mol$\n",
+    "\n",
+    "**3.** $2 \\space H_2 \\small{\\text{(g)}} + O_2 \\small{\\text{(g)}} \\rightarrow 2 H_2 O \\small{\\text{(v)}} \\quad \\Delta \\hat{H}_{r3} ^{\\circ} = -285.8 \\space kJ/mol$\n",
+    "\n",
+    "Using Hess's law, determine the standard heat of reaction for the following reaction.\n",
+    "\n",
+    "**4.** $C \\small{\\text{(s)}} + 3 \\space H_2 \\small{\\text{(g)}} \\rightarrow C_2 H_6 \\small{\\text{(g)}} \\quad \\Delta \\hat{H}_{r4} ^{\\circ} = ?$\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "To find the standard heat of reaction of the fourth formula, we must first balance the three previous one so that they equate to the last one. There is no simple trick to this, although, the more you practice, the easier it becomes.\n",
+    "\n",
+    "$$ \\big(\\space formula_{\\space 4} \\space \\big) = 2 \\times \\big(\\space formula_{\\space 2} \\space \\big) + 1.5 \\times \\big(\\space formula_{\\space 3} \\space \\big) - 0.5 \\times \\big(\\space formula_{\\space 1} \\space \\big) $$\n",
+    "\n",
+    "Therefore,\n",
+    "\n",
+    "$$ \\Delta \\hat{H}_{r4} = 2 \\times \\Big(\\Delta \\hat{H}_{r2} ^{\\circ}\\Big) + 1.5 \\times \\Big(\\Delta \\hat{H}_{r3} ^{\\circ}\\Big) - 0.5 \\times \\Big(\\Delta \\hat{H}_{r1} ^{\\circ}\\Big) $$\n",
+    "\n",
+    "$$ \\Delta \\hat{H}_{r4} = 2 \\times \\Big(-393.5 \\space \\frac{kJ}{mol}\\Big) + 1.5 \\times \\Big(-285.8 \\space \\frac{kJ}{mol} \\Big) - 0.5 \\times \\Big(-3119.6 \\space \\frac{kJ}{mol} \\Big) $$\n",
+    "\n",
+    "$$ \\Delta \\hat{H}_{r4} = -84.6 \\space \\frac{kJ}{mol} $$\n",
+    "\n",
+    "\n",
+    "#### Question\n",
+    "\n",
+    "Suppose heats of reaction at 25 &deg;C are measured experimentally for the following set of reactions:\n",
+    "\n",
+    "$$A+B \\longrightarrow C: \\space \\space \\quad \\Delta \\hat{H}_{r1} ^{\\circ} = -1000 \\space kJ/mol $$\n",
+    "\n",
+    "$$A+D \\longrightarrow 3C + E: \\space \\space \\quad \\Delta \\hat{H}_{r2} ^{\\circ} = -2000 \\space kJ/mol $$\n",
+    "\n",
+    "What is the heat of reaction of the equation involving 2D as part of the products?\n",
+    "\n",
+    "#### Answer\n",
+    "\n",
+    "$$A+B \\longrightarrow C$$\n",
+    "\n",
+    "$$A+D \\longrightarrow 3C + E$$\n",
+    "\n",
+    "---\n",
+    "\n",
+    "$$A+B \\longrightarrow C$$\n",
+    "\n",
+    "$$3C + E \\longrightarrow  A+D$$\n",
+    "\n",
+    "---\n",
+    "\n",
+    "$$2A+2B \\longrightarrow 2C$$\n",
+    "\n",
+    "$$6C + 2E \\longrightarrow  2A+2D$$\n",
+    "\n",
+    "---\n",
+    "\n",
+    "$$6C + 2E+2B \\longrightarrow 2C + 2D: \\space \\space \\quad \\Delta \\hat{H}_{r} ^{\\circ} = 2000\\space kJ/mol $$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

@@ -1,0 +1,136 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 3.8 &ndash; Module Summary\n",
+    "\n",
+    "In this module, we have covered: \n",
+    "\n",
+    "- Density and specific gravity\n",
+    "- Dimensional Homogeneity\n",
+    "- Process and Instrumentation Diagram (P&ID)\n",
+    "- Equilibrium (Solid-Liquid, Solid-Vapour and Liquid-Liquid)\n",
+    "- Temperature systems ( Kelvin, Celsius, Fahrenheit, Rankine )\n",
+    "- Recycle and purge\n",
+    "- Separator\n",
+    "- Splitter\n",
+    "\n",
+    "The purpose of this notebook is to give a summary of all the topics covered, and to give additional practice problems for topics focused more heavily in CHBE 241, which are bolded in the list above. The practice qustions will try and include most topics covered in the module.\n",
+    "\n",
+    "---\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.8.0 &ndash; Density and specific gravity\n",
+    "\n",
+    "Density is the amount of mass per unit volume, and specific gravity (S.G.) is the ratio of density of the object to the density of a standard, usually water for a liquid or solid, and air for a gas. Density of a mixture can be estimated using mass fractions of mixture components and the components' densities.\n",
+    "\n",
+    "$$Density = \\rho$$\n",
+    "\n",
+    "$$Specific \\space gravity = \\frac{{\\rho}_{sample}}{{\\rho}_{H_2O}}$$\n",
+    "\n",
+    "$$ \\overline\\rho = \\sum_{i=1}^{n} {x_i}{\\rho}_i$$\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.8.1 &ndash; Dimensional homogeneity\n",
+    "\n",
+    "Dimensional homogeneity is the concept where the dimensions of variables on both sides of an equation are the same. If the units are the same, it follows that the dimensions of each term must be the same.\n",
+    "\n",
+    "$$ Length = (Length/Time) \\times (Time)$$\n",
+    "\n",
+    "**An equation could be dimensionally homogenous but invalid if the equation is also not fully-balanced** i.e.\n",
+    "\n",
+    "$$ 2M = M $$\n",
+    "\n",
+    "is only valid for 1 case of M.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.8.2 &ndash; Temperature systems ( Kelvin, Celsius, Fahrenheit, Rankine )\n",
+    "\n",
+    "### Conversion table (Kelvin based)\n",
+    "\n",
+    "|  | From kelvins   | To kelvins     |\n",
+    "|------|------|------|\n",
+    "|   Celcius  | [°C] = **[K]** − 273.15| **[K]** = [°C] + 273.15     |\n",
+    "|Fahrenheit|[°F] = **[K]** ×  $9⁄5$ − 459.67 | **[K]** = ([°F] + 459.67) ×  $5⁄9$ |\n",
+    "|Rankine| [°R] = **[K]** ×  $9⁄5$ | **[K]** = [°R] ×  $5⁄9$ |\n",
+    "\n",
+    "### Conversion table (Celsius based)\n",
+    "\n",
+    "|  | From Celsius   | To Celsius     |\n",
+    "|------|------|------|\n",
+    "|   Kelvin  | [K] = **[°C]** + 273.15| **[°C]** = [K] - 273.15     |\n",
+    "|Fahrenheit|[°F] = **[°C]** ×  $9⁄5$ + 32  | **[°C]** = ([°F] - 32) ×  $5⁄9$ |\n",
+    "|Rankine| [°R] = **[°C** + 273.15**]** ×  $9⁄5$ | **[°C]** = [°R] ×  $5⁄9$ - 273.15 |\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3.8.3 &ndash; Practice questions\n",
+    "\n",
+    "The following practice problems aim to take the 3 mass balance scenarios (Splitter, Recycle & Purge and Separator streams) and explore all 3 in a single process."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Practice 1\n",
+    "\n",
+    "![Figure 1.](../figures/Module-3/Module-3-main-example.png \"Acetylhyde production\")\n",
+    "<p style = \"text-align:center;\">Figure 1.</p>\n",
+    "\n",
+    "A fresh feed of 50% ethylene ( $C_2H_4$ ) is fed into a process that produces acetaldehyde( $C_2H_4O$ ) and water as products. To increase the efficiency of the the system, a recycle stream from the separator bottom feed is fed back into the reactor feed. A purge stream carries 15.5 kg $C_2 H_4/hr$, 15.4 kg $O_2/hr$, 1.1 kg $C_2 H_4 O/hr$ and 18 kg $CO_2/hr$ out of the process. Given that the separator bottom feed flow rate is $150 \\space kg/hr$ and its constituents are 50% $C_2 H_4$, 20% $O_2$, 20% $C_2 H_4 O$ and 10% $CO_2$. What are the constituents of the:\n",
+    "\n",
+    "a) recycle stream\n",
+    "\n",
+    "b) fresh feed \n",
+    "\n",
+    "c) reactor feed? Give the answer in mass flow rates of each constituent."
+   ]
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}
