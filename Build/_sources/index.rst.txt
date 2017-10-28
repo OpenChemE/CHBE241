@@ -96,6 +96,7 @@ Module 5 Energy Balances
 * :ref:`Module-5-Energy-Balances/5.2 - Heat and Work.ipynb`
 * :ref:`Module-5-Energy-Balances/5.3 - Open Systems and Enthalpy.ipynb`
 * :ref:`Module-5-Energy-Balances/5.4 - Review of Terms.ipynb`
+* :ref:`Module-5-Energy-Balances/5.5 - Cv and Cp Specific Heat Capacity.ipynb`
 * :ref:`Module-5-Energy-Balances/5.6 - Questions on Cv and Cp.ipynb`
 * :ref:`Module-5-Energy-Balances/5.7 - Reference States and State Properties.ipynb`
 * :ref:`Module-5-Energy-Balances/5.8 - Path and State Functions.ipynb`
