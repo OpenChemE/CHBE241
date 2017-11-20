@@ -215,6 +215,56 @@ div.nboutput div.output_area.stderr {
 air/<span class="math">\(O_2\)</span> and excess air/<span class="math">\(O_2\)</span> to analyze combustion
 reactions.</li>
 </ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.7.1-–-Introduction">
+<h2>2.7.1 – Introduction<a class="headerlink" href="#2.7.1-–-Introduction" title="Permalink to this headline">¶</a></h2>
+<p>As you learned in Module – 1, degrees of freedom (DOF) can save you
+precious time and resources. It is very improtant to perform a DOF
+analysis before calculating the solution to any problem.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.7.2-–-Incomplete-Combustion">
+<h2>2.7.2 – Incomplete Combustion<a class="headerlink" href="#2.7.2-–-Incomplete-Combustion" title="Permalink to this headline">¶</a></h2>
+<p>When any type of fuel is burned, the carbon in the fuel reacts wit
+oxygen to form either <span class="math">\(C O_2\)</span> or <span class="math">\(C O\)</span>. To simplify
+question, we often assume that the combustion is <strong>complete</strong>, meaning
+the only by products are <span class="math">\(C O_2\)</span> and <span class="math">\(H_2 O\)</span>, but that is
+often not the case. When <span class="math">\(C O\)</span> is a product of the combustion, we
+call the reaction a <strong>partial combustion</strong> or an <strong>incomplete
+combustion</strong>. An example of this is the combustion of propane:</p>
+<div class="math">
+\[C_3 H_8 + 5 O_2 \longrightarrow 3 C O_2 + 4 H_2 O \quad (1)\]</div>
+<div class="math">
+\[C_3 H_8 + \frac{7}{2} O_2 \longrightarrow 3 C O + 4 H_2 O \quad (2)\]</div>
+<p>The first chemcial formula (1) is the complete combustion of propane
+while the second chemical formula (2) is the partial combustion of
+propane.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.7.3-–-Theoretical-Air/">
+<h2>2.7.3 – Theoretical Air/<span class="math">\(O_2\)</span><a class="headerlink" href="#2.7.3-–-Theoretical-Air/" title="Permalink to this headline">¶</a></h2>
+<p><strong>Theoretical oxygen</strong> is the theoretical amount of <span class="math">\(O_2\)</span> you
+would need for complete combustion of a certain reaction. For example,
+if you have 300 moles of propane, you would theoretically need 1,500
+moles of <span class="math">\(O_2\)</span></p>
+<p><strong>Theoretical air</strong> is the quantity of air that contains the theoretical
+oxygen. Since air is roughly 79 % <span class="math">\(N_2\)</span> and 21 % <span class="math">\(O_2\)</span>,
+theoretical air will always be a larger number than theoretical oxygen.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.7.4-–-Excess-Air/-and-Precent-Excess">
+<h2>2.7.4 – Excess Air/<span class="math">\(O_2\)</span> and Precent Excess<a class="headerlink" href="#2.7.4-–-Excess-Air/-and-Precent-Excess" title="Permalink to this headline">¶</a></h2>
+<p><strong>Excess air</strong> is the amount of air that exceeds theoretical air. So if
+you were to input 400 moles of air, and the theoretical air is found to
+be 300 moles, your excess air would equate to 100 moles.</p>
+<p><strong>Percent Excess air</strong> is a simple formula which is:</p>
+<div class="math">
+\[\frac{n_{\text{air, fed}} - n_{\text{air, theoretical}}}{n_{\text{air, theoretical}}} \times 100 \%\]</div>
+<p>or</p>
+<div class="math">
+\[\frac{n_{\text{air, excess}}}{n_{\text{air, theoretical}}} \times 100 \%\]</div>
+<hr class="docutils" />
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none"><div class="highlight"><pre>
 <span></span>In [ ]:
@@ -238,6 +288,10 @@ reactions.</li>
   <ul>
 <li><a class="reference internal" href="#">2.7 – Combustion Concepts</a><ul>
 <li><a class="reference internal" href="#2.7.0-–-Learning-Objectives">2.7.0 – Learning Objectives</a></li>
+<li><a class="reference internal" href="#2.7.1-–-Introduction">2.7.1 – Introduction</a></li>
+<li><a class="reference internal" href="#2.7.2-–-Incomplete-Combustion">2.7.2 – Incomplete Combustion</a></li>
+<li><a class="reference internal" href="#2.7.3-–-Theoretical-Air/">2.7.3 – Theoretical Air/<span class="math">\(O_2\)</span></a></li>
+<li><a class="reference internal" href="#2.7.4-–-Excess-Air/-and-Precent-Excess">2.7.4 – Excess Air/<span class="math">\(O_2\)</span> and Precent Excess</a></li>
 </ul>
 </li>
 </ul>

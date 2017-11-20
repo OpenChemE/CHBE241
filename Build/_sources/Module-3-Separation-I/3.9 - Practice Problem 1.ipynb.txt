@@ -20,7 +20,7 @@
     "\n",
     "![](../figures/Module-3/Q33_1.png)\n",
     "\n",
-    "### b) Perform a degree of analysis on each unit operation and determine which unit should be solved first.\n",
+    "### b) Perform a degree of freedom analysis on each unit operation and determine which unit should be solved first.\n",
     "\n",
     "Lets first write out all the equations for each of the unit ops.\n",
     "\n",
