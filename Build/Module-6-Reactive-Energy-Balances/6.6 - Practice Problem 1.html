@@ -235,58 +235,10 @@ inlet-outlet enthalpy table.</li>
 <div class="section" id="a)-Take-the-elemental-species--at--as-references-and-prepare-and-fill-an-inlet-outlet-enthalpy-table.">
 <h3>a) Take the elemental species <span class="math">\(\big[N_2 (g), \space H_2 (g), \space O_2 (g)\big]\)</span> at <span class="math">\(25 ^{\circ} C\)</span> as references and prepare and fill an inlet-outlet enthalpy table.<a class="headerlink" href="#a)-Take-the-elemental-species--at--as-references-and-prepare-and-fill-an-inlet-outlet-enthalpy-table." title="Permalink to this headline">¶</a></h3>
 <p>First we must prepare the enthalpy table:</p>
-<table style="width:70%" align="center"><div class="highlight-default"><div class="highlight"><pre><span></span>&lt;tr&gt;
-    &lt;th&gt; Substance &lt;/th&gt;
-    &lt;th&gt; $\dot{n}_{in} \space (mol/min)$ &lt;/th&gt;
-    &lt;th&gt; $\hat{H}_{in} \space (kJ/mol)$ &lt;/th&gt;
-    &lt;th&gt; $\dot{n}_{out} \space (mol/min)$ &lt;/th&gt;
-    &lt;th&gt; $\hat{H}_{out} \space (kJ/mol)$ &lt;/th&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $NH_3$ &lt;/td&gt;
-    &lt;td&gt;$100$&lt;/td&gt;
-    &lt;td&gt;$\hat{H}_1$&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $\text{Air}$ &lt;/td&gt;
-    &lt;td&gt;$900$&lt;/td&gt;
-    &lt;td&gt;$\hat{H}_2$&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $NO$ &lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;$90$&lt;/td&gt;
-    &lt;td&gt;$\hat{H}_3$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $H_2O$ &lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;$150$&lt;/td&gt;
-    &lt;td&gt;$\hat{H}_4$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $N_2$ &lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;$716$&lt;/td&gt;
-    &lt;td&gt;$\hat{H}_5$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $O_2$ &lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;$69$&lt;/td&gt;
-    &lt;td&gt;$\hat{H}_6$&lt;/td&gt;
-&lt;/tr&gt;
-</pre></div>
+<div class="figure">
+<img alt="" src="../_images/Table_7.png" />
 </div>
-</table><p>Using heat capacity and enthalpy tables found online such as on the
+<p>Using heat capacity and enthalpy tables found online such as on the
 <a class="reference external" href="https://www.nist.gov/">NIST</a> website, we can find the enthalpies of
 the inputs and outputs.</p>
 <div class="math">
@@ -335,58 +287,10 @@ the inputs and outputs.</p>
 <div class="math">
 \[\hat{H}_6 = 21.86 \space \frac{kJ}{mol}\]</div>
 <p>Now we can complete the table.</p>
-<table style="width:70%" align="center"><div class="highlight-default"><div class="highlight"><pre><span></span>&lt;tr&gt;
-    &lt;th&gt; Substance &lt;/th&gt;
-    &lt;th&gt; $\dot{n}_{in} \space (mol/min)$ &lt;/th&gt;
-    &lt;th&gt; $\hat{H}_{in} \space (kJ/mol)$ &lt;/th&gt;
-    &lt;th&gt; $\dot{n}_{out} \space (mol/min)$ &lt;/th&gt;
-    &lt;th&gt; $\hat{H}_{out} \space (kJ/mol)$ &lt;/th&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $NH_3$ &lt;/td&gt;
-    &lt;td&gt;$100$&lt;/td&gt;
-    &lt;td&gt;$-46.19 \space \frac{kJ}{mol}$&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $\text{Air}$ &lt;/td&gt;
-    &lt;td&gt;$900$&lt;/td&gt;
-    &lt;td&gt;$3.67 \space \frac{kJ}{mol}$&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $NO$ &lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;$90$&lt;/td&gt;
-    &lt;td&gt;$111.97 \space \frac{kJ}{mol}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $H_2O$ &lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;$150$&lt;/td&gt;
-    &lt;td&gt;$-216.91 \space \frac{kJ}{mol}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $N_2$ &lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;$716$&lt;/td&gt;
-    &lt;td&gt;$20.59 \space \frac{kJ}{mol}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt; $O_2$ &lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;$69$&lt;/td&gt;
-    &lt;td&gt;$21.86 \space \frac{kJ}{mol}$&lt;/td&gt;
-&lt;/tr&gt;
-</pre></div>
+<div class="figure">
+<img alt="" src="../_images/Table_8.png" />
 </div>
-</table></div>
+</div>
 </div>
 <div class="section" id="b)-Calculate-the-heat-transfer-to-or-from-the-reactor-in-MW.">
 <h3>b) Calculate the heat transfer to or from the reactor in MW.<a class="headerlink" href="#b)-Calculate-the-heat-transfer-to-or-from-the-reactor-in-MW." title="Permalink to this headline">¶</a></h3>
