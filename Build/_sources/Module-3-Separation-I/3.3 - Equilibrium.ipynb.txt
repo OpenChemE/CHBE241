@@ -21,7 +21,13 @@
     "4. Understand the difference between the physical and chemical equilibrium cases for the 3 equilibrium cases.\n",
     "\n",
     "\n",
-    "---\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "## 3.3.1 &ndash; Introduction\n",
     "\n",
     "In this section, we will be exploring **phase equilibriums**, **chemical and physical properties** and **temperatures and pressures** that allow the equilibrium to exist in chemical processes (e.g. boiling points, sublimation points). We will also be learning about chemical and physical properties of substances. We will also be factoring in the phase equilibriums in our balances for separation, such as in a distillation column.\n",
@@ -41,13 +47,18 @@
     "\n",
     "Since a solid is very hard to transport over a process, we usually melt it into liquid form and collect it as a precipitant at the end of the process.\n",
     "\n",
-    "---\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "## 3.3.3 &ndash; Solid-Liquid Equilibrium (solubility)\n",
     "\n",
     "Solid-Liquid Equilibrium, as a **chemical** property of a solid substance, is the **solubility** of the solid substance. Solubility refers to the ability of a given solute to dissolve in a solvent.\n",
     "\n",
     "It is measured in terms of the maximum amount of solute dissolved in a solvent at equilibrium. The resulting solution is called a **saturated solution**. Under various conditions, the equilibrium solubility can be exceeded to give a so-called **supersaturated solution**.\n",
-    "\n",
     "\n",
     "### Case of Two Substances\n",
     "\n",
@@ -59,12 +70,24 @@
     "\n",
     "$T_1$, $T_2$ and $T_3$ are all the melting temperatures of the mixture corresponding to different percent compositions of component A.\n",
     "\n",
-    "---\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "## 3.3.4 &ndash; Solid-Vapour Equilibrium\n",
     "\n",
     "Solid-Vapour Equilibrium is the temperature and pressure point where a solid and a vapour can co-exist. The temperature and pressure point is called the **sublimation** point. A prime example of this equilibrium is dry ice, which is frozen carbon dioxide. \n",
     "\n",
-    "---\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "## 3.3.5 &ndash; Liquid-Liquid Equilibrium\n",
     "\n",
     "In liquid-liquid equilibrium, the liquids can either be **miscible**, **partially miscible** or **immiscible**.\n",
@@ -117,11 +140,9 @@
     "\n",
     "Find the composition of the basis, filtrate and wet filter cake, and convert all units to a single, uniform unit.\n",
     "- Composition of 100 kg basis at 100 &deg;C:\n",
-    "\n",
     "    - $AgNO_3$ fraction =  $\\frac{952 \\space g}{100 \\space g}$ = $\\frac{952 \\space g}{100 \\space g + 952 \\space g}$        = $0.905g \\space AgNO_3$\n",
     "    \n",
     "    - $H_2O$ fraction = $1 \\space - 0.905$ = $0.095g \\space AgNO_3$\n",
-    "\n",
     "\n",
     "- Composition of filtrate and solution in wet filter cake at 20 &deg;C\n",
     "    - $AgNO_3$ fraction $x_1$ =  $\\frac{222 \\space g}{100 \\space g}$ = $\\frac{222 \\space g}{100 \\space g + 222 \\space g}$ = $0.689g \\space AgNO_3$\n",

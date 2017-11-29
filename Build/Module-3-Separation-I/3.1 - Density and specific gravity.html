@@ -42,7 +42,169 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="3.1-–-Density-and-specific-gravity-(S.G.)">
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="3.1-–-Density-and-specific-gravity-(S.G.)">
 <h1>3.1 – Density and specific gravity (S.G.)<a class="headerlink" href="#3.1-–-Density-and-specific-gravity-(S.G.)" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
 <div class="section" id="3.1.0-–-Learning-objectives">
@@ -69,23 +231,78 @@ substance in the process.</p>
 \[Specific \space gravity = \frac{{\rho}_{sample}}{{\rho}_{H_2O}}\]</div>
 </div>
 <hr class="docutils" />
-<div class="section" id="3.1.2-–-Usage-of-Density-and-Specific-Gravity">
-<h2>3.1.2 – Usage of Density and Specific Gravity<a class="headerlink" href="#3.1.2-–-Usage-of-Density-and-Specific-Gravity" title="Permalink to this headline">¶</a></h2>
-<p>In the event of lack of density data on a liquid or gas mixture, the
-density <span class="math">\(\overline\rho\)</span> of a mixture of liquids <span class="math">\(n\)</span>
-(<span class="math">\(A_1\)</span>, <span class="math">\(A_2\)</span>, <span class="math">\(A_3\)</span>...) can be estimated from the
-component mass fractions [<span class="math">\(x_i\)</span>] and pure-component densities
-[<span class="math">\(\rho_i\)</span>].</p>
+<div class="section" id="3.1.2-–-Example-1">
+<h2>3.1.2 – Example 1<a class="headerlink" href="#3.1.2-–-Example-1" title="Permalink to this headline">¶</a></h2>
+<p>Natural gas is <strong>volumetrically</strong> made up of 94.44% Methane
+(<span class="math">\(CH_4\)</span>), 4.24% Ethane (<span class="math">\(C_2H_6\)</span>), 0.22% Propane
+(<span class="math">\(C_3H_8\)</span>), 0.78% Nitrogen (<span class="math">\(N_2\)</span>), and 0.32% Carbon Dioxide
+(<span class="math">\(CO_2\)</span>). What is the density of this natural gas mixture?</p>
+<p>Let&#8217;s assume a total volume of 1 litre. This means there will be:</p>
 <div class="math">
-\[\overline\rho = \sum_{i=1}^{n} {x_i}{\rho}_i\]</div>
+\[1 \space L \cdot 0.9444 = 0.9444 \space L \space [CH_4]\]</div>
+<div class="math">
+\[1 \space L \cdot 0.0424 =  0.0424 \space L \space [C_2H_6]\]</div>
+<div class="math">
+\[1 \space L \cdot 0.0022 = 0.0022 \space L \space [C_3H_8]\]</div>
+<div class="math">
+\[1 \space L \cdot 0.0078 = 0.0078 \space L \space [N_2]\]</div>
+<div class="math">
+\[1 \space L \cdot 0.0032 = 0.0032 \space L \space [CO_2]\]</div>
+<p>Note we cannot use volumetric fractions directly to calculate the
+mixture density. Looking up the density of each component, the total
+mass and the mass fractions would be:</p>
+<div class="math">
+\[944.4 \space L \space [CH_4] \cdot \frac{0.72g}{L} = 679.97 \space g\]</div>
+<div class="math">
+\[42.4 \space L \space [C_2H_6] \cdot \frac{1.34g}{L} = 0.05682 \space g\]</div>
+<div class="math">
+\[2.2 \space L \space [C_3H_8] \cdot \frac{1.97g}{L} = 0.004334 \space g\]</div>
+<div class="math">
+\[7.8 \space L \space [N_2] \cdot \frac{1.251g}{L} = 0.009758 \space g\]</div>
+<div class="math">
+\[3.2 \space L \space [CO_2] \cdot \frac{1.977g}{L} = 0.006326 \space g\]</div>
+<p>The total mass of the 1 litre mixture would be the sum of these masses,
+which comes to <span class="math">\(680.05 \space g\)</span>. The mass fractions of the
+components then are:</p>
+<div class="math">
+\[\frac{679.97}{680.05} \space [CH_4] = 0.99988\]</div>
+<div class="math">
+\[\frac{0.05682}{680.05} \space [C_2H_6] = 0.00008355\]</div>
+<div class="math">
+\[\frac{0.004334}{680.05} \space [C_3H_8] = 0.00000637\]</div>
+<div class="math">
+\[\frac{0.009758}{680.05} \space [N_2] = 0.00001435\]</div>
+<div class="math">
+\[\frac{0.006326}{680.05} \space [CO_2] = 0.0000093\]</div>
+<p>The density of the mixture can be approximated by just the methane
+alone, the mass fraction is substantially more than the others.</p>
+<div class="math">
+\[\overline\rho_{natural \space gas} = \sum_{i=1}^{n} {x_i}{\rho}_i = 0.99988 \cdot \frac{0.72 \space g}{L} = 0.72 \space \frac{g}{L}\]</div>
+<p>A common usage of densities and S.G. is the calculation of mass or
+volumetric flowrates, given one of the two factors, since:</p>
+<div class="math">
+\[\rho = \frac{\dot{m}}{\dot{V}} = \frac{m}{V}\]</div>
+<p>Note: The dot above the variable means that the unit is the variable
+<strong>per unit time</strong>. (e.g. <span class="math">\(\dot{m}\)</span> = <span class="math">\(mass/time\)</span>)</p>
 </div>
-<div class="section" id="3.1.4-–-Example-2">
-<h2>3.1.4 – Example 2<a class="headerlink" href="#3.1.4-–-Example-2" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="3.1.2-–-Example-2">
+<h2>3.1.2 – Example 2<a class="headerlink" href="#3.1.2-–-Example-2" title="Permalink to this headline">¶</a></h2>
 <p>The volumetric flow rate of <span class="math">\(CCl_4\)</span> (
 <span class="math">\(\rho = 1.595 \space g/cm^3\)</span> ) in a pipe is 100.0 cm<span class="math">\(^3\)</span>
 /min. What is the mass flow rate of the <span class="math">\(CCl_4\)</span>?</p>
 <div class="math">
 \[\dot{m}_{CCl_4} = 100.0 \space \frac{cm^3}{min} \times 1.595 \space \frac{g}{cm^3} = 159.5 \space \frac{g}{min}\]</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -100,8 +317,8 @@ component mass fractions [<span class="math">\(x_i\)</span>] and pure-component 
 <li><a class="reference internal" href="#">3.1 – Density and specific gravity (S.G.)</a><ul>
 <li><a class="reference internal" href="#3.1.0-–-Learning-objectives">3.1.0 – Learning objectives</a></li>
 <li><a class="reference internal" href="#3.1.1-–-Introduction">3.1.1 – Introduction</a></li>
-<li><a class="reference internal" href="#3.1.2-–-Usage-of-Density-and-Specific-Gravity">3.1.2 – Usage of Density and Specific Gravity</a></li>
-<li><a class="reference internal" href="#3.1.4-–-Example-2">3.1.4 – Example 2</a></li>
+<li><a class="reference internal" href="#3.1.2-–-Example-1">3.1.2 – Example 1</a></li>
+<li><a class="reference internal" href="#3.1.2-–-Example-2">3.1.2 – Example 2</a></li>
 </ul>
 </li>
 </ul>

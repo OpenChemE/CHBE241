@@ -7,6 +7,13 @@
     "# 3.7 &ndash; Separator\n",
     "\n",
     "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "## 3.7.0 &ndash; Learning Objectives\n",
     "\n",
     "By the end of this notebook, you shdould be able to:\n",
@@ -16,8 +23,13 @@
     "- Correctly use vapor and liquid fractions in mass balances on the separator\n",
     "\n",
     "\n",
-    "---\n",
-    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "## 3.7.1 &ndash; Introduction\n",
     "Separation is essential in chemical processes, maybe it's purifying the end products or fractioning a mixture into it's constituents for recycling or different reactions.\n",
     "\n",
@@ -33,9 +45,8 @@
     "## 3.7.2 &ndash; Separator BFD\n",
     "\n",
     "![Figure 1.](../figures/Module-3/3.8-example.svg)\n",
-    "<div style=\"text-align:center\">Figure 1.</div>\n",
     "\n",
-    "<div style = \"text-align:center\"><font size = \"1\">Attribution: Victor Chiew Yung Hui & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]</font></div>\n",
+    "Attribution: Victor Chiew Yung Hui & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]\n",
     "\n",
     "---"
    ]
@@ -51,12 +62,15 @@
     "#### Noteworthy in Figure 1:\n",
     "\n",
     "- A volumetric flow rate is given for the feed stream, but mass flow rates and fractions will be needed for balances. The mass flow rate of the stream should therefore be considered an unknown process variable and labeled as such on the chart. Its value will be determined from the known volumetric flow rate and density of the feed stream.\n",
-    "$$$$\n",
+    "\n",
+    "$$ $$\n",
+    "\n",
     "- Since mass balances will be used, the given component mole fractions in the overhead product stream will have to be converted to mass fractions. The mass fractions are accordingly labeled as unknowns.\n",
     "\n",
-    "---\n",
     "\n",
-    "![Figure 1.](../figures/Module-3/3.8-example.svg)\n"
+    "![Figure 1.](../figures/Module-3/3.8-example.svg)\n",
+    "\n",
+    "Attribution: Victor Chiew Yung Hui & UBC [CC BY 4.0 de (https://creativecommons.org/licenses/by/4.0/)]"
    ]
   },
   {

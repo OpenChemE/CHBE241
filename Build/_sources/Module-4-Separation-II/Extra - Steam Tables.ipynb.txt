@@ -2,20 +2,14 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "# Extra &ndash; Steam Tables"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "## Saturated Steam table\n",
     "\n",
@@ -26,9 +20,6 @@
    "cell_type": "code",
    "execution_count": 2,
    "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true,
     "scrolled": true
    },
    "outputs": [
@@ -1385,10 +1376,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "## Super Heated Steam Table\n",
     "\n",
@@ -1400,11 +1388,7 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -1660,10 +1644,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "### 2 MPa"
    ]
@@ -1671,11 +1652,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -1920,10 +1897,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "### 3 MPa"
    ]
@@ -1931,11 +1905,7 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -2180,10 +2150,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "### 4 MPa"
    ]
@@ -2191,11 +2158,7 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -2429,10 +2392,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "### 5 MPa"
    ]
@@ -2440,11 +2400,7 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -2678,10 +2634,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "### 6 MPa"
    ]
@@ -2689,11 +2642,7 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -2927,10 +2876,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "### 7 MPa"
    ]
@@ -2938,11 +2884,7 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -3176,10 +3118,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "### 8 MPa"
    ]
@@ -3187,11 +3126,7 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -3425,10 +3360,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "### 9 MPa"
    ]
@@ -3436,11 +3368,7 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -3663,10 +3591,7 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "source": [
     "### 10 MPa"
    ]
@@ -3674,11 +3599,7 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "metadata": {
-    "collapsed": false,
-    "deletable": true,
-    "editable": true
-   },
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -3903,9 +3824,7 @@
    "cell_type": "code",
    "execution_count": null,
    "metadata": {
-    "collapsed": true,
-    "deletable": true,
-    "editable": true
+    "collapsed": true
    },
    "outputs": [],
    "source": []
@@ -3927,7 +3846,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.5.2"
+   "version": "3.6.1"
   }
  },
  "nbformat": 4,

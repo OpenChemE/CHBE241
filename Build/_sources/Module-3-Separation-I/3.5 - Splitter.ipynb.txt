@@ -22,8 +22,13 @@
     "3. Make correct assumptions to solve.\n",
     "4. Perform a mass balance on a splitter stream.\n",
     "\n",
-    "---\n",
-    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "## 3.5.1 &ndash; Introduction\n",
     "Separation is essential in chemical processes, mainly for redirection of product streams to multiple reactors, mixing chambers or separators etc.\n",
     "\n",

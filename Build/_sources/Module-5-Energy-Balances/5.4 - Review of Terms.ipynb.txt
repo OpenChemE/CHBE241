@@ -58,7 +58,7 @@
     "\n",
     "- __Isolated system:__ A system in which matter/mass and energy are __conserved__. '\n",
     "\n",
-    " -__Specific property:__ A property that is divided by mass. \n",
+    "- __Specific property:__ A property that is divided by mass. \n",
     "\n",
     "\n",
     "### check yourself: \n",

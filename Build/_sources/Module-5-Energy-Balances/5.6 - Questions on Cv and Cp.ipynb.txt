@@ -4,7 +4,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# 5.6 &ndash; Questions on $C_v$ and $C_p$ \n",
+    "# 5.6 &ndash; Questions on Heat Capacity\n",
     "\n",
     "---"
    ]
