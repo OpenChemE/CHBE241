@@ -1,0 +1,138 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Energy balance','non-reactive','heat capacity', 'heat of dilution')
+
+## DBsubject('Thermodynamics')
+## DBchapter('Multicomponent phase equilibrium')
+## DBsection('Energy changes due to mixing and solution')
+## Date('11/20/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('8.3')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+   "unionTables.pl",
+   "niceTables.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.05);
+Context()->{format}{number} = "%.4g";
+
+
+#---- Random variables for this problem ---------------------
+$n_S = Real(random(1,10,0.1));       	# mole of sulfuric acid in mol
+$m_flask = Real(random(200,500,5));	# mass of flask in grams
+
+#---- Constants and fixed variables ---------------------
+$x_S = 0.35;				# mole fraction of acid sulfuric
+$x_w = 1 - $x_S;			# mole fraction of water
+$R = $x_w / $x_S;			# mol H2O/mol H2SO4
+$inc_H = (-41.92+36.9)/(2-1.5)*($R-1.5)+(-36.9); #kJ/mol H2SO4
+$T_i = 25;				# initial temperature in deg C
+
+#---- Calculation --------------------------------
+## part a)
+$Q = 1*$inc_H*$n_S;			# kJ of energy released
+
+## part b)
+$m_tot = $m_flask + $n_S * 98.08 + $n_S/$x_S*$x_w*18; # total mass in grams
+$T_f = $T_i - $Q*1000/($m_tot*5.4);
+
+#---- Answers ---------------------------
+$ans1 = Real($Q);
+$ans2 = Real($T_f);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+
+### Problem Statement
+
+In an experiment, you are required to dilute [$n_S] moles of pure sulfuric acid (100% [`H_2SO_4`]) in a flask with enough pure water to produce a 35 mole% aqueous solution of the acid. Dilution of pure sulfuric acid with water is known to be highly exothermic. The excessive energy released from dilution of sulfuric acid can be dangerous to an experimenter. 
+
+### Part A
+
+As a cautious and meticulous experimenter, you decided to calculate the energy released from this dilution process to determine the amount of energy that needs to be removed to keep the final solution at the initial temperature. Using the data from the table below, calculate this energy in kJ. Note the reference for the table is that [`\Delta \hat{H}_m`] is zero for pure sulfuric acid and pure water.
+
+[@
+  DataTable([
+['R (mol `H_2O`/mol solute) ', '0.5 ', '1.0', '1.5 ', '2.0 ', '3.0 ', '4.0 ', '5.0', '10.0 '], 
+[' `\Delta \hat{H}_m` (kJ/mol `H_2SO_4`) ', '-15.73', '-28.07', '-36.90', '-41.92', '-48.99', '-54.06', '-58.03', '-67.03']],
+);
+@]*
+
+Energy released or taken in from dilution of sulfuric acid (negative if exothermic) ...... :* [________] kJ  
+
+
+### Part B
+
+The empty flask has a mass of [$m_flask] g, while the heat capacity of the flask
+and its contents as a whole is 5.4 J/g-K (this includes the liquids inside). The flask and its content are initially at 25 deg C. What will be the final temperature of the flask and its contents if the system is assumed to be adiabatic?
+
+Final temperature of the flask and its contents  ...... :* [________] deg C
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,70);
+WEIGHTED_ANS($ans2->cmp() ,30);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+
+
+

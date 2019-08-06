@@ -1,0 +1,135 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('crystallization','solubility')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on non-reactive processess')
+## DBsection('Multiunit')
+## Date('08/21/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('6.2')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.05);
+Context()->{format}{number} = "%.4g";
+
+#Set up multiple choice
+
+#---- Random variables for this problem ---------------------
+$m_in = Real(random(120,180,2));
+$p_cryst = Real(random(70,90,1));
+
+
+$sol_100 = 0.905;
+$sol_20 = 0.689;
+
+#---- Formulas to compute answers ---------------------------
+$f_cryst = $p_cryst/100;
+$p_sat = 100 - $p_cryst;
+
+$m3 = $m_in*(1-(1-$sol_100)/(1-$sol_20))/($f_cryst/(1-$f_cryst));
+$m2 = ($f_cryst/(1-$f_cryst))*$m3;
+$m1 = $m_in-$m2-$m3;
+$m5 = $sol_100*$m_in-$sol_20*$m1;
+$m4=$m_in-$m1-$m5;
+$recov = $m5/($m_in*$sol_100);
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($m1);
+$ans2 = Real($m2);
+$ans3 = Real($m3);
+$ans4 = Real($recov);
+$ans5 = Real($m4);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+[$m_in] kilograms of an AgNO3 solution that is saturated at 100 degrees Celsius is cooled to 20 C. Following this, the cooled crystals are filtered from the solution producing  a wet filter cake and a filtrate, which is saturated solution that is removed from the system. The wet cake from the filter contains [$p_cryst]% crystals and [$p_sat]% saturated solution by mass. This cake is then sent to a dryer where the remaining water is evaporated. 
+
+The following information is known about the system:
+
+At 100 C, 952 g of AgNO3 is soluble in 100 g of water
+
+At 20 C, 222 g of AgNO3 is soluble in 100 g of water
+
+
+
+What is the amount of filtrate (liquids from the filter) removed from the system ...... :* [______] [`kg`]
+
+What is the amount of solid AgNO3 in the filter cake ...... :* [______] [`kg`]
+
+What is the amount of saturated liquid in the filter cake ...... :* [______] [`kg`]
+
+What is the fraction of AgNO3 recovered in the system as solids? ...... :* [______] 
+
+What is the amount of water that must be removed by the dryer in kg ......:* [______] [`kg`]
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp(tolType => 'absolute',tolerance => 3,) ,20);
+WEIGHTED_ANS($ans2->cmp(tolType => 'absolute',tolerance => 1.5,) ,20);
+WEIGHTED_ANS($ans3->cmp(tolType => 'absolute',tolerance => 1.5,) ,20);
+WEIGHTED_ANS($ans4->cmp(tolType => 'absolute',tolerance => 0.02,) ,20);
+WEIGHTED_ANS($ans5->cmp(tolType => 'absolute',tolerance => 1,) ,20);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+

@@ -1,0 +1,147 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('recycle')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on reactive processess')
+## DBsection('Recycle, purge and bypass')
+## Date('03/30/2018')
+## Author('')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl",
+   "answerHints.pl"     # show hints
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.03);
+Context()->{format}{number} = "%.4g";
+
+#3.A2 Characterize recycle
+#---- Constant variables for this problem (may be manipulated later if desired)---------------------
+$w_O= 13; # wt% oil in sesame seeds
+$w_S = 87;# wt% solids in sesame seeds 
+$w_FC = 75; # filter cake weight fraction
+$r_F = 3; # feed ratio
+
+#---- Random variables for this problem ---------------------
+$r_F = Real(random(2,5,0.1)); #feed ratio of toluene to sesame seeds
+
+#---- Formulas to compute answers ---------------------------
+#assume basis of 100 kg beans fed
+$m_2 = $r_F*100 +$w_S+$w_O; # overall extractor balance
+$x_2S = $w_S/$m_2; # extractor solids balance
+$x_2O = $w_O/$m_2; # extractor oil balance
+$m_3 = $w_S/($w_FC/100); # filter solids balance
+$m_4 = $m_2-$m_3; # filter overall balance
+
+$ratio2 =  $x_2O/(1-$x_2S-$x_2O); # ratio of oil to hexane in stream 2
+$x_3O = (1-$w_FC/100)*$ratio2/(1+$ratio2); # oil:hexane ratio in filter cake
+$x_4O = ($w_O-$m_3*$x_3O)/$m_4; # filter oil balance
+$m_5 = (1-$x_4O)*$m_4; # evaporator hexane balance
+$m_1 = $r_F*100-$m_5; # mixing point hexane balance
+$m_6 = $x_4O*$m_4; # evaporator oil balance
+
+$yield = $m_6/100;
+$feed_ratio = $m_1/100;
+$rr = $m_5/$m_1;
+
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($yield);
+$ans2 = Real($feed_ratio);
+$ans3 = Real($rr);
+
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+Oil from various plants can be extracted using solvent such as n-hexane. In such a process, sesame seeds, containing [$w_O] wt% oil and [$w_S] wt% solid are ground and fed into a stirred tank along with n-hexane. We will call this stirred tank an extractor. The feed ratio is [$r_F] kg of n-hexane into the extractor per kg of sesame seeds. Following extraction, the stream of n-hexane, oil and solids are sent to a filter to extract all solids. The filter cake, that comes from the filter, has [$w_FC] wt% solids and the remainder as oil and n-hexane that are still attached to the solids. The oil and hexane in the filter cake have the same ratio as when they emerged from the extractor. The oil and hexane that is not trapped in the filter cake is sent to an evaporator, where the hexane is evaporated, and oil leaves as a liquid. We will assume this is a perfect separation for simplicity. The hexane is sent to a condenser which cools it to a liquid and is then fed back to the start of the process. The final product of sesame oil is stored in drums and shipped.
+
+*Process Flow Diagram*  
+[@ image( "UBC-MEB-19-033.png",width=>831, height=>306) @]*
+
+Calculate the yield of sesame oil to product (kg oil to kg sesame seeds fed), the required feed ratio of fresh feed of hexane (kg fresh hexane to kg sesame seeds fed) and the recycle to fresh feed ratio for hexane (kg hexane recycled/kg fresh hexane feed).
+
+
+Calculate:  
+Yield of sesame oil to sesame seed feed............. :* [________]  kg oil to kg sesame seeds fed  
+Required fresh feed of hexane ............. :* [________]  kg hexane to kg sesame seeds fed  
+The recycle to fresh feed ratio for hexane ....... :* [________]  kg hexane recycled/kg fresh hexane feed  
+END_PGML
+
+BEGIN_TEXT
+$BR
+\{ 
+knowlLink("Click for a hint", 
+value=>'You can determine which unit to start with by performing a degrees of freedom analysis.
+') 
+\}
+END_TEXT
+
+WEIGHTED_ANS($ans1->cmp() ,33);
+WEIGHTED_ANS($ans2->cmp() ,33);
+WEIGHTED_ANS($ans3->cmp() ,34);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+
+
+
+
+

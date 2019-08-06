@@ -1,0 +1,192 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Vapour-Liquid Equilibrium','Antoine's equation','Raoult's Law')
+
+## DBsubject('Thermodynamics')
+## DBchapter('Multicomponent phase equilibrium')
+## DBsection('Binary vapour-liquid equilibrium (VLE)')
+## Date('11/05/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('6.4')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+   "unionTables.pl",
+   "niceTables.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.1);
+Context()->{format}{number} = "%.4g";
+
+#Antoine coefficients, o = n-octane; n = n-nonane
+$Ao = 6.91874; $An = 6.93764;
+$Bo = 1351.756; $Bn = 1430.459;
+$Co = 209.1; $Cn = 201.808;
+
+#part a)
+#---- Random variables for this problem ---------------------
+
+$O = Real(random(10,60,1)); #mole percentage of octane
+$N = 100 - $O;
+$x_O = $O/100; #liquid mole fraction of octane
+$x_N = $N/100;
+$P_tot = 760; #mm Hg
+
+#---- Regular-Falsi Method Loop to compute bubble point temperature --------------------------------
+$Tb0 = 100; 
+$psat_O0 = 10**($Ao-$Bo/($Tb0+$Co)); 
+$psat_N0 = 10**($An-$Bn/($Tb0+$Cn)); 
+$Tb1 = 150; 
+$psat_O1 = 10**($Ao-$Bo/($Tb1+$Co)); 
+$psat_N1 = 10**($An-$Bn/($Tb1+$Cn)); 
+
+$func0 = (1 - ($psat_O0*$x_O/$P_tot + (1-$x_O)*$psat_N0/$P_tot));
+$func1 = (1 - ($psat_O1*$x_O/$P_tot + (1-$x_O)*$psat_N1/$P_tot));
+$Tb2 = ($Tb0*$func1-$Tb1*$func0)/($func1-$func0);
+
+$count = 0;
+do {
+$Tb0 = $Tb1;
+$Tb1 = $Tb2;
+$psat_O0 = 10**($Ao-$Bo/($Tb0+$Co)); $psat_N0 = 10**($An-$Bn/($Tb0+$Cn)); 
+$psat_O1 = 10**($Ao-$Bo/($Tb1+$Co)); $psat_N1 = 10**($An-$Bn/($Tb1+$Cn)); 
+$func0 = (1 - ($psat_O0*$x_O/$P_tot + (1-$x_O)*$psat_N0/$P_tot));
+$func1 = (1 - ($psat_O1*$x_O/$P_tot + (1-$x_O)*$psat_N1/$P_tot));
+$Tb2 = ($Tb0*$func1-$Tb1*$func0)/($func1-$func0);
+$count = $count + 1;
+} until ( $func1 < 1E-6 || $count == 10 );
+
+#---- Formulas to compute answers ---------------------------
+$Tb_new = $Tb2;
+$psat_O_new = 10**($Ao-$Bo/($Tb_new+$Co)); 
+$y_O = $x_O*$psat_O_new/$P_tot;
+$y_N = 1 - $y_O;
+
+#part b)
+#---- Random variables for this problem ---------------------
+$Ob = Real(random(5,20,2)); #mole percentage of octane
+$Nb = Real(random(10,30,2));
+$T_cond = Real(random(100,200,2)); #deg C
+$H = 100 - $Ob - $Nb;
+$y_Ob = $Ob/100; #vapour mole fraction of octane
+$y_Nb = $Nb/100;
+
+#---- Formulas to compute answers ---------------------------
+# subscript b here indicates part b)
+$psat_Ob = 10**($Ao-$Bo/($T_cond+$Co)); $psat_Nb = 10**($An-$Bn/($T_cond+$Cn)); 
+$P_dp =1/(($y_Ob/$psat_Ob)+($y_Nb/$psat_Nb)); #dew point pressure, mm Hg
+$x_Ob = $y_Ob*$P_dp/$psat_Ob;
+$x_Nb = 1 - $x_Ob;
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($Tb_new);
+$ans2 = Real($y_O);
+$ans3 = Real($y_N);
+$ans4 = Real($P_dp);
+$ans5 = Real($x_Ob);
+$ans6 = Real($x_Nb);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+(a) In an oil refinery, a liquid mixture of n-octane and n-nonane is produced
+as specialty oil product. To increase the octane fraction in the final
+product, this liquid mixture with [$O] mole% n-octane and [$N] mole%
+n-nonane is distilled at a pressure of [$P_tot] mm Hg. Find the bubble point
+temperature of this mixture and their initial vapour composition in equilibrium with
+the liquid mixture.
+
+[`log_{10} p^*_i = A - B/(T + C)`]  
+where [`p^*_i`] is saturation vapour pressure in mm Hg and [`T`] is temperature
+in deg C.
+
+[@
+  DataTable([
+['Species ', '`A` ', '`B` ', '`C` '], 
+['n-octane ', '6.91874', '1351.7560', '209.100'], 
+['n-nonane ', '6.93764', '1430.4597', '201.808']
+	    ],);
+@]*
+
+Bubble point temperature...... :* [________] [``degC``]  
+Vapour mole fraction of Octane...... :* [________]  
+Vapour mole fraction of Nonane...... :* [________]  
+Note: Enter mole fractions as a decimal or fraction (e.g. 0.1)
+
+(b) After a distillation operation, a vapour mixture of n-octane
+and n-nonane is accidentally contaminated with helium gas. The resulting vapour mixture contains [$Ob] mole% n-octane, [$Nb] mole% n-nonane and [$H] mole% helium. To remove the helium gas, the vapour mixture is condensed by isothermal compression at [$T_cond] deg C. Find the pressure when the condensation starts and the composition of the initial condensate.
+
+Pressure when the condensation starts...... :* [________] [``mmHg``]  
+Mole fraction of Octane in condensate...... :* [________]  
+Mole fraction of Nonane in condensate...... :* [________]  
+Note: Enter mole fractions as a decimal or fraction (e.g. 0.1)
+
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,30);
+WEIGHTED_ANS($ans2->cmp() ,10);
+WEIGHTED_ANS($ans3->cmp() ,10);
+WEIGHTED_ANS($ans4->cmp() ,30);
+WEIGHTED_ANS($ans5->cmp() ,10);
+WEIGHTED_ANS($ans6->cmp() ,10);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+
+

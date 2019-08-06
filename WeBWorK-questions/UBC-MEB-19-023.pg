@@ -1,0 +1,109 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Process Economics')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on non-reactive processess')
+## DBsection('Single unit')
+## Date('01/29/2018')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl", #multiple choice
+   "PGchoicemacros.pl",	# multi select question
+   "PGanswermacros.pl", # multi select question
+  "weightedGrader.pl",
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.01);
+Context()->{format}{number} = "%.4g";
+
+#---- Random variables for this problem ---------------------
+$P = Real(random(1,5,0.1)); #tonne/yr of product
+$B = Real(random(100,1000,10)); #tonne/yr of bacteria
+$N = Real(random(10000,100000,500)); #tonne/yr of nutrients
+#---- Formulas to compute answers ---------------------------
+#all in million dollar/yr
+$Value_P = $P * 100 * 1000 * 1000 / 1E6;
+$Value_B = $B * 100 * 1000 / 1E6;
+$Value_N = $N * 1000 / 1E6;
+$GEP = $Value_P - $Value_B - $Value_N;
+#---- Answers to the problem --------------------------------
+$ans1 = Real($GEP);
+##############################################################
+#
+#  TEXT Area
+#
+BEGIN_PGML
+
+A pharmaceutical company uses bacteria to produce a drug for cancer patients. The process for production of the drug is to add bacteria and nutrients into a reactor and seal it. At some point in time later, another amount of nutrients are added to the reactor, with nothing removed, so the bacteria continue producing the drug. Following nutrient addition the reactor is again sealed until it is eventually opened to recover the final product.
+
+The company wants to assess the economics of scaling up its process. It
+estimates a new facility could produce [$P] tonne of the drug per year and the drugs value would be $100 per gram. This would use [$B] tonnes of bacteria
+and [$N] tonnes of nutrients per year in the production. The bacteria are valued at $100 per kilogram and the nutrients at $1,000 per tonne. The value of other feeds or products in the process are not deemed to be significant. What is the approximate Gross Economic Potential (GEP) in millions of dollars per year?  
+
+Relevant Formulas:   
+Gross economic potential (GEP) = value of products - value of feeds  
+
+GEP...... :* $ [________] Million/yr
+
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,100);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+

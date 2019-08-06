@@ -1,0 +1,130 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Degree of Freedom','Balance')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on non-reactive processess')
+## DBsection('Multiunit')
+## Date('06/30/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('4.4')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance => .02);
+Context()->{format}{number} = "%.4g";
+
+#Set up multiple choice
+
+#---- Random variables and constants for this problem ---------------------
+$m1 = Real(random(1000,1500, 100));
+$m2 = Real(random(200,250,10));
+$x1N = 0.30;
+$x2L = 0.40;
+$x4L = 0.05;
+$x4W = 0.60;
+$x4N = 1 - $x4L - $x4W;
+$x2C = 1 - $x2L;
+
+#---- Formulas to compute answers ---------------------------
+$m4 = ($m1 * $x1N) / $x4N;
+$m5 = $m1 + $m2 - $m4;
+$x5L = ($m2 * $x2L - $m4 * $x4L) / $m5;
+$x5C = ($m2 * $x2C) / $m5;
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($m4);
+$ans2 = Real($m5);
+$ans3 = Real($x5L);
+$ans4 = Real($x5C);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+Multiple-Unit Balance:
+
+The flowchart below, with mass percentages, describes part of the pulp bleaching process, where lignin 
+is partially removed. In this process, [$m1].0 [`kg/h`] alkaline solution,
+consisting of water and NaOH, is mixed with [$m2].0 [`kg/h`] pulp (lignin and cellulose). All NaOH is removed through the supernatant stream and all cellulose is removed through the bleached pulp stream. Note that the species listed for each stream are the only species in that stream, for example, stream 2 consists of lignin and the remainder as cellulose and only those two species. Assume no reactions take place for your analysis.
+
+*Pulp Bleaching Process Diagram*
+[@ image( "UBC-MEB-19-012.png",width=>821, height=>323) @]*
+
+(a) What are the mass flow rates of streams 4 and 5?
+
+Stream 4 ...... :* [________] [`kg/h`]
+
+Stream 5 ...... :* [________] [`kg/h`]
+
+(b) What are the mass fractions of lignin and cellulose in the bleached pulp
+stream? Note: mass fractions are dimensionless.
+
+lignin ....... :* [_____] 
+
+cellulose ..... :* [_____]
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,25);
+WEIGHTED_ANS($ans2->cmp() ,25);
+WEIGHTED_ANS($ans3->cmp() ,25);
+WEIGHTED_ANS($ans4->cmp() ,25);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+

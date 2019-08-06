@@ -1,0 +1,147 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('combustion','excess reactant','limiting reactant')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on reactive processess')
+## DBsection('Degree of freedom analysis')
+## Date('09/26/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl",
+   "answerHints.pl"     # show hints
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.05);
+Context()->{format}{number} = "%.4g";
+
+
+#Set up multiple choice
+$mcqb = RadioButtons(
+    [ "+3 (underspecified, not solvable)", 
+	"+2 (underspecified, not solvable)", 
+	"+1 (underspecified, not solvable)",
+      "0 (completely specified, solvable)"],
+    "+1 (underspecified, not solvable)",
+    last => ["0 (completely specified, solvable)"]);
+
+$mcqc = RadioButtons(
+    [ "\( 2*n_{CO_2, in} = 1*n_{CH_3OH, out} + 2*n_{O_2, out} + 2*n_{CO_2, out} \)", 
+"\( 4*n_{CO_2, in} = 2*n_{CH_3OH, out} + 2*n_{O_2, out} + 4*n_{CO_2, out} \)", 
+"\( 2*n_{CO_2, in} = 1*n_{CH_3OH, out} + 2*n_{O_2, out} \)",
+      "\( 4*n_{CO_2, in} = 2*n_{CH_3OH, out} + 2*n_{O_2, out} \)"],
+    "\( 2*n_{CO_2, in} = 1*n_{CH_3OH, out} + 2*n_{O_2, out} + 2*n_{CO_2, out} \)" );
+
+#---- Random variables for this problem ---------------------
+$n_H2 = Real(random(10,100,2));
+$conv = Real(random(50,90,5));
+#---- Formulas to compute answers ---------------------------
+
+$ratio = 0.5/2; #stoichiometric ratio of O2 over H2
+#---- Answers to the problem --------------------------------
+$ans1 = Real($ratio);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+A reactor takes in hydrogen ([`H_2`]) and carbon dioxide ([`CO_2`]) and
+produces methanol ([`CH_3OH`]) as well as oxygen ([`O_2`]) in a single
+reaction. The reactor is fed with [$n_H2] moles of hydrogen, an unknown amount of
+carbon dioxide and no methanol or oxygen. It achieves a final carbon dioxide
+conversion of [$conv]%, and all species ([`H_2`], [`CO_2`], [`CH_3OH`] and [`O_2`])
+are present in the exiting stream.
+
+a. How many moles of oxygen ([`O_2`]) are produced for every mole of hydrogen
+([`H_2`]) consumed in this reaction?  
+Your answer...... :* [________] 
+
+END_PGML
+
+BEGIN_TEXT
+\{ 
+knowlLink("Click for a hint for part a", 
+value=>'Write a balanced chemical reaction') 
+\}
+$BR $BR
+b. What is the number of degrees of freedom for this system?
+$BR
+\{ $mcqb->buttons()\}
+$BR
+\{ 
+knowlLink("Click for a hint for part b", 
+value=>'To start, set up a flowchart with molar flows of each species.') 
+\}
+$BR $BR
+c. What is the correct form of the atomic species balance on oxygen?
+$BR
+\{ $mcqc->buttons()\}
+
+END_TEXT
+WEIGHTED_ANS($ans1->cmp() ,30);
+WEIGHTED_ANS($mcqb->cmp() ,35);
+WEIGHTED_ANS($mcqc->cmp() ,35);
+
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+
+
+
+

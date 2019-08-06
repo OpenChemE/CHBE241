@@ -1,0 +1,113 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Energy balance','non-reactive','heat capacity')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Energy balances')
+## DBsection('Non-reactive closed processes')
+## Date('11/20/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('8.2')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.05);
+Context()->{format}{number} = "%.4g";
+
+
+#---- Random variables for this problem ---------------------
+$tot_mol = Real(random(100,200,2)); 	# total moles in mol
+$E = Real(random(20,80,1));         	# mole percentage of ethanol
+$M = 100 - $E;				# mole percentage of ethanol
+$T_i = Real(random(-20,10,1));		# initial temperature in deg C
+$P = Real(random(20,40,2));		# heating rate in watt
+
+#---- Constants and fixed variables ---------------------
+
+$cp_E = 111; #J/mol-K
+$cp_M = 80; #J/mol-K
+$time = 2; #hours
+
+#---- Calculation --------------------------------
+$heat = $P*$time*3600;			# total heat in Joules
+$cp_mix = $cp_E*$E/100 + $cp_M*$M/100;	# average heat capacity
+$T_f = $heat / ($tot_mol * $cp_mix) + $T_i; #final temperature in deg C
+
+#---- Answers ---------------------------
+$ans1 = Real($T_f);
+
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+[$tot_mol] moles of a liquid mixture of [$E] mole% ethanol and [$M] mole% methanol at [$T_i] deg C enters a heater. The liquid mixture is heated at a rate of [$P] W.
+Molar heat capacities of ethanol and methanol are estimated to be constant at 111 J/mol-K and 80 J/mol-K respectively.  
+Assuming the liquid mixture is an ideal mixture, what is the final temperature of the mixture after 2 hours?
+
+Final temperature of the mixture ...... :* [________] deg C  
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,100);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+
+

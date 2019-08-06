@@ -1,0 +1,98 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Degree of Freedom','Balance')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on non-reactive processess')
+## DBsection('Degree of freedom analysis')
+## Date('06/30/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('4.3')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 0;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+
+
+#Set up multiple choice
+
+#---- Random variables for this problem ---------------------
+
+#---- Formulas to compute answers ---------------------------
+$dof = -1;
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($dof);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+Degree-of-Freedom Analysis
+Perform degree-of-freedom analysis for the separator system showed in the block diagram below. Note that only the species listed below each stream are present within them, some streams do not contain all species. How many degrees of freedom are there? 
+
+*Separator Block Flow Diagram*
+[@ image( "UBC-MEB-19-011.png",width=>764, height=>327) @]*
+
+Degree(s) of freedom ...... :* [________] 
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,100);
+
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+

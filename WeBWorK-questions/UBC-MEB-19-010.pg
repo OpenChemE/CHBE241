@@ -1,0 +1,114 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Process Classification')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on non-reactive processess')
+## DBsection('Single unit')
+## Date('06/28/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('4.2')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl", #multiple choice
+   "PGchoicemacros.pl",	# multi select question
+   "PGanswermacros.pl", # multi select question
+  "weightedGrader.pl",
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 0;
+
+##############################################################
+#
+#  Setup
+
+
+#Set up multiple choice
+$mcq = RadioButtons(
+    [ "batch, transient state process", "semibatch, transient state process", "continuous, transient state process",
+      "batch, steady state process", "semibatch, steady state process", "continuous, steady state process"],
+    "semibatch, transient state process",
+    last => ["continuous, steady state process"]);
+
+#Set up multi select question
+$msq = new_checkbox_multiple_choice();
+$msq -> qa (
+"Which term(s) in the general balance equation is/are relevant (meaning non-zero) to analyze the mass balance of water in the tank described above throughout one entire cycle of production, meaning the dilute solution entering the tank to maple suryp leaving the tank? Select all terms that are relevant.", 
+"input", "output", "accumulation");
+$msq->makeLast("input","output","generation","consumption","accumulation");
+
+#---- Random variables for this problem ---------------------
+
+#---- Formulas to compute answers ---------------------------
+
+#---- Answers to the problem --------------------------------
+
+##############################################################
+#
+#  TEXT Area
+#
+BEGIN_TEXT
+Process Classification:
+$BR
+Consider this system: As part of the maple syrup production process. A dilute maple sugar solution is heated in an open tank, part of the water evaporates and leaves the system. This then creates a concentrated maple sugar solution (maple syrup) which is removed and the process can then be repeated.
+$BR 
+$BR 
+a) Is the process of creating maple syrup from a dilute maple sugar solution a ...
+$BR 
+\{ $mcq->buttons()\}
+$BR 
+$BR 
+b) \{ $msq -> print_q() \}
+\{ $msq -> print_a() \}
+
+END_TEXT
+
+WEIGHTED_ANS($mcq->cmp() ,50);
+WEIGHTED_ANS(checkbox_cmp($msq->correct_ans()),50);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+

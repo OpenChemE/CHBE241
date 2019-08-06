@@ -1,0 +1,109 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('unit conversion','significant figures')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Definitions')
+## DBsection('Unit systems, conversion of units, dimensional homogeneity')
+## Date('06/07/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('2.2')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+#
+#
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance => .02);
+Context()->{format}{number} = "%.4g";
+
+#---- Random variables for this problem ---------------------
+$P = Real(random(1.1,1.4,0.1));
+$Tb = Real(random(101,110,1));
+$Tc = Real(random(113,121,1));
+
+#---- Formulas to compute answers ---------------------------
+$V_hat = 1.694 + (1.159 - 1.694)*($P - 1)/(1.5 - 1);
+$U_hat = 417.4 + (467 - 417.4)*($Tb - 99.6)/(111.4 - 99.6);
+$H_hat = 2226.2 + (2193 - 2226.2)*($Tc - 111.4)/(123.3 - 111.4);
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($V_hat);
+$ans2 = Real($U_hat);
+$ans3 = Real($H_hat);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+Interpolation in steam table: You are given a saturated steam table. Using two-point linear interpolation, what are the values for 
+a) Specific volume of steam [`` \hat{V} ``] at [$P] bar.
+b) Specific internal energy [`` \hat{U} ``] of water at [$Tb] deg C
+c) Specific enthalpy of evaporation [`` \hat{H}  ``] (also called latent heat of vaporization) at [$Tc] deg C.
+
+[@ image( "UBC-MEB-19-005.png",width=>621, height=>134) @]*
+
+a) [`` \hat{V} ``] of steam at [$P] bar...... :* [______] [``m^3/kg``]
+
+b) [`` \hat{U} ``] of water at [$Tb] deg C...... :* [______] [``kJ/kg``]
+
+c)  [`` \hat{H} ``] of evaporation at [$Tc] deg C...... :* [______] [``kJ/kg``]
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp(),33);
+WEIGHTED_ANS($ans2->cmp(),33);
+WEIGHTED_ANS($ans3->cmp(),34);
+
+##############################################################
+
+ENDDOCUMENT();        
+

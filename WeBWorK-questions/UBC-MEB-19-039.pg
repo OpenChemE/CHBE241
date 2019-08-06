@@ -1,0 +1,131 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Energy balance','non-reactive','heat capacity', 'latent heat')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Energy balances')
+## DBsection('Non-reactive open processes')
+## Date('11/20/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('8.3')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.05);
+Context()->{format}{number} = "%.4g";
+
+
+#---- Random variables for this problem ---------------------
+$S = Real(random(55,68,1));        	# mole percentage of styrene
+$T = 100 - $S;				# mole percentage of toluene
+
+#---- Constants and fixed variables ---------------------
+$basis = 1;				#1 mol of feed mixture
+$y_S = 0.5; $y_T = 1 - $y_S;		#vapour mole fractions of styrene and toluene
+$x_S = 0.7; $x_T = 1 - $x_S;		#liquid mole fractions of styrene and toluene
+$cp_Sv = 151; $cp_Tv = 135;		#vapour heat capacities in J/mol-K
+$cp_Sl = 183; $cp_Tl = 150;		#liquid heat capacities in J/mol-K
+$H_S = 43.5; $H_T = 33.5;		#latent heats of vaporization in kJ/mol-K
+$T_i = 200; $T_f = 90;			#Initial and final temperatures in deg C
+
+#---- Calculation --------------------------------
+## part a)
+$liq =($S/100-$y_S)/($x_S-$y_S)*$basis;		#moles of liquid stream out
+$vap = $basis - $liq;
+
+## part b)
+$heat_vap = $basis*$vap*($y_S*$cp_Sv+$y_S*$cp_Tv)*($T_i-$T_f); 
+#sensible heat release from vapour fraction in Joules
+$L_Sl = $basis*$liq*$x_S*($cp_Sv*($T_i-145.2) + $H_S*1000 + $cp_Sl*(145.2-$T_f)); #heat of condensation from liquid fraction of styrene in Joules
+$L_Tl = $basis*$liq*$x_T*($cp_Tv*($T_i-110.6) + $H_T*1000 + $cp_Tl*(110.6-$T_f));  #heat of condensation from liquid fraction of toluene in Joules
+$heat_total = $heat_vap + $L_Sl + $L_Tl;
+$heat_total = -$heat_total;
+
+#---- Answers ---------------------------
+$ans1 = Real($vap);
+$ans2 = Real($heat_total);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+1 mol/s of a superheated vapour mixture of [$S] %mole styrene and [$T] %mole
+toluene enters a condenser. A vapour stream and a liquid stream exit the
+condenser. The vapour stream contains 50 %mole styrene, while the liquid
+stream contains 70 %mole styrene. The flowchart below gives the process specifications.
+
+[@ image( "UBC-MEB-19-039.png",width=>500, height=>247) @]*
+
+Heat capacities of gaseous styrene and toluene are 151 J/mol-K and 135 J/mol-K respectively, whereas heat capacities of liquid styrene and toluene are 183 J/mol-K and 150 J/mol respectively. Latent heats of vaporization are 43.5 kJ/mol at 145.2 deg C for styrene and 33.5 kJ/mol at 110.6 deg C for toluene.  
+(a) Using mass balances, calculate the number of moles of vapour exiting the condenser per second.
+
+Number of moles of vapour exiting the condenser ...... :* [________] mol/s
+
+(b) Using the energy balance, calculate the heat given off or taken in during this partial condensation process in Watts.
+
+Total heat (use -ve for heat released and +ve for heat absorbed by the system) ...... :* [________] Watts
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,25);
+WEIGHTED_ANS($ans2->cmp() ,75);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+
+

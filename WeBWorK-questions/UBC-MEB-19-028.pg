@@ -1,0 +1,127 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('combustion','excess reactant','limiting reactant')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on reactive processess')
+## DBsection('Reactive balances')
+## Date('09/23/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl",
+   "answerHints.pl"     # show hints
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.05);
+Context()->{format}{number} = "%.3g";
+
+#balanced reaction: C_4H_10+6.5O_2 -> 5H_2O+4CO_2
+
+#---- Random variables for this problem ---------------------
+$B = Real(random(10,15,0.5)); #kmol/s butane
+$Air = Real(random(200,250,1)); #kmol/s air
+$W = 30; #kmol/s water formed
+#---- Formulas to compute answers ---------------------------
+$O = $Air*0.21; #kmol/s Oxygen
+
+$B_stoich = $O/6.5;
+
+$B_consumed = $W/5; #kmol/s butane consumed
+
+$excess_B = $B/$B_stoich - 1;
+$frac_conv = $B_consumed/$B;
+#---- Answers to the problem --------------------------------
+$ans1 = Real($excess_B);
+$ans2 = Real($frac_conv);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+Butane ([`C_4H_{10}`]) is combusted with air (79% nitrogen ([`N_2`]) and 21% oxygen
+([`O_2`]) by molar percentage) to form water ([`H_2O`]) and carbon dioxide
+([`CO_2`]) in a
+burner, no other products are formed. The burner is fed with [$B] kmol/s butane
+and [$Air] kmol/s air only. The burner forms 30 kmol/s of water, nothing more is given about the flows of products in the exiting stream.  
+
+a) What is the fractional excess of the excess reactant?  
+Fractional excess...... :* [________]  
+
+b) What is the fractional conversion of butane in the burner?  
+Fractional conversion...... :* [________]
+
+
+
+END_PGML
+
+BEGIN_TEXT
+\{ 
+knowlLink("Click for a hint", 
+value=>'Which one is the limiting reactant? Butane or Oxygen? How about excess
+reactant?') 
+\}
+END_TEXT
+WEIGHTED_ANS($ans1->cmp() ,50);
+WEIGHTED_ANS($ans2->cmp() ,50);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+
+
+

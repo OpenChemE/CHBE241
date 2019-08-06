@@ -1,0 +1,135 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Solid-Vapour  Equilibrium','Adsorption')
+
+## DBsubject('Thermodynamics')
+## DBchapter('Multicomponent phase equilibrium')
+## DBsection('Adsorption and solid-gas or solid-vapour equilibrium (SVE)')
+## Date('11/05/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('6.7')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.05);
+Context()->{format}{number} = "%.4g";
+
+
+#---- Random variables for this problem ---------------------
+
+$S_A_ini = Real(random(1,10,0.1)); # %relative saturation of toluene
+$V = Real(random(20,50,1)); # L of tank
+
+#---- Constants and fixed variables ---------------------
+
+$T = 60; #deg C
+$P_tot = 1; #atm
+$c_A_fin = 10; #ppmv of toluene
+
+#---- Calculation --------------------------------
+$n_tot = $P_tot*$V/(0.08206*($T+273.15));
+
+$psat_A =(10**(6.95805-(1346.773/($T+219.693))))*133.322; #saturation pressure of toluene in Pa;
+$p_A_ini = $S_A_ini*$psat_A/100; # initial partial pressure of toluene
+$y_A_ini = $p_A_ini/($P_tot*101325); # initial mole fraction of toluene
+
+$y_A_fin = $c_A_fin/1E6; #final mole fraction of toluene
+$p_A_fin = $y_A_fin*$P_tot*101325; #final partial pressure of toluene
+$Xsat_A = 3.3*(((6.90E-11*$p_A_fin)**0.39)/(1+(6.90E-11*$p_A_fin)**0.39));
+
+#---- Answers ---------------------------
+$n_A_ads = ($y_A_ini-$y_A_fin)*$n_tot; #mol toluene adsorbed
+$m_C = $n_A_ads/$Xsat_A;  #kg of activated carbon needed
+
+
+$ans1 = Real($n_A_ads);
+$ans2 = Real($m_C);
+
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+In a petrochemical plant, [$S_A_ini]% relative saturation of toluene is detected in a flue (waste) gas stream. To satisfy the regulatory limit of 10 ppmv (vol./vol.) toluene in the flue gas, activated carbon monolith is installed in a waste gas holding tank downstream to remove the toluene from the waste gas. This is done in batches in a tank that has a volume of [$V]-litre and contains an air-toluene mixture. Pressure and temperature are maintained at 1 atm and 60 deg C during this adsorption. 
+
+For adsorption of toluene onto activated carbon, the number of moles of toluene adsorbed per kg of activated carbon [`X_i*`] is given by Langmuir-Freundlich Equation below, which is a modification of Langmuir Isotherm equation.
+
+[`` X_i* = (a (K_Lp_i)^n)/(1+ (K_Lp_i)^n) ``]
+
+where 
+[`X_i*`] is the mole of toluene adsorbed per mass of activated carbon, mol/kg  
+[`p_i`] is the partial pressure of toluene, Pa  
+[`a`] = 3.3 mol/kg; [`K_L`] = 6.9E-11 [`Pa^{-1}`], [`n`] = 0.39
+
+Calculate the number of moles of toluene removed by the activated carbon to exactly satisfy the regulatory limit in each batch and the minimum required amount of activated carbon to remove the toluene to exactly satisfy the regulatory limit.
+
+
+
+Number of moles of toluene removed by the activated carbon ...... :* [________] [``mol``]  
+Minimum required amount of activated carbon...... :* [________]  [``kg``] 
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,50);
+WEIGHTED_ANS($ans2->cmp() ,50);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+
+

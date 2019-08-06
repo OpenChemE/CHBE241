@@ -1,0 +1,151 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Vapour-Liquid Equilibrium','Antoine's equation','Raoult's Law')
+
+## DBsubject('Thermodynamics')
+## DBchapter('Multicomponent phase equilibrium')
+## DBsection('Dew point and bubble point')
+## Date('11/05/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('6.4')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.1);
+Context()->{format}{number} = "%.4g";
+
+#Quadratic fitting equation coefficients, b = bubble, d = dew
+$Ab = 14.684; $Ad = -16.4866;
+$Bb = 19.2089; $Bd = 49.7301;
+$Cb = 110.9143; $Cd = 111.4449;
+
+# part a)
+#---- Random variables for this problem ---------------------
+$S = Real(random(30,80,1));
+$T = 100 - $S;
+$x_S = $S/100;
+$x_T = $T/100;
+
+#---- Formulas to compute answers ---------------------------
+$T_b = $Ab*$x_S**2 + $Bb*$x_S + $Cb;
+$y_S =(-$Bd+sqrt($Bd**2 - 4*$Ad*($Cd-$T_b)))/(2*$Ad);
+$y_T = 1 - $y_S;
+
+# part b)
+#---- Random variables for this problem ---------------------
+$Sb = Real(random(20,70,1));
+$Sb2 = $Sb - Real(random(5,10,1));
+$Tb = 100 - $Sb;
+$y_Sb = $Sb/100;
+$y_Tb = $Tb/100;
+$y_Sb2 = $Sb2/100;
+
+#---- Formulas to compute answers ---------------------------
+$T_d = $Ad*$y_Sb**2 + $Bd*$y_Sb + $Cd;
+$x_Sb =(-$Bb+sqrt($Bb**2 - 4*$Ab*($Cb-$T_d)))/(2*$Ab);
+$x_Tb = 1 - $x_Sb;
+
+$T_d2 = $Ad*$y_Sb2**2 + $Bd*$y_Sb2 + $Cd;
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($T_b);
+$ans2 = Real($y_S);
+$ans3 = Real($y_T);
+$ans4 = Real($T_d);
+$ans5 = Real($x_Sb);
+$ans6 = Real($x_Tb);
+$ans7 = Real($T_d2);
+
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+[@ image("UBC-MEB-19-036.png",width=>721, height=>452) @]*
+
+(a) To test your knowledge of two-phase system, your COOP supervisor gives you
+a Txy diagram (see above) and asks you to determine the bubble-point temperature and the equilibrium vapour composition at the bubble point associated with a liquid mixture of [$S] %mole styrene and [$T] %mole toluene at 1 atm. What are they?
+
+Bubble-point temperature...... :* [________] [``deg C``]  
+Equilibrium vapour mole fraction of styrene...... :* [________]  
+Equilibrium vapour mole fraction of toluene...... :* [________]
+
+(b) If you have a vapour mixture of [$Sb] %mole styrene and [$Tb] %mole toluene at 1 atm, find the dew point temperature and the equilibrium liquid composition at the dew point associated with this vapour mixture.  
+What is the final temperature of the system if you continue the condensation of the vapour mixture until it contains [$Sb2] %mole styrene?
+
+Dew-point temperature...... :* [________] [``deg C``]  
+Equilibrium liquid mole fraction of styrene...... :* [________]  
+Equilibrium liquid mole fraction of toluene...... :* [________]  
+Final temperature if you continue the condensation...... :* [________] [``deg C``]
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,15);
+WEIGHTED_ANS($ans2->cmp() ,15);
+WEIGHTED_ANS($ans3->cmp() ,15);
+WEIGHTED_ANS($ans4->cmp() ,15);
+WEIGHTED_ANS($ans5->cmp() ,15);
+WEIGHTED_ANS($ans6->cmp() ,15);
+WEIGHTED_ANS($ans7->cmp() ,10);
+
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+
+

@@ -1,0 +1,109 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Dimensional homogeneity')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Definitions')
+## DBsection('Unit systems, conversion of units, dimensional homogeneity')
+## Date('06/07/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('2.2')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 0;
+
+##############################################################
+#
+#  Setup
+# 
+#
+#Set up multiple choice
+$a = RadioButtons(
+    [ "\(m^2/s^2 \)", "\(s^2/m^3 \)","\(1/(m^2.s^2) \)", "None of these" ],
+    "\(1/(m^2.s^2) \)",
+    last => ["None of these"]);
+
+$b = RadioButtons(
+    [ "\(lb_f, dimensionless \)", "\(lb_f, lb_f \)","\(dimensionless, dimensionless \)", "None of these" ],
+    "\(lb_f, dimensionless \)",
+    last => ["None of these"]);
+#---- Random variables for this problem ---------------------
+
+#---- Formulas to compute answers ---------------------------
+
+#---- Answers to the problem --------------------------------
+;
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_TEXT
+Dimensional homogeneity 
+$PAR
+
+$BBOLD NOTE $EBOLD For multiple choice problems you have limited attempts.
+
+$PAR
+a) If y = b*z, with the units of z being \([m^3] \) and the units of y being \([m/s^2] \), what are the units of b?
+$BR 
+\{ $a->buttons()\}
+$BR 
+$BR 
+b) If z = a sin (Q), , with the units of z being \([lb_f] \), what are the units of a and Q respectively?
+$BR 
+\{ $b->buttons()\}
+
+END_TEXT
+
+WEIGHTED_ANS($a->cmp() ,50);
+WEIGHTED_ANS($b->cmp() ,50);
+##############################################################
+
+ENDDOCUMENT();        
+
+

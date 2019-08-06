@@ -1,0 +1,103 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('Gas Pressure')
+
+## DBsubject('Thermodynamics')
+## DBchapter('Definitions')
+## DBsection('Manometers')
+## Date('06/14/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('3.2')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance => .005);
+Context()->{format}{number} = "%.3g";
+
+
+#Set up multiple choice
+
+#---- Random variables for this problem ---------------------
+$pg = Real(random(-10,20,5));
+$pa = Real(random(700,760,10));
+
+#---- Formulas to compute answers ---------------------------
+$p_abs = $pa + $pg;
+#---- Answers to the problem --------------------------------
+$ans1 = Real($pg);
+$ans2 = Real($p_abs);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+The pressure of gas being sent through a line by a compressor is measured with a open-end mercury manometer. A reading of [$pg] mm is obtained at the location of interest with the reading being the difference between the end attached to the compressor and that open to atmosphere.
+ 
+a) What is the gas gauge pressure in mm of mercury?  
+[``P_{gauge}``] ...... :* [________] [``mm Hg``]
+
+b) What is the absolute pressure if the atmospheric pressure [``P_{atm}``] = [$pa] mm Hg?  
+[``P_{abs}``] ...... :* [________] [``mm Hg``]
+
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,50);
+WEIGHTED_ANS($ans2->cmp() ,50);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+

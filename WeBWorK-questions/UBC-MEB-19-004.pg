@@ -1,0 +1,97 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('unit conversion','significance figures','scientific notations')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Definitions')
+## DBsection('Unit systems, conversion of units, dimensional homogeneity')
+## Date('06/07/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('2.2')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+#
+#
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance => .02);
+Context()->{format}{number} = "%.5g";
+
+#---- Random variables for this problem ---------------------
+$d = Real(random(1.0,10.0,1.0));
+$A = Real(random(100,1000,100));
+
+#---- Formulas to compute answers ---------------------------
+$mass_kg = $d * $A * 72.1 * 16.0185;
+
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($mass_kg);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+A wastewater pond is an average of [$d].0 [`m`] deep and covers an area of [$A].0 [`m^2`] . If the density of the water is 72.1 [`lbm/ft^3`]. What is the mass of the water in [`kg`]? Note: The formula sheet may have helpful conversions.
+
+Mass of the water...... :* [______] [``kg``]
+
+
+Make sure to use the capital "E" for scientific notation.
+
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp(),100);
+##############################################################
+
+ENDDOCUMENT();        
+

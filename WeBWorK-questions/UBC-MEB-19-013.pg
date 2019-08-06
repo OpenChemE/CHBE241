@@ -1,0 +1,101 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('bypass','balance')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on non-reactive processess')
+## DBsection('Recycle, purge and bypass')
+## Date('07/25/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('4.5')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.02);
+Context()->{format}{number} = "%.4g";
+
+
+#Set up multiple choice
+
+#---- Random variables for this problem ---------------------
+$x_s_in = Real(random(1000,2000,50));
+$m_in = Real(random(6E5,10E5,1E5));
+
+#---- Formulas to compute answers ---------------------------
+$x_s_out = (5E5*$x_s_in*(1-5/6) + ($m_in-5E5)*$x_s_in) / $m_in;
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($x_s_out);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+A wastewater treatment plant has a maximum capacity of half a million litres per day. A influent stream of wastewater with [$x_s_in] [`mg/L`] suspended solids goes into the plant. In the plant, 5/6 of the suspended solids is removed. Assume the flow of this removed solids stream is negligible and does not affect the flow rate of the discharge stream. The treated water is discharged in an effluent stream. During heavy rain events, the influent flow rate can be more than the capacity of the treatment plant. To avoid damaging the plant, any excess bypasses the plant to the effluent stream and mixes with the treated water. On a stormy day, the plant receives [$m_in] [`litres`] of influent.  What is the level of suspended solids in the discharged effluent? 
+
+Level of suspended solids...... :* [______] [`mg/L`]
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,100);
+
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+

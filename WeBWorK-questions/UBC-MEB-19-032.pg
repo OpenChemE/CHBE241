@@ -1,0 +1,125 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('selectivity','yield','fractional conversion')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on reactive processess')
+## DBsection('Reactive balances')
+## Date('03/12/2018')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl",
+   "answerHints.pl"     # show hints
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.05);
+Context()->{format}{number} = "%.4g";
+
+#---- Constant variables for this problem (may be manipulated later if desired)---------------------
+$excess_H = 15; # % excess
+$conv = 95;# % conversion 
+$select = 20; # ratio of benzene to dipehnyl
+
+#---- Random variables for this problem ---------------------
+$n_T = Real(random(200,500,1)); #mol of toluene
+
+#---- Formulas to compute answers ---------------------------
+$n_T_out = $n_T*(1-($conv/100));
+$n_B_out = ($n_T*$conv/100)-2*($n_T*$conv/100)/22;
+$n_D_out = ($n_T*$conv/100)/22;
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($n_T_out);
+$ans2 = Real($n_B_out);
+$ans3 = Real($n_D_out);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+
+During World War II, there was a large demand for the production of toluene for use in explosives. Following the war, there was much lower demand for explosives, and thus another use for toluene had to be found. Production of synthetic polymers, such as nylon, was a promising industry. Toluene could be dealkylated by reacting it with hydrogen in order to produce benzene. Benzene could then be used as a precursor to a variety of chemical products such as nylon. The main reaction for this process is as follows:
+
+[`C_6H_5CH_3 + H_2 \rightleftharpoons C_6H_6 + CH_4`]  
+
+However, a reversible side reaction also occurs to produce an undesired product known as biphenyl:
+
+[`2 C_6H_6 \rightleftharpoons C_6H_5C_6H_5 + H_2`]  
+
+The reactor is fed with [$n_T] kmol/hr of toluene and [$excess_H]% excess of hydrogen. The reaction has a toluene conversion of [$conv]% and a selectivity of [$select]:1 of benzene to diphenyl. What will be the exiting flows of the following species? 
+
+Mole flows of:  
+[`C_6H_5CH_3`]............. :* [________]  kmol/hr  
+[`C_6H_6`] ............. :* [________]  kmol/hr  
+[`C_6H_5C_6H_5`] ....... :* [________]  kmol/hr  
+
+END_PGML
+
+#BEGIN_TEXT
+#$BR
+#\{ 
+#knowlLink("Click for a hint", 
+#value=>'To start, express the mole balance of each species in extent of
+#reaction and write the equilibrium constant equation.') 
+#\}
+#END_TEXT
+
+WEIGHTED_ANS($ans1->cmp() ,33);
+WEIGHTED_ANS($ans2->cmp() ,33);
+WEIGHTED_ANS($ans3->cmp() ,34);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+

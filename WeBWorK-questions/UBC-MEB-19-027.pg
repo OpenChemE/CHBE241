@@ -1,0 +1,154 @@
+##DESCRIPTION
+## 
+## Created by the UBC Faculty of Applied Science.  
+## Project led by Agnes d'Entremont, Jonathan Verrett, and Negar M. Harandi. 
+##
+## Contact: agnes.dentremont@mech.ubc.ca
+##
+## This work is licensed under the Creative Commons
+## Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+## <https://creativecommons.org/licenses/by-sa/4.0/>
+##
+## We gratefully acknowledge the financial support for this 
+## project provided by UBC Vancouver students via the Teaching
+## and Learning Enhancement Fund. We also gratefully acknowledge
+## additional funding support from BCcampus, the UBC Department of
+## Mechanical Engineering, and the UBC Applied Science Dean’s Office.  
+##
+## This work was completed on the traditional, ancestral, and unceded
+## territory of the Musqueam people. 
+##
+##ENDDESCRIPTION
+
+##KEYWORDS('selectivity', 'fractional conversion','extent of reaction')
+
+## DBsubject('Material and energy balances')
+## DBchapter('Material balances on reactive processess')
+## DBsection('Reactive balances')
+## Date('10/06/2017')
+## Author('J. S. Lee, jslee@chbe.ubc.ca')
+## Institution('University of British Columbia')
+## TitleText1('Elementary Principles of Chemical Processes')
+## EditionText1('3')
+## AuthorText1('Felder, Rousseau')
+## Section1('4.6')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();      
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "PGML.pl",
+   "parserPopUp.pl",
+   "parserRadioButtons.pl",
+  "weightedGrader.pl"
+   #"source.pl",        # allows code to be displayed on certain sites.
+   #"PGcourse.pl",      # Customization file for the course
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+Context("Numeric"); # Or Context("Complex");
+Context()->flags->set(tolerance =>.01);
+Context()->{format}{number} = "%.4g";
+
+
+#Set up multiple choice
+
+#---- Random variables for this problem ---------------------
+$nAc_out = Real(random(1200,1400,50));
+$f_eth = Real(random(0.1,0.25,0.01));
+$conv = $f_eth*100;
+$feed_ratio = Real(random(3,5.7,0.1));
+$selectivity = 0.6;
+
+
+#---- Formulas to compute answers ---------------------------
+$E1 = $nAc_out/$selectivity;
+$E2 = ($E1-$nAc_out)/2;
+#if with respect to both acetic acid and water
+# $E2 = ($nAc_out/$selectivity - $nAc_out)/4;
+#correction: $E1 = 1250 + 2*$E2;
+$nE_in = $E1/($f_eth);
+$nE_out = $nE_in - $E1;
+$nO_in = $nE_in/$feed_ratio;
+$nO_out = $nO_in -0.5*$E1 - $E2;
+$nAA_out = 2*$E2;
+$nN2_in = 0.79*$nO_in/0.21;
+$nN2_out = $nN2_in;
+$nWater_out = $E1;
+
+
+#---- Answers to the problem --------------------------------
+$ans1 = Real($nE_in);
+$ans2 = Real($nO_in);
+$ans3 = Real($nN2_in);
+$ans4 = Real($nE_out);
+$ans5 = Real($nO_out);
+$ans6 = Real($nN2_out);
+$ans7 = Real($nAc_out);
+$ans8 = Real($nAA_out);
+$ans9 = Real($nWater_out);
+
+##############################################################
+#
+#  PGML Area
+#
+#
+BEGIN_PGML
+A plant is designed to produce [$nAc_out] kgmol/h of acetaldehyde ([`CH_3CHO`])
+from ethanol ([`C_2H_5OH`]) and air (79% nitrogen, 21% oxygen by moles).
+
+The following reactions occur:  
+[` C_2H_5OH + 0.5O_2 \rightarrow CH_3CHO + H_2O `]  
+[` 2CH_3CHO + O_2 \rightarrow 2CH_3COOH `]
+
+Experimental data from a pilot scale facility shows that if the feed ratio is
+[$feed_ratio] moles ethanol per mole of oxygen that the conversion will be
+[$conv] % of ethanol. The feed consists only of ethanol and air. The selectivity for acetaldehyde is found to be 0.6 with respect to water. The only byproducts in this are acetic acid ([`CH_3COOH`]) and water as outlined in the reaction equations above. Determine the flow rates of all components in and out of the reactor given the desired flowrate of acetaldehyde.
+
+The flows of all species IN of the reactor
+- flow of ethanol...... :* [________] [``kgmol/h``]
+- flow of oxygen ...... :* [________] [``kgmol/h``]
+- flow of nitrogen...... :* [________] [``kgmol/h``]
+
+The flows of all species OUT of the reactor
+- flow of ethanol...... :* [________] [``kgmol/h``]
+- flow of oxygen ...... :* [________] [``kgmol/h``]
+- flow of nitrogen...... :* [________] [``kgmol/h``]
+- flow of acetaldehyde..... :* [________] [``kgmol/h``]
+- flow of acetic acid...... :* [________] [``kgmol/h``]
+- flow of water...... :* [________] [``kgmol/h``]
+
+END_PGML
+
+WEIGHTED_ANS($ans1->cmp() ,20);
+WEIGHTED_ANS($ans2->cmp() ,10);
+WEIGHTED_ANS($ans3->cmp() ,10);
+WEIGHTED_ANS($ans4->cmp() ,10);
+WEIGHTED_ANS($ans5->cmp() ,10);
+WEIGHTED_ANS($ans6->cmp() ,10);
+WEIGHTED_ANS($ans7->cmp() ,10);
+WEIGHTED_ANS($ans8->cmp() ,10);
+WEIGHTED_ANS($ans9->cmp() ,10);
+
+##############################################################
+
+ENDDOCUMENT();        
+
+
+
+
+
+
+
